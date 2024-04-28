@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="registration-main">
+        <div class="form">
+            <div class="form-title">
+                <a href="" class="form-title-arrow">
+                    <img src="/images/arrowLeft.svg" alt="">
+                </a>
+                <h1 class="form-title-text">Регистрация</h1>
+            </div>
+            <form action="" method="POST" class="form-main">
+                <div class="form-group">
+                    <label class="form-type" for="form-type">Вы заходите как:</label>
+                    <select onchange="redirectToPage(this)" class="form-type-content" name="form-type">
+                        <option value="wholesale">Оптовый пользователь</option>
+                        <option value="legal">Юридическое лицо</option>
+                        <option value="individual">Физическое лицо</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-type" for="email">Email:</label>
+                    <input placeholder="Введите адрес электронной почты" class="form-type-content" type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-type" for="name">Имя:</label>
+                    <input placeholder="Введите свое имя" class="form-type-content" type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-type" for="company">Наименование компании:</label>
+                    <input placeholder="Введите наименование вашей компании" class="form-type-content" type="text" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-type" for="phone">Номер телефона</label>
+                    <input placeholder="+7 (---) --- -- --" class="form-type-content" type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-type" for="company">Имя контактного лица</label>
+                    <input placeholder="Введите имя вашего представителя" class="form-type-content" type="text" name="name" required>
+                </div>
+                <button class="form-btn" type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
