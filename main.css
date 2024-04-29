@@ -694,3 +694,19 @@ a {
     display: flex;
     margin: 0 auto;
 }
+
+/* authorization */
+.authorization-group {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+.authorization-links {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
