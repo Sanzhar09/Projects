@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <script defer src="/script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="header-first">
+            <div class="header-logo">
+                <img src="./images/SABIKO.png" alt="">
+            </div>
+            <ul class="header-list">
+                <li class="header-list-content"><a href="aboutus.html">О нас</a></li>
+                <li class="header-list-content"><a href="/cooperation.html">Сотрудничество</a></li>
+                <li class="header-list-content"><a href="/delivery.html">Доставка</a></li>
+                <li class="header-list-content"><a href="/reviews.html">Отзывы</a></li>
+            </ul>
+        </div>
+        <div class="header-second">
+            <div class="header-basket"><a href="/basket.html"><img src="./images/basket.svg" alt=""></a></div>
+            <div class="header-favorite"><a href="/featured.html"><img src="./images/heart.svg" alt=""></a></div>
+            <div class="header-profile"><a href="/authorization.html"><img src="./images/profile.svg" alt=""></a></div>
+        </div>
+    </div>
+    <div class="pampers-main">
+        <div class="about-link">
+        <a href="/main.html">Главная</a>
+        <img src="/images/arrowRight.svg" alt="">
+        <a href="/categoryPampers.html">Подгузники</a>
+        </div>
+        <div class="pampers-content">
+            <div class="pampers-content-first">
+                <div class="pampers-title">Подгузники</div>
+                <div></div>
+            </div>
+            <div class="pampers-content-second">
+                <div class="pampers-second-popular" onclick="tooglePopular()">
+                    <div>Наиболее популярные</div>
+                    <img id="arrow-popular" src="/images/arrowRight.svg" alt="">
+                </div>
+                <div id="pampers-second-main">
+                    <div class="pampers-second-main" >
+                        <div class="pampers-filters">
+                            <div class="pampers-second-title">Размер</div>
+                            <div class="pampers-filters-block">
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">NB</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">2 S</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">3 M</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">4 L</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">5 XL</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">6 XXL</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pampers-filters">
+                            <div class="pampers-second-title">Вес</div>
+                            <div class="pampers-filters-block">
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">2-5 кг</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">4-8 кг</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">6-11 кг</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">9-14 кг</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">15-28 кг</label>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="pampers-filters">
+                            <div class="pampers-second-title">Количество штук в упаковке</div>
+                            <div class="pampers-quantity-block">
+                                <div class="pampers-filters-quantity">
+                                    <label class="quantity-label" for="quantity">От:</label>
+                                    <input class="quantity-input" id="quantity" name="quantity" placeholder="0">
+                                </div>
+                                <div class="pampers-filters-quantity">
+                                    <label class="quantity-label" for="quantity">До:</label>
+                                    <input class="quantity-input" id="quantity" name="quantity" placeholder="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pampers-filters">
+                            <div class="pampers-second-title">Пол ребенка</div>
+                            <div class="pampers-filters-block">
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">Унисекс</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">Девочка</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">Мальчик</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pampers-filters">
+                            <div class="pampers-second-title">Особенноости</div>
+                            <div class="pampers-filters-block">
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">Дышащая поверхность</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">Защита от прелостей</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">Индикатор заполненности</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">Защита от покраснений</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pampers-filters">
+                            <div class="pampers-second-title">Возраст ребенка</div>
+                            <div class="pampers-filters-block">
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">0 месяцев</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">1-2 месяца</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">2-3 месяца</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">3-4 месяца</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">4-5 месяцев</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">5-6 месяцев</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">6-7 месяцев</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">7-8 месяцев</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">8-9 месяцев</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">9-10 месяцев</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">10-11 месяцев</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">11-12 месяцев</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">1 год</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">1,5 года</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">2 года</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">3 года</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">4 года</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">5 года</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">6 лет</label>
+                                </div>
+                                <div class="pampers-second-blocks">
+                                    <input type="checkbox">
+                                    <label class="pampers-second-choice" for="">7 лет</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <footer class="footer">
+        <div class="footer-blocks">
+            <a class="footer-title">О Sabiko</a>
+            <a href="" class="footer-links">О нас</a>
+            <a href="/cooperation.html" class="footer-links">Сотрудничество</a>
+            <a href="" class="footer-links">Политика конфиденциальности</a>
+            <a href="" class="footer-links">Правила использования</a>
+            <a href="/delivery.html" class="footer-links">Политика доставки</a>
+        </div>
+        <div class="footer-blocks">
+            <a class="footer-title">Полезные ссылки</a>
+            <a href="./faq.html" class="footer-links">Часто задаваемые вопросы</a>
+            <a href="/reviews.html" class="footer-links">Отзывы</a>
+            <a href="" class="footer-links">Купить товар</a>
+            <div class="footer-pay">
+                <img src="/images/visa.png" alt="">
+                <img src="/images/mastercard.png" alt="">
+                <img src="/images/applepay.png" alt="">
+                <img src="/images/googlepay.png" alt="">
+            </div>
+        </div>
+        <div class="footer-blocks footer-networks">
+            <a class="footer-logo"><img class="footer-logo-content" src="/images/SABIKO.png" alt="" ></a class="footer-logo">
+            <div class="footer-pay">
+                <a href=""><img src="/images/telegram.png" alt=""></a>
+                <a href=""><img src="/images/wpp.png" alt=""></a>
+                <a href=""><img src="/images/inst.png" alt=""></a>
+                <a href=""><img src="/images/facebook.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
