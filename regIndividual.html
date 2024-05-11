@@ -10,8 +10,9 @@
 <body>
     <div class="registration-main">
         <div class="form">
+            <a href="/main.html" class="form-title-logo"><img src="/images/SABIKO.png" alt=""></a>
             <div class="form-title">
-                <a href="/main.html" class="form-title-arrow">
+                <a href="/main.html" class="form-title-arrow form-title-arrow-mobile">
                     <img src="/images/arrowLeft.svg" alt="">
                 </a>
                 <h1 class="form-title-text">Регистрация</h1>
@@ -20,9 +21,9 @@
                 <div class="form-group">
                     <label class="form-type" for="form-type">Вы заходите как:</label>
                     <select onchange="redirectToPage(this)" class="form-type-content" name="form-type">
-                        <option value="individual">Физическое лицо</option>
-                        <option value="legal">Юридическое лицо</option>
-                        <option value="wholesale">Оптовый пользователь</option>
+                        <option value="individual">Покупатель</option>
+                        <option value="legal">Дилер</option>
+                        <option value="wholesale">Дистрибьютор</option>
                     </select>
                 </div>
                 <div class="form-group">

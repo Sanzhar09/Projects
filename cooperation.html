@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/main.css">
+    <script src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div class="header">
         <div class="header-first">
+            <div class="header-burger fade" onclick="toggleBurger()">
+                <img src="/images/burger (2).svg" >
+            </div>
             <div class="header-logo">
-                <img src="./images/SABIKO.png" alt="">
+                <img class="header-img-mobile" src="./images/SABIKO.png" alt="">
             </div>
             <ul class="header-list">
                 <li class="header-list-content"><a href="aboutus.html">О нас</a></li>
@@ -32,6 +36,39 @@
             <a href="/cooperation.html" >Сотрудничество</a>
         </div>
         <div class="cooperation-main-content">
+            <div class="category category-mobile">
+                <h1 class="category-title">Категории</h1>
+                <div class="category-content">
+                    <a href="/categoryPampers.html" class="category-card">
+                        <img class="category-image-mobile" src="/images/pampers.svg" alt="">
+                        <div class="category-card-desc">Подгузники</div>
+                    </a>
+                    <a href="/categoryPants.html" class="category-card">
+                        <img class="category-image-mobile" src="/images/panties.svg" alt="">
+                        <div class="category-card-desc">Трусики</div>
+                    </a>
+                    <a  href="" class="category-card">
+                        <img class="category-image-mobile" src="/images/napkins.svg" alt="">
+                        <div class="category-card-desc">Салфетки</div>
+                    </a>
+                </div>
+                <ul class="header-list-mobile">
+                    <li class="header-list-content"><a href="aboutus.html">О нас</a></li>
+                    <li class="header-list-content"><a href="/cooperation.html">Сотрудничество</a></li>
+                    <li class="header-list-content"><a href="/delivery.html">Доставка</a></li>
+                    <li class="header-list-content"><a href="/reviews.html">Отзывы</a></li>
+                </ul>
+                <div class="footer-pay-mobile">
+                    <div class="footer-pay-blocks">
+                        <a href=""><img class="footer-networks-img" src="/images/telegram.png" alt=""></a>
+                        <a href=""><img class="footer-networks-img" src="/images/wpp.png" alt=""></a>
+                    </div>
+                    <div class="footer-pay-blocks">
+                        <a href=""><img class="footer-networks-img" src="/images/inst.png" alt=""></a>
+                        <a href=""><img class="footer-networks-img" src="/images/facebook.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
             <div class="cooperation-title">Сотрудничество</div>
             <div class="cooperation-content">
                 <div class="cooperation-content-first">
@@ -61,20 +98,34 @@
         </div>
     </div>
     <footer class="footer">
-        <div class="footer-blocks">
-            <a class="footer-title">О Sabiko</a>
-            <a href="" class="footer-links">О нас</a>
-            <a href="/cooperation.html" class="footer-links">Сотрудничество</a>
-            <a href="" class="footer-links">Политика конфиденциальности</a>
-            <a href="" class="footer-links">Правила использования</a>
-            <a href="/delivery.html" class="footer-links">Политика доставки</a>
+        <div class="footer-blocks-first">
+            <div class="footer-blocks">
+                <a class="footer-title">О Sabiko</a>
+                <a href="" class="footer-links">О нас</a>
+                <a href="/cooperation.html" class="footer-links">Сотрудничество</a>
+                <a href="" class="footer-links">Политика конфиденциальности</a>
+                <a href="" class="footer-links">Правила использования</a>
+                <a href="/delivery.html" class="footer-links">Политика доставки</a>
+            </div>
+            <div class="footer-blocks" id="footer-blocks">
+                <a class="footer-title">Полезные ссылки</a>
+                <a href="./faq.html" class="footer-links">Часто задаваемые вопросы</a>
+                <a href="/reviews.html" class="footer-links">Отзывы</a>
+                <a href="" class="footer-links">Купить товар</a>
+                <div class="footer-pay-card">
+                    <img src="/images/visa.png" alt="">
+                    <img src="/images/mastercard.png" alt="">
+                    <img src="/images/applepay.png" alt="">
+                    <img src="/images/googlepay.png" alt="">
+                </div>
+            </div>
         </div>
-        <div class="footer-blocks">
+        <div class="footer-blocks footer-blocks-second">
             <a class="footer-title">Полезные ссылки</a>
             <a href="./faq.html" class="footer-links">Часто задаваемые вопросы</a>
             <a href="/reviews.html" class="footer-links">Отзывы</a>
             <a href="" class="footer-links">Купить товар</a>
-            <div class="footer-pay">
+            <div class="footer-pay-card">
                 <img src="/images/visa.png" alt="">
                 <img src="/images/mastercard.png" alt="">
                 <img src="/images/applepay.png" alt="">
@@ -84,10 +135,14 @@
         <div class="footer-blocks footer-networks">
             <a class="footer-logo"><img class="footer-logo-content" src="/images/SABIKO.png" alt="" ></a class="footer-logo">
             <div class="footer-pay">
-                <a href=""><img src="/images/telegram.png" alt=""></a>
-                <a href=""><img src="/images/wpp.png" alt=""></a>
-                <a href=""><img src="/images/inst.png" alt=""></a>
-                <a href=""><img src="/images/facebook.png" alt=""></a>
+                <div class="footer-pay-blocks">
+                    <a href=""><img class="footer-networks-img" src="/images/telegram.png" alt=""></a>
+                    <a href=""><img class="footer-networks-img" src="/images/wpp.png" alt=""></a>
+                </div>
+                <div class="footer-pay-blocks">
+                    <a href=""><img class="footer-networks-img" src="/images/inst.png" alt=""></a>
+                    <a href=""><img class="footer-networks-img" src="/images/facebook.png" alt=""></a>
+                </div>
             </div>
         </div>
     </footer>
