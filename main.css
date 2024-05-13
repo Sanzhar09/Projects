@@ -276,6 +276,14 @@ ul {
     border-radius: 20px;
     background-color: rgba(238, 166, 18, 0.7);
 }
+.hits-card-new {
+    padding: 5px 20px 5px 20px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: rgba(72, 111, 250, 0.7);
+    display: flex;
+    justify-content: center;
+}
 .hits-card-main {
     padding: 5px 20px 5px 20px;
     color: #fff;
@@ -1051,7 +1059,7 @@ ul {
     gap: 32px;
 }
 #pampers-second-main {
-    display: none;
+    /* display: none; */
 }
 .pampers-second-title {
     font-family: Montserrat;
@@ -1112,6 +1120,144 @@ ul {
     color: rgba(143, 143, 143, 1);
 }
 
+.cabinet {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 397px;
+    max-width: 1220px;
+}
+.cabinet-content {
+    display: flex;
+    gap: 60px;
+}
+.cabinet-choice {
+    padding: 22px 30px 0px 30px;
+    border: 1px solid #fff;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+    max-height: 176px;
+}
+.cabinet-choice-block {
+    padding: 10px 88px 10px 16px;
+}
+.cabinet-choice-block a {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+}
+.cabinet-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.profile-content {
+    border-bottom: 1px solid rgba(209, 209, 209, 1);
+    padding-bottom: 58px;
+}
+.cabinet-profile-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    margin-bottom: 30px;
+}
+.cabinet-profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.cabinet-profile-first {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    color: rgba(0, 0, 0, 1);
+}
+.cabinet-profile-blocks {
+    display: flex;
+    gap: 120px;
+}
+.profile-second-data {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.profile-second-data label {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.profile-second-data input {
+    border: none;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.cabinet-profile-fourth button {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.cabinet-profile-password {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.profile-fifth-password {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+}
+.profile-fifth-change button {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.highlight {
+    background-color: rgb(255, 237, 237);
+}
+
+.address-second-data label {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.address-second-data {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.address-second-data input {
+    background-color: #fff;
+    border: 1px solid rgba(209, 209, 209, 1);
+    border-radius: 6px;
+    width: 807px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 16px;
+}
 
 
 
@@ -1310,6 +1456,7 @@ ul {
     right: 20px;
     top: 15px;
     max-width: 18px;
+    background-color: rgba(231, 231, 231, 1);
 }
 .hits-card-text {
     position: absolute;
@@ -1536,6 +1683,7 @@ ul {
     align-items: center;
     gap: 16px;
     margin-bottom: 19px;
+    
 }
 .about-content {
     display: flex;
