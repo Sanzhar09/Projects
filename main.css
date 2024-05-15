@@ -40,6 +40,8 @@ ul {
 }
 .main {
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 /* header */
 .header {
@@ -249,6 +251,16 @@ ul {
     line-height: 21.94px;
     letter-spacing: 0.02em;
     text-align: left;
+}
+.category-mobile-content {
+    display: none;
+}
+
+.category-mobile {
+    display: none
+}
+.category-image-mobile {
+    max-height: 80px;
 }
 
 
@@ -490,9 +502,6 @@ ul {
     padding-left: 100px;
     padding-right: 100px;
     max-width: 1220px;
-}
-.category-mobile {
-    display: none;
 }
 .about-title {
     font-family: Montserrat;
@@ -857,12 +866,153 @@ ul {
 }
 /* Basket */
 .basket {
-    padding: 40px 100px 105px 100px;
+    padding: 40px 100px 172px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 .basket-content {
     display: flex;
+    justify-content: space-between;
     gap: 60px;
 }
+.basket-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+
+}
+.basket-left-card {
+    display: flex;
+    gap: 24px;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    padding: 28px 22px;
+}
+.basket-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+.basket-title-first {
+    display: flex;
+    gap: 20px;
+}
+.basket-title-content {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.basket-title-hashtag {
+    display: flex;
+    gap: 12px;
+}
+.basket-title-icons {
+    display: flex;
+    gap: 40px;
+}
+.basket-title-hashtag .hits-card-new  {
+    padding: 4px 15px;
+    font-family: Montserrat;
+    font-size: 8.89px;
+    font-weight: 500;
+    line-height: 10.84px;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+}
+.basket-title-hashtag .hits-card-main  {
+    padding: 4px 15px;
+    font-family: Montserrat;
+    font-size: 8.89px;
+    font-weight: 500;
+    line-height: 10.84px;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+}
+.basket-content-desc {
+    display: flex;
+    justify-content: space-between;
+}
+.basket-desc-param {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.basket-param-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.basket-param-title {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+}
+.basket-param-count {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.basket-content-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+}
+.basket-total-desc {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    justify-content: flex-end;
+}
+.basket-total-count {
+    background-color: rgba(143, 143, 143, 1);
+    padding: 7px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 14.46px;
+    font-weight: 500;
+    line-height: 17.62px;
+}
+.basket-total-desc .hits-card-oldprice {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.basket-total-desc .hits-card-price {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.26px;
+    letter-spacing: 0.02em;
+}
+
+.basket-card-title {
+    display: flex;
+    justify-content: space-between;
+}
+.basket-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+}
+
+
 .basket-right {
     display: flex;
     flex-direction: column;
@@ -1292,9 +1442,192 @@ ul {
     padding-left: 16px;
 }
 
+/* Карточка Товара */
+.cardProduct-main {
+    padding: 30px 100px 66px 100px;
+}
+.cardProduct-card {
+    display: flex;
+    gap: 18px;
+    padding: 40px 30px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 20px;
+    margin-bottom: 60px;
+}
+.cardProduct-swiper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.cardProduct-card-img img {
+    border-radius: 20px;
+}
+.cardProduct-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+}
+.cardProduct-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.cardProduct-title div {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39.01px;
+}
+.cardProduct-content-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+.cardProduct-sales {
+    display: flex;
+    gap: 40px;
+}
+.cardProduct-info {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-param {
+    display: flex;
+    gap: 60px;
+}
+.cardProduct-param-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-right: 165px;
+}
+.param-block-name {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+}
+.param-block-content {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.cardProduct-price {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
 
+.cardProduct-price .hits-card-oldprice {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.38px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-price .hits-card-price {
+    font-family: Montserrat;
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 53.64px;
+}
+.cardProduct-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+.cardProduct-button {
+    background-color: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    padding: 18px 104px;
+    color: #fff;
+}
+.cardProduct-desc {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+.cardProduct-desc-first {
+    max-width: 745px;
+    padding: 34px 30px;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 16px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardProduct-desc-title {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39.01px;
+}
+.cardProduct-desc-content {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
 
+.cardProduct-second {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 71px;
+    padding-bottom: 71px;
+    width: 100%;
+}
+.cardProduct-second-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.38px;
+    }
+.cardProduct-second-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardProduct-delivery {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.cardProduct-delivery-img img {
+    max-width: 40px;
+}
+.cardProduct-delivery-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+.cardProduct-delivery-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-delivery-info {
+    display: flex;
+    justify-content: space-between;
+}
+.cardProduct-main .hits {
+    padding-left: 0;
+    padding-right: 0;
+}
 /* Mobile */
 @media only screen and (max-width: 481px) {
 /* Main Page */
@@ -1418,7 +1751,6 @@ ul {
     right: auto;
 } 
 .category {
-    order:2;
     max-width: 480px;
     /* padding-right: 8px; */
     padding-left: 16px;
@@ -1737,7 +2069,7 @@ ul {
 .about-main {
     padding-left: 16px;
     padding-right: 17px;
-    padding-top: 17px;
+    padding-top: 83px;
     margin-bottom: 60px;
     max-width: 1220px;
 }
@@ -1841,7 +2173,7 @@ ul {
 }
 
 .cooperation-main {
-    padding: 17px 16px 110px 16px;
+    padding: 83px 16px 110px 16px;
 }
 .cooperation-title {
     font-family: Montserrat;
@@ -1905,7 +2237,7 @@ ul {
 
 /* Deliver */
 .main-delivery {
-    padding: 17px 16px 110px 16px;
+    padding: 83px 16px 110px 16px;
 }
 .delivery-main-content {
     display: flex;
@@ -1960,7 +2292,7 @@ ul {
 
 /* Review mobile */
 .main-reviews{
-    padding: 17px 16px 110px 16px;
+    padding: 83px 16px 110px 16px;
 }
 .reviews-title {
     font-family: Montserrat;
@@ -2101,5 +2433,21 @@ ul {
     letter-spacing: 0.02em;
     text-decoration: underline;
 }
-
+/* Избранное */
+.featured {
+    padding: 83px 16px 110px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    flex: 1;
+}
+.featured-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+}
+.featured .hits {
+    padding: 0;
+}
 }
