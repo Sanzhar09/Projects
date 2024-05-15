@@ -9,8 +9,13 @@
 <body>
     <div class="header">
         <div class="header-first">
+            <div class="header-burger fade" onclick="toggleBurger()">
+                <img src="/images/burger (2).svg" >
+            </div>
             <div class="header-logo">
-                <img src="./images/SABIKO.png" alt="">
+                <a href="/main.html">
+                    <img class="header-img-mobile" src="./images/SABIKO.png" alt="">
+                </a>
             </div>
             <ul class="header-list">
                 <li class="header-list-content"><a href="aboutus.html">О нас</a></li>
@@ -32,6 +37,247 @@
             <a href="/featured.html">Избранное</a>
         </div>
         <div class="featured-title">Избранное</div>
+        <div class="hits">
+            <div class="hits-content">
+                <div class="hits-card">
+                    <div class="hits-card-first">
+                        <div class="hits-card-img-container">
+                            <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                            <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                            <div class="hits-card-text">
+                                <div class="hits-card-sale">Распродажа</div>
+                                <div class="hits-card-main">Хит продаж</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card-second">
+                        <div class="hits-card-second-block">
+                            <div class="hits-card-title">Трусики Нептун</div>
+                            <div class="hits-card-character" id="mobiles">
+                                <div class="hits-card-chars">Размер 4 XL </div>
+                                <div class="hits-card-chars">9-14 кг</div>
+                            </div>
+                            <div class="hits-card-character">
+                                <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                <div class="hits-card-chard-prices">
+                                    <div class="hits-card-oldprice">9200₸</div>
+                                    <div class="hits-card-price">7500 ₸</div>
+                                </div>
+                            </div>
+                            <div class="hits-card-btn">
+                                <button class="button-basket">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hits-card">
+                    <div class="hits-card-first">
+                        <div class="hits-card-img-container">
+                            <img src="/images/napkins.png" alt="" class="hits-card-img">
+                            <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                            <div class="hits-card-text">
+                                <div class="hits-card-sale">Распродажа</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card-second">
+                        <div class="hits-card-second-block">
+                            <div class="hits-card-title">Влажные салфетки</div>
+                            <div class="hits-card-character" id="mobiles">
+                                <div class="hits-card-chars">Размер 4 XL </div>
+                                <div class="hits-card-chars">9-14 кг</div>
+                            </div>
+                            <div class="hits-card-character">
+                                <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                <div class="hits-card-chard-prices">
+                                    <div class="hits-card-price">7500 ₸</div>
+                                </div>
+                            </div>
+                            <div class="hits-card-btn">
+                                <button class="button-basket">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hits-card">
+                    <div class="hits-card-first">
+                        <div class="hits-card-img-container">
+                            <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                            <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                            <div class="hits-card-text">
+                                <div class="hits-card-new">Новинка</div>
+                                <div class="hits-card-main">Хит продаж</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card-second">
+                        <div class="hits-card-second-block">
+                            <div class="hits-card-title">Подгузники Марс</div>
+                            <div class="hits-card-character" id="mobiles">
+                                <div class="hits-card-chars">Размер 4 XL </div>
+                                <div class="hits-card-chars">9-14 кг</div>
+                            </div>
+                            <div class="hits-card-character">
+                                <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                <div class="hits-card-chard-prices">
+                                    <div class="hits-card-price">7500 ₸</div>
+                                </div>
+                            </div>
+                            <div class="hits-card-btn">
+                                <button class="button-basket">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hits-card">
+                    <div class="hits-card-first">
+                        <div class="hits-card-img-container">
+                            <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                            <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                            <div class="hits-card-text">
+                                <div class="hits-card-main">Хит продаж</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card-second">
+                        <div class="hits-card-second-block">
+                            <div class="hits-card-title">Подгузники Плутон</div>
+                            <div class="hits-card-character" id="mobiles">
+                                <div class="hits-card-chars">Размер 4 XL </div>
+                                <div class="hits-card-chars">9-14 кг</div>
+                            </div>
+                            <div class="hits-card-character">
+                                <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                <div class="hits-card-chard-prices">
+                                    <div class="hits-card-price">7500 ₸</div>
+                                </div>
+                            </div>
+                            <div class="hits-card-btn">
+                                <button class="button-basket">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hits-card">
+                    <div class="hits-card-first">
+                        <div class="hits-card-img-container">
+                            <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                            <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                            <div class="hits-card-text">
+                                <div class="hits-card-main">Хит продаж</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card-second">
+                        <div class="hits-card-second-block">
+                            <div class="hits-card-title">Трусики Нептун</div>
+                            <div class="hits-card-character" id="mobiles">
+                                <div class="hits-card-chars">Размер 4 XL </div>
+                                <div class="hits-card-chars">9-14 кг</div>
+                            </div>
+                            <div class="hits-card-character">
+                                <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                <div class="hits-card-chard-prices">
+                                    <div class="hits-card-price">7500 ₸</div>
+                                </div>
+                            </div>
+                            <div class="hits-card-btn">
+                                <button class="button-basket">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hits-card">
+                    <div class="hits-card-first">
+                        <div class="hits-card-img-container">
+                            <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                            <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                            <div class="hits-card-text">
+                                <div class="hits-card-main">Хит продаж</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card-second">
+                        <div class="hits-card-second-block">
+                            <div class="hits-card-title">Трусики Нептун</div>
+                            <div class="hits-card-character" id="mobiles">
+                                <div class="hits-card-chars">Размер 4 XL </div>
+                                <div class="hits-card-chars">9-14 кг</div>
+                            </div>
+                            <div class="hits-card-character">
+                                <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                <div class="hits-card-chard-prices">
+                                    <div class="hits-card-price">7500 ₸</div>
+                                </div>
+                            </div>
+                            <div class="hits-card-btn">
+                                <button class="button-basket">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hits-card">
+                    <div class="hits-card-first">
+                        <div class="hits-card-img-container">
+                            <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                            <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                            <div class="hits-card-text">
+                                <div class="hits-card-main">Хит продаж</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card-second">
+                        <div class="hits-card-second-block">
+                            <div class="hits-card-title">Трусики Нептун</div>
+                            <div class="hits-card-character" id="mobiles">
+                                <div class="hits-card-chars">Размер 4 XL </div>
+                                <div class="hits-card-chars">9-14 кг</div>
+                            </div>
+                            <div class="hits-card-character">
+                                <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                <div class="hits-card-chard-prices">
+                                    <div class="hits-card-price">7500 ₸</div>
+                                </div>
+                            </div>
+                            <div class="hits-card-btn">
+                                <button class="button-basket">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hits-card">
+                    <div class="hits-card-first">
+                        <div class="hits-card-img-container">
+                            <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                            <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                            <div class="hits-card-text">
+                                <div class="hits-card-sale">Распродажа</div>
+                                <div class="hits-card-main">Хит продаж</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card-second">
+                        <div class="hits-card-second-block">
+                            <div class="hits-card-title">Трусики Нептун</div>
+                            <div class="hits-card-character" id="mobiles">
+                                <div class="hits-card-chars">Размер 4 XL </div>
+                                <div class="hits-card-chars">9-14 кг</div>
+                            </div>
+                            <div class="hits-card-character">
+                                <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                <div class="hits-card-chard-prices">
+                                    <div class="hits-card-oldprice">9200₸</div>
+                                    <div class="hits-card-price">7500 ₸</div>
+                                </div>
+                            </div>
+                            <div class="hits-card-btn">
+                                <button class="button-basket">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer class="footer">
         <div class="footer-blocks">

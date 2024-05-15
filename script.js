@@ -60,45 +60,25 @@ document.addEventListener('DOMContentLoaded', function() {
 // }
 
 function toggleBurger () {
+     let categoryMobile = document.querySelector('.category-mobile-content')
+
     let burger = document.querySelector('.header-burger'); // Получаем первый элемент с классом 'header-burger'
-    let category = document.querySelector('.category-content'); // Получаем элемент с классом 'category'
-    let categoryCard = document.querySelectorAll('.category-card'); // Получаем элемент с классом 'category'
-    let headerList = document.querySelector('.header-list-mobile');
-    let footerPayMobile = document.querySelector('.footer-pay-mobile');
-    burger.addEventListener('click',function(e){
+    burger?.addEventListener('click',function(e){
         e.preventDefault();
-        if(category.style.flexDirection == 'row'){
-            category.style.flexDirection = 'column';
-            category.style.gap = '17px';
-            category.style.paddingTop = '12px';
-            headerList.style.display = 'flex';
-            footerPayMobile.style.display = 'flex'
-            footerPayMobile.style.gap = '32px'
-            categoryCard.forEach(function(card) {
-                card.style.paddingTop = '0';
-                card.style.paddingBottom = '0';
-            });
-
+        if(categoryMobile.style.display === 'none'){
+            categoryMobile.style.display ='flex'
         }
-        else {
-            category.style.flexDirection = 'row';
-            category.style.gap = '32px';
-            category.style.paddingTop= '0';
-            headerList.style.display = 'none';
-            footerPayMobile.style.display = 'none';
-            category.style.paddingBottom = '16px'
-            card.style.paddingTop = '16px';
-                card.style.paddingBottom = '6px';
-            categoryCard.forEach(function(card) {
-            });
-
-
-        }
+        else
+            {
+                categoryMobile.style.display = 'none'
+            }
     })
 }
 
+
 // Banner
-let swiper = new Swiper(".mySwiper", {
+if (typeof Swiper !== 'undefined') {
+    let swiper = new Swiper(".mySwiper", {
     spaceBetween:30,
     navigation: {
     nextEl:".swiper-button-next",
@@ -107,17 +87,17 @@ let swiper = new Swiper(".mySwiper", {
     pagination: {
     el:".swiper-pagination",
     },
-    mousewheel: true,
     keyboard:true,
     });
+}
 
 
 const form = document.querySelector('.form-main');
-form.addEventListener('submit', async (e) => {
+form?.addEventListener('submit', async (e) => {
     e.preventDefault(); // Предотвращаем отправку формы по умолчанию
 
     const formData = new FormData(form); // Получаем данные формы
-    const url = '/your-backend-login-endpoint'; // Замените на ваш URL для аутентификации
+    const url = '/login'; // Замените на ваш URL для аутентификации
 
     try {
         const response = await fetch(url, {
@@ -140,18 +120,102 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
+// Забыл пароль
+const forgotPassword = document.getElementById('form-forgot-password');
+forgotPassword?.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+    const forgotPasswordData = new FormData(forgotPassword); // Получаем данные формы
+    const url = '/OTP'; // Замените на ваш URL для аутентификации
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: forgotPasswordData
+        });
+
+        if (response.ok) {
+            // Успешный ответ от сервера
+            const data = await response.json();
+            console.log(data); // Обработка успешного входа
+            window.location.href = '/authorization.html'; // Перенаправление на страницу авторизации
+        } else {
+            // Ошибка от сервера
+            console.error('Ошибка при авторизации:', response.status);
+        }
+    } catch (error) {
+        // Ошибка сети или другая ошибка
+        console.error('Ошибка при отправке запроса:', error);
+    }
+});
+
+
+// Регистрация
+const formRegistration = document.getElementById('form-registration');
+formRegistration?.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+    const formData = new FormData(formRegistration); // Получаем данные формы
+    const url = '/registr'; // Замените на ваш URL для аутентификации
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            // Успешный ответ от сервера
+            const data = await response.json();
+            console.log(data); // Обработка успешного входа
+            window.location.href = '/account.html'; // Перенаправление на страницу аккаунта
+        } else {
+            // Ошибка от сервера
+            console.error('Ошибка при авторизации:', response.status);
+        }
+    } catch (error) {
+        // Ошибка сети или другая ошибка
+        console.error('Ошибка при отправке запроса:', error);
+    }
+});
+
+// Регистрация Дилер
+const formRegistrationLegal = document.getElementById('form-registration-legal');
+formRegistrationLegal?.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+    const formData = new FormData(formRegistration); // Получаем данные формы
+    const url = '/registrLegal'; // Замените на ваш URL для аутентификации
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            // Успешный ответ от сервера
+            const data = await response.json();
+            console.log(data); // Обработка успешного входа
+            window.location.href = '/account.html'; // Перенаправление на страницу аккаунта
+        } else {
+            // Ошибка от сервера
+            console.error('Ошибка при авторизации:', response.status);
+        }
+    } catch (error) {
+        // Ошибка сети или другая ошибка
+        console.error('Ошибка при отправке запроса:', error);
+    }
+});
 
 // Favor button
 // Находим иконку "избранное"
 const favorIcon = document.querySelector('.hits-card-favor');
 
 // Добавляем обработчик события клика на иконку "избранное"
-favorIcon.addEventListener('click', async () => {
+favorIcon?.addEventListener('click', async () => {
     // Получаем ID товара или другие необходимые данные для отправки на сервер
     const productId = ''; // Замените на реальный ID товара
-
     // Определяем URL для отправки запроса на добавление товара в избранное
-    const url = '/your-backend-favorite-endpoint'; // Замените на ваш URL для добавления товара в избранное
+    const url = '/login'; // Замените на ваш URL для добавления товара в избранное
 
     try {
         // Отправляем POST-запрос на сервер
@@ -182,7 +246,7 @@ favorIcon.addEventListener('click', async () => {
 const editButton = document.getElementById('change-data');
 
 // Добавляем обработчик события клика на кнопку "Изменить данные"
-editButton.addEventListener('click', () => {
+editButton?.addEventListener('click', () => {
     // Находим все инпуты в профильной части
     const inputs = document.getElementById('data');
     // Удаляем атрибут disabled у каждого инпута

@@ -6,32 +6,66 @@
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script defer src="/script.js"></script>
+    <script defer src="./script.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <div class="main">
-        <div class="header">
-            <div class="header-first">
-                <div class="header-burger fade" onclick="toggleBurger()">
-                    <img src="/images/burger (2).svg" >
-                </div>
-                <div class="header-logo">
-                    <img class="header-img-mobile" src="./images/SABIKO.png" alt="">
-                </div>
-                <ul class="header-list">
-                    <li class="header-list-content"><a href="aboutus.html">О нас</a></li>
-                    <li class="header-list-content"><a href="/cooperation.html">Сотрудничество</a></li>
-                    <li class="header-list-content"><a href="/delivery.html">Доставка</a></li>
-                    <li class="header-list-content"><a href="/reviews.html">Отзывы</a></li>
-                </ul>
+    <div class="header">
+        <div class="header-first">
+            <div class="header-burger fade" onclick="toggleBurger()">
+                <img src="/images/burger (2).svg" >
             </div>
-            <div class="header-second">
-                <div class="header-basket"><a href="/basket.html"><img src="./images/basket.svg" alt=""></a></div>
-                <div class="header-favorite"><a href="/featured.html"><img src="./images/heart.svg" alt=""></a></div>
-                <div class="header-profile"><a href="/authorization.html"><img src="./images/profile.svg" alt=""></a></div>
+            <div class="header-logo">
+                <a href="/main.html">
+                    <img class="header-img-mobile" src="./images/SABIKO.png" alt="">
+                </a>
+            </div>
+            <ul class="header-list">
+                <li class="header-list-content"><a href="aboutus.html">О нас</a></li>
+                <li class="header-list-content"><a href="/cooperation.html">Сотрудничество</a></li>
+                <li class="header-list-content"><a href="/delivery.html">Доставка</a></li>
+                <li class="header-list-content"><a href="/reviews.html">Отзывы</a></li>
+            </ul>
+        </div>
+        <div class="header-second">
+            <div class="header-basket"><a href="/basket.html"><img src="./images/basket.svg" alt=""></a></div>
+            <div class="header-favorite"><a href="/featured.html"><img src="./images/heart.svg" alt=""></a></div>
+            <div class="header-profile"><a href="/authorization.html"><img src="./images/profile.svg" alt=""></a></div>
+        </div>
+    </div>
+    <div class="category-mobile-content">
+        <div class="category-content">
+            <a href="/categoryPampers.html" class="category-card">
+                <img class="category-image-mobile" src="/images/pampers.svg" alt="">
+                <div class="category-card-desc">Подгузники</div>
+            </a>
+            <a href="/categoryPants.html" class="category-card">
+                <img class="category-image-mobile" src="/images/panties.svg" alt="">
+                <div class="category-card-desc">Трусики</div>
+            </a>
+            <a  href="" class="category-card">
+                <img class="category-image-mobile" src="/images/napkins.svg" alt="">
+                <div class="category-card-desc">Салфетки</div>
+            </a>
+        </div>
+        <ul class="header-list-mobile">
+            <li class="header-list-content"><a href="aboutus.html">О нас</a></li>
+            <li class="header-list-content"><a href="/cooperation.html">Сотрудничество</a></li>
+            <li class="header-list-content"><a href="/delivery.html">Доставка</a></li>
+            <li class="header-list-content"><a href="/reviews.html">Отзывы</a></li>
+        </ul>
+        <div class="footer-pay-mobile">
+            <div class="footer-pay-blocks">
+                <a href=""><img class="footer-networks-img" src="/images/telegram.png" alt=""></a>
+                <a href=""><img class="footer-networks-img" src="/images/wpp.png" alt=""></a>
+            </div>
+            <div class="footer-pay-blocks">
+                <a href=""><img class="footer-networks-img" src="/images/inst.png" alt=""></a>
+                <a href=""><img class="footer-networks-img" src="/images/facebook.png" alt=""></a>
             </div>
         </div>
+    </div>
+    <div class="main">
         <div class="banner-main">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
@@ -81,7 +115,7 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
-        <div class="category">
+        <div class="category category-mobile">
             <h1 class="category-title">Категории</h1>
             <div class="category-content">
                 <a href="/categoryPampers.html" class="category-card">
@@ -96,22 +130,6 @@
                     <img class="category-image-mobile" src="/images/napkins.svg" alt="">
                     <div class="category-card-desc">Салфетки</div>
                 </a>
-            </div>
-            <ul class="header-list-mobile">
-                <li class="header-list-content"><a href="aboutus.html">О нас</a></li>
-                <li class="header-list-content"><a href="/cooperation.html">Сотрудничество</a></li>
-                <li class="header-list-content"><a href="/delivery.html">Доставка</a></li>
-                <li class="header-list-content"><a href="/reviews.html">Отзывы</a></li>
-            </ul>
-            <div class="footer-pay-mobile">
-                <div class="footer-pay-blocks">
-                    <a href=""><img class="footer-networks-img" src="/images/telegram.png" alt=""></a>
-                    <a href=""><img class="footer-networks-img" src="/images/wpp.png" alt=""></a>
-                </div>
-                <div class="footer-pay-blocks">
-                    <a href=""><img class="footer-networks-img" src="/images/inst.png" alt=""></a>
-                    <a href=""><img class="footer-networks-img" src="/images/facebook.png" alt=""></a>
-                </div>
             </div>
         </div>
         <div class="hits">

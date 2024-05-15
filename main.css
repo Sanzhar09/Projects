@@ -1,3 +1,32 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/static/Montserrat-Light.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Подключение Gooseberry */
+@font-face {
+    font-family: 'Gooseberry';
+    src: url('путь_к_файлу_шрифта/Gooseberry-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.font-montserrat {
+    font-family: Montserrat, sans-serif;
+}
+
+.font-gooseberry {
+    font-family: Gooseberry, sans-serif;
+}
+
+
 li {
     list-style: none;
 }
@@ -200,6 +229,7 @@ ul {
 .category-content {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 60px;
 }
 .category-card{
@@ -242,6 +272,7 @@ ul {
     display: flex;
     gap: 60px;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .hits-card {
     display: flex;
@@ -426,6 +457,7 @@ ul {
 }
 .footer-pay {
     display: flex;
+    align-items: center;
     gap: 32px;
 }
 .footer-pay-blocks 
@@ -446,16 +478,10 @@ ul {
     justify-content: center;
     gap: 40px;
     align-items: center;
-    margin-left: 110px;
 }
-
-@media only screen and (min-width: 390px) {
-    .footer-logo-content {
-        min-width: 216px;
-        min-height: 54px;
-    }
+.footer-logo-content  {
+    min-width: 216px;
 }
-
 
 
 
@@ -1021,12 +1047,19 @@ ul {
 /* Feature */
 .featured {
     padding: 60px 100px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    flex: 1;
 }
 .featured-title {
     font-family: Montserrat;
     font-size: 30px;
     font-weight: 500;
     line-height: 36.57px;
+}
+.featured .hits {
+    padding: 0;
 }
 
 /* Pampers */
@@ -1263,19 +1296,28 @@ ul {
 
 
 /* Mobile */
-@media only screen and (max-width: 390px) {
+@media only screen and (max-width: 481px) {
 /* Main Page */
 .main {
     display: flex;
     flex-direction: column;
+    padding-top: 77px;
+}
+.main .category {
+    padding-left: 16px;
+    padding-right: 8px;
 }
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 16px;
-    order: 1;
+    padding: 18px 16px;
     border-bottom: 1px solid rgba(238, 238, 238, 1);
+    box-sizing: border-box;
+    z-index: 13;
+    position: fixed;
+    width: 100%;
+    background-color:#fff;
 }
 .header-burger {
     display: block;
@@ -1377,32 +1419,33 @@ ul {
 } 
 .category {
     order:2;
-    max-width: 390px;
-    padding-right: 8px;
+    max-width: 480px;
+    /* padding-right: 8px; */
     padding-left: 16px;
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
+    margin-bottom: 20px;
 }
 .category-title {
     display: none;
 }
 .category-content {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 32px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: inherit;
+    width: 100%;
 }
 .category-card{
     display: flex;
     flex-direction: row;
-    gap: 6px;
     padding:0;
-    padding-top: 16px;
-    padding-bottom: 16px;
     border: none;
     border-radius: 0;
-    box-shadow: none
+    box-shadow: none;
+    gap: 6px;
 }
 .category-image-mobile {
     width: 19px; /* Устанавливаем максимальную ширину изображений в мобильной версии */
@@ -1414,6 +1457,34 @@ ul {
     line-height: 17.07px;
     text-align: left;
 }
+.category-mobile-content {
+    display: none;
+    bottom: 0;
+    overflow-y: scroll;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    padding-left: 17px;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    z-index: 11;
+    background-color: #fff;
+    position: fixed;
+    padding-top: 13px;
+}
+.category-mobile-content .category-content {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+.header-list-mobile {
+    display: flex;
+}
+.footer-pay-mobile {
+    display: flex;
+    gap: 32px;
+}
 
 .hits {
     display: flex;
@@ -1421,7 +1492,6 @@ ul {
     gap: 16px;
     padding-right: 16px;
     padding-left: 16px;
-    width: 390px;
     margin-bottom: 34px;
     order:4;
 }
@@ -1667,6 +1737,7 @@ ul {
 .about-main {
     padding-left: 16px;
     padding-right: 17px;
+    padding-top: 17px;
     margin-bottom: 60px;
     max-width: 1220px;
 }
@@ -1696,7 +1767,7 @@ ul {
     gap: 16px;
 }
 .about-img img {
-    max-width: 357px;
+    max-width: 480px;
 }
 .about-first-text {
     display: flex;
@@ -1770,7 +1841,7 @@ ul {
 }
 
 .cooperation-main {
-    padding: 0px 16px 110px 16px;
+    padding: 17px 16px 110px 16px;
 }
 .cooperation-title {
     font-family: Montserrat;
@@ -1829,12 +1900,12 @@ ul {
     line-height: 17.07px;
 }
 .cooperation-second  img{
-    max-width: 357px;
+    max-width: 480px;
 }
 
 /* Deliver */
 .main-delivery {
-    padding: 0px 16px 110px 16px;
+    padding: 17px 16px 110px 16px;
 }
 .delivery-main-content {
     display: flex;
@@ -1884,12 +1955,12 @@ ul {
     line-height: 17.07px;
 }
 .delivery-content-second img {
-    max-width: 357px;
+    max-width: 466px;
 }
 
 /* Review mobile */
 .main-reviews{
-    padding: 0px 16px 110px 16px;
+    padding: 17px 16px 110px 16px;
 }
 .reviews-title {
     font-family: Montserrat;
