@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('./fonts/static/Montserrat-Light.ttf') format('truetype');
+    src: url('./fonts/static/Montserrat-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
@@ -8,7 +8,7 @@
 /* Подключение Gooseberry */
 @font-face {
     font-family: 'Gooseberry';
-    src: url('путь_к_файлу_шрифта/Gooseberry-Regular.ttf') format('truetype');
+    src: url('./fonts/goosberry_version_02.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -17,6 +17,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    font-family: 'Montserrat';
 }
 .font-montserrat {
     font-family: Montserrat, sans-serif;
@@ -42,6 +43,7 @@ ul {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    gap: 60px;
 }
 /* header */
 .header {
@@ -144,6 +146,13 @@ ul {
     width: 100vw;
     
 }
+swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .hits .swiper {
+      padding-bottom: 40px;
+    }
 .banner {
     background-image: url('./images/banner\ \(2\).png');
     background-position: left;
@@ -227,6 +236,7 @@ ul {
     font-weight: 500;
     line-height: 36.57px;
     text-align: left;
+    margin: 0;
 }
 .category-content {
     display: flex;
@@ -271,7 +281,6 @@ ul {
     gap: 39px;
     padding-right: 100px;
     padding-left: 100px;
-    margin-bottom: 60px;
 }
 .hits-title {
     font-family: Montserrat;
@@ -306,6 +315,7 @@ ul {
     top: 15px;
 }
 .hits-card-text {
+    align-items: flex-start;
     position: absolute;
     left: 6px;
     bottom: 10px;
@@ -320,7 +330,12 @@ ul {
     background-color: rgba(238, 166, 18, 0.7);
 }
 .hits-card-new {
-    padding: 5px 20px 5px 20px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: 0.02em;
+    padding: 5px 20px;
     color: #fff;
     border-radius: 20px;
     background-color: rgba(72, 111, 250, 0.7);
@@ -408,7 +423,6 @@ ul {
     gap: 205px;
     justify-content: center;
     align-items: center;
-    margin-bottom: 60px;
 }
 .info-blocks {
     display: flex;
@@ -881,7 +895,9 @@ ul {
     flex-direction: column;
     gap: 40px;
     width: 100%;
-
+}
+.basket-left-mobile {
+    display: none;
 }
 .basket-left-card {
     display: flex;
@@ -1213,9 +1229,20 @@ ul {
 }
 
 /* Pampers */
-.pampers-main {
+.pampers {
     padding: 40px 100px 100px 100px;
     min-height:1700px ;
+}
+.pampers-main {
+    display: flex;
+    gap: 60px;
+}
+.pampers-main .hits {
+    gap: 0;
+    padding: 0;
+}
+.pampers-main .hits-title {
+    margin-bottom: 30px;
 }
 .pampers-title {
     font-family: Montserrat;
@@ -1302,6 +1329,32 @@ ul {
     line-height: 19.5px;
     color: rgba(143, 143, 143, 1);
 }
+
+/* Pants */
+
+.pants {
+    padding: 40px 100px 100px 100px;
+    min-height:1700px;
+}
+.pants-main {
+    display: flex;
+    gap: 60px;
+}
+.pants-main .hits {
+    padding: 0;
+}
+.napkins {
+    padding: 40px 100px 100px 100px;
+    min-height:1700px;
+}
+.napkins-main {
+    display: flex;
+    gap: 60px;
+}
+.napkins-main .hits {
+    padding: 0;
+}
+
 
 .cabinet {
     padding-left: 100px;
@@ -1446,6 +1499,9 @@ ul {
 .cardProduct-main {
     padding: 30px 100px 66px 100px;
 }
+.cardProduct-mobile-main {
+    display: none;
+}
 .cardProduct-card {
     display: flex;
     gap: 18px;
@@ -1507,6 +1563,11 @@ ul {
     flex-direction: column;
     gap: 6px;
     padding-right: 165px;
+}
+.cardProduct-param-block2 {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 .param-block-name {
     font-family: Montserrat;
@@ -1634,7 +1695,8 @@ ul {
 .main {
     display: flex;
     flex-direction: column;
-    padding-top: 77px;
+    padding-top: 85px;
+    gap: 0;
 }
 .main .category {
     padding-left: 16px;
@@ -1693,7 +1755,8 @@ ul {
 
 .banner-main {
     order: 3;
-    position: relative
+    position: relative;
+    margin-bottom: 22px;
 }
 .swiper-content {
     position: absolute;
@@ -1769,6 +1832,7 @@ ul {
     justify-content: space-between;
     align-items: inherit;
     width: 100%;
+    gap: 0;
 }
 .category-card{
     display: flex;
@@ -1817,15 +1881,13 @@ ul {
     display: flex;
     gap: 32px;
 }
-
 .hits {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding-right: 16px;
-    padding-left: 16px;
-    margin-bottom: 34px;
+    display: block;
+    padding-bottom: 34px;
     order:4;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 .hits-title {
     font-family: Montserrat;
@@ -1833,14 +1895,19 @@ ul {
     font-weight: 600;
     line-height: 19.5px;
     text-align: left;
+    margin-bottom: 16px;
 }
 .hits-content {
     display: flex;
     gap: 20px;
 }
+.main .hits-card {
+    padding-bottom: 12px;
+}
 .hits-card {
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 .hits-card-first {
     display: flex;
@@ -1867,6 +1934,14 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+.hits-card-text .hits-card-new {
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12.19px;
+    letter-spacing: 0.02em;
+    padding: 5px 10px;
 }
 .hits-card-sale {
     padding: 5px 10px;
@@ -1895,6 +1970,7 @@ ul {
     max-width: 265px;
     padding:12px 8px 20px 8px;
     max-width: 169px;
+    box-sizing: border-box;
 }
 .hits-card-second-block {
     display: flex;
@@ -1996,7 +2072,8 @@ ul {
 .footer {
     padding: 30px 16px;
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
+    gap: 0;
     background-color: rgba(238, 238, 238, 1);
     border-top: 1px solid rgba(238, 238, 238, 1);
     order:6;
@@ -2005,6 +2082,7 @@ ul {
 .footer-blocks {
     display: flex;
     flex-direction: column;
+    max-width: 170px;
     gap: 16px;
 }
 .footer-blocks-first {
@@ -2052,8 +2130,8 @@ ul {
 .footer-networks {
     display: flex;
     justify-content: flex-start;
-    gap: 40px;
-    align-items: center;
+    gap: 20px;
+    align-items: flex-start;
     margin: 0;
     max-width: 120px;
 }
@@ -2062,6 +2140,7 @@ ul {
 }
 
 .footer-logo-content {
+    min-width: unset;
     max-width: 80px;
 }
 
@@ -2098,8 +2177,12 @@ ul {
     flex-direction: column;
     gap: 16px;
 }
+.about-img {
+    display: flex;
+    justify-content: center;
+}
 .about-img img {
-    max-width: 480px;
+    width: 100%;
 }
 .about-first-text {
     display: flex;
@@ -2231,8 +2314,12 @@ ul {
     font-weight: 400;
     line-height: 17.07px;
 }
+.cooperation-second {
+    display: flex;
+    justify-content: center;
+}
 .cooperation-second  img{
-    max-width: 480px;
+    width: 100%;
 }
 
 /* Deliver */
@@ -2342,7 +2429,6 @@ ul {
 .form {
     display: block;
     margin: 0;
-    padding: 0;
     border: none;
     border-radius: none;
     box-shadow: none; 
@@ -2449,5 +2535,404 @@ ul {
 }
 .featured .hits {
     padding: 0;
+}
+
+/* Basket mobile */
+
+.basket{
+    padding-left: 16px;
+    padding-right: 17px;
+    padding-top: 83px;
+    gap: 0;
+}
+.basket .basket-title {
+    margin-bottom: 30px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+}
+.basket-content {
+    display: flex;
+    flex-direction: column;
+}
+.basket-left {
+    display: none;
+}
+.basket-left-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.basket-mobile-first {
+    display: flex;
+    gap: 12px;
+}
+.basket-first-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 14px;
+}
+.basket-mobile-title {
+    display: flex;
+    justify-content: space-between;
+}
+.basket-title-mobile-content {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.01em;
+}
+.basket-title-mobile-icons {
+    display: flex;
+    gap: 23px;
+}
+.basket-mobile-sale {
+    display: flex;
+    gap: 12px;
+}
+.basket-mobile-sale .hits-card-new {
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    
+}
+.basket-mobile-sale .hits-card-main {
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12.19px;
+    letter-spacing: 0.02em;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+}
+.basket-mobile-second {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.basket-mobile-param {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.basket-mobile-param .basket-param-title {
+    font-family: Montserrat;
+    letter-spacing: 0.02em;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+}
+.basket-mobile-param .basket-param-count {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.basket-mobile-third {
+    display: flex;
+    justify-content: space-between;
+}
+.basket-mobile-count {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+}
+.mobile-count-content {
+    padding: 10px 14px;
+    background-color: rgba(143, 143, 143, 1);
+    color: #fff;
+    border-radius: 8px;
+}
+.basket-mobile-count .hits-card-oldprice {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.basket-mobile-count .hits-card-price {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.82px;
+    letter-spacing: 0.02em;
+}
+.basket-popup {
+    padding: 32px 41px;
+    background-color: #fff;
+    display: none;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 70%;
+}
+.basket-popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.basket-popup-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.38px;
+}
+.basket-popup-desc {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(63, 63, 63, 1);
+}
+
+
+/* Card Product */
+
+.cardProduct-main {
+    display: none;
+    padding: 12px 16px;
+}
+.cardProduct-mobile-main {
+    display: block;
+    padding: 83px 16px;
+}
+.cardProduct-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 60px;
+}
+
+.cardProduct-swiper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.cardProduct-card-img img {
+    border-radius: 20px;
+    max-width: 358px;
+}
+.cardProduct-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+}
+.cardProduct-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.cardProduct-title div {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    display: flex;
+    justify-content: flex-start;
+}
+.cardProduct-content-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cardProduct-sales {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 40px;
+}
+.cardProduct-sales-content {
+    display: flex;
+    gap: 28px;
+}
+.cardProduct-sales .hits-card-sale {
+    position:sticky;
+}
+.cardProduct-info {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-param {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardProduct-param-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-right: 165px;
+}
+.param-block-name {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+}
+.param-block-content {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.cardProduct-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+
+.cardProduct-price .hits-card-oldprice {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-price .hits-card-price {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.82px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.cardProduct-button {
+    background-color: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    padding: 16px 101px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+.cardProduct-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+    margin-bottom: 60px;
+}
+.cardProduct-desc-first {
+    max-width: 745px;
+    padding: 34px 30px;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 16px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardProduct-desc-title {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39.01px;
+}
+.cardProduct-desc-content {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+    padding: 0;
+}
+
+.cardProduct-second {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    width: 100%;
+}
+.cardProduct-second-titles-content {
+    display: flex;
+    justify-content: space-between;
+}
+.cardProduct-second-titles-content div {
+    padding: 16px 40px;
+}
+.none {
+    display: none;
+}
+.cardProduct-delivery {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.cardProduct-delivery-img img {
+    max-width: 40px;
+}
+.cardProduct-delivery-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+.cardProduct-delivery-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-delivery-info {
+    display: flex;
+    justify-content: space-between;
+}
+.cardProduct-delivery-info div {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-main .hits {
+    padding-left: 0;
+    padding-right: 0;
+}
+.active-card {
+    padding: 16px 40px;
+    background-color: #fff;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 100px;
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.07);
+}
+.card-margin {
+    margin-top: 12px;
 }
 }

@@ -13,7 +13,7 @@ function toogleAnswer(question) {
 }
 // Registration
 function redirectToPage(selectElement) {
-    var selectedValue = selectElement.value;
+    let selectedValue = selectElement.value;
     if (selectedValue === 'individual') {
         window.location.href = 'regIndividual.html'; // Перенаправление на страницу для физического лица
     } else if (selectedValue === 'legal') {
@@ -268,3 +268,29 @@ links.forEach(link => {
         link.classList.add('highlight');
     }
 });
+
+
+
+
+// cardProduct
+document?.addEventListener('DOMContentLoaded', function() {
+    let descTab = document.getElementById('desc-tab');
+    let deliveryTab = document.getElementById('delivery-tab');
+    let descContent = document.getElementById('desc-content');
+    let deliveryContent = document.getElementById('delivery-content');
+    
+    descTab?.addEventListener('click', function() {
+        descContent.classList.remove('none');
+        deliveryContent.classList.add('none');
+        descTab.classList.add('active-card');
+        deliveryTab.classList.remove('active-card');
+    });
+
+    deliveryTab?.addEventListener('click', function() {
+        deliveryContent.classList.remove('none');
+        descContent.classList.add('none');
+        deliveryTab.classList.add('active-card');
+        descTab.classList.remove('active-card');
+    });
+});
+console.log("hello")

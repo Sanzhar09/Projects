@@ -26,219 +26,459 @@
             <div class="header-profile"><a href="/authorization.html"><img src="./images/profile.svg" alt=""></a></div>
         </div>
     </div>
-    <div class="pampers-main">
+    <div class="pampers">
         <div class="about-link">
         <a href="/main.html">Главная</a>
         <img src="/images/arrowRight.svg" alt="">
         <a href="/categoryPampers.html">Подгузники</a>
         </div>
-        <div class="pampers-content">
-            <div class="pampers-content-first">
-                <div class="pampers-title">Подгузники</div>
-                <div></div>
-            </div>
-            <div class="pampers-content-second">
-                <div class="pampers-second-popular" onclick="tooglePopular()">
-                    <div>Наиболее популярные</div>
-                    <img id="arrow-popular" src="/images/arrowRight.svg" alt="">
-                </div>
-                <div id="pampers-second-main">
-                    <div class="pampers-second-main" >
-                        <div class="pampers-filters">
-                            <div class="pampers-second-title">Размер</div>
-                            <div class="pampers-filters-block">
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">NB</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">2 S</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">3 M</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">4 L</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">5 XL</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">6 XXL</label>
+        <div class="pampers-main">
+            <div class="hits">
+                <div class="hits-title">Подгузники</div>
+                <div class="hits-content">
+                    <div class="hits-card">
+                        <div class="hits-card-first">
+                            <div class="hits-card-img-container">
+                                <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                                <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                                <div class="hits-card-text">
+                                    <div class="hits-card-sale">Распродажа</div>
+                                    <div class="hits-card-main">Хит продаж</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="pampers-filters">
-                            <div class="pampers-second-title">Вес</div>
-                            <div class="pampers-filters-block">
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">2-5 кг</label>
+                        <div class="hits-card-second">
+                            <div class="hits-card-second-block">
+                                <div class="hits-card-title">Трусики Нептун</div>
+                                <div class="hits-card-character" id="mobiles">
+                                    <div class="hits-card-chars">Размер 4 XL </div>
+                                    <div class="hits-card-chars">9-14 кг</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">4-8 кг</label>
+                                <div class="hits-card-character">
+                                    <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                    <div class="hits-card-chard-prices">
+                                        <div class="hits-card-oldprice">9200₸</div>
+                                        <div class="hits-card-price">7500 ₸</div>
+                                    </div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">6-11 кг</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">9-14 кг</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">15-28 кг</label>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="pampers-filters">
-                            <div class="pampers-second-title">Количество штук в упаковке</div>
-                            <div class="pampers-quantity-block">
-                                <div class="pampers-filters-quantity">
-                                    <label class="quantity-label" for="quantity">От:</label>
-                                    <input class="quantity-input" id="quantity" name="quantity" placeholder="0">
-                                </div>
-                                <div class="pampers-filters-quantity">
-                                    <label class="quantity-label" for="quantity">До:</label>
-                                    <input class="quantity-input" id="quantity" name="quantity" placeholder="0">
+                                <div class="hits-card-btn">
+                                    <button class="button-basket">В корзину</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="pampers-filters">
-                            <div class="pampers-second-title">Пол ребенка</div>
-                            <div class="pampers-filters-block">
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">Унисекс</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">Девочка</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">Мальчик</label>
+                    </div>
+                    <div class="hits-card">
+                        <div class="hits-card-first">
+                            <div class="hits-card-img-container">
+                                <img src="/images/napkins.png" alt="" class="hits-card-img">
+                                <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                                <div class="hits-card-text">
+                                    <div class="hits-card-sale">Распродажа</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="pampers-filters">
-                            <div class="pampers-second-title">Особенноости</div>
-                            <div class="pampers-filters-block">
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">Дышащая поверхность</label>
+                        <div class="hits-card-second">
+                            <div class="hits-card-second-block">
+                                <div class="hits-card-title">Влажные салфетки</div>
+                                <div class="hits-card-character" id="mobiles">
+                                    <div class="hits-card-chars">Размер 4 XL </div>
+                                    <div class="hits-card-chars">9-14 кг</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">Защита от прелостей</label>
+                                <div class="hits-card-character">
+                                    <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                    <div class="hits-card-chard-prices">
+                                        <div class="hits-card-price">7500 ₸</div>
+                                    </div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">Индикатор заполненности</label>
-                                </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">Защита от покраснений</label>
+                                <div class="hits-card-btn">
+                                    <button class="button-basket">В корзину</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="pampers-filters">
-                            <div class="pampers-second-title">Возраст ребенка</div>
-                            <div class="pampers-filters-block">
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">0 месяцев</label>
+                    </div>
+                    <div class="hits-card">
+                        <div class="hits-card-first">
+                            <div class="hits-card-img-container">
+                                <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                                <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                                <div class="hits-card-text">
+                                    <div class="hits-card-new">Новинка</div>
+                                    <div class="hits-card-main">Хит продаж</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">1-2 месяца</label>
+                            </div>
+                        </div>
+                        <div class="hits-card-second">
+                            <div class="hits-card-second-block">
+                                <div class="hits-card-title">Подгузники Марс</div>
+                                <div class="hits-card-character" id="mobiles">
+                                    <div class="hits-card-chars">Размер 4 XL </div>
+                                    <div class="hits-card-chars">9-14 кг</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">2-3 месяца</label>
+                                <div class="hits-card-character">
+                                    <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                    <div class="hits-card-chard-prices">
+                                        <div class="hits-card-price">7500 ₸</div>
+                                    </div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">3-4 месяца</label>
+                                <div class="hits-card-btn">
+                                    <button class="button-basket">В корзину</button>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">4-5 месяцев</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card">
+                        <div class="hits-card-first">
+                            <div class="hits-card-img-container">
+                                <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                                <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                                <div class="hits-card-text">
+                                    <div class="hits-card-main">Хит продаж</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">5-6 месяцев</label>
+                            </div>
+                        </div>
+                        <div class="hits-card-second">
+                            <div class="hits-card-second-block">
+                                <div class="hits-card-title">Подгузники Плутон</div>
+                                <div class="hits-card-character" id="mobiles">
+                                    <div class="hits-card-chars">Размер 4 XL </div>
+                                    <div class="hits-card-chars">9-14 кг</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">6-7 месяцев</label>
+                                <div class="hits-card-character">
+                                    <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                    <div class="hits-card-chard-prices">
+                                        <div class="hits-card-price">7500 ₸</div>
+                                    </div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">7-8 месяцев</label>
+                                <div class="hits-card-btn">
+                                    <button class="button-basket">В корзину</button>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">8-9 месяцев</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card">
+                        <div class="hits-card-first">
+                            <div class="hits-card-img-container">
+                                <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                                <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                                <div class="hits-card-text">
+                                    <div class="hits-card-main">Хит продаж</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">9-10 месяцев</label>
+                            </div>
+                        </div>
+                        <div class="hits-card-second">
+                            <div class="hits-card-second-block">
+                                <div class="hits-card-title">Трусики Нептун</div>
+                                <div class="hits-card-character" id="mobiles">
+                                    <div class="hits-card-chars">Размер 4 XL </div>
+                                    <div class="hits-card-chars">9-14 кг</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">10-11 месяцев</label>
+                                <div class="hits-card-character">
+                                    <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                    <div class="hits-card-chard-prices">
+                                        <div class="hits-card-price">7500 ₸</div>
+                                    </div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">11-12 месяцев</label>
+                                <div class="hits-card-btn">
+                                    <button class="button-basket">В корзину</button>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">1 год</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card">
+                        <div class="hits-card-first">
+                            <div class="hits-card-img-container">
+                                <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                                <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                                <div class="hits-card-text">
+                                    <div class="hits-card-main">Хит продаж</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">1,5 года</label>
+                            </div>
+                        </div>
+                        <div class="hits-card-second">
+                            <div class="hits-card-second-block">
+                                <div class="hits-card-title">Трусики Нептун</div>
+                                <div class="hits-card-character" id="mobiles">
+                                    <div class="hits-card-chars">Размер 4 XL </div>
+                                    <div class="hits-card-chars">9-14 кг</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">2 года</label>
+                                <div class="hits-card-character">
+                                    <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                    <div class="hits-card-chard-prices">
+                                        <div class="hits-card-price">7500 ₸</div>
+                                    </div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">3 года</label>
+                                <div class="hits-card-btn">
+                                    <button class="button-basket">В корзину</button>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">4 года</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card">
+                        <div class="hits-card-first">
+                            <div class="hits-card-img-container">
+                                <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                                <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                                <div class="hits-card-text">
+                                    <div class="hits-card-main">Хит продаж</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">5 года</label>
+                            </div>
+                        </div>
+                        <div class="hits-card-second">
+                            <div class="hits-card-second-block">
+                                <div class="hits-card-title">Трусики Нептун</div>
+                                <div class="hits-card-character" id="mobiles">
+                                    <div class="hits-card-chars">Размер 4 XL </div>
+                                    <div class="hits-card-chars">9-14 кг</div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">6 лет</label>
+                                <div class="hits-card-character">
+                                    <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                    <div class="hits-card-chard-prices">
+                                        <div class="hits-card-price">7500 ₸</div>
+                                    </div>
                                 </div>
-                                <div class="pampers-second-blocks">
-                                    <input type="checkbox">
-                                    <label class="pampers-second-choice" for="">7 лет</label>
+                                <div class="hits-card-btn">
+                                    <button class="button-basket">В корзину</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hits-card">
+                        <div class="hits-card-first">
+                            <div class="hits-card-img-container">
+                                <img src="/images/pampersimg.png" alt="" class="hits-card-img">
+                                <img src="/images/favor.svg" alt="" class="hits-card-favor">
+                                <div class="hits-card-text">
+                                    <div class="hits-card-sale">Распродажа</div>
+                                    <div class="hits-card-main">Хит продаж</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hits-card-second">
+                            <div class="hits-card-second-block">
+                                <div class="hits-card-title">Трусики Нептун</div>
+                                <div class="hits-card-character" id="mobiles">
+                                    <div class="hits-card-chars">Размер 4 XL </div>
+                                    <div class="hits-card-chars">9-14 кг</div>
+                                </div>
+                                <div class="hits-card-character">
+                                    <div class="hits-card-chars hit-card-chars-mobile">56 штук</div>
+                                    <div class="hits-card-chard-prices">
+                                        <div class="hits-card-oldprice">9200₸</div>
+                                        <div class="hits-card-price">7500 ₸</div>
+                                    </div>
+                                </div>
+                                <div class="hits-card-btn">
+                                    <button class="button-basket">В корзину</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>    
+            <div class="pampers-content">
+                <div class="pampers-content-second">
+                    <div class="pampers-second-popular" onclick="tooglePopular()">
+                        <div>Наиболее популярные</div>
+                        <img id="arrow-popular" src="/images/arrowRight.svg" alt="">
+                    </div>
+                    <div id="pampers-second-main">
+                        <div class="pampers-second-main" >
+                            <div class="pampers-filters">
+                                <div class="pampers-second-title">Размер</div>
+                                <div class="pampers-filters-block">
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">NB</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">2 S</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">3 M</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">4 L</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">5 XL</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">6 XXL</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pampers-filters">
+                                <div class="pampers-second-title">Вес</div>
+                                <div class="pampers-filters-block">
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">2-5 кг</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">4-8 кг</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">6-11 кг</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">9-14 кг</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">15-28 кг</label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="pampers-filters">
+                                <div class="pampers-second-title">Количество штук в упаковке</div>
+                                <div class="pampers-quantity-block">
+                                    <div class="pampers-filters-quantity">
+                                        <label class="quantity-label" for="quantity">От:</label>
+                                        <input class="quantity-input" id="quantity" name="quantity" placeholder="0">
+                                    </div>
+                                    <div class="pampers-filters-quantity">
+                                        <label class="quantity-label" for="quantity">До:</label>
+                                        <input class="quantity-input" id="quantity" name="quantity" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pampers-filters">
+                                <div class="pampers-second-title">Пол ребенка</div>
+                                <div class="pampers-filters-block">
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">Унисекс</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">Девочка</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">Мальчик</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pampers-filters">
+                                <div class="pampers-second-title">Особенноости</div>
+                                <div class="pampers-filters-block">
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">Дышащая поверхность</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">Защита от прелостей</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">Индикатор заполненности</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">Защита от покраснений</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pampers-filters">
+                                <div class="pampers-second-title">Возраст ребенка</div>
+                                <div class="pampers-filters-block">
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">0 месяцев</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">1-2 месяца</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">2-3 месяца</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">3-4 месяца</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">4-5 месяцев</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">5-6 месяцев</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">6-7 месяцев</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">7-8 месяцев</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">8-9 месяцев</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">9-10 месяцев</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">10-11 месяцев</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">11-12 месяцев</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">1 год</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">1,5 года</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">2 года</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">3 года</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">4 года</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">5 года</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">6 лет</label>
+                                    </div>
+                                    <div class="pampers-second-blocks">
+                                        <input type="checkbox">
+                                        <label class="pampers-second-choice" for="">7 лет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>       
     </div>
     <footer class="footer">
         <div class="footer-blocks">
