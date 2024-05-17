@@ -12,6 +12,9 @@
     font-weight: normal;
     font-style: normal;
 }
+.mobile {
+    display: none;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -403,6 +406,9 @@ swiper-container {
     line-height: 24.38px;
     letter-spacing: 0.02em;
     text-align: left;
+}
+.mobile {
+    display: none;
 }
 .button-basket {
     padding: 12px 74px;
