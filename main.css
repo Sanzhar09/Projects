@@ -3385,4 +3385,95 @@ swiper-container {
     font-weight: 500;
     line-height: 17.07px;
 }
+
+.pants {
+    padding: 83px 16px 60px 16px;
+    min-height:1700px ;
+}
+.pants-main {
+    display: flex;
+    gap: 60px;
+}
+.pants-main .hits-content {
+    display: grid;
+    grid-template-columns: 169px 169px;
+}
+.pants-main .hits {
+    display:flex;
+}
+.pants-main .hits-title {
+    margin-bottom: 30px;
+}
+.pants-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    color: rgba(63, 63, 63, 1);
+    margin-bottom: 29px;
+}
+.pants-content-second {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+.pants-second-popular {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+}
+.pants-second-main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+#pants-second-main {
+    /* display: none; */
+}
+.pants-second-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+}
+.pants-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.pants-second-blocks {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.pants-filters-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.pants-second-choice {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(63, 63, 63, 1);
+}
+.pants-quantity-block {
+    max-width: 212px;
+}
+.pants-filters-quantity {
+    max-width: 85px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(143, 143, 143, 1);
+    border-radius: 5px;
+    padding-left: 12px;
+}
+
+
+
+
+
 }

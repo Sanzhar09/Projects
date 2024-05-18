@@ -10,8 +10,13 @@
 <body>
     <div class="header">
         <div class="header-first">
+            <div class="header-burger fade" onclick="toggleBurger()">
+                <img src="/images/burger (2).svg" >
+            </div>
             <div class="header-logo">
-                <a href="/main.html"><img src="./images/SABIKO.png" alt=""></a>
+                <a href="/main.html">
+                    <img class="header-img-mobile" src="./images/SABIKO.png" alt="">
+                </a>
             </div>
             <ul class="header-list">
                 <li class="header-list-content"><a href="aboutus.html">О нас</a></li>
@@ -83,7 +88,6 @@
         <a href="/categoryPampers.html">Подгузники</a>
         </div>
         <div class="pampers-main">
-
             <div class="hits">
                 <div class="hits-title">Подгузники</div>
                 <div class="pampers-mobile-title forMobile">
@@ -542,20 +546,34 @@
          </div>       
     </div>
     <footer class="footer">
-        <div class="footer-blocks">
-            <a class="footer-title">О Sabiko</a>
-            <a href="" class="footer-links">О нас</a>
-            <a href="/cooperation.html" class="footer-links">Сотрудничество</a>
-            <a href="" class="footer-links">Политика конфиденциальности</a>
-            <a href="" class="footer-links">Правила использования</a>
-            <a href="/delivery.html" class="footer-links">Политика доставки</a>
+        <div class="footer-blocks-first">
+            <div class="footer-blocks">
+                <a class="footer-title">О Sabiko</a>
+                <a href="" class="footer-links">О нас</a>
+                <a href="/cooperation.html" class="footer-links">Сотрудничество</a>
+                <a href="" class="footer-links">Политика конфиденциальности</a>
+                <a href="" class="footer-links">Правила использования</a>
+                <a href="/delivery.html" class="footer-links">Политика доставки</a>
+            </div>
+            <div class="footer-blocks" id="footer-blocks">
+                <a class="footer-title">Полезные ссылки</a>
+                <a href="./faq.html" class="footer-links">Часто задаваемые вопросы</a>
+                <a href="/reviews.html" class="footer-links">Отзывы</a>
+                <a href="" class="footer-links">Купить товар</a>
+                <div class="footer-pay-card">
+                    <img src="/images/visa.png" alt="">
+                    <img src="/images/mastercard.png" alt="">
+                    <img src="/images/applepay.png" alt="">
+                    <img src="/images/googlepay.png" alt="">
+                </div>
+            </div>
         </div>
-        <div class="footer-blocks">
+        <div class="footer-blocks footer-blocks-second">
             <a class="footer-title">Полезные ссылки</a>
             <a href="./faq.html" class="footer-links">Часто задаваемые вопросы</a>
             <a href="/reviews.html" class="footer-links">Отзывы</a>
             <a href="" class="footer-links">Купить товар</a>
-            <div class="footer-pay">
+            <div class="footer-pay-card">
                 <img src="/images/visa.png" alt="">
                 <img src="/images/mastercard.png" alt="">
                 <img src="/images/applepay.png" alt="">
@@ -565,10 +583,14 @@
         <div class="footer-blocks footer-networks">
             <a class="footer-logo"><img class="footer-logo-content" src="/images/SABIKO.png" alt="" ></a class="footer-logo">
             <div class="footer-pay">
-                <a href=""><img src="/images/telegram.png" alt=""></a>
-                <a href=""><img src="/images/wpp.png" alt=""></a>
-                <a href=""><img src="/images/inst.png" alt=""></a>
-                <a href=""><img src="/images/facebook.png" alt=""></a>
+                <div class="footer-pay-blocks">
+                    <a href=""><img class="footer-networks-img" src="/images/telegram.png" alt=""></a>
+                    <a href=""><img class="footer-networks-img" src="/images/wpp.png" alt=""></a>
+                </div>
+                <div class="footer-pay-blocks">
+                    <a href=""><img class="footer-networks-img" src="/images/inst.png" alt=""></a>
+                    <a href=""><img class="footer-networks-img" src="/images/facebook.png" alt=""></a>
+                </div>
             </div>
         </div>
     </footer>
