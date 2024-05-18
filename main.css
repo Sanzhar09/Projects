@@ -281,7 +281,6 @@ swiper-container {
     align-items: center;
     gap: 39px;
     padding-right: 100px;
-    padding-left: 100px;
 }
 .hits-title {
     font-family: Montserrat;
@@ -289,7 +288,6 @@ swiper-container {
     font-weight: 500;
     line-height: 36.57px;
     text-align: left;
-    width: 100%;
 }
 .hits-content {
     display: grid;
@@ -1238,7 +1236,6 @@ swiper-container {
     line-height: 36.57px;
 }
 .featured .hits {
-    padding: 0;
 }
 
 /* Pampers */
