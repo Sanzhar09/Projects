@@ -11,6 +11,18 @@ function toogleAnswer(question) {
         arrowIcon.src = '/images/arrowRight.svg'; // Меняем иконку на стрелку вправо
     }
 }
+// Orders
+function toogleOrders(question) {
+    let answer = question.nextElementSibling; // Получаем следующий элемент (ответ)
+    let arrowIcon = question.querySelector('.order-arrow'); // Получаем иконку вопроса
+    if (answer.style.display === 'none') {
+        answer.style.display = 'flex'; // Показываем ответ
+        arrowIcon.src = '/images/arrow-down.svg'; // Меняем иконку на стрелку вниз
+    } else {
+        answer.style.display = 'none'; // Скрываем ответ
+        arrowIcon.src = '/images/arrowRight.svg'; // Меняем иконку на стрелку вправо
+    }
+}
 // Registration
 function redirectToPage(selectElement) {
     let selectedValue = selectElement.value;
@@ -58,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //         arrowPopular.src = "/images/arrow-down.svg"; // Меняем иконку на стрелку вниз
 //     }
 // }
-
+// Burger Mobile
 function toggleBurger () {
      let categoryMobile = document.querySelector('.category-mobile-content')
 
@@ -74,6 +86,26 @@ function toggleBurger () {
             }
     })
 }
+
+// Profile Mobile
+function toggleCabinet() {
+    let mobileCabinet = document.querySelector('.mobile-cabinet')
+    let choiceBlock = document.querySelector('.cabinet-choice-block')
+ 
+    header-profile?.addEventListener('click',function(e){
+        e.preventDefault();
+        if(mobileCabinet.style.display==='none') {
+            mobileCabinet.style.display = 'flex'
+        }
+        else
+        {
+            mobileCabinet.style.display = 'none'
+            
+        }
+    })
+}
+
+
 
 
 // Banner
@@ -293,4 +325,5 @@ document?.addEventListener('DOMContentLoaded', function() {
         descTab.classList.remove('active-card');
     });
 });
-console.log("hello")
+
+

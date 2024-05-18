@@ -46,29 +46,1161 @@
             <div class="cabinet-profile">
                 <div>
                     <div class="cabinet-profile-title">Мои Заказы</div>
-                        <div class="cabinet-profile-content">
-                            <div class="cabinet-profile-blocks">
-                                <div class="address-second-data">
-                                    <label for="fullname">Адрес 1:</label>
-                                    <input type="text" id="data" value="Иванов Иван Иванович">
+                        <div class="orders forDesktop">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-cards">
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    
                                 </div>
                             </div>
-                            <div class="cabinet-profile-blocks">
-                                <div class="address-second-data">
-                                    <label for="phone">Адрес 2:</label>
-                                    <input type="tel" id="data" value="+7 (701) 777-7777">
+                            
+                        </div>
+                        <div class="orders forDesktop">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-cards">
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    
                                 </div>
                             </div>
-                            <div class="cabinet-profile-blocks">
-                                <div class="address-second-data">
-                                    <label for="phone">Адрес 3:</label>
-                                    <input type="tel" id="data" value="+7 (701) 777-7777">
+                            
+                        </div>
+                        <div class="orders forDesktop">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-cards">
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    
                                 </div>
                             </div>
-                            <div class="cabinet-profile-fourth"><button id="change-data">+Добавить другой адрес</button></div>
+                            
+                        </div>
+                        <div class="orders forDesktop">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-cards">
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="orders forDesktop">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-cards">
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="orders forDesktop">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-cards">
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    <div class="order-left">
+                                        <div class="order-title">
+                                            <div class="order-title-content">Трусики Нептун</div>
+                                        </div>
+                                        <div class="order-desk">
+                                            <div class="order-desk-content">
+                                                <div class="order-desk-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                                <div class="order-desk-info">
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Размер</div>
+                                                        <div class="order-desk-count">NB / 2-5кг</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество штук в упаковке</div>
+                                                        <div class="order-desk-count">56 штук</div>
+                                                    </div>
+                                                    <div class="order-desk-param">
+                                                        <div class="order-desk-title">Количество товара</div>
+                                                        <div class="order-desk-count">1</div>
+                                                    </div>
+                                                </div>    
+                                            </div>
+                                            <div class="order-desk-third">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
+
+
+
+
+                        <div class="orders forMobile">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="basket-left-mobile ">
+                                        <div class="basket-mobile-first">
+                                            <div class="basket-mobie-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                            <div class="basket-first-content">
+                                                <div class="basket-mobile-title">
+                                                    <div class="basket-title-mobile-content">Трусики Нептун</div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div class="basket-mobile-second">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество штук в упаковке</div>
+                                                <div class="basket-param-count">56 штук</div>
+                                            </div>
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Размер</div>
+                                                <div class="basket-param-count">NB / 2-5кг</div>
+                                            </div>
+                                        </div>
+                                        <div class="basket-mobile-third">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество товара</div>
+                                                <div class="basket-param-count">1</div>
+                                            </div>
+                                            <div class="basket-mobile-count">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="orders forMobile">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="basket-left-mobile ">
+                                        <div class="basket-mobile-first">
+                                            <div class="basket-mobie-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                            <div class="basket-first-content">
+                                                <div class="basket-mobile-title">
+                                                    <div class="basket-title-mobile-content">Трусики Нептун</div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div class="basket-mobile-second">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество штук в упаковке</div>
+                                                <div class="basket-param-count">56 штук</div>
+                                            </div>
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Размер</div>
+                                                <div class="basket-param-count">NB / 2-5кг</div>
+                                            </div>
+                                        </div>
+                                        <div class="basket-mobile-third">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество товара</div>
+                                                <div class="basket-param-count">1</div>
+                                            </div>
+                                            <div class="basket-mobile-count">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="orders forMobile">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="basket-left-mobile ">
+                                        <div class="basket-mobile-first">
+                                            <div class="basket-mobie-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                            <div class="basket-first-content">
+                                                <div class="basket-mobile-title">
+                                                    <div class="basket-title-mobile-content">Трусики Нептун</div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div class="basket-mobile-second">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество штук в упаковке</div>
+                                                <div class="basket-param-count">56 штук</div>
+                                            </div>
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Размер</div>
+                                                <div class="basket-param-count">NB / 2-5кг</div>
+                                            </div>
+                                        </div>
+                                        <div class="basket-mobile-third">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество товара</div>
+                                                <div class="basket-param-count">1</div>
+                                            </div>
+                                            <div class="basket-mobile-count">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="orders forMobile">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="basket-left-mobile ">
+                                        <div class="basket-mobile-first">
+                                            <div class="basket-mobie-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                            <div class="basket-first-content">
+                                                <div class="basket-mobile-title">
+                                                    <div class="basket-title-mobile-content">Трусики Нептун</div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div class="basket-mobile-second">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество штук в упаковке</div>
+                                                <div class="basket-param-count">56 штук</div>
+                                            </div>
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Размер</div>
+                                                <div class="basket-param-count">NB / 2-5кг</div>
+                                            </div>
+                                        </div>
+                                        <div class="basket-mobile-third">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество товара</div>
+                                                <div class="basket-param-count">1</div>
+                                            </div>
+                                            <div class="basket-mobile-count">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="orders forMobile">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="basket-left-mobile ">
+                                        <div class="basket-mobile-first">
+                                            <div class="basket-mobie-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                            <div class="basket-first-content">
+                                                <div class="basket-mobile-title">
+                                                    <div class="basket-title-mobile-content">Трусики Нептун</div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div class="basket-mobile-second">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество штук в упаковке</div>
+                                                <div class="basket-param-count">56 штук</div>
+                                            </div>
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Размер</div>
+                                                <div class="basket-param-count">NB / 2-5кг</div>
+                                            </div>
+                                        </div>
+                                        <div class="basket-mobile-third">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество товара</div>
+                                                <div class="basket-param-count">1</div>
+                                            </div>
+                                            <div class="basket-mobile-count">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="orders forMobile">
+                            <div class="orders-title" onclick="toogleOrders(this)" >
+                                <div>Заказ от 11.02.2024</div>
+                                <div><img class="order-arrow" src="./images/arrowRight.svg" alt=""></div>
+                            </div>
+                            <div class="orders-content">
+                                <div class="orders-content-first">
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Адрес доставки</div>
+                                            <div class="orders-info-desc">Сейфулина 255,66</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Дата доставки</div>
+                                            <div class="orders-info-desc">12.02.2024</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Оплата</div>
+                                            <div class="orders-info-desc">Kaspi QR</div>
+                                        </div>
+                                    </div>
+                                    <div class="orders-first-info">
+                                        <div class="orders-first-info-content">
+                                            <div class="orders-info-title">Сумма заказа</div>
+                                            <div class="orders-info-desc">45 000 ₸</div>
+                                        </div>
+                                        <div class="orders-first-info-content orders-padding">
+                                            <div class="orders-info-title">Статус заказа</div>
+                                            <div class="orders-info-desc">Доставлено</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="basket-left-mobile ">
+                                        <div class="basket-mobile-first">
+                                            <div class="basket-mobie-img"><img src="./images/basket-mobileimg.png" alt=""></div>
+                                            <div class="basket-first-content">
+                                                <div class="basket-mobile-title">
+                                                    <div class="basket-title-mobile-content">Трусики Нептун</div>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        <div class="basket-mobile-second">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество штук в упаковке</div>
+                                                <div class="basket-param-count">56 штук</div>
+                                            </div>
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Размер</div>
+                                                <div class="basket-param-count">NB / 2-5кг</div>
+                                            </div>
+                                        </div>
+                                        <div class="basket-mobile-third">
+                                            <div class="basket-mobile-param">
+                                                <div class="basket-param-title">Количество товара</div>
+                                                <div class="basket-param-count">1</div>
+                                            </div>
+                                            <div class="basket-mobile-count">
+                                                <div class="hits-card-oldprice">18400</div>
+                                                <div class="hits-card-price">15 000 ₸</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                 </div>
             </div>
+            
         </div>
     </div>    
     
