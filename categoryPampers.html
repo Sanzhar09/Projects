@@ -41,7 +41,7 @@
                 <img class="category-image-mobile" src="/images/panties.svg" alt="">
                 <div class="category-card-desc">Трусики</div>
             </a>
-            <a  href="" class="category-card">
+            <a  href="./categoryNapkins.html" class="category-card">
                 <img class="category-image-mobile" src="/images/napkins.svg" alt="">
                 <div class="category-card-desc">Салфетки</div>
             </a>
@@ -76,7 +76,7 @@
                     <img class="category-image-mobile" src="/images/panties.svg" alt="">
                     <div class="category-card-desc">Трусики</div>
                 </a>
-                <a  href="" class="category-card">
+                <a  href="./categoryNapkins.html" class="category-card">
                     <img class="category-image-mobile" src="/images/napkins.svg" alt="">
                     <div class="category-card-desc">Салфетки</div>
                 </a>
@@ -91,7 +91,7 @@
             <div class="hits">
                 <div class="hits-title">Подгузники</div>
                 <div class="pampers-mobile-title forMobile">
-                    <div class="pampers-filter-title">
+                    <div class="pampers-filter-title filter-btn">
                         <div>Фильтр</div>
                         <img src="./images/filter.svg" alt="">
                     </div>
@@ -340,16 +340,18 @@
                     </div>
                 </div>
             </div>
-            <div class="pampers-content none">
+            <div class="pampers-content">
                 <div class="pampers-content-second">
                     <div class="pampers-second-popular" onclick="tooglePopular()">
                         <div>Наиболее популярные</div>
                         <img id="arrow-popular" src="/images/arrowRight.svg" alt="">
                     </div>
-                    <div id="pampers-second-main">
                         <div class="pampers-second-main" >
                             <div class="pampers-filters">
-                                <div class="pampers-second-title">Размер</div>
+                                <div class="pampers-second-title-content">
+                                    <div class="pampers-second-title">Размер</div> 
+                                    <img class="forMobile" src="./images/arrow-down.svg" alt="">
+                                </div>
                                 <div class="pampers-filters-block">
                                     <div class="pampers-second-blocks">
                                         <input type="checkbox">
@@ -378,7 +380,10 @@
                                 </div>
                             </div>
                             <div class="pampers-filters">
-                                <div class="pampers-second-title">Вес</div>
+                                <div class="pampers-second-title-content">
+                                    <div class="pampers-second-title">Вес</div> 
+                                    <img class="forMobile" src="./images/arrow-down.svg" alt="">
+                                </div>
                                 <div class="pampers-filters-block">
                                     <div class="pampers-second-blocks">
                                         <input type="checkbox">
@@ -403,7 +408,7 @@
                                     
                                 </div>
                             </div>
-                            <div class="pampers-filters">
+                            <div class="pampers-filters-mobile">
                                 <div class="pampers-second-title">Количество штук в упаковке</div>
                                 <div class="pampers-quantity-block">
                                     <div class="pampers-filters-quantity">
@@ -417,7 +422,10 @@
                                 </div>
                             </div>
                             <div class="pampers-filters">
-                                <div class="pampers-second-title">Пол ребенка</div>
+                                <div class="pampers-second-title-content">
+                                    <div class="pampers-second-title">Пол</div> 
+                                    <img class="forMobile" src="./images/arrow-down.svg" alt="">
+                                </div>
                                 <div class="pampers-filters-block">
                                     <div class="pampers-second-blocks">
                                         <input type="checkbox">
@@ -434,7 +442,10 @@
                                 </div>
                             </div>
                             <div class="pampers-filters">
-                                <div class="pampers-second-title">Особенноости</div>
+                                <div class="pampers-second-title-content">
+                                    <div class="pampers-second-title">Особенности</div> 
+                                    <img class="forMobile" src="./images/arrow-down.svg" alt="">
+                                </div>
                                 <div class="pampers-filters-block">
                                     <div class="pampers-second-blocks">
                                         <input type="checkbox">
@@ -455,7 +466,10 @@
                                 </div>
                             </div>
                             <div class="pampers-filters">
-                                <div class="pampers-second-title">Возраст ребенка</div>
+                                <div class="pampers-second-title-content">
+                                    <div class="pampers-second-title">Возраст ребенка</div> 
+                                    <img class="forMobile" src="./images/arrow-down.svg" alt="">
+                                </div>
                                 <div class="pampers-filters-block">
                                     <div class="pampers-second-blocks">
                                         <input type="checkbox">
@@ -539,8 +553,26 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="pampers-filters-desktop">
+                                <div class="pampers-second-title-content">
+                                    <div class="pampers-second-title">Количество в упаковке</div> 
+                                    <img class="forMobile" src="./images/arrow-down.svg" alt="">
+                                </div>
+                                <div class="pampers-quantity-block">
+                                    <div class="pampers-filters-quantity">
+                                        <label class="quantity-label" for="quantity">От:</label>
+                                        <input class="quantity-input" id="quantity" name="quantity" placeholder="0">
+                                    </div>
+                                    <div class="pampers-filters-quantity">
+                                        <label class="quantity-label" for="quantity">До:</label>
+                                        <input class="quantity-input" id="quantity" name="quantity" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button id="category-btn" class="form-btn" >Применить</button>
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
          </div>       

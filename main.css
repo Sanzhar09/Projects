@@ -12,6 +12,14 @@
     font-weight: normal;
     font-style: normal;
 }
+.swiper-button-next:after {
+    color: rgba(179, 179, 179, 1);
+    padding-bottom: 170px;
+}
+.swiper-button-prev:after {
+    color: rgba(179, 179, 179, 1);
+    padding-bottom: 170px;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -76,7 +84,6 @@ ul {
     font-size: 16px;
     font-weight: 500;
     line-height: 19.5px;
-    text-align: left;
 }
 .header-second {
     display: flex;
@@ -118,6 +125,12 @@ ul {
     background-color: rgba(63, 63, 63, 1);
     color: #fff;
     border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+.swiper-content-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
 }
 .swiper-slide {
     text-align: center;
@@ -280,7 +293,6 @@ swiper-container {
     flex-direction: column;
     align-items: center;
     gap: 39px;
-    padding-right: 100px;
 }
 .hits-title {
     font-family: Montserrat;
@@ -291,8 +303,9 @@ swiper-container {
 }
 .hits-content {
     display: grid;
-    grid-template-columns: 265px 265px 265px 265px;
+    grid-template-columns: repeat(4, 1fr);
     gap: 60px;
+    /* width: 100%; */
 }
 .hits-card {
     display: flex;
@@ -314,6 +327,8 @@ swiper-container {
     position: absolute;
     right: 20px;
     top: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 }
 .hits-card-text {
     align-items: flex-start;
@@ -424,9 +439,15 @@ swiper-container {
     font-size: 15px;
     font-weight: 500;
     line-height: 18.29px;
-    letter-spacing: 0.02em;
     text-align: center;
     color:rgba(63, 63, 63, 1);
+    cursor: pointer;
+    transition: backgroun-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.button-basket:active{
+    background-color: #444;
+    color: #fff;
 }
 /* info */
 .info {
@@ -469,11 +490,15 @@ swiper-container {
     gap: 200px;
     background-color: rgba(238, 238, 238, 1);
     border-top: 1px solid rgba(238, 238, 238, 1);
+    justify-content: space-between;
 }
 .footer-blocks {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+.footer-blocks-second {
+    margin-right: 74px;
 }
 #footer-blocks {
     display: none;
@@ -872,6 +897,12 @@ swiper-container {
     max-width: 292px;
     display: flex;
     margin: 0 auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+.form-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
 }
 
 /* authorization */
@@ -1125,8 +1156,13 @@ swiper-container {
 .basket-method-content {
     border: 1px solid rgba(209, 209, 209, 1);
     border-radius: 5px;
-    min-width: 373px;
+    min-width: 360px;
     padding: 9px 0;
+    padding-left: 12px;
+}
+.basket-time {
+    border-bottom: 1px solid rgba(209, 209, 209, 1);
+    padding-bottom: 20px;
 }
 .basket-address {
     max-width: 373px;
@@ -1180,6 +1216,12 @@ swiper-container {
     color: #fff;
     background-color: rgba(63, 63, 63, 1);
     border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+.basket-right-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
 }
 .basket-popup {
     padding: 80px 100px 100px 100px;
@@ -1229,15 +1271,31 @@ swiper-container {
     gap: 29px;
     flex: 1;
 }
+.featured .hits {
+    align-items: flex-start;
+    width: 100%;
+}
 .featured-title {
     font-family: Montserrat;
     font-size: 30px;
     font-weight: 500;
     line-height: 36.57px;
 }
-.featured .hits {
+.featured .hits-content {
+    width: 100%;
+}
+.featured .hits-card-img-container {
+    width: 100%;
+    height: 100%;
 }
 
+.featured .hits-card-img {
+    width: 100%;
+    height: 100%;
+}
+.featured .hits-card-second {
+    max-width: none;
+}
 /* Pampers */
 .pampers {
     padding: 40px 100px 100px 100px;
@@ -1245,14 +1303,22 @@ swiper-container {
 }
 .pampers-main {
     display: flex;
+    justify-content: space-between;
     gap: 60px;
 }
 .pampers-main .hits {
     gap: 0;
     padding: 0;
 }
+.pampers-main .hits-content {
+    display: grid;
+    grid-template-columns: 265px 265px 265px;
+}
 .pampers-main .hits-title {
     margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
 }
 .pampers-title {
     font-family: Montserrat;
@@ -1281,6 +1347,13 @@ swiper-container {
 #pampers-second-main {
     /* display: none; */
 }
+.pampers-second-title-content {
+    display: flex;
+    justify-content: space-between;
+    width: 93%;
+}
+.pampers-second-title-content img {
+}
 .pampers-second-title {
     font-family: Montserrat;
     font-size: 16px;
@@ -1291,6 +1364,9 @@ swiper-container {
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+.pampers-filters-desktop {
+    display: none;
 }
 .pampers-second-blocks {
     display: flex;
@@ -1348,10 +1424,20 @@ swiper-container {
 }
 .pants-main {
     display: flex;
+    justify-content: space-between;
     gap: 60px;
 }
 .pants-main .hits {
     padding: 0;
+}
+.pants-main .hits-content {
+    display: grid;
+    grid-template-columns: 265px 265px 265px;
+}
+.pants-main .hits-title {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
 }
 .napkins {
     padding: 40px 100px 100px 100px;
@@ -1360,9 +1446,19 @@ swiper-container {
 .napkins-main {
     display: flex;
     gap: 60px;
+    justify-content: space-between;
 }
 .napkins-main .hits {
     padding: 0;
+}
+.napkins-main .hits-content {
+    display: grid;
+    grid-template-columns: 265px 265px 265px;
+}
+.napkins-main .hits-title {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
 }
 
 
@@ -1813,12 +1909,28 @@ swiper-container {
     .forDescktop {
         display: none;
     }
+    
+.swiper-button-next:after {
+    color: rgba(179, 179, 179, 1);
+    padding-top: 0;
+    display: none;
+}
+.swiper-button-prev:after {
+    color: rgba(179, 179, 179, 1);
+    padding-top: 0;
+    display: none;
+}
 /* Main Page */
 .main {
     display: flex;
     flex-direction: column;
     padding-top: 85px;
     gap: 0;
+}
+
+.main .hits {
+    gap: 0;
+    align-items: flex-start;
 }
 .main .category {
     padding-left: 16px;
@@ -1887,7 +1999,9 @@ swiper-container {
     max-width: 478px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 0;
+    height: 90%;
+    justify-content: space-between;
 }
 .swiper-content-title {
     font-family: gooseberry;
@@ -1913,6 +2027,7 @@ swiper-container {
     color: #fff;
     border-radius: 30px;
 }
+
 .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -2048,7 +2163,7 @@ swiper-container {
 }
 .hits-card-favor {
     position: absolute;
-    right: 40px;
+    right: 45px;
     top: 15px;
     max-width: 18px;
     background-color: rgba(231, 231, 231, 1);
@@ -2564,7 +2679,7 @@ swiper-container {
     border: none;
     border-radius: none;
     box-shadow: none; 
-    max-width: 412px;
+    padding: 20px 16px;
 }
 .form-title {
     display: flex;
@@ -2626,14 +2741,14 @@ swiper-container {
     border-radius: 6px;
 }
 .form-btn {
-    padding: 16px 100px;
     color: #fff;
     background: rgba(63, 63, 63, 1);
     border-radius: 30px;
     max-width: 357px;
     max-height: 49px;
     display: flex;
-    margin: 0 auto;
+    justify-content: center;
+    margin: 0;
 }
 
 /* authorization */
@@ -2656,14 +2771,22 @@ swiper-container {
     padding: 83px 16px 110px 16px;
     display: flex;
     flex-direction: column;
-    gap: 29px;
+    gap: 0;
     flex: 1;
+}
+.featured .hits-card-favor {
+    right: 20px;
+}
+.featured .hits-content {
+    display: grid;
+    grid-template-columns: 169px 169px;
 }
 .featured-title {
     font-family: Montserrat;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 36.57px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    margin-bottom: 20px;
 }
 .featured .hits {
     padding: 0;
@@ -3265,16 +3388,17 @@ swiper-container {
     padding: 83px 16px 60px 16px;
     min-height:1700px ;
 }
-.pampers-main {
-    display: flex;
-    gap: 60px;
+
+.pampers .hits-card-favor {
+    right: 20px;
 }
 .pampers-main .hits-content {
     display: grid;
-    grid-template-columns: 169px 169px;
+    grid-template-columns: repeat(2, 1fr);
 }
 .pampers-main .hits {
     display:flex;
+    width: 100%;
 }
 .pampers-main .hits-title {
     margin-bottom: 30px;
@@ -3293,7 +3417,7 @@ swiper-container {
     gap: 37px;
 }
 .pampers-second-popular {
-    display: flex;
+    display: none;
     gap: 12px;
     align-items: center;
     cursor: pointer;
@@ -3302,9 +3426,16 @@ swiper-container {
     display: flex;
     flex-direction: column;
     gap: 32px;
-}
-#pampers-second-main {
-    /* display: none; */
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    padding-top: 12px;
+    top: 65px;
+    left: 0;
+    padding-left: 16px;
+    overflow-y: scroll;
+    bottom: 0;
+    padding-bottom: 60px;
 }
 .pampers-second-title {
     font-family: Montserrat;
@@ -3317,13 +3448,16 @@ swiper-container {
     flex-direction: column;
     gap: 16px;
 }
+.pampers-filters-mobile {
+    display: none;
+}
 .pampers-second-blocks {
     display: flex;
     gap: 12px;
     align-items: center;
 }
 .pampers-filters-block {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 12px;
 }
@@ -3387,9 +3521,12 @@ swiper-container {
     padding: 83px 16px 60px 16px;
     min-height:1700px ;
 }
+.pants .hits-card-favor {
+    right: 20px;
+}
 .pants-main {
     display: flex;
-    gap: 60px;
+    gap: 0;
 }
 .pants-main .hits-content {
     display: grid;
@@ -3397,6 +3534,7 @@ swiper-container {
 }
 .pants-main .hits {
     display:flex;
+    gap: 0;
 }
 .pants-main .hits-title {
     margin-bottom: 30px;
@@ -3469,6 +3607,34 @@ swiper-container {
     padding-left: 12px;
 }
 
+/* Napkins */
+.napkins {
+    padding: 83px 16px 60px 16px;
+    min-height:1700px ;
+}
+.pampers-main {
+    display: flex;
+    gap: 0;
+}
+.napkins-main {
+    display: flex;
+    gap: 0;
+}
+.napkins .hits-card-favor {
+    right: 20px;
+}
+.napkins-main .hits-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.napkins-main .hits {
+    display:flex;
+    gap: 0;
+    width: 100%;
+}
+.napkins-main .hits-title {
+    margin-bottom: 30px;
+}
 
 
 

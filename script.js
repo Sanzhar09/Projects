@@ -1,3 +1,23 @@
+// Favor image
+
+document.addEventListener("DOMContentLoaded", function() {
+    const favorIcons = document.querySelectorAll(".hits-card-favor");
+
+    favorIcons.forEach(icon => {
+        icon.addEventListener("click", function() {
+            if (this.src.includes("favor.svg")) {
+                this.src = "/images/heart.svg";
+            } else {
+                this.src = "/images/favor.svg";
+            }
+        });
+    });
+});
+
+
+
+
+
 
 // FAQ
 function toogleAnswer(question) {
@@ -326,4 +346,57 @@ document?.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// PampersCategory
+document?.addEventListener("DOMContentLoaded", function() {
+    const titleContents = document.querySelectorAll('.pampers-second-title-content');
 
+    titleContents.forEach(titleContent => {
+        titleContent?.addEventListener('click', function() {
+            const filtersBlock = titleContent.closest('.pampers-filters').querySelector('.pampers-filters-block');
+            if (filtersBlock.style.display === 'flex') {
+                filtersBlock.style.display = 'none';
+            } else {
+                filtersBlock.style.display = 'flex';
+            }
+        });
+    });
+});
+
+document?.addEventListener("DOMContentLoaded", function() {
+    const button = document.getElementById('category-btn');
+
+    button?.addEventListener('click', function() {
+        const closeFilters = document.querySelector('.pampers-second-main')
+        if (closeFilters) {
+            closeFilters.style.display = 'none';
+        }
+
+    });
+});
+
+document?.addEventListener("DOMContentLoaded", function() {
+    const button = document.querySelector('.filter-btn');
+
+    button?.addEventListener('click', function() {
+        const closeFilters = document.querySelector('.pampers-second-main')
+        if (closeFilters) {
+            closeFilters.style.display = 'flex';
+            closeFilters.scrollIntoView({ behavior: 'smooth' }); // Прокручиваем элемент в область видимости с плавной анимацией
+
+        }
+
+    });
+});
+document?.addEventListener("DOMContentLoaded", function() {
+    const button = document.querySelector('.filter-btn');
+
+    button?.addEventListener('click', function() {
+        const closeFilters = document.querySelector('.pants-second-main')
+        if (closeFilters) {
+            closeFilters.style.display = 'flex';
+            closeFilters.scrollIntoView({ behavior: 'smooth' }); // Прокручиваем элемент в область видимости с плавной анимацией
+
+        }
+
+    });
+});
