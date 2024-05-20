@@ -1,10 +1,11 @@
 // Favor image
 
-document.addEventListener("DOMContentLoaded", function() {
+document?.addEventListener("DOMContentLoaded", function() {
     const favorIcons = document.querySelectorAll(".hits-card-favor");
 
     favorIcons.forEach(icon => {
-        icon.addEventListener("click", function() {
+        icon?.addEventListener("click", function(event) {
+            event.stopPropagation();
             if (this.src.includes("favor.svg")) {
                 this.src = "/images/heart.svg";
             } else {
@@ -14,9 +15,26 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document?.addEventListener("DOMContentLoaded", function() {
+    // Добавляем обработчик события для карточек
+    const hitsCards = document.querySelectorAll('.hits-card');
+    hitsCards.forEach(card => {
+        card.addEventListener('click', function() {
+            window.location.href = './cardProduct.html';
+        });
 
+})
+})
+document?.addEventListener("DOMContentLoaded", function() {
+    // Добавляем обработчик события для карточек
+    const basketCards = document.querySelectorAll('.button-basket');
+    basketCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
 
-
+})
+})
 
 
 // FAQ
@@ -359,7 +377,7 @@ document?.addEventListener("DOMContentLoaded", function() {
 });
 
 document?.addEventListener("DOMContentLoaded", function() {
-    const button = document.getElementById('category-btn');
+    const button = document.getElementById('category-btn-mob');
 
     button?.addEventListener('click', function() {
         const closeFilters = document.querySelector('.pampers-second-main')

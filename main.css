@@ -128,6 +128,11 @@ ul {
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
 }
 .swiper-content-btn:active {
     background-color: rgba(209, 209, 209, 1);
@@ -286,7 +291,24 @@ swiper-container {
 .category-image-mobile {
     max-height: 80px;
 }
-
+#category-btn-mob {
+    display: none;
+}
+#category-btn-desk {
+    padding: 18px 60px;
+    color: #fff;
+    background: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    max-width: 292px;
+    display: flex;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+#category-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
+}
 
 /* hits */
 .hits {
@@ -312,6 +334,7 @@ swiper-container {
 .hits-card {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 .hits-card-first {
     display: flex;
@@ -446,6 +469,7 @@ swiper-container {
     cursor: pointer;
     transition: backgroun-color 0.3s ease, color 0.3s ease;
     transition: background-color 0.3s ease, border-color 0.3s ease;
+    width: 100%;
 }
 .button-basket:active{
     background-color: #444;
@@ -896,11 +920,15 @@ swiper-container {
     color: #fff;
     background: rgba(63, 63, 63, 1);
     border-radius: 30px;
-    max-width: 292px;
     display: flex;
     margin: 0 auto;
     cursor: pointer;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
 }
 .form-btn:active {
     background-color: rgba(209, 209, 209, 1);
@@ -1220,6 +1248,11 @@ swiper-container {
     border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
 }
 .basket-right-btn:active {
     background-color: rgba(209, 209, 209, 1);
@@ -2030,6 +2063,11 @@ swiper-container {
     background-color: rgba(63, 63, 63, 1);
     color: #fff;
     border-radius: 30px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: 0.02em;
 }
 
 .swiper-slide {
@@ -2064,6 +2102,24 @@ swiper-container {
     gap: 30px;
     margin-bottom: 20px;
 }
+#category-btn-desk {
+    display: none
+}
+#category-btn-mob {
+    padding: 18px 60px;
+    color: #fff;
+    background: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    max-width: 292px;
+    display: flex;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+#category-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
+}
+
 .category-title {
     display: none;
 }
@@ -2749,10 +2805,14 @@ swiper-container {
     background: rgba(63, 63, 63, 1);
     border-radius: 30px;
     max-width: 357px;
-    max-height: 49px;
     display: flex;
     justify-content: center;
     margin: 0;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
 }
 
 /* authorization */
@@ -2803,6 +2863,20 @@ swiper-container {
     padding-right: 17px;
     padding-top: 83px;
     gap: 0;
+}
+.basket-right-btn {
+    margin-top: 20px;
+    padding: 18px 118px;
+    color: #fff;
+    background-color: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
 }
 .basket .basket-title {
     margin-bottom: 30px;
@@ -3471,6 +3545,11 @@ swiper-container {
 }
 .pampers-filters-mobile {
     display: none;
+}
+.pampers-filters-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 .pampers-second-blocks {
     display: flex;
