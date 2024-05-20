@@ -94,17 +94,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function toggleBurger () {
      let categoryMobile = document.querySelector('.category-mobile-content')
 
-    let burger = document.querySelector('.header-burger'); // Получаем первый элемент с классом 'header-burger'
-    burger?.addEventListener('click',function(e){
-        e.preventDefault();
-        if(categoryMobile.style.display === 'none'){
-            categoryMobile.style.display ='flex'
+    if(categoryMobile.style.display === 'none'){
+        categoryMobile.style.display ='flex'
+    }
+    else
+        {
+            categoryMobile.style.display = 'none'
         }
-        else
-            {
-                categoryMobile.style.display = 'none'
-            }
-    })
 }
 
 // Profile Mobile

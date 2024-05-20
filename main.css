@@ -12,6 +12,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 .swiper-button-next:after {
     color: rgba(179, 179, 179, 1);
     padding-bottom: 170px;
@@ -293,6 +294,7 @@ swiper-container {
     flex-direction: column;
     align-items: center;
     gap: 39px;
+    box-sizing: border-box;
 }
 .hits-title {
     font-family: Montserrat;
@@ -1619,11 +1621,13 @@ swiper-container {
     border-radius: 20px;
     margin-bottom: 60px;
 }
+.cardProduct-swiper img {
+    width: 60px;
+    border-radius: 10px;
+}
 .cardProduct-swiper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
+    height: 380px;
+    padding-top: 44px;
 }
 .cardProduct-card-img img {
     border-radius: 20px;
@@ -2972,12 +2976,29 @@ swiper-container {
     border-radius: 20px;
     margin-bottom: 60px;
 }
-
+.cardProduct-card .mySwiper {
+    width: 380px;
+    height: 70px;
+}
 .cardProduct-swiper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 6px;
+    height: 60px;
+}
+.cardProduct-swiper img {
+    width: 60px;
+    border-radius: 10px;
+}
+.cardProduct-swiper {
+    padding-top: 0;
+}
+.cardProduct-card swiper-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .cardProduct-card-img img {
     border-radius: 20px;
@@ -3208,7 +3229,7 @@ swiper-container {
     background: #fff;
     height: 100%;
     width: 100%;
-    padding: 22px 30px 0px 30px;
+    padding: 22px 30px 0px 0;
     border: none;
     box-shadow: none;
     border-radius: 0;
