@@ -4,6 +4,12 @@
     font-weight: 400;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/static/Montserrat-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
 
 /* Подключение Gooseberry */
 @font-face {
@@ -811,20 +817,19 @@ swiper-container {
 
 /* Reviews */
 .main-reviews{
-    padding: 40px 100px 100px 102px;
 }
 .reviews-title {
     font-family: Montserrat;
     font-size: 30px;
+    display: flex;
     font-weight: 500;
     line-height: 36.57px;
     text-align: left;
     margin-bottom: 27px;
 }
 .reviews-content {
-    display: flex;
     gap: 40px;
-    max-width: 588px;
+    max-width: 388px;
     margin: 0 auto;
 }
 .reviews-content-card {
@@ -887,7 +892,7 @@ swiper-container {
 .form-title-text {
     font-family: Montserrat;
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 24px;
     letter-spacing: 0.03em;
     text-align: center;
@@ -1048,7 +1053,7 @@ swiper-container {
 .basket-param-count {
     font-family: Montserrat;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 18.29px;
     letter-spacing: 0.02em;
 }
@@ -1642,6 +1647,9 @@ swiper-container {
 .cardProduct-main {
     padding: 30px 100px 66px 100px;
 }
+.cardProduct-favor {
+    cursor: pointer;
+}
 .cardProduct-mobile-main {
     display: none;
 }
@@ -1756,6 +1764,12 @@ swiper-container {
     border-radius: 30px;
     padding: 18px 104px;
     color: #fff;
+    cursor: pointer;
+     transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+.cardProduct-button:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
 }
 .cardProduct-desc {
     display: flex;
@@ -2164,7 +2178,7 @@ swiper-container {
     z-index: 11;
     background-color: #fff;
     position: fixed;
-    padding-top: 13px;
+    padding-top: 23px;
 }
 .category-mobile-content .category-content {
     display: flex;

@@ -14,6 +14,33 @@ document?.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const favorIcons = document.querySelectorAll('.icon-favor');
+    const cardProductFavor = document.querySelector('.cardProduct-favor')
+
+    cardProductFavor.addEventListener('click', function(event) {
+        event.stopPropagation();  // Остановка всплытия события, если это необходимо
+        if (cardProductFavor.src.includes('favor.svg')) {
+            cardProductFavor.src = './images/heart.svg';
+        } else {
+            cardProductFavor.src = './images/favor.svg';
+        }
+    });
+
+
+
+    favorIcons.forEach(icon => {
+        icon.addEventListener('click', function(event) {
+            event.stopPropagation();  // Остановка всплытия события, если это необходимо
+            if (icon.src.includes('favor.svg')) {
+                icon.src = './images/heart.svg';
+            } else {
+                icon.src = './images/favor.svg';
+            }
+        });
+    });
+});
+
 
 document?.addEventListener("DOMContentLoaded", function() {
     // Добавляем обработчик события для карточек
@@ -31,6 +58,17 @@ document?.addEventListener("DOMContentLoaded", function() {
     basketCards.forEach(card => {
         card.addEventListener('click', function(e) {
             e.stopPropagation();
+        });
+
+})
+})
+
+document?.addEventListener("DOMContentLoaded", function() {
+    // Добавляем обработчик события для карточек
+    const hitsCards = document.querySelectorAll('.basket-left-card');
+    hitsCards.forEach(card => {
+        card.addEventListener('click', function() {
+            window.location.href = './cardProduct.html';
         });
 
 })
@@ -109,18 +147,16 @@ document.addEventListener('DOMContentLoaded', function() {
 //     }
 // }
 // Burger Mobile
-function toggleBurger () {
-     let categoryMobile = document.querySelector('.category-mobile-content')
+function toggleBurger() {
+    let categoryMobile = document.querySelector('.category-mobile-content');
+    let displayStyle = window.getComputedStyle(categoryMobile).display;
 
-    if(categoryMobile.style.display === 'none'){
-        categoryMobile.style.display ='flex'
+    if (displayStyle === 'none') {
+        categoryMobile.style.display = 'flex';
+    } else {
+        categoryMobile.style.display = 'none';
     }
-    else
-        {
-            categoryMobile.style.display = 'none'
-        }
 }
-
 // Profile Mobile
 function toggleCabinet() {
     let mobileCabinet = document.querySelector('.mobile-cabinet')
