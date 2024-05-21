@@ -14,11 +14,11 @@ document?.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function() {
+document?.addEventListener("DOMContentLoaded", function() {
     const favorIcons = document.querySelectorAll('.icon-favor');
     const cardProductFavor = document.querySelector('.cardProduct-favor')
 
-    cardProductFavor.addEventListener('click', function(event) {
+    cardProductFavor?.addEventListener('click', function(event) {
         event.stopPropagation();  // Остановка всплытия события, если это необходимо
         if (cardProductFavor.src.includes('favor.svg')) {
             cardProductFavor.src = './images/heart.svg';
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     favorIcons.forEach(icon => {
-        icon.addEventListener('click', function(event) {
+        icon?.addEventListener('click', function(event) {
             event.stopPropagation();  // Остановка всплытия события, если это необходимо
             if (icon.src.includes('favor.svg')) {
                 icon.src = './images/heart.svg';
@@ -46,7 +46,7 @@ document?.addEventListener("DOMContentLoaded", function() {
     // Добавляем обработчик события для карточек
     const hitsCards = document.querySelectorAll('.hits-card');
     hitsCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card?.addEventListener('click', function() {
             window.location.href = './cardProduct.html';
         });
 
@@ -56,7 +56,7 @@ document?.addEventListener("DOMContentLoaded", function() {
     // Добавляем обработчик события для карточек
     const basketCards = document.querySelectorAll('.button-basket');
     basketCards.forEach(card => {
-        card.addEventListener('click', function(e) {
+        card?.addEventListener('click', function(e) {
             e.stopPropagation();
         });
 
@@ -67,7 +67,7 @@ document?.addEventListener("DOMContentLoaded", function() {
     // Добавляем обработчик события для карточек
     const hitsCards = document.querySelectorAll('.basket-left-card');
     hitsCards.forEach(card => {
-        card.addEventListener('click', function() {
+        card?.addEventListener('click', function() {
             window.location.href = './cardProduct.html';
         });
 
@@ -112,14 +112,14 @@ function redirectToPage(selectElement) {
 }
 
 // Popup Basket
-document.addEventListener('DOMContentLoaded', function() {
+document?.addEventListener('DOMContentLoaded', function() {
     const openPopup = document.getElementById('show-popup');
     if (openPopup) {
         const popUp = document.getElementById('basket-popup');
         const basket = document.getElementById('basket-main');
         const footerColor = document.getElementById('footer');
 
-        openPopup.addEventListener('click', function(e) {
+        openPopup?.addEventListener('click', function(e) {
             e.preventDefault();
             popUp.classList.add('open');
             basket.classList.add('active-basket');
@@ -176,8 +176,6 @@ function toggleCabinet() {
 }
 
 
-
-
 // Banner
 if (typeof Swiper !== 'undefined') {
     let swiper = new Swiper(".mySwiper", {
@@ -192,157 +190,6 @@ if (typeof Swiper !== 'undefined') {
     keyboard:true,
     });
 }
-
-
-const form = document.querySelector('.form-main');
-form?.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
-
-    const formData = new FormData(form); // Получаем данные формы
-    const url = '/login'; // Замените на ваш URL для аутентификации
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: formData
-        });
-
-        if (response.ok) {
-            // Успешный ответ от сервера
-            const data = await response.json();
-            console.log(data); // Обработка успешного входа
-            window.location.href = '/account.html'; // Перенаправление на страницу аккаунта
-        } else {
-            // Ошибка от сервера
-            console.error('Ошибка при авторизации:', response.status);
-        }
-    } catch (error) {
-        // Ошибка сети или другая ошибка
-        console.error('Ошибка при отправке запроса:', error);
-    }
-});
-
-// Забыл пароль
-const forgotPassword = document.getElementById('form-forgot-password');
-forgotPassword?.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
-    const forgotPasswordData = new FormData(forgotPassword); // Получаем данные формы
-    const url = '/OTP'; // Замените на ваш URL для аутентификации
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: forgotPasswordData
-        });
-
-        if (response.ok) {
-            // Успешный ответ от сервера
-            const data = await response.json();
-            console.log(data); // Обработка успешного входа
-            window.location.href = '/authorization.html'; // Перенаправление на страницу авторизации
-        } else {
-            // Ошибка от сервера
-            console.error('Ошибка при авторизации:', response.status);
-        }
-    } catch (error) {
-        // Ошибка сети или другая ошибка
-        console.error('Ошибка при отправке запроса:', error);
-    }
-});
-
-
-// Регистрация
-const formRegistration = document.getElementById('form-registration');
-formRegistration?.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
-
-    const formData = new FormData(formRegistration); // Получаем данные формы
-    const url = '/registr'; // Замените на ваш URL для аутентификации
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: formData
-        });
-
-        if (response.ok) {
-            // Успешный ответ от сервера
-            const data = await response.json();
-            console.log(data); // Обработка успешного входа
-            window.location.href = '/account.html'; // Перенаправление на страницу аккаунта
-        } else {
-            // Ошибка от сервера
-            console.error('Ошибка при авторизации:', response.status);
-        }
-    } catch (error) {
-        // Ошибка сети или другая ошибка
-        console.error('Ошибка при отправке запроса:', error);
-    }
-});
-
-// Регистрация Дилер
-const formRegistrationLegal = document.getElementById('form-registration-legal');
-formRegistrationLegal?.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
-
-    const formData = new FormData(formRegistration); // Получаем данные формы
-    const url = '/registrLegal'; // Замените на ваш URL для аутентификации
-
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: formData
-        });
-
-        if (response.ok) {
-            // Успешный ответ от сервера
-            const data = await response.json();
-            console.log(data); // Обработка успешного входа
-            window.location.href = '/account.html'; // Перенаправление на страницу аккаунта
-        } else {
-            // Ошибка от сервера
-            console.error('Ошибка при авторизации:', response.status);
-        }
-    } catch (error) {
-        // Ошибка сети или другая ошибка
-        console.error('Ошибка при отправке запроса:', error);
-    }
-});
-
-// Favor button
-// Находим иконку "избранное"
-const favorIcon = document.querySelector('.hits-card-favor');
-
-// Добавляем обработчик события клика на иконку "избранное"
-favorIcon?.addEventListener('click', async () => {
-    // Получаем ID товара или другие необходимые данные для отправки на сервер
-    const productId = ''; // Замените на реальный ID товара
-    // Определяем URL для отправки запроса на добавление товара в избранное
-    const url = '/login'; // Замените на ваш URL для добавления товара в избранное
-
-    try {
-        // Отправляем POST-запрос на сервер
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
-        });
-
-        if (response.ok) {
-            // Обработка успешного ответа от сервера
-            console.log('Товар успешно добавлен в избранное');
-        } else {
-            // Обработка ошибки от сервера
-            console.error('Ошибка при добавлении товара в избранное:', response.status);
-        }
-    } catch (error) {
-        // Обработка ошибки сети или другой ошибки
-        console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
-    }
-});
-
-
 // Cabinet
 // Находим кнопку "Изменить данные"
 const editButton = document.getElementById('change-data');
@@ -449,4 +296,347 @@ document?.addEventListener("DOMContentLoaded", function() {
         }
 
     });
+});
+
+
+// Запросы 
+document?.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('.form-main');
+    const passwordInput = document.getElementById('password');
+    const errorList = document.querySelector('.authorization-error');
+    const lengthErrorItem = document.querySelector('.authorization-error-password');
+
+    form?.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+        const password = passwordInput.value;
+
+        // Скрываем все ошибки
+        // errorList.classList.add('displayNone');
+        // lengthErrorItem.classList.add('displayNone');
+
+        
+        const formData = new FormData(form); // Получаем данные формы
+        const url = '/login';
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                // Успешный ответ от сервера
+                const data = await response.json();
+                console.log(data); // Обработка успешного входа
+                window.location.href = '/account.html'; // Перенаправление на страницу аккаунта
+            } // Проверяем длину пароля
+            else if (password.length < 8) {
+                // Отображаем соответствующую ошибку
+                lengthErrorItem.style.display = 'block'
+                return; // Останавливаем выполнение скрипта, если пароль недостаточно длинный
+            }
+    
+        } catch (error) {
+            // Ошибка сети или другая ошибка
+            console.error('Ошибка при отправке запроса:', error);
+        }
+    });
+});
+// Забыл пароль
+const forgotPassword = document.getElementById('form-forgot-password');
+forgotPassword?.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+    const forgotPasswordData = new FormData(forgotPassword); // Получаем данные формы
+    const url = '/OTP'; // Замените на ваш URL для аутентификации
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: forgotPasswordData
+        });
+
+        if (response.ok) {
+            // Успешный ответ от сервера
+            const data = await response.json();
+            console.log(data); // Обработка успешного входа
+            window.location.href = '/authorization.html'; // Перенаправление на страницу авторизации
+        } else {
+            // Ошибка от сервера
+            console.error('Ошибка при авторизации:', response.status);
+        }
+    } catch (error) {
+        // Ошибка сети или другая ошибка
+        console.error('Ошибка при отправке запроса:', error);
+    }
+});
+
+
+// Регистрация
+document?.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('.form-reg');
+    const passwordInput = document.getElementById('passwordReg');
+    const passwordInputRepeat = document.getElementById('passwordRegRepeat');
+    const errorList = document.querySelector('.registration-error');
+    const lengthErrorItem = document.querySelector('.registration-error-password');
+    const confirmationErrorItem = document.querySelector('.registration-password-confirmation');
+
+    form?.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+        const password = passwordInput.value;
+        const passwordRepeat = passwordInputRepeat.value;
+
+        let hasError = false;
+
+        // Скрываем все ошибки
+        lengthErrorItem.style.display = 'none';
+        confirmationErrorItem.style.display = 'none';
+        errorList.classList.add('displayNone');
+
+        // Проверяем длину пароля
+        if (password.length < 8) {
+            lengthErrorItem.style.display = 'block';
+            errorList.classList.remove('displayNone');
+            hasError = true;
+        }
+
+        // Проверяем совпадение паролей
+        if (password !== passwordRepeat) {
+            confirmationErrorItem.style.display = 'block';
+            errorList.classList.remove('displayNone');
+            hasError = true;
+        }
+
+        // Если есть ошибки, прекращаем выполнение скрипта
+        if (hasError) {
+            return;
+        }
+
+        const formData = new FormData(form); // Получаем данные формы
+        const url = '/registr';
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                // Успешный ответ от сервера
+                const data = await response.json();
+                console.log(data); // Обработка успешного входа
+                window.location.href = '/cabinet.html'; // Перенаправление на страницу аккаунта
+            } else {
+                // Обработка ошибки от сервера
+                const errorData = await response.json();
+                console.error('Ошибка при авторизации:', response.status, errorData);
+                // Здесь можно добавить отображение других ошибок от сервера
+            }
+        } catch (error) {
+            // Ошибка сети или другая ошибка
+            console.error('Ошибка при отправке запроса:', error);
+        }
+    });
+});
+
+
+// Регистрация Дилер
+document?.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('.form-reg-legal');
+    const passwordInput = document.getElementById('passwordLegal');
+    const passwordInputRepeat = document.getElementById('passwordLegalRepeat');
+    const errorList = document.querySelector('.regLegal-error');
+    const lengthErrorItem = document.querySelector('.regLegal-error-password');
+    const confirmationErrorItem = document.querySelector('.regLegal-password-confirmation');
+
+    form?.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+
+        const password = passwordInput.value;
+        const passwordRepeat = passwordInputRepeat.value;
+
+        let hasError = false;
+
+        // Скрываем все ошибки
+        lengthErrorItem.style.display = 'none';
+        confirmationErrorItem.style.display = 'none';
+        errorList.classList.add('displayNone');
+
+        // Проверяем длину пароля
+        if (password.length < 8) {
+            lengthErrorItem.style.display = 'block';
+            errorList.classList.remove('displayNone');
+            hasError = true;
+        }
+
+        // Проверяем совпадение паролей
+        if (password !== passwordRepeat) {
+            confirmationErrorItem.style.display = 'block';
+            errorList.classList.remove('displayNone');
+            hasError = true;
+        }
+
+        // Если есть ошибки, прекращаем выполнение скрипта
+        if (hasError) {
+            return;
+        }
+
+        const formData = new FormData(form); // Получаем данные формы
+        const url = '/registrLegal';
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok) {
+                // Успешный ответ от сервера
+                const data = await response.json();
+                console.log(data); // Обработка успешного входа
+                window.location.href = '/cabinetDiller.html'; // Перенаправление на страницу аккаунта
+            } else {
+                // Обработка ошибки от сервера
+                const errorData = await response.json();
+                console.error('Ошибка при авторизации:', response.status, errorData);
+                // Здесь можно добавить отображение других ошибок от сервера
+            }
+        } catch (error) {
+            // Ошибка сети или другая ошибка
+            console.error('Ошибка при отправке запроса:', error);
+        }
+    });
+});
+// Favor button
+// Находим иконку "избранное"
+document.addEventListener('DOMContentLoaded', () => {
+    const favorIcons = document.querySelectorAll('.hits-card-favor');
+
+    favorIcons.forEach(favorIcon => {
+        favorIcon?.addEventListener('click', async (event) => {
+            event.stopPropagation(); // Останавливаем всплытие события клика
+
+            const productId = favorIcon.dataset.id; // Получаем ID товара из data-атрибута
+
+            if (!productId) {
+                console.error('ID товара не найден');
+                return;
+            }
+
+            const url = '/addFavor'; // Замените на ваш URL для добавления товара в избранное
+
+            try {
+                // Отправляем POST-запрос на сервер
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
+                });
+
+                if (response.ok) {
+                    // Обработка успешного ответа от сервера
+                    console.log('Товар успешно добавлен в избранное');
+                } else {
+                    // Обработка ошибки от сервера
+                    console.error('Ошибка при добавлении товара в избранное:', response.status);
+                }
+            } catch (error) {
+                // Обработка ошибки сети или другой ошибки
+                console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
+            }
+        });
+    });
+
+ // Обработчик для добавления в корзину
+ const basketButtons = document.querySelectorAll('.button-basket');
+
+ basketButtons.forEach(button => {
+     button?.addEventListener('click', async (event) => {
+         event.stopPropagation();
+
+         const productId = button.dataset.id;
+
+         if (!productId) {
+             console.error('ID товара не найден');
+             return;
+         }
+
+         const url = '/addBasket';
+
+         try {
+             const response = await fetch(url, {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json'
+                 },
+                 body: JSON.stringify({ productId })
+             });
+
+             if (response.ok) {
+                 console.log('Товар успешно добавлен в корзину');
+                 button.textContent = 'Добавлено';
+             } else {
+                 console.error('Ошибка при добавлении товара в корзину:', response.status);
+             }
+         } catch (error) {
+             console.error('Ошибка при отправке запроса на добавление товара в корзину:', error);
+         }
+     });
+ });
+});
+
+
+document?.addEventListener("DOMContentLoaded", function() {
+    const dropdownButton = document.querySelector('.dropdown-mobile-button');
+    const dropdownContent = document.querySelector('.dropdown-mobile-content');
+    const dropdownItems = document.querySelectorAll('.dropdown-mobile-item');
+
+    dropdownItems.forEach(item => {
+        item?.addEventListener('click', function() {
+            dropdownButton.textContent = this.textContent; // Меняем текст кнопки на выбранный пункт
+            dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
+        });
+    });
+
+    dropdownButton?.addEventListener('click', function() {
+        // Переключаем отображение содержимого выпадающего списка при клике на кнопку
+        if (dropdownContent.style.display === 'block') {
+            dropdownContent.style.display = 'none';
+        } else {
+            dropdownContent.style.display = 'block';
+        }
+    });
+
+    // Добавляем обработчик клика вне выпадающего списка, чтобы скрыть его
+    // document?.addEventListener('click', function(event) {
+    //     if (!event.target.closest('.dropdown-mobile-container')) {
+    //         dropdownContent.style.display = 'none';
+    //     }
+    // });
+});
+document?.addEventListener("DOMContentLoaded", function() {
+    const dropdownButton = document.querySelector('.dropdown-button');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+    dropdownItems.forEach(item => {
+        item?.addEventListener('click', function() {
+            dropdownButton.textContent = this.textContent; // Меняем текст кнопки на выбранный пункт
+            dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
+        });
+    });
+
+    dropdownButton?.addEventListener('click', function() {
+        // Переключаем отображение содержимого выпадающего списка при клике на кнопку
+        if (dropdownContent.style.display === 'block') {
+            dropdownContent.style.display = 'none';
+        } else {
+            dropdownContent.style.display = 'block';
+        }
+    });
+
+    // Добавляем обработчик клика вне выпадающего списка, чтобы скрыть его
+    // document?.addEventListener('click', function(event) {
+    //     if (!event.target.closest('.dropdown-container')) {
+    //         dropdownContent.style.display = 'none';
+    //     }
+    // });
 });

@@ -10,6 +10,29 @@
     font-weight: 500;
     font-style: normal;
 }
+.displayNone {
+    display: none;
+}
+.authorization-error {
+    color: red;
+    list-style-type: none;
+}
+.registration-password-confirmation {
+    color: red;
+    list-style-type: none;
+}
+.registration-error-password {
+    color: red;
+    list-style-type: none;
+}
+.regLegal-password-confirmation {
+    color: red;
+    list-style-type: none;
+}
+.regLegal-error-password {
+    color: red;
+    list-style-type: none;
+}
 
 /* Подключение Gooseberry */
 @font-face {
@@ -817,26 +840,30 @@ swiper-container {
 
 /* Reviews */
 .main-reviews{
+    padding: 40px 100px 100px 100px;
 }
 .reviews-title {
     font-family: Montserrat;
     font-size: 30px;
-    display: flex;
     font-weight: 500;
     line-height: 36.57px;
+    display: flex;
     text-align: left;
     margin-bottom: 27px;
 }
 .reviews-content {
-    gap: 40px;
-    max-width: 388px;
+    max-width: 588px;
     margin: 0 auto;
-}
-.reviews-content-card {
-    padding: 100px;
     border: 1px solid rgba(238, 238, 238, 1);
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+}
+.reviews-content-card {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 .reviews-card-title {
     font-family: Montserrat;
@@ -845,13 +872,19 @@ swiper-container {
     line-height: 18.29px;
     text-align: left;
     margin-bottom: 12px;
+    padding-top: 100px;
+    padding-left: 100px;
 }
 .reviews-card-desc {
     font-family: Montserrat;
     font-size: 16px;
     font-weight: 400;
     line-height: 19.5px;
-    text-align: left;
+    padding: 12px 100px 100px 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -1949,6 +1982,59 @@ swiper-container {
 .forDescktop {
     display: block;
 }
+/* Dropdown category */
+/* Стили для контейнера выпадающего списка */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+.dropdown {
+}
+
+/* Стили для кнопки выпадающего списка */
+.dropdown-button {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+}
+
+/* Стили для содержимого выпадающего списка */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Стили для элементов внутри выпадающего списка */
+.dropdown-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+/* Стили для элементов при наведении курсора */
+.dropdown-item:hover {background-color: #fff}
+
+/* Показываем содержимое выпадающего списка при наведении на кнопку */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Стили для кнопки при наведении курсора */
+.dropdown:hover .dropdown-button {
+    background-color: #fff;
+}
 
 
 
@@ -2708,20 +2794,21 @@ swiper-container {
     font-weight: 600;
     line-height: 19.5px;
     margin-bottom: 27px;
+    padding: 0;
+    
+}
+.swiper-pagination-horizontal {
+    position: fixed;
 }
 .reviews-content {
-    display: block;
-    gap: 40px;
-    max-width: 358px;
+    max-width: 338px;
+    padding: 20px;
+    margin: 0 auto;
 }
 .reviews-content img {
     display: none;
 }
 .reviews-content-card {
-    padding: 20px;
-    border: 1px solid rgba(238, 238, 238, 1);
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
 }
 .reviews-card-title {
     font-family: Montserrat;
@@ -2730,13 +2817,14 @@ swiper-container {
     line-height: 18.29px;
     text-align: left;
     margin-bottom: 12px;
+    padding: 0;
 }
 .reviews-card-desc {
     font-family: Montserrat;
     font-size: 16px;
     font-weight: 400;
     line-height: 19.5px;
-    text-align: left;
+    padding: 0;
 }
 
 
@@ -3048,6 +3136,13 @@ swiper-container {
 .cardProduct-main {
     display: none;
     padding: 12px 16px;
+}
+
+.cardProduct-mobile-main .hits-title {
+    margin-bottom: 0;
+}
+.cardProduct-mobile-main .hits {
+    align-items: flex-start;
 }
 .cardProduct-mobile-main {
     display: block;
@@ -3614,7 +3709,7 @@ swiper-container {
 }
 .pampers-mobile-title {
     display: flex;
-    gap: 59px;
+    width: 100%;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 16px;
@@ -3750,7 +3845,59 @@ swiper-container {
     margin-bottom: 30px;
 }
 
+/* Dropdown category */
+/* Стили для контейнера выпадающего списка */
+.dropdown-mobile-container {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-mobile {
+}
 
+/* Стили для кнопки выпадающего списка */
+.dropdown-mobile-button {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+}
+
+/* Стили для содержимого выпадающего списка */
+.dropdown-mobile-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Стили для элементов внутри выпадающего списка */
+.dropdown-mobile-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+/* Стили для элементов при наведении курсора */
+.dropdown-mobile-item:hover {background-color: #fff}
+
+/* Показываем содержимое выпадающего списка при наведении на кнопку */
+.dropdown-mobile:hover .dropdown-mobile-content {
+    display: block;
+}
+
+/* Стили для кнопки при наведении курсора */
+.dropdown-mobile:hover .dropdown-mobile-button {
+    background-color: #fff;
+}
 
 
 }

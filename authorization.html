@@ -26,10 +26,15 @@
                     <label class="form-type" for="name">Пароль:</label>
                     <input placeholder="Введите свое имя" class="form-type-content" type="password" id="password" name="password" required>
                 </div>
+                <ul class="authorization-error">
+                    <li class="displayNone" data-error="confirmation">Не совпадает с подтверждением.</li>
+                    <li class="displayNone authorization-error-password" data-error="lenght">Ошибка авториазации</li>
+                </ul>
                 <div class="authorization-group">
                     <a href="/forgotPassword.html" class="authorization-links">Забыли пароль?</a>
                     <a href="/regIndividual.html" class="authorization-links">Зарегистрироваться</a>
                 </div>
+                
                 <button class="form-btn" type="submit">Войти</button>
             </form>
         </div>

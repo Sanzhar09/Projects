@@ -17,7 +17,7 @@
                 </a>
                 <h1 class="form-title-text">Регистрация</h1>
             </div>
-            <form action="" method="POST" id="form-registration-legal" class="form-main">
+            <form action="" method="POST" id="form-registration-legal" class="form-main form-reg-legal">
                 <div class="form-group">
                     <label class="form-type" for="form-type">Вы заходите как:</label>
                     <select onchange="redirectToPage(this)" class="form-type-content" name="form-type">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-type" for="company">БИН (ИИН)</label>
-                    <input placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
+                    <input placeholder="Введите данные" class="form-type-content" type="number" name="name" required>
                 </div>
                 <div class="form-group">
                     <label class="form-type" for="company">Банк</label>
@@ -66,6 +66,18 @@
                     <label class="form-type" for="company">Номер счета</label>
                     <input placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
                 </div>
+                <div class="form-group">
+                    <label class="form-type" for="password">Пароль:</label>
+                    <input placeholder="Введите пароль" class="form-type-content" type="password" id="passwordLegal" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-type" for="password">Подтверждение пароля:</label>
+                    <input placeholder="Подтвердите пароль" class="form-type-content" type="password" id="passwordLegalRepeat" name="password" required>
+                </div>
+                <ul class="regLegal-error">
+                    <li class="displayNone regLegal-password-confirmation" data-error="confirmation">Пароли не совпадают.</li>
+                    <li class="displayNone regLegal-error-password" data-error="lenght">Количество символов должно быть не меньше 8.</li>
+                </ul>
                 <button class="form-btn" type="submit">Зарегистрироваться</button>
             </form>
         </div>

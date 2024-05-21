@@ -17,7 +17,7 @@
                 </a>
                 <h1 class="form-title-text">Регистрация</h1>
             </div>
-            <form action="" method="POST" id="form-registration" class="form-main">
+            <form action="" method="POST" id="form-registration" class="form-main form-reg">
                 <div class="form-group">
                     <label class="form-type" for="form-type">Вы заходите как:</label>
                     <select onchange="redirectToPage(this)" class="form-type-content" name="form-type">
@@ -38,6 +38,18 @@
                     <label class="form-type" for="phone">Номер телефона:</label>
                     <input placeholder="+7 (---) --- -- --" class="form-type-content" type="tel" id="phone" name="phone" required>
                 </div>
+                <div class="form-group">
+                    <label class="form-type" for="password">Пароль:</label>
+                    <input placeholder="Введите пароль" class="form-type-content" type="password" id="passwordReg" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-type" for="password">Подтверждение пароля:</label>
+                    <input placeholder="Подтвердите пароль" class="form-type-content" type="password" id="passwordRegRepeat" name="password" required>
+                </div>
+                <ul class="registration-error">
+                    <li class="displayNone registration-password-confirmation" data-error="confirmation">Пароли не совпадают.</li>
+                    <li class="displayNone registration-error-password" data-error="lenght">Количество символов должно быть не меньше 8.</li>
+                </ul>
                 <button class="form-btn" type="submit">Зарегистрироваться</button>
             </form>
         </div>
