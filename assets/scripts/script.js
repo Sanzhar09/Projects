@@ -824,7 +824,7 @@ document?.addEventListener('DOMContentLoaded', function() {
             saveButtonContainer.style.display='flex'
             saveButtonContainer.style.justifyContent='center'
             dataInput.disabled = false;
-            numberInput.disabled = false;
+            numberInput.disabled = true;
             emailInput.disabled = false;
             roleInput.disabled = false;
             nameCompanyInput.disabled = false;
@@ -840,6 +840,8 @@ document?.addEventListener('DOMContentLoaded', function() {
         const email = emailInput.value;
         const role = roleInput.value;
         const nameCompany = nameCompanyInput.value;
+        const modal = document.getElementById('success-modal');
+
         // Если все поля не пустые
         if (name.trim() !== '' && number.trim() !== '' && email.trim() !== '' && role.trim() !== '' && nameCompany.trim() !== '') {
             // Формируем объект с данными для отправки на сервер
@@ -868,7 +870,7 @@ document?.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 // Обработка успешного ответа от сервера
                 console.log('Ответ от сервера:', data);
-                alert('Адрес успешно сохранён!');
+                modal.style.display = 'flex';
             })
         } else {
             alert('Пожалуйста, введите адрес.');
@@ -919,6 +921,90 @@ function sendRequestChangeAmount(id, count) {
         alert('Ошибка при отправке данных на сервер!');
     });
 }
+
+
+// Change profile Diller
+document?.addEventListener('DOMContentLoaded', function() {
+    const addressCompany = document.getElementById('dataAddressCompany');
+    const bankName = document.getElementById('dataBank');
+    const IiName = document.getElementById('dataIin');
+    const bankInput = document.getElementById('dataKbe');
+    const bikName = document.getElementById('dataBik');
+    const accountNumber = document.getElementById('dataAccountNumber');
+
+    const saveButtonContainer = document.getElementById('save-company-containter');
+    const saveButton = document.getElementById('save-button-company');
+
+    function showCompanyInput() {
+
+        if(saveButtonContainer.style.display='none')
+
+            saveButtonContainer.style.display='flex'
+            saveButtonContainer.style.justifyContent='center'
+            addressCompany.disabled = false;
+            bankName.disabled = false;
+            IiName.disabled = false;
+            bankInput.disabled = false;
+            bikName.disabled = false;
+            accountNumber.disabled = false;
+    }
+
+    document.getElementById('change-data-company')?.addEventListener('click', showCompanyInput);
+    // Пример обработчика события для кнопки "Сохранить"
+    saveButton?.addEventListener('click', function() {
+        // Получаем значение из поля ввода
+        const addressComp = addressCompany.value;
+        const nameBank = bankName.value;
+        const iin = IiName.value;
+        const dataBank = bankInput.value;
+        const bik = bikName.value;
+        const numberAcc = accountNumber.value;
+        const modal = document.getElementById('success-modal');
+
+        // Если все поля не пустые
+        if (addressComp.trim() !== '' && nameBank.trim() !== '' && iin.trim() !== '' && dataBank.trim() !== '' && numberAcc.trim() !== '' && bik.trim() !== '') {
+            // Формируем объект с данными для отправки на сервер
+            const data = {
+                name: addressComp,
+                number: nameBank,
+                email: iin,
+                role: dataBank,
+                accountNumber:numberAcc,
+                bikName:bik,
+            };
+            fetch('addAddress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    saveButtonContainer.style.display='none'
+                    addressCompany.disabled = true;
+                    bankName.disabled = true;
+                    IiName.disabled = true;
+                    bankInput.disabled = true;
+                    bikName.disabled = true;
+                    accountNumber.disabled = true;
+                    throw new Error('Ошибка сети');
+
+                }
+                return response.json();
+            })
+            .then(data => {
+                modal.style.display = 'flex';
+                // Обработка успешного ответа от сервера
+                console.log('Ответ от сервера:', data);
+                alert('Адрес успешно сохранён!');
+            })
+        } else {
+            alert('Пожалуйста, введите адрес.');
+        }
+    });
+});
+
 
 
 
@@ -980,7 +1066,7 @@ editProfileCancel = () => {
     $('.cabinet-profile-fourth').show();
 }
 editProfile = () => {
-    const phoneElement = document.getElementById('phone');;
+    const phoneElement = document.getElementById('phone');
     const maskOptions = {
         mask: '+{7}(000)000-00-00'
     };
@@ -1005,6 +1091,7 @@ editProfileSubmit = async () => {
     const fullName = $('#fullname').val();
     const email = $('#email').val();
     const phone = $('#phone').val();
+    const modal = document.getElementById('success-modal');
     if(fullName?.length && email?.length && phone?.length)
     try {
         // Отправляем POST-запрос на сервер
@@ -1023,6 +1110,7 @@ editProfileSubmit = async () => {
             $('#phone').attr('disabled', true);
             $('.cabinet-buttons').hide();
             $('.cabinet-profile-fourth').show();
+            modal.style.display = 'flex';
         } else {
             // Обработка ошибки от сервера
             console.error('Ошибка при добавлении товара в избранное:', response.status);
@@ -1032,3 +1120,11 @@ editProfileSubmit = async () => {
         console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
     }
 }
+function closeModal(event) {
+    const modal = document.getElementById('success-modal');
+    // Закрываем модальное окно при клике вне его
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+

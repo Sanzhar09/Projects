@@ -83,34 +83,43 @@
                         <div class="cabinet-profile-blocks">
                             <div class="profile-second-data">
                                 <label for="fullname">Адрес:</label>
-                                <input type="text" id="data" value="г.Алматы,ул Толе би 50" disabled>
+                                <input type="text" id="dataAddressCompany" value="г.Алматы,ул Толе би 50" disabled>
                             </div>
                             <div class="profile-second-data">
                                 <label for="number">БИН(ИИН)</label>
-                                <input type="number" id="data" value="123213123" disabled>
+                                <input type="number" id="dataIin" value="123213123" disabled>
                             </div>
                         </div>
                         <div class="cabinet-profile-blocks">
                             <div class="profile-second-data">
                                 <label for="phone">Банк</label>
-                                <input type="text" id="data" value="АО Народный банк Казахстана" disabled>
+                                <input type="text" id="dataBank" value="АО Народный банк Казахстана" disabled>
                             </div>
                             <div class="profile-second-data">
                                 <label for="phone">КБе:</label>
-                                <input type="number" id="data" value="16" disabled>
+                                <input type="number" id="dataKbe" value="16" disabled>
                             </div>
                         </div>
                         <div class="cabinet-profile-blocks">
                             <div class="profile-second-data">
                                 <label for="phone">БИК</label>
-                                <input type="text" id="data" value="TSESKZKA" disabled>
+                                <input type="text" id="dataBik" value="TSESKZKA" disabled>
                             </div>
                             <div class="profile-second-data">
                                 <label for="phone">Номер счета:</label>
-                                <input type="number" id="data" value="KZ123456789SD12345678" disabled>
+                                <input type="number" id="dataAccountNumber" value="KZ123456789SD12345678" disabled>
                             </div>
                         </div>
-                        <div class="cabinet-profile-fourth"><button id="change-data">Изменить Реквизиты компании</button></div>
+                        <div id="success-modal" class="modal-cabinet" onclick="closeModal(event)">
+                            <div class="modal-content">
+                                <div class="modal-content-title">Успешно!</div>
+                                <div><img src="./assets/images/done.svg" alt=""></div>
+                                <div class="modal-content-desk">Ваши данные изменены.</div>
+                            </div>
+                        </div>
+                        <div class="cabinet-profile-fourth"><button id="change-data-company">Изменить Реквизиты компании</button></div>
+                        <div class="displayNone" id="save-company-containter"><button id="save-button-company">Сохранить</button></div>
+
                     </div>
                 </div>
                     <div class="cabinet-profile-password">
