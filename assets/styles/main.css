@@ -1,17 +1,24 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('./fonts/static/Montserrat-Regular.ttf') format('truetype');
+    src: url('../fonts/static/Montserrat-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Montserrat';
-    src: url('./fonts/static/Montserrat-Medium.ttf') format('truetype');
+    src: url('../fonts/static/Montserrat-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 .displayNone {
     display: none;
+}
+.displayBlock  {
+    display: none;
+}
+.address-input {
+    display: block;
+    margin: 10px 0;
 }
 .swiper-button-next:after {
     color: rgba(179, 179, 179, 1);
@@ -429,6 +436,12 @@ ul {
     transition: backgroun-color 0.3s ease, color 0.3s ease;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     width: 100%;
+}
+.basket-minus {
+    cursor: pointer;
+}
+.basket-plus {
+    cursor: pointer;
 }
 .button-basket:active{
     background-color: #444;
@@ -1312,7 +1325,7 @@ ul {
 }
 .pampers-main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 60px;
 }
 .pampers-main .hits {
@@ -1433,7 +1446,7 @@ ul {
 }
 .pants-main {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 60px;
 }
 .pants-main .hits {
@@ -1455,7 +1468,7 @@ ul {
 .napkins-main {
     display: flex;
     gap: 60px;
-    justify-content: space-between;
+    justify-content: center;
 }
 .napkins-main .hits {
     padding: 0;
@@ -1562,6 +1575,52 @@ ul {
     background: transparent;
     border: none;
     padding: 0;
+    cursor: pointer;
+}
+#save-button {
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 50px;
+    background: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    max-width: 357px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+#save-button-profile {
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 50px;
+    background: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    max-width: 357px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.add-input-address {
+    background-color: #fff;
+    border: 1px solid rgba(209, 209, 209, 1);
+    border-radius: 6px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 16px;
+    width: 98%;
+}
+#save-button:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
 }
 .cabinet-profile-password {
     display: flex;
@@ -1753,7 +1812,12 @@ ul {
     padding: 18px 104px;
     color: #fff;
     cursor: pointer;
-     transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
 }
 .cardProduct-button:active {
     background-color: rgba(209, 209, 209, 1);
@@ -2928,6 +2992,7 @@ ul {
     padding-top: 83px;
     gap: 0;
 }
+
 .basket-right-btn {
     margin-top: 20px;
     padding: 18px 118px;

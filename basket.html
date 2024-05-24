@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="./assets/styles/slick.css" />
+    <script src="./assets/scripts/slick.min.js"></script>
     <link rel="stylesheet" href="./assets/styles/main.css">
     <script defer src="./assets/scripts/script.js"></script>
-    <title>Document</title>
+    <title>SABIKO Корзина</title>
 </head>
 <body id="basket-main">
     <div class="header">
@@ -85,7 +88,7 @@
         <div class="basket-title">Корзина</div>
         <div class="basket-content">
             <div class="basket-left">
-                    <div class="basket-left-card">
+                    <div class="basket-left-card" data-id="1" data-count="2">
                         <div><img src="./images/basketimgcard.png" alt=""></div>
                         <div class="basket-card-content">
                             <div class="basket-card-title">
@@ -114,6 +117,47 @@
                                 </div>
                                 <div class="basket-content-total">
                                     <div class="basket-total-desc">
+                                        <img onclick="changeAmount(event, false, 1, 2)" class="basket-minus" src="./images/minus.svg" alt="">
+                                        <div class="basket-total-count">2</div>
+                                        <img onclick="changeAmount(event, true, 1, 2)" class="basket-plus" src="./images/plus.svg" alt="">
+                                    </div>
+                                    <div class="basket-total-desc">
+                                        <div class="hits-card-oldprice">18400</div>
+                                        <div class="hits-card-price">15 000 ₸</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basket-left-card" data-id="2" data-count="2">
+                        <div><img src="./images/basketimgcard.png" alt=""></div>
+                        <div class="basket-card-content">
+                            <div class="basket-card-title">
+                                <div class="basket-title-first">
+                                    <div class="basket-title-content">Подгузники Марс</div>
+                                    <div class="basket-title-hashtag">
+                                        <div class="hits-card-new">Новинка</div>
+                                        <div class="hits-card-main">Хит продаж</div>
+                                    </div>
+                                </div>    
+                                <div class="basket-title-icons">
+                                    <img class="icon-favor" src="./images/favor.svg" alt="">
+                                    <img class="hits-card-delete" src="/images/deletebtn2.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="basket-content-desc">
+                                <div class="basket-desc-param">
+                                    <div class="basket-param-content">
+                                        <div class="basket-param-title">Размер</div>
+                                        <div class="basket-param-count">NB / 2-5кг</div>
+                                    </div>
+                                    <div class="basket-param-content">
+                                        <div class="basket-param-title">Количество штук в упаковке</div>
+                                        <div class="basket-param-count">56 штук</div>
+                                    </div>
+                                </div>
+                                <div class="basket-content-total">
+                                    <div class="basket-total-desc">
                                         <img class="basket-minus" src="./images/minus.svg" alt="">
                                         <div class="basket-total-count">2</div>
                                         <img class="basket-plus" src="./images/plus.svg" alt="">
@@ -126,7 +170,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="basket-left-card">
+                    <div class="basket-left-card" data-id="3" data-count="2">
                         <div><img src="./images/basketimgcard.png" alt=""></div>
                         <div class="basket-card-content">
                             <div class="basket-card-title">
@@ -155,50 +199,11 @@
                                 </div>
                                 <div class="basket-content-total">
                                     <div class="basket-total-desc">
-                                        <img src="./images/minus.svg" alt="">
-                                        <div class="basket-total-count">2</div>
-                                        <img src="./images/plus.svg" alt="">
-                                    </div>
-                                    <div class="basket-total-desc">
-                                        <div class="hits-card-oldprice">18400</div>
-                                        <div class="hits-card-price">15 000 ₸</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="basket-left-card">
-                        <div><img src="./images/basketimgcard.png" alt=""></div>
-                        <div class="basket-card-content">
-                            <div class="basket-card-title">
-                                <div class="basket-title-first">
-                                    <div class="basket-title-content">Подгузники Марс</div>
-                                    <div class="basket-title-hashtag">
-                                        <div class="hits-card-new">Новинка</div>
-                                        <div class="hits-card-main">Хит продаж</div>
-                                    </div>
-                                </div>    
-                                <div class="basket-title-icons">
-                                    <img class="icon-favor" src="./images/favor.svg" alt="">
-                                    <img class="hits-card-delete" src="/images/deletebtn2.svg" alt="">
-                                </div>
-                            </div>
-                            <div class="basket-content-desc">
-                                <div class="basket-desc-param">
-                                    <div class="basket-param-content">
-                                        <div class="basket-param-title">Размер</div>
-                                        <div class="basket-param-count">NB / 2-5кг</div>
-                                    </div>
-                                    <div class="basket-param-content">
-                                        <div class="basket-param-title">Количество штук в упаковке</div>
-                                        <div class="basket-param-count">56 штук</div>
-                                    </div>
-                                </div>
-                                <div class="basket-content-total">
-                                    <div class="basket-total-desc">
-                                        <img src="./images/minus.svg" alt="">
-                                        <div class="basket-total-count">2</div>
-                                        <img src="./images/plus.svg" alt="">
+                                        <div class="basket-total-desc">
+                                            <img class="basket-minus" src="./images/minus.svg" alt="">
+                                            <div class="basket-total-count">2</div>
+                                            <img class="basket-plus" src="./images/plus.svg" alt="">
+                                        </div>
                                     </div>
                                     <div class="basket-total-desc">
                                         <div class="hits-card-oldprice">18400</div>
@@ -237,11 +242,11 @@
                     </div>
                 </div>
                 <div class="basket-mobile-third">
-                    <div class="basket-mobile-count">
-                        <img src="./images/minus2.svg" alt="">
-                        <div class="mobile-count-content">2</div>
-                        <img src="./images/plus.svg" alt="">
-                    </div>
+                    <div class="basket-total-desc">
+                                <img class="basket-minus" src="./images/minus.svg" alt="">
+                                <div class="basket-total-count">2</div>
+                                <img class="basket-plus" src="./images/plus.svg" alt="">
+                            </div>
                     <div class="basket-mobile-count">
                         <div class="hits-card-oldprice">18400</div>
                         <div class="hits-card-price">15 000 ₸</div>
@@ -276,11 +281,11 @@
                     </div>
                 </div>
                 <div class="basket-mobile-third">
-                    <div class="basket-mobile-count">
-                        <img src="./images/minus2.svg" alt="">
-                        <div class="mobile-count-content">2</div>
-                        <img src="./images/plus.svg" alt="">
-                    </div>
+                    <div class="basket-total-desc">
+                                <img class="basket-minus" src="./images/minus.svg" alt="">
+                                <div class="basket-total-count">2</div>
+                                <img class="basket-plus" src="./images/plus.svg" alt="">
+                            </div>
                     <div class="basket-mobile-count">
                         <div class="hits-card-oldprice">18400</div>
                         <div class="hits-card-price">15 000 ₸</div>
@@ -315,11 +320,11 @@
                     </div>
                 </div>
                 <div class="basket-mobile-third">
-                    <div class="basket-mobile-count">
-                        <img src="./images/minus2.svg" alt="">
-                        <div class="mobile-count-content">2</div>
-                        <img src="./images/plus.svg" alt="">
-                    </div>
+                    <div class="basket-total-desc">
+                                <img class="basket-minus" src="./images/minus.svg" alt="">
+                                <div class="basket-total-count">2</div>
+                                <img class="basket-plus" src="./images/plus.svg" alt="">
+                            </div>
                     <div class="basket-mobile-count">
                         <div class="hits-card-oldprice">18400</div>
                         <div class="hits-card-price">15 000 ₸</div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/main.css">
     <script src="./assets/scripts/script.js"></script>
-    <title>Document</title>
+    <title>SABIKO Профиль</title>
 </head>
 <body>
     <div class="header">
@@ -66,8 +66,12 @@
                                     <input type="tel" id="data" value="+7 (701) 777-7777">
                                 </div>
                             </div>
-                            <div class="cabinet-profile-fourth forMobile"><button id="change-data">Добавить другой адрес</button></div>
-                            <div class="cabinet-profile-fourth forDescktop"><button id="change-data">+Добавить другой адрес</button></div>
+                            <div id="address-container">
+                                <input class="add-input-address displayNone" type="tel" placeholder="Добавьте адрес" id="input-address" value="">
+                            </div>
+                            <div class="cabinet-profile-fourth forMobile"><button id="add-address">Добавить другой адрес</button></div>
+                            <div class="cabinet-profile-fourth forDescktop"><button id="add-address-descktop">+Добавить другой адрес</button></div>
+                            <div class="displayNone" id="save-button-container"><button id="save-button">Сохранить</button></div>
                         </div>
                 </div>
             </div>

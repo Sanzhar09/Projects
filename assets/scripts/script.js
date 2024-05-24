@@ -202,18 +202,6 @@ if (typeof Swiper !== 'undefined') {
     keyboard:true,
     });
 }
-// Cabinet
-// Находим кнопку "Изменить данные"
-const editButton = document.getElementById('change-data');
-// Добавляем обработчик события клика на кнопку "Изменить данные"
-editButton?.addEventListener('click', () => {
-    // Находим все инпуты в профильной части
-    const inputs = document.getElementById('data');
-    // Удаляем атрибут disabled у каждого инпута
-    inputs.forEach(input => {
-        input.removeAttribute('disabled');
-    });
-});
 
 
 
@@ -728,6 +716,197 @@ document?.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Находим элемент по ID
+//     const element = document.getElementById('phoneReg');
+//     // Опции маски
+//     const maskOptions = {
+//       mask: '+{7}(000)000-00-00'
+//     };
+//     // Применяем маску к элементу
+//     const mask = IMask(element, maskOptions);
+//   });
+
+
+// Add Adress
+document?.addEventListener('DOMContentLoaded', function() {
+    const addressInput = document.getElementById('input-address');
+    const saveButtonContainer = document.getElementById('save-button-container');
+    const saveButton = document.getElementById('save-button');
+
+    function showAddressInput() {
+        // Показываем поле ввода адреса
+        // addressInput.classList.remove('displayNone');
+        // addressInput.classList.add('displayBlock');
+        if(addressInput.style.display='none')
+
+            addressInput.style.display='block'
+        // Делаем кнопку "Сохранить" видимой
+        if(saveButtonContainer.style.display='none')
+
+            saveButtonContainer.style.display='flex'
+            saveButtonContainer.style.justifyContent='center'
+
+    }
+
+    // Добавляем обработчики событий для обеих кнопок
+    document.getElementById('add-address-descktop')?.addEventListener('click', showAddressInput);
+    document.getElementById('add-address')?.addEventListener('click', showAddressInput);
+
+    // Пример обработчика события для кнопки "Сохранить"
+    saveButton?.addEventListener('click', function() {
+        // Получаем значение из поля ввода
+        const address = addressInput.value;
+        
+        // Если адрес не пустой
+        if (address.trim() !== '') {
+            // Формируем объект с данными для отправки на сервер
+            const data = {
+                address: address
+            };
+
+            fetch('addAddress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    addressInput.style.display='none'
+                    saveButtonContainer.style.display='none'
+                    throw new Error('Ошибка сети');
+                    
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Обработка успешного ответа от сервера
+                console.log('Ответ от сервера:', data);
+                alert('Адрес успешно сохранён!');
+            })
+        } else {
+            alert('Пожалуйста, введите адрес.');
+        }
+    });
+});
+
+// Change Profile
+document?.addEventListener('DOMContentLoaded', function() {
+    const dataInput = document.getElementById('data-input');
+    const numberInput = document.getElementById('number-input');
+    const emailInput = document.getElementById('email-input');
+    const roleInput = document.getElementById('role-input');
+    const nameCompanyInput = document.getElementById('nameCompany-input');
+
+
+    const saveButtonContainer = document.getElementById('save-profile-containter');
+    const saveButton = document.getElementById('save-button-profile');
+
+    function showProfileInput() {
+    
+        if(saveButtonContainer.style.display='none')
+
+            saveButtonContainer.style.display='flex'
+            saveButtonContainer.style.justifyContent='center'
+            dataInput.disabled = false;
+            numberInput.disabled = false;
+            emailInput.disabled = false;
+            roleInput.disabled = false;
+            nameCompanyInput.disabled = false;
+
+    }
+    
+    document.getElementById('change-data-profile')?.addEventListener('click', showProfileInput);
+    // Пример обработчика события для кнопки "Сохранить"
+    saveButton?.addEventListener('click', function() {
+        // Получаем значение из поля ввода
+        const name = dataInput.value;
+        const number = numberInput.value;
+        const email = emailInput.value;
+        const role = roleInput.value;
+        const nameCompany = nameCompanyInput.value;
+        // Если все поля не пустые
+        if (name.trim() !== '' && number.trim() !== '' && email.trim() !== '' && role.trim() !== '' && nameCompany.trim() !== '') {
+            // Формируем объект с данными для отправки на сервер
+            const data = {
+                name: name,
+                number: number,
+                email: email,
+                role: role,
+                nameCompany:nameCompany,
+            };
+            fetch('addAddress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    saveButtonContainer.style.display='none'
+                    throw new Error('Ошибка сети');
+                    
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Обработка успешного ответа от сервера
+                console.log('Ответ от сервера:', data);
+                alert('Адрес успешно сохранён!');
+            })
+        } else {
+            alert('Пожалуйста, введите адрес.');
+        }
+    });
+});
+
+
+function changeAmount(e, isAdd, id, count) {
+    e.stopPropagation();
+    card = $(`[data-id="${id}"]`);
+    const newCount = isAdd ? count + 1 : count - 1;
+    card.attr('data-count', newCount);
+    console.log(newCount);
+    card.find('.basket-total-count').attr('asd', count);
+    card.find('.basket-total-count').html(newCount);
+
+    sendRequestChangeAmount(id, newCount);
+}
+
+function sendRequestChangeAmount(id, count) {
+    const data = {
+        cardId: id,
+        count: count
+    };
+
+    fetch('count', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Ошибка сети');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Обработка успешного ответа от сервера
+        console.log('Ответ от сервера:', data);
+        alert('Данные успешно отправлены на сервер!');
+    })
+    .catch(error => {
+        // Обработка ошибок
+        console.error('Ошибка:', error.message);
+        alert('Ошибка при отправке данных на сервер!');
+    });
+}
+
 
 
 // Slick
@@ -771,13 +950,3 @@ document?.addEventListener("DOMContentLoaded", function() {
     });
   });
       
-  document.addEventListener('DOMContentLoaded', function() {
-    // Находим элемент по ID
-    const element = document.getElementById('phoneReg');
-    // Опции маски
-    const maskOptions = {
-      mask: '+{7}(000)000-00-00'
-    };
-    // Применяем маску к элементу
-    const mask = IMask(element, maskOptions);
-  });
