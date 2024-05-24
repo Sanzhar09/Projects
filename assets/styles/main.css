@@ -1,0 +1,3862 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/static/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/static/Montserrat-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+.displayNone {
+    display: none;
+}
+.swiper-button-next:after {
+    color: rgba(179, 179, 179, 1);
+    padding-bottom: 170px;
+}
+.swiper-button-prev:after {
+    color: rgba(179, 179, 179, 1);
+    padding-bottom: 170px;
+}
+.authorization-error {
+    color: red;
+    list-style-type: none;
+}
+.registration-password-confirmation {
+    color: red;
+    list-style-type: none;
+}
+.registration-error-password {
+    color: red;
+    list-style-type: none;
+}
+.regLegal-password-confirmation {
+    color: red;
+    list-style-type: none;
+}
+.regLegal-error-password {
+    color: red;
+    list-style-type: none;
+}
+
+/* Подключение Gooseberry */
+@font-face {
+    font-family: 'Gooseberry';
+    src: url('./fonts/goosberry_version_02.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+.font-montserrat {
+    font-family: Montserrat, sans-serif;
+}
+
+.font-gooseberry {
+    font-family: Gooseberry, sans-serif;
+}
+
+
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: rgba(0,0,0,1);
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+.main {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+/* header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px 100px;
+}
+.header-first {
+    display: flex;
+    align-items: center;
+}
+.header-burger {
+    display: none;
+}
+
+.header-logo {
+    margin-right:70px;
+}
+.header-list {
+    display: flex;
+    padding: 0;
+    gap: 50px;
+}
+.header-list-mobile {
+    display: none;
+}
+.header-list-content{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+}
+.header-second {
+    display: flex;
+    gap: 60px;
+}
+
+/* banner */
+.swiper-content {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    max-width: 478px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.swiper-button-next:after {
+    color: rgba(179, 179, 179, 1);
+    padding-bottom: 170px;
+}
+.swiper-button-prev:after {
+    color: rgba(179, 179, 179, 1);
+    padding-bottom: 170px;
+}
+.swiper-content-title {
+    font-family: gooseberry;
+    font-size: 58px;
+    font-weight: 500;
+    line-height: 58px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    color:rgba(84, 61, 141, 1);
+}
+.swiper-content-desc {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 12px;
+}
+.swiper-content-btn {
+    padding: 18px 60px;
+    background-color: rgba(63, 63, 63, 1);
+    color: #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.swiper-content-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.swiper-slide img {
+    object-fit: cover;
+    max-height: 469px;
+    background-color: rgba(249, 249, 249, 1);
+    /* width: 100%; */
+    padding-right: 600px;
+}
+.slick-arrow-main {
+    position: absolute;
+    z-index: 1;
+}
+
+.swiper {
+    gap: 200px;
+}
+.active {
+    display: none;
+    position: absolute;
+}
+
+/* category */
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.category-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    text-align: left;
+    margin: 0;
+}
+.category-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+.category-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 47px 72px;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+}
+.category-card-desc {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.category-mobile-content {
+    display: none;
+}
+
+.category-mobile {
+    display: none
+}
+.category-image-mobile {
+    max-height: 80px;
+}
+#category-btn-mob {
+    display: none;
+}
+#category-btn-desk {
+    padding: 18px 60px;
+    color: #fff;
+    background: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    max-width: 292px;
+    display: flex;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+#category-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
+}
+
+/* hits */
+.hits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 39px;
+    box-sizing: border-box;
+}
+.hits-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    text-align: left;
+}
+.hits-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+.hits-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.hits-card-first {
+    display: flex;
+    position: relative;
+}
+.hits-card-img-container {
+    position: relative;   
+
+}
+.hits-card-img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.hits-card-favor {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.hits-card-text {
+    align-items: flex-start;
+    position: absolute;
+    left: 6px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.hits-card-sale {
+    padding: 5px 20px 5px 20px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: rgba(238, 166, 18, 0.7);
+}
+.hits-card-new {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: 0.02em;
+    padding: 5px 20px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: rgba(72, 111, 250, 0.7);
+    display: flex;
+    justify-content: center;
+}
+.hits-card-main {
+    padding: 5px 20px 5px 20px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: rgba(238, 77, 27, 0.7);
+}
+.hits-card-second {
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    max-width: 265px;
+    padding:20px 16px 32px 16px;
+}
+.hits-card-second-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.hits-card-title {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.hits-card-character {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hits-card-chars {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.63px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.hits-card-chard-prices {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.hits-card-oldprice {
+    text-decoration: line-through;
+    color: rgba(238, 77, 27, 1);
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.63px;
+    letter-spacing: 0.02em;
+    text-align: right;
+}
+.hits-card-price {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.38px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.mobile {
+    display: none;
+}
+.forMobile {
+    display: none;
+}
+.mobile-cabinet {
+    display: none;
+}
+.button-basket {
+    padding: 12px 74px;
+    background-color: #fff;
+    border: 1px solid rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    text-align: center;
+    color:rgba(63, 63, 63, 1);
+    cursor: pointer;
+    transition: backgroun-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    width: 100%;
+}
+.button-basket:active{
+    background-color: #444;
+    color: #fff;
+}
+/* info */
+.info {
+    display: flex;
+    gap: 205px;
+    justify-content: center;
+    align-items: center;
+}
+.info-blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 210px;
+}
+.info-img {
+}
+.info-title {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.info-desc {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+
+/* footer */
+.footer {
+    padding: 60px 100px;
+    display: flex;
+    gap: 200px;
+    background-color: rgba(238, 238, 238, 1);
+    border-top: 1px solid rgba(238, 238, 238, 1);
+    justify-content: space-between;
+}
+.footer-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.footer-blocks-second {
+    margin-right: 74px;
+}
+#footer-blocks {
+    display: none;
+}
+.footer-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.38px;
+    text-align: left;
+}
+.footer-links {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    text-align: left;
+}
+.footer-pay {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+.footer-pay-blocks 
+{
+    display: flex;
+    gap: 32px;
+}
+.footer-pay-mobile {
+    display: none;
+}
+.footer-pay-card {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+.footer-networks {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+.footer-logo-content  {
+    min-width: 216px;
+}
+
+
+
+/* About us */
+.about-main {
+    padding-left: 100px;
+    padding-right: 100px;
+    max-width: 1220px;
+}
+.about-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    text-align: left;
+    margin-bottom: 27px;
+}
+.about-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 19px;
+}
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.about-first-part {
+    display: flex;
+    gap: 60px;
+}
+.about-first-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.about-first-text-desc {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: left;
+}
+.about-first-text-descTwo {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    text-align: left;
+    border-left: 3px solid rgba(0, 0, 0, 1);
+    padding-left: 20px;
+}
+.about-third-part {
+   display: flex;
+   gap: 60px;
+}
+.about-third-text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+      max-width: 698px;
+}
+.about-fourth-part {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+.about-fourth-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.fourth-images-content {
+    display: flex;
+    gap: 41px;
+}
+
+
+/* FAQ */
+.faq-main {
+    padding-left: 100px;
+    padding-bottom: 100px;
+}
+.faq-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    text-align: left;
+    margin-bottom: 29px;
+}
+.faq-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+.faq-block {
+    display: flex;
+    flex-direction: column;
+}
+.faq-question {
+    color: #444;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    gap: 88px;
+    border-radius: 20px;
+    max-width: 1400px;
+    
+}
+
+.faq-answer {
+    display: none;
+    border-left: 3px solid rgba(0, 0, 0, 1);
+    padding-left: 20px;
+    margin-top: 32px;
+}
+
+
+
+/* Cooperation */
+.cooperation-main {
+    padding: 40px 100px 100px 102px;
+}
+.cooperation-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    text-align: left;
+    margin-bottom: 27px;
+}
+.cooperation-content {
+    display: flex;
+    justify-content: space-between;
+}
+.cooperation-content-first {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.cooperation-first-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.cooperation-networks-title {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    text-align: left;
+}
+.cooperation-first-tel {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: left;
+    color:rgba(0, 0, 0, 1);
+}
+.cooperation-networks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cooperation-networks-content {
+    display: flex;
+    gap:12px;
+    align-items: center;
+}
+.cooperation-networks-contacts {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: left;
+}
+
+/* Delivery */
+
+.main-delivery {
+    padding: 40px 100px 100px 102px;
+}
+.delivery-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+.delivery-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    text-align: left;
+}
+.delivery-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 62px;
+}
+.delivery-content-first {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+.delivery-first-block {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+.delivery-first-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.delivery-first-desc {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: left;
+}
+.delivery-first-title-content {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    text-align: left;
+}
+
+
+/* Reviews */
+.main-reviews{
+    padding: 40px 100px 100px 100px;
+}
+.reviews-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    display: flex;
+    text-align: left;
+    margin-bottom: 27px;
+}
+.reviews-content {
+    max-width: 588px;
+    margin: 0 auto;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+}
+.reviews-content-card {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.reviews-card-title {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    text-align: left;
+    margin-bottom: 12px;
+    padding-top: 100px;
+    padding-left: 100px;
+}
+.reviews-card-desc {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    padding: 12px 100px 100px 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Registration */
+.registration-main {
+    background-image: url('/images/regImg.png');
+    background-size: cover;
+    height: 100vw;
+    padding-top: 100px;
+    overflow: auto;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    padding: 60px;
+    border: 1px solid #fff;
+    border-radius: 32px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+    background-color: #fff;
+    max-width: 412px;
+    gap: 40px;
+    position: relative;
+    max-height: 800px;
+    overflow: auto;
+}
+.form-title {
+    display: flex;
+    align-items: center;
+    
+}
+.form-title-arrow {
+    margin-right: auto;
+    position: absolute;
+    left: 50px;
+}
+.form-title-text {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+.form-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.form-type {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.form-type-content {
+    padding: 13px;
+    border: 1px solid rgba(209, 209, 209, 1);
+    border-radius: 6px;
+}
+.form-btn {
+    padding: 18px 60px;
+    color: #fff;
+    background: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    display: flex;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.form-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
+}
+
+/* authorization */
+.authorization-group {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+.authorization-links {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+/* Basket */
+.basket {
+    padding: 40px 100px 172px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.basket-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+.icon-favor {
+    cursor: pointer;
+}
+.hits-card-delete {
+    cursor: pointer;
+}
+.basket-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+.basket-left-mobile {
+    display: none;
+}
+.basket-left-card {
+    display: flex;
+    gap: 24px;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    padding: 28px 22px;
+}
+.basket-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+.basket-title-first {
+    display: flex;
+    gap: 20px;
+}
+.basket-title-content {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.basket-title-hashtag {
+    display: flex;
+    gap: 12px;
+}
+.basket-title-icons {
+    display: flex;
+    gap: 40px;
+}
+.basket-title-hashtag .hits-card-new  {
+    padding: 4px 15px;
+    font-family: Montserrat;
+    font-size: 8.89px;
+    font-weight: 500;
+    line-height: 10.84px;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+}
+.basket-title-hashtag .hits-card-main  {
+    padding: 4px 15px;
+    font-family: Montserrat;
+    font-size: 8.89px;
+    font-weight: 500;
+    line-height: 10.84px;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+}
+.basket-content-desc {
+    display: flex;
+    justify-content: space-between;
+}
+.basket-desc-param {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.basket-param-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.basket-param-title {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+}
+.basket-param-count {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.basket-content-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+}
+.basket-total-desc {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    justify-content: flex-end;
+}
+.basket-total-count {
+    background-color: rgba(143, 143, 143, 1);
+    padding: 7px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 14.46px;
+    font-weight: 500;
+    line-height: 17.62px;
+}
+.basket-total-desc .hits-card-oldprice {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.basket-total-desc .hits-card-price {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.26px;
+    letter-spacing: 0.02em;
+}
+
+.basket-card-title {
+    display: flex;
+    justify-content: space-between;
+}
+.basket-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+}
+
+
+.basket-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 373px;
+}
+.basket-right-first {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.basket-first-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.38px;
+    text-align: left;
+}
+.basket-title-delivery {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.38px;
+    text-align: left;
+    margin-bottom: 24px;
+}
+.basket-right-content {
+    display: flex;
+    flex-direction: column;
+    gap: 13.5px;
+    border-bottom: 1px solid rgba(209, 209, 209, 1);
+    padding-bottom: 20px;
+}
+.basket-right-desc {
+    display: flex;
+    justify-content: space-between;
+}
+.basket-content-desc {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.basket-content-price {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.price-red {
+    color: rgba(212, 55, 55, 1);
+}
+.border-bottom {
+    border: 1px solid rgba(209, 209, 209, 1);
+}
+.basket-main-price {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.38px;
+    letter-spacing: 0.02em;
+}
+.basket-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.basket-form-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.basket-second-method {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    color: rgba(63, 63, 63, 1);
+}
+.basket-method-content {
+    border: 1px solid rgba(209, 209, 209, 1);
+    border-radius: 5px;
+    min-width: 360px;
+    padding: 9px 0;
+    padding-left: 12px;
+}
+.basket-time {
+    border-bottom: 1px solid rgba(209, 209, 209, 1);
+    padding-bottom: 20px;
+}
+.basket-address {
+    max-width: 373px;
+}
+.basket-method-desc {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    color: rgba(63, 63, 63, 1);
+}
+.basket-form-save {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.basket-save-desc {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(63, 63, 63, 1);
+}
+.basket-delivery-time {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.basket-delivery-free {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.basket-right-total {
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 29.26px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.basket-right-btn {
+    margin-top: 20px;
+    padding: 18px 118px;
+    color: #fff;
+    background-color: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.basket-right-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
+}
+.basket-popup {
+    padding: 80px 100px 100px 100px;
+    background-color: #fff;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+.basket-popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.basket-popup-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+}
+.basket-popup-desc {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(63, 63, 63, 1);
+}
+.basket-popup.open {
+    display: block;
+}
+
+
+.active-basket {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* Feature */
+.featured {
+    padding: 60px 100px 100px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    flex: 1;
+}
+.featured .hits {
+    align-items: flex-start;
+    width: 100%;
+}
+.featured-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+}
+.featured .hits-content {
+    width: 100%;
+}
+.featured .hits-card-img-container {
+    width: 100%;
+    height: 100%;
+}
+
+.featured .hits-card-img {
+    width: 100%;
+    height: 100%;
+}
+.featured .hits-card-second {
+    max-width: none;
+}
+/* Pampers */
+.pampers {
+    padding: 40px 100px 100px 100px;
+    min-height:1700px ;
+}
+.pampers-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+.pampers-main .hits {
+    gap: 0;
+    padding: 0;
+}
+.pampers-main .hits-content {
+    display: grid;
+    grid-template-columns: 265px 265px 265px;
+}
+.pampers-main .hits-title {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.pampers-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    color: rgba(63, 63, 63, 1);
+    margin-bottom: 29px;
+}
+.pampers-content-second {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+.pampers-second-popular {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+}
+.pampers-second-main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+#pampers-second-main {
+    /* display: none; */
+}
+.pampers-second-title-content {
+    display: flex;
+    justify-content: space-between;
+    width: 93%;
+}
+.pampers-second-title-content img {
+}
+.pampers-second-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+}
+.pampers-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.pampers-filters-desktop {
+    display: none;
+}
+.pampers-second-blocks {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.pampers-filters-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.pampers-second-choice {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(63, 63, 63, 1);
+}
+.pampers-quantity-block {
+    max-width: 212px;
+}
+.pampers-filters-quantity {
+    max-width: 85px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(143, 143, 143, 1);
+    border-radius: 5px;
+    padding-left: 12px;
+}
+.quantity-input {
+    border: none;
+    max-width: 35px;
+}
+.quantity-input:focus {
+    outline: none;
+}
+.pampers-quantity-block {
+    display: flex;
+    gap: 40px;
+}
+.quantity-label {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(143, 143, 143, 1);
+}
+
+/* Pants */
+
+.pants {
+    padding: 40px 100px 100px 100px;
+    min-height:1700px;
+}
+.pants-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+.pants-main .hits {
+    padding: 0;
+}
+.pants-main .hits-content {
+    display: grid;
+    grid-template-columns: 265px 265px 265px;
+}
+.pants-main .hits-title {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+.napkins {
+    padding: 40px 100px 100px 100px;
+    min-height:1700px;
+}
+.napkins-main {
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+}
+.napkins-main .hits {
+    padding: 0;
+}
+.napkins-main .hits-content {
+    display: grid;
+    grid-template-columns: 265px 265px 265px;
+}
+.napkins-main .hits-title {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+.cabinet {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 397px;
+    max-width: 1220px;
+}
+.cabinet-content {
+    display: flex;
+    gap: 60px;
+}
+.cabinet-choice {
+    padding: 22px 30px 0px 30px;
+    border: 1px solid #fff;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+    max-height: 176px;
+}
+.cabinet-choice-block {
+    padding: 10px 88px 10px 16px;
+    width: 100%;
+}
+.cabinet-choice-block a {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+}
+.cabinet-profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+.profile-content {
+    border-bottom: 1px solid rgba(209, 209, 209, 1);
+    padding-bottom: 58px;
+}
+.cabinet-profile-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    margin-bottom: 30px;
+}
+.cabinet-profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.cabinet-profile-first {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    color: rgba(0, 0, 0, 1);
+}
+.cabinet-profile-blocks {
+    display: flex;
+    gap: 120px;
+}
+.profile-second-data {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.profile-second-data label {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.profile-second-data input {
+    border: none;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.cabinet-profile-fourth button {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.cabinet-profile-password {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.profile-fifth-password {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+}
+.profile-fifth-change button {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.highlight {
+    background-color: rgb(255, 237, 237);
+}
+
+.address-second-data label {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.address-second-data {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+.address-second-data input {
+    background-color: #fff;
+    border: 1px solid rgba(209, 209, 209, 1);
+    border-radius: 6px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 16px;
+}
+
+/* Карточка Товара */
+.cardProduct-main {
+    padding: 30px 100px 66px 100px;
+}
+.cardProduct-favor {
+    cursor: pointer;
+}
+.cardProduct-mobile-main {
+    display: none;
+}
+.cardProduct-card {
+    display: flex;
+    gap: 18px;
+    padding: 40px 30px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 20px;
+    margin-bottom: 60px;
+}
+
+#prevCardDesk {
+    cursor: pointer;
+}
+#nextCardDesk {
+    cursor: pointer;
+}
+.cardProduct-swiper img {
+    max-width: 60px;
+    border-radius: 10px;
+}
+.cardProduct-swiper {
+    padding-top: 44px;
+    margin: 0;
+    padding: 0;
+    max-width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.mySlick .slick-list {
+    height: 100%;
+}
+.mySlick img {
+    margin-bottom: 20px;
+}
+.cardProduct-card-img img {
+    border-radius: 20px;
+}
+.cardProduct-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+}
+.cardProduct-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.cardProduct-title div {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39.01px;
+}
+.cardProduct-content-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cardProduct-sales {
+    display: flex;
+    gap: 40px;
+}
+.cardProduct-info {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-param {
+    display: flex;
+    gap: 60px;
+}
+.cardProduct-param-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-right: 165px;
+}
+.cardProduct-param-block2 {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.param-block-name {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+}
+.param-block-content {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.cardProduct-price {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.cardProduct-price .hits-card-oldprice {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24.38px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-price .hits-card-price {
+    font-family: Montserrat;
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 53.64px;
+}
+.cardProduct-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+.cardProduct-button {
+    background-color: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    padding: 18px 104px;
+    color: #fff;
+    cursor: pointer;
+     transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+.cardProduct-button:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
+}
+.cardProduct-desc {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+.cardProduct-desc-first {
+    max-width: 745px;
+    padding: 34px 30px;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 16px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardProduct-desc-title {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39.01px;
+}
+.cardProduct-desc-content {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+
+.cardProduct-second {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 71px;
+    padding-bottom: 71px;
+    width: 100%;
+}
+.cardProduct-second-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.38px;
+    }
+.cardProduct-second-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardProduct-delivery {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.cardProduct-delivery-img img {
+    max-width: 40px;
+}
+.cardProduct-delivery-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+.cardProduct-delivery-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-delivery-info {
+    display: flex;
+    justify-content: space-between;
+}
+.cardProduct-main .hits {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* myOrders */
+.orders-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4px;
+    margin-bottom: 40px;
+}
+.orders-content {
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+}
+.orders-content-first {
+    display: flex;
+    justify-content: space-between;
+    gap: 68px;
+}
+.orders-first-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+}
+.orders-first-info-content {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+.orders-info-title {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.orders-info-desc {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.order-desk{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.order-desk-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.order-desk-content {
+    display: flex;
+    gap: 12px;
+}
+.order-desk-title {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.order-title-content {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+}
+
+.order-desk-count {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+}
+.order-desk-param {
+    display: flex;
+    justify-content: space-between;
+    gap: 61px;
+}
+.order-desk-third {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.order-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.forDescktop {
+    display: block;
+}
+/* Dropdown category */
+/* Стили для контейнера выпадающего списка */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+.dropdown {
+}
+
+/* Стили для кнопки выпадающего списка */
+.dropdown-button {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+}
+
+/* Стили для содержимого выпадающего списка */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Стили для элементов внутри выпадающего списка */
+.dropdown-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+/* Стили для элементов при наведении курсора */
+.dropdown-item:hover {background-color: #fff}
+
+/* Показываем содержимое выпадающего списка при наведении на кнопку */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Стили для кнопки при наведении курсора */
+.dropdown:hover .dropdown-button {
+    background-color: #fff;
+}
+
+
+
+/* Mobile */
+@media only screen and (max-width: 481px) {
+    .forMobile {
+        display: block;
+    }
+    .forDescktop {
+        display: none;
+    }
+    
+.swiper-button-next:after {
+    color: rgba(179, 179, 179, 1);
+    padding-top: 0;
+    display: none;
+}
+.swiper-button-prev:after {
+    color: rgba(179, 179, 179, 1);
+    padding-top: 0;
+    display: none;
+}
+/* Main Page */
+.main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 85px;
+    gap: 0;
+}
+
+.main .hits {
+    gap: 0;
+    align-items: flex-start;
+}
+.main .category {
+    padding-left: 16px;
+    padding-right: 8px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 16px;
+    border-bottom: 1px solid rgba(238, 238, 238, 1);
+    box-sizing: border-box;
+    z-index: 13;
+    position: fixed;
+    width: 100%;
+    background-color:#fff;
+}
+.header-burger {
+    display: block;
+    align-items: start;
+}
+
+.header-img-mobile {
+    width: 88px;
+}
+.header-first {
+    display: flex;
+    gap: 70px;
+    align-items: center;
+}
+.header-logo {
+    margin-right:70px;
+}
+.header-list {
+    display: none;
+}
+.header-list-mobile {
+    flex-direction: column;
+    gap: 12px;
+}
+.header-list-content{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    text-align: left;
+}
+.header-second {
+    display: flex;
+    gap: 40px;
+}
+.header-favorite {
+    display: none;
+}
+
+
+.banner-main {
+    order: 3;
+    position: relative;
+    margin-bottom: 22px;
+}
+.swiper-content {
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    max-width: 478px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    height: 90%;
+    justify-content: space-between;
+}
+
+.swiper-content-title {
+    font-family: gooseberry;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color:rgba(84, 61, 141, 1);
+}
+.swiper-content-desc {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.63px;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 0;
+}
+.swiper-content-btn {
+    padding: 10px 24px;
+    background-color: rgba(63, 63, 63, 1);
+    color: #fff;
+    border-radius: 30px;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.63px;
+    letter-spacing: 0.02em;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    object-fit: cover;
+    max-height: 469px;
+    padding-right: 600px;
+    background-color: rgba(249, 249, 249, 1);
+    max-width: 390px;
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 14px !important;
+    left: auto;
+} 
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: 14px !important;
+    right: auto;
+} 
+.category {
+    max-width: 480px;
+    /* padding-right: 8px; */
+    padding-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+#category-btn-desk {
+    display: none
+}
+#category-btn-mob {
+    padding: 18px 60px;
+    color: #fff;
+    background: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    max-width: 292px;
+    display: flex;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+}
+#category-btn:active {
+    background-color: rgba(209, 209, 209, 1);
+    border:1px solid rgba(209, 209, 209, 1) ;
+}
+
+.category-title {
+    display: none;
+}
+.category-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: inherit;
+    width: 100%;
+    gap: 0;
+}
+.category-card{
+    display: flex;
+    flex-direction: row;
+    padding:0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    gap: 6px;
+}
+.category-image-mobile {
+    width: 19px; /* Устанавливаем максимальную ширину изображений в мобильной версии */
+}
+.category-card-desc {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    text-align: left;
+}
+.category-mobile-content {
+    display: none;
+    bottom: 0;
+    overflow-y: scroll;
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+    padding-left: 17px;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    z-index: 11;
+    background-color: #fff;
+    position: fixed;
+    padding-top: 23px;
+}
+.category-mobile-content .category-content {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+.header-list-mobile {
+    display: flex;
+}
+.footer-pay-mobile {
+    display: flex;
+    gap: 32px;
+}
+.hits {
+    display: flex;
+    padding-bottom: 34px;
+    order:4;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+}
+
+.hits-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    text-align: left;
+    margin-bottom: 16px;
+    width: 80%;
+}
+.hits-content {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.main .hits-card {
+    padding-bottom: 12px;
+}
+.hits-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.hits-card-first {
+    display: flex;
+    position: relative;
+}
+.hits-card-img-container {
+    position: relative;   
+
+}
+.hits-card-img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    max-width: 169px;
+}
+.hits-card-favor {
+    position: absolute;
+    right: 45px;
+    top: 15px;
+    max-width: 18px;
+    background-color: rgba(231, 231, 231, 1);
+}
+.hits-example {
+    display: flex;
+    justify-content: space-between;
+}
+.hits-card-text {
+    position: absolute;
+    left: 6px;
+    bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.hits-card-text .hits-card-new {
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12.19px;
+    letter-spacing: 0.02em;
+    padding: 5px 10px;
+}
+.hits-card-sale {
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: rgba(238, 166, 18, 0.7);
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 500;
+    position: absolute;
+    top: -95px;
+}
+.hits-card-main {
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 20px;
+    background-color: rgba(238, 77, 27, 0.7);
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 500;
+}
+.hits-card-second {
+    border: 1px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    max-width: 265px;
+    padding:12px 8px 20px 8px;
+    max-width: 169px;
+    box-sizing: border-box;
+}
+.hits-card-second-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.hits-card-title {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.01em;
+}
+.hits-card-character {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+#mobiles {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+.hits-card-chars {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.63px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.hits-card-chard-prices {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.hits-card-oldprice {
+    text-decoration: line-through;
+    color: rgba(238, 77, 27, 1);
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12.19px;
+    letter-spacing: 0.02em;
+    text-align: right;
+}
+.hits-card-price {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    text-align: left;
+}
+.hits-card-btn {
+   display: none;
+} 
+.hit-card-chars-mobile {
+    display: none;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    order:5;
+}
+.info-blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 210px;
+}
+
+.info-img {
+    max-width: 60px;
+}
+.info-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.info-desc {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    text-align: center;
+    word-wrap: break-word; /* Разрешить перенос слов */
+}
+.footer {
+    padding: 30px 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+    background-color: rgba(238, 238, 238, 1);
+    border-top: 1px solid rgba(238, 238, 238, 1);
+    order:6;
+    min-width:358px;
+}
+.footer-blocks {
+    display: flex;
+    flex-direction: column;
+    max-width: 170px;
+    gap: 16px;
+}
+.footer-blocks-first {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 170px;
+}
+.footer-blocks-second {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+}
+#footer-blocks {
+    display: flex;
+}
+.footer-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.38px;
+    text-align: left;
+}
+.footer-links {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    text-align: left;
+}
+.footer-pay-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.footer-pay {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.footer-pay-blocks {
+    display: flex;
+    gap: 22px;
+}
+.footer-networks {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: flex-start;
+    margin: 0;
+    max-width: 120px;
+}
+.footer-networks-img {
+    width: 44px;
+}
+
+.footer-logo-content {
+    min-width: unset;
+    max-width: 80px;
+}
+
+/* About us */
+.about-main {
+    padding-left: 16px;
+    padding-right: 17px;
+    padding-top: 83px;
+    margin-bottom: 60px;
+    max-width: 1220px;
+}
+.about-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.about-link {
+    display: none;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 19px;
+    
+}
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.about-first-part {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.about-img {
+    display: flex;
+    justify-content: center;
+}
+.about-img img {
+    width: 100%;
+}
+.about-first-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.about-first-text-desc {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: left;
+}
+.about-first-text-descTwo {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    text-align: left;
+    border-left: 3px solid rgba(0, 0, 0, 1);
+    padding-left: 20px;
+}
+.about-third-part {
+   display: none;
+   flex-direction: column;
+   gap: 60px;
+}
+.about-third-text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+      max-width: 698px;
+}
+.about-fourth-part {
+    display: none;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+.about-fourth-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.fourth-images-content {
+    display: flex;
+    gap: 41px;
+}
+.faq-main {
+    padding: 16px;
+    margin-bottom: 170px;
+}
+.faq-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    text-align: left;
+}
+.faq-question .faq-answer {
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+}
+.category-mobile {
+    padding-left: 0;
+}
+
+.cooperation-main {
+    padding: 83px 16px 110px 16px;
+}
+.cooperation-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    text-align: left;
+    margin-bottom: 27px;
+}
+.cooperation-content {
+    display: flex;
+    gap: 20px;
+    order: 2;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cooperation-content-first {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    gap: 32px;
+}
+.cooperation-first-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.cooperation-networks-title {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.cooperation-first-tel {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    text-align: left;
+    color:rgba(0, 0, 0, 1);
+}
+.cooperation-networks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cooperation-networks-content {
+    display: flex;
+    gap:12px;
+    align-items: center;
+}
+.cooperation-networks-contacts {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+}
+.cooperation-second {
+    display: flex;
+    justify-content: center;
+}
+.cooperation-second  img{
+    width: 100%;
+}
+
+/* Deliver */
+.main-delivery {
+    padding: 83px 16px 110px 16px;
+}
+.delivery-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.delivery-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    order: 2;
+}
+.delivery-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    order: 3;
+}
+.delivery-content-first {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    order: 2;
+}
+.delivery-first-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.delivery-first-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.delivery-first-desc {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.delivery-first-title-content {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+}
+.delivery-content-second img {
+    max-width: 357px;
+}
+
+/* Review mobile */
+.main-reviews{
+    padding: 83px 16px 110px 16px;
+}
+.reviews-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    margin-bottom: 27px;
+    padding: 0;
+    
+}
+.swiper-pagination-horizontal {
+    position: fixed;
+}
+.reviews-content {
+    max-width: 338px;
+    padding: 20px;
+    margin: 0 auto;
+}
+.reviews-content img {
+    display: none;
+}
+.reviews-content-card {
+}
+.reviews-card-title {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    text-align: left;
+    margin-bottom: 12px;
+    padding: 0;
+}
+.reviews-card-desc {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    padding: 0;
+}
+
+
+/* Registration mobile */
+.registration-main {
+    background-image: none;
+    height: 100vh;
+    padding-top: 18px;
+    display: block;
+    margin: 0;
+    border: none;
+    border-radius: none;
+    box-shadow: none; 
+    padding: 20px 16px;
+}
+.form {
+    display: block;
+    margin: 0;
+    border: none;
+    border-radius: none;
+    box-shadow: none; 
+    padding: 20px 16px;
+}
+.form-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+.form-title-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.form-title-logo img {
+    max-width: 88px;
+}
+.form-title-arrow {
+    display: none;
+}
+.form-title-arrow-mobile {
+    display: block;
+    margin-right: inherit;
+    position:inherit;
+    left: 50px;
+}
+.form-title-text {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    display: flex;
+    align-items: flex-start;
+}
+.form-main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-width: 358px;
+}
+.form-group input {
+    max-height: 33px;
+}
+.form-type {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.form-type-content {
+    padding: 9px 12px;
+    border: 1px solid rgba(209, 209, 209, 1);
+    border-radius: 6px;
+}
+.form-btn {
+    color: #fff;
+    background: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    max-width: 357px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+
+/* authorization */
+.authorization-group {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+.authorization-links {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+}
+/* Избранное */
+.featured {
+    padding: 83px 16px 110px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex: 1;
+}
+.featured .hits-card-favor {
+    right: 20px;
+}
+.featured .hits-content {
+    display: grid;
+    grid-template-columns: 169px 169px;
+}
+.featured-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    margin-bottom: 20px;
+}
+.featured .hits {
+    padding: 0;
+}
+
+/* Basket mobile */
+
+.basket{
+    padding-left: 16px;
+    padding-right: 17px;
+    padding-top: 83px;
+    gap: 0;
+}
+.basket-right-btn {
+    margin-top: 20px;
+    padding: 18px 118px;
+    color: #fff;
+    background-color: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.basket .basket-title {
+    margin-bottom: 30px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+}
+.basket-content {
+    display: flex;
+    flex-direction: column;
+}
+.basket-left {
+    display: none;
+}
+.basket-left-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.basket-mobile-first {
+    display: flex;
+    gap: 12px;
+}
+.basket-first-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 14px;
+}
+.basket-mobile-title {
+    display: flex;
+    justify-content: space-between;
+}
+.basket-title-mobile-content {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.01em;
+}
+.basket-title-mobile-icons {
+    display: flex;
+    gap: 23px;
+}
+.basket-mobile-sale {
+    display: flex;
+    gap: 12px;
+}
+.basket-mobile-sale .hits-card-new {
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    
+}
+.basket-mobile-sale .hits-card-main {
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12.19px;
+    letter-spacing: 0.02em;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+}
+.basket-mobile-second {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.basket-mobile-param {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.basket-mobile-param .basket-param-title {
+    font-family: Montserrat;
+    letter-spacing: 0.02em;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+}
+.basket-mobile-param .basket-param-count {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.basket-mobile-third {
+    display: flex;
+    justify-content: space-between;
+}
+.basket-mobile-count {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+}
+.mobile-count-content {
+    padding: 10px 14px;
+    background-color: rgba(143, 143, 143, 1);
+    color: #fff;
+    border-radius: 8px;
+}
+.basket-mobile-count .hits-card-oldprice {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.basket-mobile-count .hits-card-price {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.82px;
+    letter-spacing: 0.02em;
+}
+.basket-popup {
+    padding: 32px 41px;
+    background-color: #fff;
+    display: none;
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 70%;
+}
+.basket-popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.basket-popup-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24.38px;
+}
+.basket-popup-desc {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(63, 63, 63, 1);
+}
+
+
+/* Card Product */
+
+.cardProduct-main {
+    display: none;
+    padding: 12px 16px;
+}
+
+.cardProduct-mobile-main .hits-title {
+    margin-bottom: 0;
+}
+.cardProduct-mobile-main .hits {
+    align-items: flex-start;
+}
+.cardProduct-mobile-main {
+    display: block;
+    padding: 83px 16px;
+}
+.cardProduct-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+.cardProduct-card .mySlick-mobile {
+    height: 70px;
+}
+.mySlick-mobile {
+    max-width: 380px;
+}
+.mySlick-mobile .slick-slide {
+    width: 60px;
+}
+.cardProduct-swiper {
+    max-width: 380px;
+} 
+.cardProduct-swiper img {
+    max-width: 60px;
+    height: 60px;
+    border-radius: 10px;
+}
+.cardProduct-swiper {
+    padding-top: 0;
+}
+.cardProduct-card-img img {
+    border-radius: 20px;
+    max-width: 358px;
+}
+.cardProduct-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+}
+.cardProduct-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.cardProduct-title div {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+    display: flex;
+    justify-content: flex-start;
+}
+.cardProduct-content-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cardProduct-sales {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 40px;
+}
+.cardProduct-sales-content {
+    display: flex;
+    gap: 28px;
+}
+.cardProduct-sales .hits-card-sale {
+    position:sticky;
+}
+.cardProduct-info {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-param {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardProduct-param-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-right: 165px;
+}
+.param-block-name {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+}
+.param-block-content {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.cardProduct-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+
+.cardProduct-price .hits-card-oldprice {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-price .hits-card-price {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26.82px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.cardProduct-button {
+    background-color: rgba(63, 63, 63, 1);
+    border-radius: 30px;
+    padding: 16px 101px;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+.cardProduct-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+    margin-bottom: 60px;
+}
+.cardProduct-desc-first {
+    max-width: 745px;
+    padding: 34px 30px;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 16px;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardProduct-desc-title {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 39.01px;
+}
+.cardProduct-desc-content {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+    padding: 0;
+}
+
+.cardProduct-second {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    width: 100%;
+}
+.cardProduct-second-titles-content {
+    display: flex;
+    justify-content: space-between;
+}
+.cardProduct-second-titles-content div {
+    padding: 16px 40px;
+}
+.none {
+    display: none;
+}
+.cardProduct-delivery {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.cardProduct-delivery-img img {
+    max-width: 40px;
+}
+.cardProduct-delivery-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+.cardProduct-delivery-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-delivery-info {
+    display: flex;
+    justify-content: space-between;
+}
+.cardProduct-delivery-info div {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.cardProduct-main .hits {
+    padding-left: 0;
+    padding-right: 0;
+}
+.active-card {
+    padding: 16px 40px;
+    background-color: #fff;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 100px;
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.07);
+}
+.card-margin {
+    margin-top: 12px;
+}
+.cabinet {
+    padding-left: 0;
+    padding-right: 0px;
+    padding-bottom: 397px;
+    max-width: 1220px;
+}
+.cabinet-content {
+    display: flex;
+    gap: 60px;
+}
+.mobile-cabinet {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 22px 30px 0px 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    left: 0;
+    bottom: 0;
+    
+}
+.cabinet-choice {
+    padding: 22px 30px 0px 30px;
+    border: 1px solid #fff;
+    box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+    max-height: 176px;
+    display: none;
+}
+.cabinet-choice-block {
+    padding: 10px 88px 10px 16px;
+}
+.cabinet-choice-block a {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+}
+.cabinet-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 80px 16px;
+}
+.profile-content {
+    border-bottom: 1px solid rgba(209, 209, 209, 1);
+    padding-bottom: 58px;
+}
+.cabinet-profile-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.5px;
+}
+.cabinet-profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.cabinet-profile-first {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+    color: rgba(0, 0, 0, 1);
+}
+.cabinet-profile-blocks {
+    display: flex;
+    gap: 120px;
+}
+.profile-second-data {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.profile-second-data label {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+    color: rgba(63, 63, 63, 1);
+}
+.profile-second-data input {
+    border: none;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.cabinet-profile-fourth {
+    text-align: center;
+    width: 100%;
+}
+.cabinet-profile-fourth button {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.29px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    background-color: rgba(63, 63, 63, 1);
+    padding: 16px 86px;
+    border-radius: 30px;
+    color: #fff;
+}
+.cabinet-profile-password {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.profile-fifth-password {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21.94px;
+}
+.profile-fifth-change button {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    text-decoration: underline;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+.highlight {
+    background-color: rgb(255, 237, 237);
+}
+.orders{
+}
+.orders-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 4px;
+    margin-bottom: 24px;
+}
+.orders-content {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+.orders-content-first {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.orders-first-info {
+    display: flex;
+}
+.orders-first-info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.orders-info-title {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.orders-info-desc {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.orders-padding {
+    padding-left: 86px;
+}
+.orders-content .basket-mobile-second {
+    flex-direction: row;
+    justify-content: space-between;
+}
+.orders-content .basket-mobile-count {
+    align-items: flex-end;
+}
+.orders-content .basket-left-mobile {
+    border-bottom: 1px solid rgba(209, 209, 209, 1);
+    padding-bottom: 20px;
+}
+
+/* CategoryPampers */
+.pampers {
+    padding: 83px 16px 60px 16px;
+    min-height:1700px ;
+}
+
+.pampers .hits-card-favor {
+    right: 20px;
+}
+.pampers-main .hits-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.pampers-main .hits {
+    display:flex;
+    width: 100%;
+}
+.pampers-main .hits-title {
+    margin-bottom: 30px;
+}
+.pampers-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    color: rgba(63, 63, 63, 1);
+    margin-bottom: 29px;
+}
+.pampers-content-second {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+.pampers-second-popular {
+    display: none;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+}
+.pampers-second-main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    padding-top: 12px;
+    top: 65px;
+    left: 0;
+    padding-left: 16px;
+    overflow-y: scroll;
+    bottom: 0;
+    padding-bottom: 60px;
+}
+.pampers-second-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+}
+.pampers-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.pampers-filters-mobile {
+    display: none;
+}
+.pampers-filters-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.pampers-second-blocks {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.pampers-filters-block {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+}
+.pampers-second-choice {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(63, 63, 63, 1);
+}
+.pampers-quantity-block {
+    max-width: 212px;
+}
+.pampers-filters-quantity {
+    max-width: 85px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(143, 143, 143, 1);
+    border-radius: 5px;
+    padding-left: 12px;
+}
+.quantity-input {
+    border: none;
+    max-width: 35px;
+}
+.quantity-input:focus {
+    outline: none;
+}
+.pampers-quantity-block {
+    display: flex;
+    gap: 40px;
+}
+.quantity-label {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(143, 143, 143, 1);
+}
+.pampers-mobile-title {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 16px;
+}
+.pampers-filter-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.pampers-filter-title div {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+}
+
+.pants {
+    padding: 83px 16px 60px 16px;
+    min-height:1700px ;
+}
+.pants .hits-card-favor {
+    right: 20px;
+}
+.pants-main {
+    display: flex;
+    gap: 0;
+}
+.pants-main .hits-content {
+    display: grid;
+    grid-template-columns: 169px 169px;
+}
+.pants-main .hits {
+    display:flex;
+    gap: 0;
+}
+.pants-main .hits-title {
+    margin-bottom: 30px;
+}
+.pants-title {
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 36.57px;
+    color: rgba(63, 63, 63, 1);
+    margin-bottom: 29px;
+}
+.pants-content-second {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+.pants-second-popular {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    cursor: pointer;
+}
+.pants-second-main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+#pants-second-main {
+    /* display: none; */
+}
+.pants-second-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+}
+.pants-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.pants-second-blocks {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.pants-filters-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.pants-second-choice {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.5px;
+    color: rgba(63, 63, 63, 1);
+}
+.pants-quantity-block {
+    max-width: 212px;
+}
+.pants-filters-quantity {
+    max-width: 85px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid rgba(143, 143, 143, 1);
+    border-radius: 5px;
+    padding-left: 12px;
+}
+
+/* Napkins */
+.napkins {
+    padding: 83px 16px 60px 16px;
+    min-height:1700px ;
+}
+.pampers-main {
+    display: flex;
+    gap: 0;
+}
+.napkins-main {
+    display: flex;
+    gap: 0;
+}
+.napkins .hits-card-favor {
+    right: 20px;
+}
+.napkins-main .hits-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.napkins-main .hits {
+    display:flex;
+    gap: 0;
+    width: 100%;
+}
+.napkins-main .hits-title {
+    margin-bottom: 30px;
+}
+
+/* Dropdown category */
+/* Стили для контейнера выпадающего списка */
+.dropdown-mobile-container {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-mobile {
+}
+
+/* Стили для кнопки выпадающего списка */
+.dropdown-mobile-button {
+    background-color: #fff;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.07px;
+}
+
+/* Стили для содержимого выпадающего списка */
+.dropdown-mobile-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Стили для элементов внутри выпадающего списка */
+.dropdown-mobile-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+/* Стили для элементов при наведении курсора */
+.dropdown-mobile-item:hover {background-color: #fff}
+
+/* Показываем содержимое выпадающего списка при наведении на кнопку */
+.dropdown-mobile:hover .dropdown-mobile-content {
+    display: block;
+}
+
+/* Стили для кнопки при наведении курсора */
+.dropdown-mobile:hover .dropdown-mobile-button {
+    background-color: #fff;
+}
+
+
+}
