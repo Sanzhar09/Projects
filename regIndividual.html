@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SABIKO Регистрация</title>
     <link rel="stylesheet" href="./assets/styles/main.css">
-    <title>Document</title>
-    <script src="./assets/scripts/script.js"></script>
+    <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
     <script src="./assets/scripts/imask.js"></script>
 </head>
 <body>
     <div class="registration-main">
         <div class="form">
-            <a href="/" class="form-title-logo"><img src="/images/SABIKO.png" alt=""></a>
+            <a href="/" class="form-title-logo"><img src="./assets/images/SABIKO.png" alt=""></a>
             <div class="form-title">
                 <a href="/" class="form-title-arrow form-title-arrow-mobile">
-                    <img src="/images/arrowLeft.svg" alt="">
+                    <img src="./assets/images/arrowLeft.svg" alt="">
                 </a>
                 <h1 class="form-title-text">Регистрация</h1>
             </div>
             <form action="" method="POST" id="form-registration" class="form-main form-reg">
                 <div class="form-group">
                     <label class="form-type" for="form-type">Вы заходите как:</label>
-                    <select onchange="redirectToPage(this)" class="form-type-content" name="form-type">
+                    <select onchange="redirectToPage(this)" class="form-type-content" id="form-type" name="form-type">
                         <option value="individual">Покупатель</option>
                         <option value="legal">Дилер</option>
                         <option value="wholesale">Дистрибьютор</option>
@@ -36,15 +36,15 @@
                     <input placeholder="Введите свое имя" class="form-type-content" type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="phone">Номер телефона:</label>
-                    <input placeholder="+7 (---) --- -- --" class="form-type-content" type="tel" id="phoneReg" name="phone" required>
+                    <label class="form-type" for="phoneReg">Номер телефона:</label>
+                    <input placeholder="+7 (---) --- -- --" class="form-type-content" type="text" id="phoneReg" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="password">Пароль:</label>
+                    <label class="form-type" for="passwordReg">Пароль:</label>
                     <input placeholder="Введите пароль" class="form-type-content" type="password" id="passwordReg" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="password">Подтверждение пароля:</label>
+                    <label class="form-type" for="passwordRegRepeat">Подтверждение пароля:</label>
                     <input placeholder="Подтвердите пароль" class="form-type-content" type="password" id="passwordRegRepeat" name="password" required>
                 </div>
                 <ul class="registration-error">
@@ -56,4 +56,5 @@
         </div>
     </div>
 </body>
+<script src="./assets/scripts/script.js" defer></script>
 </html>

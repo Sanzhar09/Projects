@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/main.css">
-    <title>Document</title>
-    <script src="./assets/scripts/script.js"></script>
+    <title>SABIKO регистрация</title>
+    <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
+    <script src="./assets/scripts/imask.js"></script>
 </head>
 <body>
     <div class="registration-main">
         <div class="form">
-            <a href="/" class="form-title-logo"><img src="/images/SABIKO.png" alt=""></a>
+            <a href="/" class="form-title-logo"><img src="./assets/images/SABIKO.png" alt=""></a>
             <div class="form-title">
                 <a href="/" class="form-title-arrow form-title-arrow-mobile">
-                    <img src="/images/arrowLeft.svg" alt="">
+                    <img src="./assets/images/arrowLeft.svg" alt="">
                 </a>
                 <h1 class="form-title-text">Регистрация</h1>
             </div>
             <form action="" method="POST" id="form-registration-legal" class="form-main form-reg-legal">
                 <div class="form-group">
                     <label class="form-type" for="form-type">Вы заходите как:</label>
-                    <select onchange="redirectToPage(this)" class="form-type-content" name="form-type">
+                    <select onchange="redirectToPage(this)" class="form-type-content" name="form-type" id="form-type">
                         <option value="legal">Дилер</option>
                         <option value="individual">Покупатель</option>
                         <option value="wholesale">Дистрибьютор</option>
@@ -36,39 +37,39 @@
                 </div>
                 <div class="form-group">
                     <label class="form-type" for="company">Наименование компании:</label>
-                    <input placeholder="Введите наименование вашей компании" class="form-type-content" type="text" name="company" required>
+                    <input id="company" placeholder="Введите наименование вашей компании" class="form-type-content" type="text" name="company" required>
                 </div>
                 <div class="form-group">
                     <label class="form-type" for="phone">Номер телефона</label>
-                    <input placeholder="+7 (---) --- -- --" class="form-type-content" type="tel" id="phone" name="phone" required>
+                    <input placeholder="+7 (---) --- -- --" class="form-type-content" type="text" id="phone" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="company">БИН (ИИН)</label>
-                    <input placeholder="Введите данные" class="form-type-content" type="number" name="name" required>
+                    <label class="form-type" for="iin">БИН (ИИН)</label>
+                    <input id="iin" placeholder="Введите данные" class="form-type-content" type="number" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="company">Банк</label>
-                    <input placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
+                    <label class="form-type" for="bank">Банк</label>
+                    <input id="bank" placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="company">КБе</label>
-                    <input placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
+                    <label class="form-type" for="kbe">КБе</label>
+                    <input id="kbe" placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="company">БИК</label>
-                    <input placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
+                    <label class="form-type" for="bik">БИК</label>
+                    <input id="bik" placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="company">Номер счета</label>
-                    <input placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
+                    <label class="form-type" for="account">Номер счета</label>
+                    <input id="account" placeholder="Введите данные" class="form-type-content" type="text" name="name" required>
                 </div>
                 <div class="form-group">
                     <label class="form-type" for="password">Пароль:</label>
-                    <input placeholder="Введите пароль" class="form-type-content" type="password" id="passwordLegal" name="password" required>
+                    <input id="password" placeholder="Введите пароль" class="form-type-content" type="password" id="passwordLegal" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="password">Подтверждение пароля:</label>
-                    <input placeholder="Подтвердите пароль" class="form-type-content" type="password" id="passwordLegalRepeat" name="password" required>
+                    <label class="form-type" for="password-confirm">Подтверждение пароля:</label>
+                    <input id="password-confirm" placeholder="Подтвердите пароль" class="form-type-content" type="password" id="passwordLegalRepeat" name="password" required>
                 </div>
                 <ul class="regLegal-error">
                     <li class="displayNone regLegal-password-confirmation" data-error="confirmation">Пароли не совпадают.</li>
@@ -79,4 +80,5 @@
         </div>
     </div>
 </body>
+<script src="./assets/scripts/script.js" defer></script>
 </html>

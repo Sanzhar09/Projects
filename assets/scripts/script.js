@@ -139,7 +139,20 @@ function redirectToPage(selectElement) {
         window.location.href = 'wholesale.html'; // Перенаправление на страницу для оптового пользователя
     }
 }
-
+const phoneRegElement = document.getElementById('phoneReg');;
+if(phoneRegElement) {
+    const maskOptions = {
+        mask: '+{7}(000)000-00-00'
+    };
+    IMask(phoneRegElement, maskOptions);
+}
+const phoneElement = document.getElementById('phone');;
+if(phoneElement) {
+    const maskOptions = {
+        mask: '+{7}(000)000-00-00'
+    };
+    IMask(phoneElement, maskOptions);
+}
 // Popup Basket
 document?.addEventListener('DOMContentLoaded', function() {
     const openPopup = document.getElementById('show-popup');
@@ -173,7 +186,7 @@ function toggleBurger() {
 function toggleCabinet() {
     let mobileCabinet = document.querySelector('.mobile-cabinet')
     let choiceBlock = document.querySelector('.cabinet-choice-block')
- 
+
     header-profile?.addEventListener('click',function(e){
         e.preventDefault();
         if(mobileCabinet.style.display==='none') {
@@ -182,7 +195,7 @@ function toggleCabinet() {
         else
         {
             mobileCabinet.style.display = 'none'
-            
+
         }
     })
 }
@@ -226,7 +239,7 @@ document?.addEventListener('DOMContentLoaded', function() {
     let deliveryTab = document.getElementById('delivery-tab');
     let descContent = document.getElementById('desc-content');
     let deliveryContent = document.getElementById('delivery-content');
-    
+
     descTab?.addEventListener('click', function() {
         descContent.classList.remove('none');
         deliveryContent.classList.add('none');
@@ -298,7 +311,7 @@ document?.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Запросы 
+// Запросы
 document?.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector('.form-main');
     const passwordInput = document.getElementById('password');
@@ -314,7 +327,7 @@ document?.addEventListener("DOMContentLoaded", function() {
         // errorList.classList.add('displayNone');
         // lengthErrorItem.classList.add('displayNone');
 
-        
+
         const formData = new FormData(form); // Получаем данные формы
         const url = '/login';
         try {
@@ -334,7 +347,7 @@ document?.addEventListener("DOMContentLoaded", function() {
                 lengthErrorItem.style.display = 'block'
                 return; // Останавливаем выполнение скрипта, если пароль недостаточно длинный
             }
-    
+
         } catch (error) {
             // Ошибка сети или другая ошибка
             console.error('Ошибка при отправке запроса:', error);
@@ -542,19 +555,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Delete button
     document.addEventListener('DOMContentLoaded', () => {
         const favorIcons = document.querySelectorAll('.hits-card-delete');
-    
+
         favorIcons.forEach(favorIcon => {
             favorIcon?.addEventListener('click', async (event) => {
                 event.stopPropagation(); // Останавливаем всплытие события клика
-    
+
                 const productId = favorIcon.dataset.id; // Получаем ID товара из data-атрибута
                 if (!productId) {
                     console.error('ID товара не найден');
                     return;
                 }
-    
+
                 const url = '/deleteCard'; // Замените на ваш URL для добавления товара в избранное
-    
+
                 try {
                     // Отправляем POST-запрос на сервер
                     const response = await fetch(url, {
@@ -564,7 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
                     });
-    
+
                     if (response.ok) {
                         // Обработка успешного ответа от сервера
                         console.log('Товар успешно добавлен в избранное');
@@ -579,22 +592,22 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         })
     })
-    
+
     document.addEventListener('DOMContentLoaded', () => {
         const favorIcons = document.querySelectorAll('.hits-card-delete');
-    
+
         favorIcons.forEach(favorIcon => {
             favorIcon?.addEventListener('click', async (event) => {
                 event.stopPropagation(); // Останавливаем всплытие события клика
-    
+
                 const productId = favorIcon.dataset.id; // Получаем ID товара из data-атрибута
                 if (!productId) {
                     console.error('ID товара не найден');
                     return;
                 }
-    
+
                 const url = '/deleteCard'; // Замените на ваш URL для добавления товара в избранное
-    
+
                 try {
                     // Отправляем POST-запрос на сервер
                     const response = await fetch(url, {
@@ -604,7 +617,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         },
                         body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
                     });
-    
+
                     if (response.ok) {
                         // Обработка успешного ответа от сервера
                         console.log('Товар успешно добавлен в избранное');
@@ -757,7 +770,7 @@ document?.addEventListener('DOMContentLoaded', function() {
     saveButton?.addEventListener('click', function() {
         // Получаем значение из поля ввода
         const address = addressInput.value;
-        
+
         // Если адрес не пустой
         if (address.trim() !== '') {
             // Формируем объект с данными для отправки на сервер
@@ -777,7 +790,7 @@ document?.addEventListener('DOMContentLoaded', function() {
                     addressInput.style.display='none'
                     saveButtonContainer.style.display='none'
                     throw new Error('Ошибка сети');
-                    
+
                 }
                 return response.json();
             })
@@ -805,7 +818,7 @@ document?.addEventListener('DOMContentLoaded', function() {
     const saveButton = document.getElementById('save-button-profile');
 
     function showProfileInput() {
-    
+
         if(saveButtonContainer.style.display='none')
 
             saveButtonContainer.style.display='flex'
@@ -817,7 +830,7 @@ document?.addEventListener('DOMContentLoaded', function() {
             nameCompanyInput.disabled = false;
 
     }
-    
+
     document.getElementById('change-data-profile')?.addEventListener('click', showProfileInput);
     // Пример обработчика события для кнопки "Сохранить"
     saveButton?.addEventListener('click', function() {
@@ -848,7 +861,7 @@ document?.addEventListener('DOMContentLoaded', function() {
                 if (!response.ok) {
                     saveButtonContainer.style.display='none'
                     throw new Error('Ошибка сети');
-                    
+
                 }
                 return response.json();
             })
@@ -911,6 +924,7 @@ function sendRequestChangeAmount(id, count) {
 
 // Slick
   $(function(){
+      if($('.mySlick').length)
     $('.mySlick').slick({
         infinite: false,
         slidesToShow: 5,
@@ -925,20 +939,22 @@ function sendRequestChangeAmount(id, count) {
     });
   });
   $(function(){
-    $('.mySlick-mobile').slick({
+      if($('.mySlick-mobile').length)
+    $('.mySlick-mobile')?.slick({
         infinite: false,
         slidesToShow: 5,
         slidesToScroll: 1,
         swipeToSlide: true,
         swipe: true,      // Включаем листание на сенсорных экранах
-        touchMove: true, 
+        touchMove: true,
         prevArrow: '#prevCardDesk',
         nextArrow: '#nextCardDesk'
 
     });
   });
   $(function(){
-    $('.mySlick-main').slick({
+      if($('.mySlick-main').length)
+    $('.mySlick-main')?.slick({
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -949,4 +965,70 @@ function sendRequestChangeAmount(id, count) {
 
     });
   });
-      
+
+//Cabinet
+let temp = {};
+editProfileCancel = () => {
+    $('#fullname').val(temp.fullName);
+    $('#email').val(temp.email);
+    $('#phone').val(temp.phone);
+
+    $('#fullname').attr('disabled', true);
+    $('#email').attr('disabled', true);
+    $('#phone').attr('disabled', true);
+    $('.cabinet-buttons').hide();
+    $('.cabinet-profile-fourth').show();
+}
+editProfile = () => {
+    const phoneElement = document.getElementById('phone');;
+    const maskOptions = {
+        mask: '+{7}(000)000-00-00'
+    };
+    IMask(phoneElement, maskOptions);
+
+    $('#fullname').attr('disabled', false);
+    $('#email').attr('disabled', false);
+    $('#phone').attr('disabled', false);
+    $('.cabinet-profile-fourth').hide();
+    $('.cabinet-buttons').css('display', 'flex');
+    const fullName = $('#fullname').val();
+    const email = $('#email').val();
+    const phone = $('#phone').val();
+    temp = {
+        fullName,
+        email,
+        phone,
+    };
+}
+
+editProfileSubmit = async () => {
+    const fullName = $('#fullname').val();
+    const email = $('#email').val();
+    const phone = $('#phone').val();
+    if(fullName?.length && email?.length && phone?.length)
+    try {
+        // Отправляем POST-запрос на сервер
+        const response = await fetch('/editCabinet', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({fullName, email, phone}) // Отправляем ID товара на сервер в формате JSON
+        });
+        if (response.ok) {
+            // Обработка успешного ответа от сервера
+            console.log('Товар успешно добавлен в избранное');
+            $('#fullname').attr('disabled', true);
+            $('#email').attr('disabled', true);
+            $('#phone').attr('disabled', true);
+            $('.cabinet-buttons').hide();
+            $('.cabinet-profile-fourth').show();
+        } else {
+            // Обработка ошибки от сервера
+            console.error('Ошибка при добавлении товара в избранное:', response.status);
+        }
+    } catch (error) {
+        // Обработка ошибки сети или другой ошибки
+        console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
+    }
+}

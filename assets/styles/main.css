@@ -238,7 +238,7 @@ ul {
     padding: 47px 72px;
     border: 1px solid rgba(238, 238, 238, 1);
     border-radius: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
 }
 .category-card-desc {
     font-family: Montserrat;
@@ -307,7 +307,7 @@ ul {
     position: relative;
 }
 .hits-card-img-container {
-    position: relative;   
+    position: relative;
 
 }
 .hits-card-img {
@@ -357,7 +357,7 @@ ul {
 }
 .hits-card-second {
     border: 1px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     max-width: 265px;
@@ -520,7 +520,7 @@ ul {
     align-items: center;
     gap: 32px;
 }
-.footer-pay-blocks 
+.footer-pay-blocks
 {
     display: flex;
     gap: 32px;
@@ -657,7 +657,7 @@ ul {
     gap: 88px;
     border-radius: 20px;
     max-width: 1400px;
-    
+
 }
 
 .faq-answer {
@@ -799,10 +799,10 @@ ul {
     margin: 0 auto;
     border: 1px solid rgba(238, 238, 238, 1);
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
 }
 .reviews-content-card {
-    
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -833,7 +833,7 @@ ul {
 
 /* Registration */
 .registration-main {
-    background-image: url('/images/regImg.png');
+    background-image: url('../images/regImg.png');
     background-size: cover;
     height: 100vw;
     padding-top: 100px;
@@ -847,7 +847,7 @@ ul {
     padding: 60px;
     border: 1px solid #fff;
     border-radius: 32px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     background-color: #fff;
     max-width: 412px;
     gap: 40px;
@@ -858,7 +858,7 @@ ul {
 .form-title {
     display: flex;
     align-items: center;
-    
+
 }
 .form-title-arrow {
     margin-right: auto;
@@ -1557,13 +1557,23 @@ ul {
     letter-spacing: 0.02em;
     color: rgba(63, 63, 63, 1);
 }
-.profile-second-data input {
+.profile-second-data input:disabled {
     border: none;
-    font-family: Montserrat;
     font-size: 15px;
     font-weight: 500;
     line-height: 18.29px;
     letter-spacing: 0.02em;
+}
+.profile-second-data input {
+    font-family: Montserrat;
+    padding: 13px;
+    border: 1px solid rgba(209, 209, 209, 1);
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+    width: 250px;
 }
 .cabinet-profile-fourth button {
     font-family: Montserrat;
@@ -1577,6 +1587,28 @@ ul {
     padding: 0;
     cursor: pointer;
 }
+
+.cabinet-buttons {
+    display: none;
+}
+
+#save-cabinet {
+    font-size: 13px;
+    padding: 8px 14px;
+    margin: 0;
+    align-self: flex-start;
+}
+
+#cancel-save-cabinet {
+    font-size: 13px;
+    padding: 8px 14px;
+    margin: 0;
+    align-self: flex-start;
+    color: #3F3F3F;
+    background-color: #ffffff;
+    margin-left: 60px;
+}
+
 #save-button {
     cursor: pointer;
     color: #fff;
@@ -2065,7 +2097,7 @@ ul {
     .forDescktop {
         display: none;
     }
-    
+
 .swiper-button-next:after {
     color: rgba(179, 179, 179, 1);
     padding-top: 0;
@@ -2207,11 +2239,11 @@ ul {
 .swiper-button-next, .swiper-rtl .swiper-button-prev {
     right: 14px !important;
     left: auto;
-} 
+}
 .swiper-button-prev, .swiper-rtl .swiper-button-next {
     left: 14px !important;
     right: auto;
-} 
+}
 .category {
     max-width: 480px;
     /* padding-right: 8px; */
@@ -2334,7 +2366,7 @@ ul {
     position: relative;
 }
 .hits-card-img-container {
-    position: relative;   
+    position: relative;
 
 }
 .hits-card-img {
@@ -2391,7 +2423,7 @@ ul {
 }
 .hits-card-second {
     border: 1px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     max-width: 265px;
@@ -2454,7 +2486,7 @@ ul {
 }
 .hits-card-btn {
    display: none;
-} 
+}
 .hit-card-chars-mobile {
     display: none;
 }
@@ -2592,7 +2624,7 @@ ul {
     align-items: center;
     gap: 16px;
     margin-bottom: 19px;
-    
+
 }
 .about-content {
     display: flex;
@@ -2816,7 +2848,7 @@ ul {
     line-height: 19.5px;
     margin-bottom: 27px;
     padding: 0;
-    
+
 }
 .swiper-pagination-horizontal {
     position: fixed;
@@ -2858,7 +2890,7 @@ ul {
     margin: 0;
     border: none;
     border-radius: none;
-    box-shadow: none; 
+    box-shadow: none;
     padding: 20px 16px;
 }
 .form {
@@ -2866,7 +2898,7 @@ ul {
     margin: 0;
     border: none;
     border-radius: none;
-    box-shadow: none; 
+    box-shadow: none;
     padding: 20px 16px;
 }
 .form-title {
@@ -3060,7 +3092,7 @@ ul {
     padding: 3px 10px;
     display: flex;
     align-items: center;
-    
+
 }
 .basket-mobile-sale .hits-card-main {
     font-family: Montserrat;
@@ -3198,7 +3230,7 @@ ul {
 }
 .cardProduct-swiper {
     max-width: 380px;
-} 
+}
 .cardProduct-swiper img {
     max-width: 60px;
     height: 60px;
@@ -3442,7 +3474,7 @@ ul {
     border-radius: 0;
     left: 0;
     bottom: 0;
-    
+
 }
 .cabinet-choice {
     padding: 22px 30px 0px 30px;

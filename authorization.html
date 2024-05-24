@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SABIKO</title>
     <link rel="stylesheet" href="./assets/styles/main.css">
-    <title>Document</title>
-    <script defer src="./assets/scripts/script.js"></script>
+    <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
 </head>
 <body>
     <div class="registration-main">
         <div class="form">
-            <a href="/index.html" class="form-title-logo"><img src="/images/SABIKO.png" alt=""></a>
+            <a href="/index.html" class="form-title-logo"><img src="./assets/images/SABIKO.png" alt=""></a>
             <div class="form-title">
                 <a href="/" class="form-title-arrow">
-                    <img src="/images/arrowLeft.svg" alt="">
+                    <img src="./assets/images/arrowLeft.svg" alt="">
                 </a>
                 <h1 class="form-title-text">Авторизация</h1>
             </div>
@@ -23,21 +23,21 @@
                     <input placeholder="Введите адрес электронной почты" class="form-type-content" type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label class="form-type" for="name">Пароль:</label>
-                    <input placeholder="Введите свое имя" class="form-type-content" type="password" id="password" name="password" required>
+                    <label class="form-type" for="password">Пароль:</label>
+                    <input placeholder="Введите пароль" class="form-type-content" type="password" id="password" name="password" required>
                 </div>
                 <ul class="authorization-error">
-                    <li class="displayNone" data-error="confirmation">Не совпадает с подтверждением.</li>
-                    <li class="displayNone authorization-error-password" data-error="lenght">Ошибка авториазации</li>
+                    <li class="displayNone authorization-error-password" data-error="lenght">Ошибка авторизации</li>
                 </ul>
                 <div class="authorization-group">
                     <a href="/forgotPassword.html" class="authorization-links">Забыли пароль?</a>
                     <a href="/regIndividual.html" class="authorization-links">Зарегистрироваться</a>
                 </div>
-                
+
                 <button class="form-btn" type="submit">Войти</button>
             </form>
         </div>
     </div>
 </body>
+<script src="./assets/scripts/script.js"></script>
 </html>

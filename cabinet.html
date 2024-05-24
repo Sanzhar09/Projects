@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/main.css">
+    <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
+    <script src="./assets/scripts/imask.js"></script>
     <script src="./assets/scripts/script.js"></script>
-    <title>Document</title>
+    <title>SABIKO Кабинет</title>
 </head>
 <body>
     <div class="header">
         <div class="header-first">
             <div class="header-burger fade" onclick="toggleBurger()">
-                <img src="/images/burger (2).svg" >
+                <img src="./assets/images/burger (2).svg" >
             </div>
             <div class="header-logo">
                 <a href="/">
-                    <img class="header-img-mobile" src="./images/SABIKO.png" alt="">
+                    <img class="header-img-mobile" src="assets/images/SABIKO.png" alt="">
                 </a>
             </div>
             <ul class="header-list">
@@ -26,15 +28,15 @@
             </ul>
         </div>
         <div class="header-second">
-            <div class="header-basket"><a href="/basket.html"><img src="./images/basket.svg" alt=""></a></div>
-            <div class="header-favorite"><a href="/featured.html"><img src="./images/heart.svg" alt=""></a></div>
-            <div class="header-profile"><a href="/authorization.html"><img src="./images/profile.svg" alt=""></a></div>
+            <div class="header-basket"><a href="/basket.html"><img src="assets/images/basket.svg" alt=""></a></div>
+            <div class="header-favorite"><a href="/featured.html"><img src="assets/images/heart.svg" alt=""></a></div>
+            <div class="header-profile"><a href="/authorization.html"><img src="assets/images/profile.svg" alt=""></a></div>
         </div>
     </div>
     <div class="cabinet">
         <div class="about-link">
             <a href="/">Главная</a>
-            <img src="/images/arrowRight.svg" alt="">
+            <img src="./assets/images/arrowRight.svg" alt="">
             <a href="/cabinet.html">Кабинет</a>
         </div>
         <div class="mobile-cabinet">
@@ -51,30 +53,36 @@
             <div class="cabinet-profile">
                 <div class="profile-content">
                     <div class="cabinet-profile-title">Профиль</div>
-                        <div class="cabinet-profile-content">
+                        <form class="cabinet-profile-content" id="profile-form">
                             <div class="cabinet-profile-first">Личная информация</div>
                             <div class="cabinet-profile-blocks">
                                 <div class="profile-second-data">
                                     <label for="fullname">ФИО:</label>
-                                    <input type="text" id="data" value="Иванов Иван Иванович" disabled>
+                                    <input required type="text" id="fullname" value="Иванов Иван Иванович" disabled>
                                 </div>
                                 <div class="profile-second-data">
                                     <label for="email">Почта:</label>
-                                    <input type="email" id="data" value="ivanov@example.com" disabled>
+                                    <input required type="email" id="email" value="ivanov@example.com" disabled>
                                 </div>
                             </div>
                             <div class="cabinet-profile-blocks">
                                 <div class="profile-second-data">
                                     <label for="phone">Номер телефона:</label>
-                                    <input type="tel" id="data" value="+7 (701) 777-7777" disabled>
+                                    <input required type="text" id="phone" value="+7 (701) 777-7777" disabled>
                                 </div>
                                 <div class="profile-second-data">
-                                    <label for="phone">Роль:</label>
-                                    <input type="text" id="data" value="Покупатель" disabled>
+                                    <label for="role">Роль:</label>
+                                    <input type="text" id="role" value="Покупатель" disabled>
                                 </div>
                             </div>
-                            <div class="cabinet-profile-fourth"><button id="change-data">Изменить данные</button></div>
-                        </div>
+                            <div class="cabinet-buttons">
+                                <button id="save-cabinet" class="form-btn" type="button" onclick="editProfileSubmit()">Сохранить</button>
+                                <button id="cancel-save-cabinet" class="form-btn" type="button" onclick="editProfileCancel()">Отменить</button>
+                            </div>
+                            <div class="cabinet-profile-fourth">
+                                <button id="change-data" onclick="editProfile()" type="button">Изменить данные</button>
+                            </div>
+                        </form>
                 </div>
                     <div class="cabinet-profile-password">
                         <div class="profile-fifth-password">Пароль</div>
@@ -84,8 +92,8 @@
                     </div>
             </div>
         </div>
-    </div>    
-    
+    </div>
+
 
 
 
@@ -105,10 +113,10 @@
                 <a href="/reviews.html" class="footer-links">Отзывы</a>
                 <a href="" class="footer-links">Купить товар</a>
                 <div class="footer-pay-card">
-                    <img src="/images/visa.png" alt="">
-                    <img src="/images/mastercard.png" alt="">
-                    <img src="/images/applepay.png" alt="">
-                    <img src="/images/googlepay.png" alt="">
+                    <img src="./assets/images/visa.png" alt="">
+                    <img src="./assets/images/mastercard.png" alt="">
+                    <img src="./assets/images/applepay.png" alt="">
+                    <img src="./assets/images/googlepay.png" alt="">
                 </div>
             </div>
         </div>
@@ -118,26 +126,26 @@
             <a href="/reviews.html" class="footer-links">Отзывы</a>
             <a href="" class="footer-links">Купить товар</a>
             <div class="footer-pay-card">
-                <img src="/images/visa.png" alt="">
-                <img src="/images/mastercard.png" alt="">
-                <img src="/images/applepay.png" alt="">
-                <img src="/images/googlepay.png" alt="">
+                <img src="./assets/images/visa.png" alt="">
+                <img src="./assets/images/mastercard.png" alt="">
+                <img src="./assets/images/applepay.png" alt="">
+                <img src="./assets/images/googlepay.png" alt="">
             </div>
         </div>
         <div class="footer-blocks footer-networks">
-            <a class="footer-logo"><img class="footer-logo-content" src="/images/SABIKO.png" alt="" ></a class="footer-logo">
+            <a class="footer-logo"><img class="footer-logo-content" src="./assets/images/SABIKO.png" alt="" ></a>
             <div class="footer-pay">
                 <div class="footer-pay-blocks">
-                    <a href=""><img class="footer-networks-img" src="/images/telegram.png" alt=""></a>
-                    <a href=""><img class="footer-networks-img" src="/images/wpp.png" alt=""></a>
+                    <a href=""><img class="footer-networks-img" src="./assets/images/telegram.png" alt=""></a>
+                    <a href=""><img class="footer-networks-img" src="./assets/images/wpp.png" alt=""></a>
                 </div>
                 <div class="footer-pay-blocks">
-                    <a href=""><img class="footer-networks-img" src="/images/inst.png" alt=""></a>
-                    <a href=""><img class="footer-networks-img" src="/images/facebook.png" alt=""></a>
+                    <a href=""><img class="footer-networks-img" src="./assets/images/inst.png" alt=""></a>
+                    <a href=""><img class="footer-networks-img" src="./assets/images/facebook.png" alt=""></a>
                 </div>
             </div>
         </div>
     </footer>
-    
+
 </body>
 </html>
