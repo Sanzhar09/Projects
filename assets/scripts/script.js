@@ -183,22 +183,29 @@ function toggleBurger() {
     }
 }
 // Profile Mobile
-function toggleCabinet() {
-    let mobileCabinet = document.querySelector('.mobile-cabinet')
-    let choiceBlock = document.querySelector('.cabinet-choice-block')
+document.addEventListener('DOMContentLoaded', function() {
+        const mobileCabinet = document.querySelector('.mobile-cabinet');
+        const choiceBlocks = document.querySelectorAll('.cabinet-choice-block a');
+        const headerProfile = document.querySelector('.header-burger-profile');
 
-    header-profile?.addEventListener('click',function(e){
-        e.preventDefault();
-        if(mobileCabinet.style.display==='none') {
-            mobileCabinet.style.display = 'flex'
-        }
-        else
-        {
-            mobileCabinet.style.display = 'none'
+        // Показ/скрытие мобильного меню при клике на headerProfile
+        headerProfile?.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (mobileCabinet.style.display === 'none' || mobileCabinet.style.display === '') {
+                mobileCabinet.style.display = 'flex';
+            } else {
+                mobileCabinet.style.display = 'none';
+            }
+        });
 
-        }
-    })
-}
+        // Скрытие мобильного меню при клике на любой пункт
+        choiceBlocks.forEach(block => {
+            block.addEventListener('click', function() {
+                mobileCabinet.style.display = 'none';
+            });
+        });
+    
+})
 
 
 // Banner
