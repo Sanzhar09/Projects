@@ -36,6 +36,14 @@
     color: red;
     list-style-type: none;
 }
+.password-confirmation {
+    color: red;
+    list-style-type: none;
+}
+.error-password {
+    color: red;
+    list-style-type: none;
+}
 .registration-error-password {
     color: red;
     list-style-type: none;
@@ -1591,8 +1599,16 @@ ul {
 .cabinet-buttons {
     display: none;
 }
-
+.cabinet-password-buttons {
+    display: none;
+}
 #save-cabinet {
+    font-size: 13px;
+    padding: 8px 14px;
+    margin: 0;
+    align-self: flex-start;
+}
+#save-password {
     font-size: 13px;
     padding: 8px 14px;
     margin: 0;
@@ -1600,6 +1616,15 @@ ul {
 }
 
 #cancel-save-cabinet {
+    font-size: 13px;
+    padding: 8px 14px;
+    margin: 0;
+    align-self: flex-start;
+    color: #3F3F3F;
+    background-color: #ffffff;
+    margin-left: 60px;
+}
+#cancel-save-password {
     font-size: 13px;
     padding: 8px 14px;
     margin: 0;
@@ -1722,6 +1747,44 @@ ul {
     font-size: 18px;
     font-weight: 500;
     line-height: 21.94px;
+}
+.profile-password-change {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+#change-password-btn {
+    cursor: pointer;
+}
+.profile-password-change label {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17.07px;
+    letter-spacing: 0.02em;
+}
+.profile-password-block  {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.profile-password-change input {
+    max-width: 373px;
+    padding: 12px;
+    border: 1px solid rgba(209, 209, 209, 1);
+    border-radius: 6px;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18.29px;
+    letter-spacing: 0.02em;
+}
+.profile-password-new {
+    display: flex;
+    justify-content: space-between;
+}
+.profile-password-new input {
+    min-width: 373px;
 }
 .profile-fifth-change button {
     font-family: Montserrat;
@@ -3667,10 +3730,35 @@ ul {
     border: none;
     padding: 0;
 }
+.profile-password-new {
+    flex-direction: column;
+    gap: 20px;
+} 
+.cabinet-password-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+#save-password {
+    font-size: 13px;
+    padding: 16px 14px;
+    width: 100%;
+    margin: 0;
+    align-self: center;
+}
+
+#cancel-save-password {
+    font-size: 13px;
+    padding: 16px 14px;
+    width: 100%;
+    margin: 0;
+    align-self: center;
+    color: #3F3F3F;
+    background-color: #ffffff;
+    margin-left: 0;
+}
 .highlight {
     background-color: rgb(255, 237, 237);
-}
-.orders{
 }
 .orders-title {
     display: flex;

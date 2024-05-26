@@ -128,12 +128,37 @@
 
                     </div>
                 </div>
-                    <div class="cabinet-profile-password">
-                        <div class="profile-fifth-password">Пароль</div>
-                        <div class="profile-fifth-change">
-                            <button>Изменить пароль</button>
+                <div class="cabinet-profile-password">
+                    <div class="profile-fifth-password">Пароль</div>
+                    <div class="profile-password-change">
+                        <div class="profile-password-block">
+                            <label for="role">Текущий пароль:</label>
+                            <input id="oldPassword" placeholder="Введите текущий пароль"  type="password">
                         </div>
+                        <div class="profile-password-new">
+                            <div class="profile-password-block">
+                                <label for="role">Новый пароль:</label>
+                                <input id="newPassword" placeholder="Введите новый пароль"  type="password">
+                            </div>
+                            <div class="profile-password-block">
+                                <label for="role">Подтверждение нового пароля:</label>
+                                <input id="repeatPassword" placeholder="Введите новый пароль повторно"  type="password">
+                            </div>
+                        </div>
+                        <ul class="regLegal-error">
+                            <li class="displayNone password-confirmation" data-error="confirmation">Пароли не совпадают.</li>
+                            <li class="displayNone error-password" data-error="lenght">Количество символов должно быть не меньше 8.</li>
+                        </ul>
                     </div>
+                    <div class="cabinet-password-buttons">
+                        <button id="save-password" class="form-btn" type="button" onclick="editPasswordSubmit()">Сохранить</button>
+                        <button id="cancel-save-password" class="form-btn" type="button" onclick="editPasswordCancel()">Отменить</button>
+                    </div>
+                    
+                    <div class="profile-fifth-change">
+                        <button id="change-password-btn" onclick="changePasswordCabinet()">Изменить пароль</button>
+                    </div>
+                </div>
                 </div>
         </div>
     </div>

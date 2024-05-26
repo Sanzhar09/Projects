@@ -1127,11 +1127,68 @@ editProfileSubmit = async () => {
         console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
     }
 }
-function closeModal(event) {
-    const modal = document.getElementById('success-modal');
-    // Закрываем модальное окно при клике вне его
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
 
+ function changePasswordCabinet() {
+    const passwordChangeBlock = document.querySelector('.profile-password-change');
+    const cabinetPasswordButtons = document.querySelector('.cabinet-password-buttons');
+    const changePassword = document.getElementById('change-password-btn')
+
+        passwordChangeBlock.style.display = 'flex';
+        cabinetPasswordButtons.style.display = 'flex';
+        changePassword.style.display = 'none'
+ }
+ editPasswordCancel =()=> {
+    const passwordChangeBlock = document.querySelector('.profile-password-change');
+    const cabinetPasswordButtons = document.querySelector('.cabinet-password-buttons');
+    const changePassword = document.getElementById('change-password-btn')
+
+    passwordChangeBlock.style.display = 'none';
+    cabinetPasswordButtons.style.display = 'none';
+    changePassword.style.display = 'block'
+
+ }
+
+ 
+
+
+ editPasswordSubmit = async () => {
+    const passwordChangeBlock = document.querySelector('.profile-password-change');
+    const cabinetPasswordButtons = document.querySelector('.cabinet-password-buttons');
+    const passwordConfirmation = document.querySelector('.password-confirmation')
+    const errorPassword = document.querySelector('.error-password')
+    const oldPassword = $('#oldPassword').val();
+    const newPassword = $('#newPassword').val();
+    const repeatPassword = $('#repeatPassword').val();
+    const modal = document.getElementById('success-modal');
+    if((oldPassword?.length>7 && newPassword?.length>7 && repeatPassword?.length>7)&&  newPassword == repeatPassword )
+    try {
+        // Отправляем POST-запрос на сервер
+        const response = await fetch('/changePassword', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({oldPassword, newPassword, repeatPassword}) // Отправляем ID товара на сервер в формате JSON
+        });
+        if (response.ok) {
+            // Обработка успешного ответа от сервера
+            console.log('Товар успешно добавлен в избранное');
+            passwordChangeBlock.style.display = 'none';
+            cabinetPasswordButtons.style.display = 'none';
+            modal.style.display = 'flex';
+        } else {
+            // Обработка ошибки от сервера
+            console.error('Ошибка при добавлении товара в избранное:', response.status);
+        }
+    } catch (error) {
+        // Обработка ошибки сети или другой ошибки
+        console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
+    }
+    else if(oldPassword?.length<8 && newPassword?.length<8 && repeatPassword?.length<8) {
+        errorPassword.style.display = 'block'
+    }
+    else if(newPassword !== repeatPassword) {
+        passwordConfirmation.style.display = 'block'
+        
+    }
+}
