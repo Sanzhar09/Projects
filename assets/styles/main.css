@@ -462,7 +462,7 @@ ul {
     display: none;
 }
 .button-basket {
-    padding: 12px 74px;
+    padding: 12px;
     background-color: #fff;
     border: 1px solid rgba(63, 63, 63, 1);
     border-radius: 30px;
