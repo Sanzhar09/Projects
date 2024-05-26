@@ -36,6 +36,10 @@
     color: red;
     list-style-type: none;
 }
+.password-same {
+    color: red;
+    list-style-type: none;
+}
 .password-confirmation {
     color: red;
     list-style-type: none;

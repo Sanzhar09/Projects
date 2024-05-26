@@ -1156,11 +1156,12 @@ editProfileSubmit = async () => {
     const cabinetPasswordButtons = document.querySelector('.cabinet-password-buttons');
     const passwordConfirmation = document.querySelector('.password-confirmation')
     const errorPassword = document.querySelector('.error-password')
+    const passwordSame = document.querySelector('.password-same')
     const oldPassword = $('#oldPassword').val();
     const newPassword = $('#newPassword').val();
     const repeatPassword = $('#repeatPassword').val();
     const modal = document.getElementById('success-modal');
-    if((oldPassword?.length>7 && newPassword?.length>7 && repeatPassword?.length>7)&&  newPassword == repeatPassword )
+    if((oldPassword?.length>7 && newPassword?.length>7 && repeatPassword?.length>7)&&  newPassword == repeatPassword &&  oldPassword !== repeatPassword )
     try {
         // Отправляем POST-запрос на сервер
         const response = await fetch('/changePassword', {
@@ -1184,11 +1185,23 @@ editProfileSubmit = async () => {
         // Обработка ошибки сети или другой ошибки
         console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
     }
-    else if(oldPassword?.length<8 && newPassword?.length<8 && repeatPassword?.length<8) {
+    else if(oldPassword?.length<8 || newPassword?.length<8 || repeatPassword?.length<8) {
         errorPassword.style.display = 'block'
+        passwordConfirmation.style.display = 'none'
+        passwordSame.style.display = 'none'
     }
     else if(newPassword !== repeatPassword) {
         passwordConfirmation.style.display = 'block'
-        
+        errorPassword.style.display = 'none'
+        passwordSame.style.display = 'none'
+
     }
+    else if(oldPassword == repeatPassword) {
+        passwordSame.style.display = 'block'
+        errorPassword.style.display = 'none'
+        passwordConfirmation.style.display = 'none'
+    }
+    else 
+    console.log("oshibka")
+    
 }
