@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/styles/slick.css" />
     <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
-    <script src="swiper_folder/swiper-element-bundle.min.js"></script>
+    <script src="./assets/scripts/slick.min.js"></script>
     <script src="./assets/scripts/script.js"></script>
     <title>SABIKO Отзывы</title>
 </head>
@@ -91,62 +91,34 @@
             <a href="/reviews.html">Отзывы</a>
         </div>
         <div class="reviews-title">Отзывы</div>
-            <swiper-container slides-per-view="1" navigation = "true" class="reviews-content forDescktop">
-                <!-- <img src="/images/arrowLeft.svg" alt=""> -->
-                <swiper-slide  class="reviews-content-card">
+            <div class="reviews-content forDescktop">
+                <div  class="reviews-content-card">
                     <div class="reviews-card-title">
                         Диана Б.
                     </div>
                     <div class="reviews-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis egestas sed tempus urna. Aliquet lectus proin nibh nisl condimentum id venenatis. Nisi est sit amet facilisis magna etiam tempor orci. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.</div>
-                </swiper-slide>
-                <swiper-slide  class="reviews-content-card">
+                </div>
+                <div  class="reviews-content-card">
                     <div class="reviews-card-title">
                         Гульмира Б.
                     </div>
                     <div class="reviews-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis egestas sed tempus urna. Aliquet lectus proin nibh nisl condimentum id venenatis. Nisi est sit amet facilisis magna etiam tempor orci. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.</div>
-                </swiper-slide>
-                <swiper-slide  class="reviews-content-card">
+                </div>
+                <div  class="reviews-content-card">
                     <div class="reviews-card-title">
                         Лариса А.
                     </div>
                     <div class="reviews-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis egestas sed tempus urna. Aliquet lectus proin nibh nisl condimentum id venenatis. Nisi est sit amet facilisis magna etiam tempor orci. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.</div>
-                </swiper-slide>
-                <swiper-slide  class="reviews-content-card">
+                </div>
+                <div  class="reviews-content-card">
                     <div class="reviews-card-title">
                         Лаура И.
                     </div>
                     <div class="reviews-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis egestas sed tempus urna. Aliquet lectus proin nibh nisl condimentum id venenatis. Nisi est sit amet facilisis magna etiam tempor orci. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.</div>
-                </swiper-slide>
-                <!-- <img src="./images/arrowRight.svg" alt=""> -->
-            </swiper-container>
-            <swiper-container slides-per-view="1" pagination="true" class="reviews-content forMobile">
-                <!-- <img src="/images/arrowLeft.svg" alt=""> -->
-                <swiper-slide  class="reviews-content-card">
-                    <div class="reviews-card-title">
-                        Диана Б.
-                    </div>
-                    <div class="reviews-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis egestas sed tempus urna. Aliquet lectus proin nibh nisl condimentum id venenatis. Nisi est sit amet facilisis magna etiam tempor orci. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.</div>
-                </swiper-slide>
-                <swiper-slide  class="reviews-content-card">
-                    <div class="reviews-card-title">
-                        Гульмира Б.
-                    </div>
-                    <div class="reviews-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis egestas sed tempus urna. Aliquet lectus proin nibh nisl condimentum id venenatis. Nisi est sit amet facilisis magna etiam tempor orci. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.</div>
-                </swiper-slide>
-                <swiper-slide  class="reviews-content-card">
-                    <div class="reviews-card-title">
-                        Лариса А.
-                    </div>
-                    <div class="reviews-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis egestas sed tempus urna. Aliquet lectus proin nibh nisl condimentum id venenatis. Nisi est sit amet facilisis magna etiam tempor orci. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.</div>
-                </swiper-slide>
-                <swiper-slide  class="reviews-content-card">
-                    <div class="reviews-card-title">
-                        Лаура И.
-                    </div>
-                    <div class="reviews-card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis egestas sed tempus urna. Aliquet lectus proin nibh nisl condimentum id venenatis. Nisi est sit amet facilisis magna etiam tempor orci. Sollicitudin tempor id eu nisl nunc mi ipsum faucibus vitae.</div>
-                </swiper-slide>
-                <!-- <img src="./images/arrowRight.svg" alt=""> -->
-            </swiper-container>
+                </div>
+            </div>
+            <div class="swiper-button-prev"><img src="./assets/images/slider-control.png" alt="prev"/></div>
+            <div class="swiper-button-next"><img src="./assets/images/slider-control.png" alt="next"/></div>
         </div>
     </div>
     <footer class="footer">
@@ -185,7 +157,7 @@
             </div>
         </div>
         <div class="footer-blocks footer-networks">
-            <a class="footer-logo"><img class="footer-logo-content" src="./assets/images/SABIKO.png" alt="" ></a class="footer-logo">
+            <a class="footer-logo"><img class="footer-logo-content" src="./assets/images/SABIKO.png" alt="" ></a>
             <div class="footer-pay">
                 <div class="footer-pay-blocks">
                     <a href=""><img class="footer-networks-img" src="./assets/images/telegram.png" alt=""></a>

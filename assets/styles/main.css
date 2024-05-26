@@ -20,6 +20,16 @@
     display: block;
     margin: 10px 0;
 }
+
+.main-reviews .swiper-button-prev {
+    top: 400px;
+    left: 300px;
+}
+.main-reviews .swiper-button-next {
+    top: 400px;
+    right: 300px;
+}
+
 .swiper-button-prev {
     position: absolute;
     top: 290px;
@@ -2251,6 +2261,10 @@ ul {
         display: block;
     }
     .forDescktop {
+        display: none;
+    }
+
+    .swiper-button-prev, .swiper-button-next{
         display: none;
     }
 /* Main Page */

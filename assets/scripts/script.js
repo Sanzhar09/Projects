@@ -1012,18 +1012,41 @@ document?.addEventListener('DOMContentLoaded', function() {
 
     });
   });
-  $(function(){
-    if($('.mySlickMain').length)
-      $('.mySlickMain').slick({
-          infinite: false,
-          dots: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          draggable: true,  // Включаем возможность листания мышью
-          prevArrow: '.swiper-button-prev',
-          nextArrow: '.swiper-button-next'
-      });
-});
+
+    $(function(){
+        if($('.mySlickMain').length)
+          $('.mySlickMain').slick({
+              infinite: false,
+              dots: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              draggable: true,  // Включаем возможность листания мышью
+              prevArrow: '.swiper-button-prev',
+              nextArrow: '.swiper-button-next'
+          });
+    });
+
+    $(function(){
+        if($('.reviews-content').length)
+          $('.reviews-content').slick({
+              infinite: false,
+              dots: false,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              draggable: true,  // Включаем возможность листания мышью
+              prevArrow: '.swiper-button-prev',
+              nextArrow: '.swiper-button-next',
+              mobileFirst:true,
+              arrows: false,
+              responsive: [
+                  {
+                      breakpoint: 481,
+                      settings: {
+                          arrows: true,
+                      }
+                  }],
+          });
+    });
 
 
 //   slickcardProduct Cards
