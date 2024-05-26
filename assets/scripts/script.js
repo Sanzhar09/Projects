@@ -207,21 +207,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
-
-// Получаем все ссылки в меню
-$(document).ready(function(){
-    $('.cabinet-choice-block a').click(function() {
-        // Удаляем класс highlight со всех блоков
-        $('.cabinet-choice-block a').removeClass('highlight');
-        // Добавляем класс highlight к текущему блоку
-        $(this).addClass('highlight');
-    });
-});
-
-
-
-
 // cardProduct
 document?.addEventListener('DOMContentLoaded', function() {
     let descTab = document.getElementById('desc-tab');
