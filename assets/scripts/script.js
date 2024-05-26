@@ -204,24 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 mobileCabinet.style.display = 'none';
             });
         });
-    
-})
 
-
-// Banner
-if (typeof Swiper !== 'undefined') {
-    let swiper = new Swiper(".mySwiper", {
-    spaceBetween:30,
-    navigation: {
-    nextEl:".swiper-button-next",
-    prevEl:".swiper-button-prev",
-    },
-    pagination: {
-    el:".swiper-pagination",
-    },
-    keyboard:true,
-    });
-}
+});
 
 
 
@@ -1045,20 +1029,19 @@ document?.addEventListener('DOMContentLoaded', function() {
   });
   $(function(){
     if($('.mySlickMain').length)
-  $('.mySlickMain').slick({
-      infinite: false,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      draggable: true,  // Включаем возможность листания мышью
-      swipeToSlide: true,
-      prevArrow: '#prev',
-      nextArrow: '#next'
-
-  });
+      $('.mySlickMain').slick({
+          infinite: false,
+          dots: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          draggable: true,  // Включаем возможность листания мышью
+          prevArrow: '.swiper-button-prev',
+          nextArrow: '.swiper-button-next'
+      });
 });
 
 
-//   slickcardProduct Cards 
+//   slickcardProduct Cards
 $(function(){
     if($('.mySlickCards').length)
   $('.mySlickCards').slick({
@@ -1073,19 +1056,18 @@ $(function(){
 
   });
 });
-//   slickcardProduct Cards 
+//   slickcardProduct Cards
 $(function(){
     if($('.mySlickCardsMain').length)
-  $('.mySlickCardsMain').slick({
-      infinite: false,
-      slidesToShow: 2,
-      slidesToScroll: 5,
-      draggable: true,  // Включаем возможность листания мышью
-      swipeToSlide: true,
-      prevArrow: '#prev',
-      nextArrow: '#next'
-
-  });
+      $('.mySlickCardsMain').slick({
+          infinite: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          draggable: true,  // Включаем возможность листания мышью
+          swipeToSlide: true,
+          dots: true,
+          arrows: false,
+      });
 });
 
 //Cabinet
@@ -1177,7 +1159,7 @@ editProfileSubmit = async () => {
 
  }
 
- 
+
 
 
  editPasswordSubmit = async () => {
@@ -1230,7 +1212,7 @@ editProfileSubmit = async () => {
         errorPassword.style.display = 'none'
         passwordConfirmation.style.display = 'none'
     }
-    else 
+    else
     console.log("oshibka")
-    
+
 }
