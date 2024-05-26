@@ -1446,6 +1446,7 @@ ul {
     font-weight: 400;
     line-height: 19.5px;
     color: rgba(63, 63, 63, 1);
+    cursor: pointer;
 }
 .pampers-quantity-block {
     max-width: 212px;
