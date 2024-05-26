@@ -226,15 +226,13 @@ if (typeof Swiper !== 'undefined') {
 
 
 // Получаем все ссылки в меню
-const links = document.querySelectorAll('.cabinet-choice-block a');
-
-// Перебираем каждую ссылку
-links.forEach(link => {
-    // Проверяем, содержит ли текущий URL значение атрибута href ссылки
-    if (window.location.href.includes(link.getAttribute('href'))) {
-        // Если да, добавляем класс "active" к ссылке
-        link.classList.add('highlight');
-    }
+$(document).ready(function(){
+    $('.cabinet-choice-block a').click(function() {
+        // Удаляем класс highlight со всех блоков
+        $('.cabinet-choice-block a').removeClass('highlight');
+        // Добавляем класс highlight к текущему блоку
+        $(this).addClass('highlight');
+    });
 });
 
 
@@ -1046,18 +1044,49 @@ document?.addEventListener('DOMContentLoaded', function() {
     });
   });
   $(function(){
-      if($('.mySlick-main').length)
-    $('.mySlick-main')?.slick({
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        swipeToSlide: true,
-        vertical:false,
-        prevArrow: '#left-slick',
-        nextArrow: '#right-slick'
+    if($('.mySlickMain').length)
+  $('.mySlickMain').slick({
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      draggable: true,  // Включаем возможность листания мышью
+      swipeToSlide: true,
+      prevArrow: '#prev',
+      nextArrow: '#next'
 
-    });
   });
+});
+
+
+//   slickcardProduct Cards 
+$(function(){
+    if($('.mySlickCards').length)
+  $('.mySlickCards').slick({
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 5,
+      vertical: false,
+      draggable: true,  // Включаем возможность листания мышью
+      swipeToSlide: true,
+      prevArrow: '#prev',
+      nextArrow: '#next'
+
+  });
+});
+//   slickcardProduct Cards 
+$(function(){
+    if($('.mySlickCardsMain').length)
+  $('.mySlickCardsMain').slick({
+      infinite: false,
+      slidesToShow: 2,
+      slidesToScroll: 5,
+      draggable: true,  // Включаем возможность листания мышью
+      swipeToSlide: true,
+      prevArrow: '#prev',
+      nextArrow: '#next'
+
+  });
+});
 
 //Cabinet
 let temp = {};

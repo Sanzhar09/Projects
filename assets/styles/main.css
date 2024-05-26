@@ -1802,7 +1802,7 @@ ul {
     padding: 0;
 }
 .highlight {
-    background-color: rgb(255, 237, 237);
+    background-color: rgba(242, 237, 255, 1);
 }
 
 .address-second-data label {

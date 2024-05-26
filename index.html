@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/main.css">
     <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="./assets/styles/slick.css" />
+    <script src="./assets/scripts/slick.min.js"></script>
     <script defer src="./assets/scripts/script.js"></script>
     <title>SABIKO</title>
 </head>
@@ -68,7 +70,7 @@
     <div class="main">
         <div class="banner-main">
             <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper mySlickMain">
                     <div class="swiper-slide">
                         <img src="assets/images/banner (2).png" alt="">
                         <div class="swiper-content">
@@ -608,8 +610,8 @@
         </div>
         <div class="hits mobile">
             <div class="hits-title">Хиты продаж</div>
-            <swiper-container class="hits-content" pagination="true" pagination-clickable="true" space-between="20" slides-per-view="2">
-                <swiper-slide class="hits-card">
+            <div class="hits-content mySlickCardsMain" pagination="true" pagination-clickable="true" space-between="20" slides-per-view="2">
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -637,8 +639,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -666,8 +668,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -695,8 +697,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -724,8 +726,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -753,8 +755,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -782,8 +784,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -811,8 +813,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -840,13 +842,13 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-            </swiper-container>
+                </div>
+            </div>
         </div>
         <div class="hits mobile">
             <div class="hits-title">Новинки</div>
-            <swiper-container class="hits-content"  pagination="true" pagination-clickable="true" space-between="30" slides-per-view="2">
-                <swiper-slide class="hits-card">
+            <div class="hits-content mySlickCardsMain"  pagination="true" pagination-clickable="true" space-between="30" slides-per-view="2">
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -874,8 +876,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -903,8 +905,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -932,8 +934,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -961,8 +963,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -990,8 +992,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -1019,8 +1021,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -1048,8 +1050,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -1077,8 +1079,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-                <swiper-slide class="hits-card">
+                </div>
+                <div class="hits-card">
                     <div class="hits-card-first">
                             <img src="./assets/images/pampersimg.png" alt="" class="hits-card-img">
                             <img src="./assets/images/favor.svg" alt="" class="hits-card-favor">
@@ -1106,8 +1108,8 @@
                             </div>
                         </div>
                     </div>
-                </swiper-slide>
-            </swiper-container>
+                </div>
+            </div>
         </div>
         <div class="info">
             <div class="info-blocks">
