@@ -2584,10 +2584,10 @@ ul {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    max-width: 265px;
     padding:12px 8px 20px 8px;
     max-width: 169px;
     box-sizing: border-box;
+    width: 100%;
 }
 .hits-card-second-block {
     display: flex;
