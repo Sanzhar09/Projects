@@ -988,14 +988,12 @@ document?.addEventListener('DOMContentLoaded', function() {
     $('.mySlick').slick({
         infinite: false,
         slidesToShow: 5,
-        slidesToScroll: 5,
         vertical: true,
         draggable: true,  // Включаем возможность листания мышью
         verticalSwiping: true,
         swipeToSlide: true,
-        prevArrow: '#prevCardDesk',
-        nextArrow: '#nextCardDesk'
-
+        prevArrow: '.prev-arrow',
+        nextArrow: '.next-arrow'
     });
   });
   $(function(){
@@ -1007,9 +1005,7 @@ document?.addEventListener('DOMContentLoaded', function() {
         swipeToSlide: true,
         swipe: true,      // Включаем листание на сенсорных экранах
         touchMove: true,
-        prevArrow: '#prevCardDesk',
-        nextArrow: '#nextCardDesk'
-
+        arrows: false,
     });
   });
 
@@ -1077,6 +1073,10 @@ $(function(){
           arrows: false,
       });
 });
+
+setSelectedImage = (url) => {
+    $('.cardProduct-card-img img').attr('src', url);
+}
 
 //Cabinet
 let temp = {};

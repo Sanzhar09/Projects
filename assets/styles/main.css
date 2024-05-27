@@ -1919,6 +1919,8 @@ ul {
 }
 .cardProduct-card-img img {
     border-radius: 20px;
+    width: 482px;
+    height: 454px;
 }
 .cardProduct-card-content {
     display: flex;
@@ -3398,6 +3400,7 @@ ul {
 .cardProduct-card-img img {
     border-radius: 20px;
     max-width: 358px;
+    height: 335px;
 }
 .cardProduct-card-content {
     display: flex;
