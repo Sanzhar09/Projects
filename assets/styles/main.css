@@ -238,8 +238,7 @@ ul {
     object-fit: cover;
     max-height: 469px;
     background-color: rgba(249, 249, 249, 1);
-    /* width: 100%; */
-    padding-right: 600px;
+    margin: 0 auto;
 }
 .slick-arrow-main {
     position: absolute;
@@ -301,7 +300,8 @@ ul {
     display: none
 }
 .category-image-mobile {
-    max-height: 80px;
+    width: 80px;
+    height: 80px;
 }
 #category-btn-mob {
     display: none;
@@ -885,9 +885,14 @@ ul {
 .registration-main {
     background-image: url('../images/regImg.png');
     background-size: cover;
-    height: 100vw;
-    padding-top: 100px;
+    min-height: 100vh;
     overflow: auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .form {
     display: flex;
@@ -902,8 +907,7 @@ ul {
     max-width: 412px;
     gap: 40px;
     position: relative;
-    max-height: 800px;
-    overflow: auto;
+    flex: 1;
 }
 .form-title {
     display: flex;
@@ -2444,7 +2448,8 @@ ul {
     gap: 6px;
 }
 .category-image-mobile {
-    width: 19px; /* Устанавливаем максимальную ширину изображений в мобильной версии */
+    width: 19px;
+    height: 19px;
 }
 .category-card-desc {
     font-family: Montserrat;
