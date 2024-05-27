@@ -828,10 +828,11 @@ function sendRequestChangeAmount(id, count) {
     $('.mySlick').slick({
         infinite: false,
         slidesToShow: 5,
+        slidesToScroll: 5,
         vertical: true,
-        draggable: true,  // Включаем возможность листания мышью
+        draggable: false,  // Включаем возможность листания мышью
         verticalSwiping: true,
-        swipeToSlide: true,
+        swipeToSlide: false,
         prevArrow: '.prev-arrow',
         nextArrow: '.next-arrow'
     });
@@ -842,7 +843,6 @@ function sendRequestChangeAmount(id, count) {
     $('.mySlick-mobile')?.slick({
         infinite: false,
         slidesToShow: 5,
-        slidesToScroll: 1,
         swipeToSlide: true,
         swipe: true,      // Включаем листание на сенсорных экранах
         touchMove: true,
