@@ -964,6 +964,7 @@ ul {
     font-weight: 600;
     line-height: 19.5px;
     letter-spacing: 0.02em;
+    border: none;
 }
 .form-btn:active {
     background-color: rgba(209, 209, 209, 1);
@@ -1643,13 +1644,13 @@ ul {
     cursor: pointer;
 }
 
-.cabinet-buttons {
+.cabinet-buttons, .requsites-buttons {
     display: none;
 }
 .cabinet-password-buttons {
     display: none;
 }
-#save-cabinet {
+#save-cabinet, #save-requisites {
     font-size: 13px;
     padding: 8px 14px;
     margin: 0;
@@ -1662,7 +1663,7 @@ ul {
     align-self: flex-start;
 }
 
-#cancel-save-cabinet {
+#cancel-save-cabinet, #cancel-save-requisites {
     font-size: 13px;
     padding: 8px 14px;
     margin: 0;
@@ -1670,6 +1671,7 @@ ul {
     color: #3F3F3F;
     background-color: #ffffff;
     margin-left: 60px;
+    border: 1px solid #3F3F3F;
 }
 #cancel-save-password {
     font-size: 13px;
@@ -1679,6 +1681,7 @@ ul {
     color: #3F3F3F;
     background-color: #ffffff;
     margin-left: 60px;
+    border: 1px solid #3F3F3F;
 }
 
 #save-button {

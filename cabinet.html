@@ -75,18 +75,11 @@
                                     <input type="text" id="role" value="Покупатель" disabled>
                                 </div>
                             </div>
-                            <div id="success-modal" class="modal-cabinet" onclick="closeModal(event)">
-                                <div class="modal-content">
-                                    <div class="modal-content-title">Успешно!</div>
-                                    <div><img src="./assets/images/done.svg" alt=""></div>
-                                    <div class="modal-content-desk">Ваши данные изменены.</div>
-                                </div>
-                            </div>
                             <div class="cabinet-buttons">
                                 <button id="save-cabinet" class="form-btn" type="button" onclick="editProfileSubmit()">Сохранить</button>
                                 <button id="cancel-save-cabinet" class="form-btn" type="button" onclick="editProfileCancel()">Отменить</button>
                             </div>
-                            <div class="cabinet-profile-fourth">
+                            <div class="cabinet-profile-fourth edit-profile-btn">
                                 <button id="change-data" onclick="editProfile()" type="button">Изменить данные</button>
                             </div>
                         </form>
@@ -180,5 +173,12 @@
         </div>
     </footer>
 
+    <div id="success-modal" class="modal-cabinet" onclick="closeModal(event)">
+        <div class="modal-content">
+            <div class="modal-content-title">Успешно!</div>
+            <div><img src="./assets/images/done.svg" alt=""></div>
+            <div class="modal-content-desk">Ваши данные изменены.</div>
+        </div>
+    </div>
 </body>
 </html>

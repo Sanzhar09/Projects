@@ -779,80 +779,6 @@ document?.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Change Profile
-document?.addEventListener('DOMContentLoaded', function() {
-    const dataInput = document.getElementById('data-input');
-    const numberInput = document.getElementById('number-input');
-    const emailInput = document.getElementById('email-input');
-    const roleInput = document.getElementById('role-input');
-    const nameCompanyInput = document.getElementById('nameCompany-input');
-
-
-    const saveButtonContainer = document.getElementById('save-profile-containter');
-    const saveButton = document.getElementById('save-button-profile');
-
-    function showProfileInput() {
-
-        if(saveButtonContainer.style.display='none')
-
-            saveButtonContainer.style.display='flex'
-            saveButtonContainer.style.justifyContent='center'
-            dataInput.disabled = false;
-            numberInput.disabled = true;
-            emailInput.disabled = false;
-            roleInput.disabled = false;
-            nameCompanyInput.disabled = false;
-
-    }
-
-    document.getElementById('change-data-profile')?.addEventListener('click', showProfileInput);
-    // Пример обработчика события для кнопки "Сохранить"
-    saveButton?.addEventListener('click', function() {
-        // Получаем значение из поля ввода
-        const name = dataInput.value;
-        const number = numberInput.value;
-        const email = emailInput.value;
-        const role = roleInput.value;
-        const nameCompany = nameCompanyInput.value;
-        const modal = document.getElementById('success-modal');
-
-        // Если все поля не пустые
-        if (name.trim() !== '' && number.trim() !== '' && email.trim() !== '' && role.trim() !== '' && nameCompany.trim() !== '') {
-            // Формируем объект с данными для отправки на сервер
-            const data = {
-                name: name,
-                number: number,
-                email: email,
-                role: role,
-                nameCompany:nameCompany,
-            };
-            fetch('addAddress', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    saveButtonContainer.style.display='none'
-                    throw new Error('Ошибка сети');
-
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Обработка успешного ответа от сервера
-                console.log('Ответ от сервера:', data);
-                modal.style.display = 'flex';
-            })
-        } else {
-            alert('Пожалуйста, введите адрес.');
-        }
-    });
-});
-
-
 function changeAmount(e, isAdd, id, count) {
     e.stopPropagation();
     card = $(`[data-id="${id}"]`);
@@ -896,92 +822,6 @@ function sendRequestChangeAmount(id, count) {
     });
 }
 
-
-// Change profile Diller
-document?.addEventListener('DOMContentLoaded', function() {
-    const addressCompany = document.getElementById('dataAddressCompany');
-    const bankName = document.getElementById('dataBank');
-    const IiName = document.getElementById('dataIin');
-    const bankInput = document.getElementById('dataKbe');
-    const bikName = document.getElementById('dataBik');
-    const accountNumber = document.getElementById('dataAccountNumber');
-
-    const saveButtonContainer = document.getElementById('save-company-containter');
-    const saveButton = document.getElementById('save-button-company');
-
-    function showCompanyInput() {
-
-        if(saveButtonContainer.style.display='none')
-
-            saveButtonContainer.style.display='flex'
-            saveButtonContainer.style.justifyContent='center'
-            addressCompany.disabled = false;
-            bankName.disabled = false;
-            IiName.disabled = false;
-            bankInput.disabled = false;
-            bikName.disabled = false;
-            accountNumber.disabled = false;
-    }
-
-    document.getElementById('change-data-company')?.addEventListener('click', showCompanyInput);
-    // Пример обработчика события для кнопки "Сохранить"
-    saveButton?.addEventListener('click', function() {
-        // Получаем значение из поля ввода
-        const addressComp = addressCompany.value;
-        const nameBank = bankName.value;
-        const iin = IiName.value;
-        const dataBank = bankInput.value;
-        const bik = bikName.value;
-        const numberAcc = accountNumber.value;
-        const modal = document.getElementById('success-modal');
-
-        // Если все поля не пустые
-        if (addressComp.trim() !== '' && nameBank.trim() !== '' && iin.trim() !== '' && dataBank.trim() !== '' && numberAcc.trim() !== '' && bik.trim() !== '') {
-            // Формируем объект с данными для отправки на сервер
-            const data = {
-                name: addressComp,
-                number: nameBank,
-                email: iin,
-                role: dataBank,
-                accountNumber:numberAcc,
-                bikName:bik,
-            };
-            fetch('addAddress', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    saveButtonContainer.style.display='none'
-                    addressCompany.disabled = true;
-                    bankName.disabled = true;
-                    IiName.disabled = true;
-                    bankInput.disabled = true;
-                    bikName.disabled = true;
-                    accountNumber.disabled = true;
-                    throw new Error('Ошибка сети');
-
-                }
-                return response.json();
-            })
-            .then(data => {
-                modal.style.display = 'flex';
-                // Обработка успешного ответа от сервера
-                console.log('Ответ от сервера:', data);
-                alert('Адрес успешно сохранён!');
-            })
-        } else {
-            alert('Пожалуйста, введите адрес.');
-        }
-    });
-});
-
-
-
-
 // Slick
   $(function(){
       if($('.mySlick').length)
@@ -996,6 +836,7 @@ document?.addEventListener('DOMContentLoaded', function() {
         nextArrow: '.next-arrow'
     });
   });
+
   $(function(){
       if($('.mySlick-mobile').length)
     $('.mySlick-mobile')?.slick({
@@ -1045,34 +886,35 @@ document?.addEventListener('DOMContentLoaded', function() {
     });
 
 
-//   slickcardProduct Cards
-$(function(){
-    if($('.mySlickCards').length)
-  $('.mySlickCards').slick({
-      infinite: false,
-      slidesToShow: 2,
-      slidesToScroll: 5,
-      vertical: false,
-      draggable: true,  // Включаем возможность листания мышью
-      swipeToSlide: true,
-      prevArrow: '#prev',
-      nextArrow: '#next'
-
-  });
-});
-//   slickcardProduct Cards
-$(function(){
-    if($('.mySlickCardsMain').length)
-      $('.mySlickCardsMain').slick({
+    //   slickcardProduct Cards
+    $(function(){
+        if($('.mySlickCards').length)
+      $('.mySlickCards').slick({
           infinite: false,
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 5,
+          vertical: false,
           draggable: true,  // Включаем возможность листания мышью
           swipeToSlide: true,
-          dots: true,
-          arrows: false,
+          prevArrow: '#prev',
+          nextArrow: '#next'
+
       });
-});
+    });
+
+    //   slickcardProduct Cards
+    $(function(){
+        if($('.mySlickCardsMain').length)
+          $('.mySlickCardsMain').slick({
+              infinite: false,
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              draggable: true,  // Включаем возможность листания мышью
+              swipeToSlide: true,
+              dots: true,
+              arrows: false,
+          });
+    });
 
 setSelectedImage = (url) => {
     $('.cardProduct-card-img img').attr('src', url);
@@ -1084,12 +926,14 @@ editProfileCancel = () => {
     $('#fullname').val(temp.fullName);
     $('#email').val(temp.email);
     $('#phone').val(temp.phone);
+    $('#company-name')?.val(temp.company);
 
     $('#fullname').attr('disabled', true);
     $('#email').attr('disabled', true);
     $('#phone').attr('disabled', true);
+    $('#company-name')?.attr('disabled', true);
     $('.cabinet-buttons').hide();
-    $('.cabinet-profile-fourth').show();
+    $('.edit-profile-btn').show();
 }
 editProfile = () => {
     const phoneElement = document.getElementById('phone');
@@ -1101,24 +945,28 @@ editProfile = () => {
     $('#fullname').attr('disabled', false);
     $('#email').attr('disabled', false);
     $('#phone').attr('disabled', false);
-    $('.cabinet-profile-fourth').hide();
+    $('#company-name').attr('disabled', false);
+    $('.edit-profile-btn').hide();
     $('.cabinet-buttons').css('display', 'flex');
     const fullName = $('#fullname').val();
     const email = $('#email').val();
     const phone = $('#phone').val();
+    const company = $('#company-name')?.val();
     temp = {
         fullName,
         email,
         phone,
     };
+    if(company) temp.company = company;
 }
 
 editProfileSubmit = async () => {
     const fullName = $('#fullname').val();
     const email = $('#email').val();
     const phone = $('#phone').val();
+    const company = $('#company-name')?.val();
     const modal = document.getElementById('success-modal');
-    if(fullName?.length && email?.length && phone?.length)
+    if((!company || company.length) && fullName?.length && email?.length && phone?.length)
     try {
         // Отправляем POST-запрос на сервер
         const response = await fetch('/editCabinet', {
@@ -1126,25 +974,116 @@ editProfileSubmit = async () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({fullName, email, phone}) // Отправляем ID товара на сервер в формате JSON
+            body: company ? JSON.stringify({fullName, email, phone, company}) : JSON.stringify({fullName, email, phone}) // Отправляем ID товара на сервер в формате JSON
         });
         if (response.ok) {
             // Обработка успешного ответа от сервера
-            console.log('Товар успешно добавлен в избранное');
             $('#fullname').attr('disabled', true);
             $('#email').attr('disabled', true);
             $('#phone').attr('disabled', true);
+            if(company) $('#company-name').attr('disabled', true);
             $('.cabinet-buttons').hide();
-            $('.cabinet-profile-fourth').show();
+            $('.edit-profile-btn').show();
             modal.style.display = 'flex';
         } else {
             // Обработка ошибки от сервера
-            console.error('Ошибка при добавлении товара в избранное:', response.status);
+            console.error('Ошибка при сохранении данных:', response.status);
         }
     } catch (error) {
         // Обработка ошибки сети или другой ошибки
-        console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
+        console.error('Ошибка при сохранении данных:', error);
     }
+}
+
+//Cabinet requisites
+let tempReq = {};
+editRequisitesCancel = () => {
+    $('#dataAddressCompany').val(tempReq.dataAddressCompany);
+    $('#dataIin').val(tempReq.dataIin);
+    $('#dataBank').val(tempReq.dataBank);
+    $('#dataKbe').val(tempReq.dataKbe);
+    $('#dataBik').val(tempReq.dataBik);
+    $('#dataAccountNumber').val(tempReq.dataAccountNumber);
+
+    $('#dataAddressCompany').attr('disabled', true);
+    $('#dataIin').attr('disabled', true);
+    $('#dataBank').attr('disabled', true);
+    $('#dataKbe')?.attr('disabled', true);
+    $('#dataBik')?.attr('disabled', true);
+    $('#dataAccountNumber')?.attr('disabled', true);
+    $('.requsites-buttons').hide();
+    $('.requsites-edit-btn').show();
+}
+editRequisites = () => {
+    $('#dataAddressCompany').attr('disabled', false);
+    $('#dataIin').attr('disabled', false);
+    $('#dataBank').attr('disabled', false);
+    $('#dataKbe')?.attr('disabled', false);
+    $('#dataBik')?.attr('disabled', false);
+    $('#dataAccountNumber')?.attr('disabled', false);
+    $('.requsites-edit-btn').hide();
+    $('.requsites-buttons').css('display', 'flex');
+
+    const dataAddressCompany = $('#dataAddressCompany').val();
+    const dataIin = $('#dataIin').val();
+    const dataBank = $('#dataBank').val();
+    const dataKbe = $('#dataKbe')?.val();
+    const dataBik = $('#dataBik')?.val();
+    const dataAccountNumber = $('#dataAccountNumber')?.val();
+    tempReq = {
+        dataAddressCompany,
+        dataIin,
+        dataBank,
+        dataKbe,
+        dataBik,
+        dataAccountNumber,
+    };
+}
+
+editRequisitesSubmit = async () => {
+    const dataAddressCompany = $('#dataAddressCompany').val();
+    const dataIin = $('#dataIin').val();
+    const dataBank = $('#dataBank').val();
+    const dataKbe = $('#dataKbe')?.val();
+    const dataBik = $('#dataBik')?.val();
+    const dataAccountNumber = $('#dataAccountNumber')?.val();
+
+    const modal = document.getElementById('success-modal');
+    if(dataAddressCompany?.length && dataIin?.length && dataBank?.length && dataKbe?.length && dataBik?.length && dataAccountNumber?.length)
+    try {
+        // Отправляем POST-запрос на сервер
+        const response = await fetch('/editRequisites', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({dataAddressCompany, dataIin, dataBank, dataKbe, dataBik, dataAccountNumber}) // Отправляем ID товара на сервер в формате JSON
+        });
+        if (response.ok) {
+            // Обработка успешного ответа от сервера
+            $('#dataAddressCompany').attr('disabled', true);
+            $('#dataIin').attr('disabled', true);
+            $('#dataBank').attr('disabled', true);
+            $('#dataKbe')?.attr('disabled', true);
+            $('#dataBik')?.attr('disabled', true);
+            $('#dataAccountNumber')?.attr('disabled', true);
+
+            $('.requsites-buttons').hide();
+            $('.requsites-edit-btn').show();
+            modal.style.display = 'flex';
+        } else {
+            // Обработка ошибки от сервера
+            console.error('Ошибка при сохранении:', response.status);
+        }
+    } catch (error) {
+        // Обработка ошибки сети или другой ошибки
+        console.error('Ошибка при сохранении:', error);
+    }
+}
+
+closeModal = (e) => {
+    const modal = document.getElementById('success-modal');
+    if(e.target === modal) modal.style.display = 'none';
 }
 
  function changePasswordCabinet() {
