@@ -2206,30 +2206,31 @@ ul {
 .forDescktop {
     display: block;
 }
-/* Dropdown category */
-/* Стили для контейнера выпадающего списка */
-.dropdown-container {
+
+.dropdown-mobile-container {
     position: relative;
     display: inline-block;
 }
-.dropdown {
+.pampers-filter-title-desktop {
+    display: flex;
+    align-items: center;
 }
-
 /* Стили для кнопки выпадающего списка */
-.dropdown-button {
+.dropdown-mobile-button {
     background-color: #fff;
     padding: 10px;
+    padding-left: 0;
     font-size: 16px;
     border: none;
     cursor: pointer;
     font-family: Montserrat;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 17.07px;
+    line-height: 19.5px;
 }
 
 /* Стили для содержимого выпадающего списка */
-.dropdown-content {
+.dropdown-mobile-content {
     display: none;
     position: absolute;
     background-color: #fff;
@@ -2239,7 +2240,7 @@ ul {
 }
 
 /* Стили для элементов внутри выпадающего списка */
-.dropdown-item {
+.dropdown-mobile-item {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -2248,17 +2249,18 @@ ul {
 }
 
 /* Стили для элементов при наведении курсора */
-.dropdown-item:hover { background-color: #fff }
+.dropdown-mobile-item:hover {background-color: #fff}
 
 /* Показываем содержимое выпадающего списка при наведении на кнопку */
-.dropdown:hover .dropdown-content {
+.dropdown-mobile:hover .dropdown-mobile-content {
     display: block;
 }
 
 /* Стили для кнопки при наведении курсора */
-.dropdown:hover .dropdown-button {
+.dropdown-mobile:hover .dropdown-mobile-button {
     background-color: #fff;
 }
+
 
 .slick-initialized .slick-slide {
     position: relative;

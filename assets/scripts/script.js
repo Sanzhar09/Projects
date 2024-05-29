@@ -7,9 +7,9 @@ document?.addEventListener("DOMContentLoaded", function() {
         icon?.addEventListener("click", function(event) {
             event.stopPropagation();
             if (this.src.includes("favor.svg")) {
-                this.src = "/images/heart.svg";
+                this.src = "./assets/images/heart.svg";
             } else {
-                this.src = "/images/favor.svg";
+                this.src = "./assets/images/favor.svg";
             }
         });
     });
@@ -21,18 +21,18 @@ document?.addEventListener("DOMContentLoaded", function() {
     cardProductFavor?.addEventListener('click', function(event) {
         event.stopPropagation();  // Остановка всплытия события, если это необходимо
         if (cardProductFavor.src.includes('favor.svg')) {
-            cardProductFavor.src = './images/heart.svg';
+            cardProductFavor.src = './assets/images/heart.svg';
         } else {
-            cardProductFavor.src = './images/favor.svg';
+            cardProductFavor.src = './assets/images/favor.svg';
         }
     });
     favorIcons.forEach(icon => {
         icon?.addEventListener('click', function(event) {
             event.stopPropagation();  // Остановка всплытия события, если это необходимо
             if (icon.src.includes('favor.svg')) {
-                icon.src = './images/heart.svg';
+                icon.src = './assets/images/heart.svg';
             } else {
-                icon.src = './images/favor.svg';
+                icon.src = './assets/images/favor.svg';
             }
         });
     });
@@ -613,16 +613,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
  // Обработчик для добавления в корзину
  const basketButtons = document.querySelectorAll('.button-basket');
 
@@ -660,9 +650,10 @@ document.addEventListener('DOMContentLoaded', () => {
      });
  });
 
-togglePopular = () => {
+ togglePopular = () => {
     const dropdownContent = document.querySelector('.dropdown-mobile-content');
     const dropdownItems = document.querySelectorAll('.dropdown-mobile-item');
+    const dropdownButton = document.querySelector('.dropdown-mobile-button');
 
     dropdownItems.forEach(item => {
         item?.addEventListener('click', function() {
@@ -670,6 +661,28 @@ togglePopular = () => {
             dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
         });
     });
+
+    // Для переключения видимости выпадающего списка
+    if (dropdownContent.style.display === 'block') {
+        dropdownContent.style.display = 'none';
+    } else {
+        dropdownContent.style.display = 'block';
+    }
+}
+
+togglePopularMobile = () => {
+    const dropdownContent = document.querySelector('.dropdown-mobile-content');
+    const dropdownItems = document.querySelectorAll('.dropdown-mobile-item');
+    const dropdownButton = document.querySelector('.dropdown-mobile-button');
+
+    dropdownItems.forEach(item => {
+        item?.addEventListener('click', function() {
+            dropdownButton.textContent = this.textContent; // Меняем текст кнопки на выбранный пункт
+            dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
+        });
+    });
+
+    // Для переключения видимости выпадающего списка
     if (dropdownContent.style.display === 'block') {
         dropdownContent.style.display = 'none';
     } else {
@@ -685,33 +698,64 @@ sortSelected = (sorting, refresh) => {
         //TODO send request with currentForm value but with new sort
     }
 }
-filterSubmitted = (e) => {
-    e.preventDefault();
-    console.log($('#filter').serializeArray());
-    //TODO send request with currentForm value and with currentSorting
+function filterSubmitted(event) {
+    event.preventDefault(); // Предотвращаем стандартное поведение отправки формы
+
+    const form = document.getElementById('filter');
+    const formData = new FormData(form);
+
+    // Сбор данных в объект
+    const filters = {};
+    formData.forEach((value, key) => {
+        if (!filters[key]) {
+            filters[key] = [];
+        }
+        filters[key].push(value);
+    });
+
+    console.log('Отправляемые данные (POST):', filters); // Вывод данных в консоль
+
+    // Отправка запроса
+    fetch('/filterCategory', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(filters)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        // Обработка данных
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
 }
 
-document?.addEventListener("DOMContentLoaded", function() {
-    const dropdownButton = document.querySelector('.dropdown-button');
-    const dropdownContent = document.querySelector('.dropdown-content');
-    const dropdownItems = document.querySelectorAll('.dropdown-item');
 
-    dropdownItems.forEach(item => {
-        item?.addEventListener('click', function() {
-            dropdownButton.textContent = this.textContent; // Меняем текст кнопки на выбранный пункт
-            dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
-        });
-    });
 
-    dropdownButton?.addEventListener('click', function() {
-        // Переключаем отображение содержимого выпадающего списка при клике на кнопку
-        if (dropdownContent.style.display === 'block') {
-            dropdownContent.style.display = 'none';
-        } else {
-            dropdownContent.style.display = 'block';
-        }
-    });
-});
+// document?.addEventListener("DOMContentLoaded", function() {
+//     const dropdownButton = document.querySelector('.dropdown-button');
+//     const dropdownContent = document.querySelector('.dropdown-content');
+//     const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+//     dropdownItems.forEach(item => {
+//         item?.addEventListener('click', function() {
+//             dropdownButton.textContent = this.textContent; // Меняем текст кнопки на выбранный пункт
+//             dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
+//         });
+//     });
+
+//     dropdownButton?.addEventListener('click', function() {
+//         // Переключаем отображение содержимого выпадающего списка при клике на кнопку
+//         if (dropdownContent.style.display === 'block') {
+//             dropdownContent.style.display = 'none';
+//         } else {
+//             dropdownContent.style.display = 'block';
+//         }
+//     });
+// });
 // document.addEventListener('DOMContentLoaded', function() {
 //     // Находим элемент по ID
 //     const element = document.getElementById('phoneReg');

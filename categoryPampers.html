@@ -99,7 +99,7 @@
                     <div class="pampers-filter-title">
                         <div class="dropdown-mobile-container">
                             <div class="dropdown-mobile">
-                                <button class="dropdown-mobile-button" onclick="togglePopular()">Наиболее популярные</button>
+                                <button class="dropdown-mobile-button" onclick="togglePopularMobile()">Наиболее популярные</button>
                                 <div class="dropdown-mobile-content">
                                     <div class="dropdown-mobile-item" onclick="sortSelected('popular')">Наиболее популярные</div>
                                     <div class="dropdown-mobile-item" onclick="sortSelected('price-asc')">По возрастанию цены</div>
@@ -354,9 +354,19 @@
             </div>
             <div class="pampers-content">
                 <div class="pampers-content-second">
-                    <div class="pampers-second-popular" onclick="togglePopular()">
-                        <div>Наиболее популярные</div>
-                        <img id="arrow-popular" src="./assets/images/arrowRight.svg" alt="">
+                    <div class="pampers-filter-title-desktop forDescktop">
+                        <div class="dropdown-mobile-container">
+                            <div class="dropdown-mobile">
+                                <button class="dropdown-mobile-button" onclick="togglePopular()">Наиболее популярные</button>
+                                <div class="dropdown-mobile-content">
+                                    <div class="dropdown-mobile-item" onclick="sortSelected('popular')">Наиболее популярные</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected('price-asc')">По возрастанию цены</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected('price-desc')">По убыванию цены</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected('newest')">Новинки</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="assets/images/arrowRight.svg" alt="" onclick="togglePopular()">
                     </div>
                     <form class="pampers-second-main" onsubmit="filterSubmitted(event)" id="filter">
                         <div class="pampers-filters">
@@ -366,22 +376,22 @@
                             </div>
                             <div class="pampers-filters-block">
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox" name="size-nb"> NB</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="NB"> NB</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox" name="size-2s"> 2 S</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="2S"> 2 S</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox" name="size-3m"> 3 M</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="3M"> 3 M</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox" name="size-4l"> 4 L</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="4L"> 4 L</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox" name="size-5xl"> 5 XL</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="5XL"> 5 XL</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox" name="size-6xxl"> 6 XXL</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="6XXL"> 6 XXL</label>
                                 </div>
                             </div>
                         </div>
@@ -392,19 +402,19 @@
                             </div>
                             <div class="pampers-filters-block">
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 2-5 кг</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="2-5kg"> 2-5 кг</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 4-8 кг</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="4-8kg"> 4-8 кг</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 6-11 кг</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="6-11kg"> 6-11 кг</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 9-14 кг</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="9-14kg"> 9-14 кг</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 15-28 кг</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="15-28kg"> 15-28 кг</label>
                                 </div>
 
                             </div>
@@ -429,13 +439,13 @@
                             </div>
                             <div class="pampers-filters-block">
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> Унисекс</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="U"> Унисекс</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> Девочка</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="W"> Девочка</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> Мальчик</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="M"> Мальчик</label>
                                 </div>
                             </div>
                         </div>
@@ -446,16 +456,16 @@
                             </div>
                             <div class="pampers-filters-block">
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> Дышащая поверхность</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="Дышащая поверхность"> Дышащая поверхность</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> Защита от прелостей</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="Защита от прелостей"> Защита от прелостей</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> Индикатор заполненности</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="Индикатор заполненности"> Индикатор заполненности</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> Защита от покраснений</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="Защита от покраснений"> Защита от покраснений</label>
                                 </div>
                             </div>
                         </div>
@@ -466,66 +476,67 @@
                             </div>
                             <div class="pampers-filters-block">
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 0 месяцев</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="0-months"> 0 месяцев</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 1-2 месяца</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="1-2-months"> 1-2 месяца</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 2-3 месяца</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="2-3-months"> 2-3 месяца</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 3-4 месяца</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="3-4-months"> 3-4 месяца</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 4-5 месяцев</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="4-5-months"> 4-5 месяцев</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 5-6 месяцев</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="5-6-months"> 5-6 месяцев</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 6-7 месяцев</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="6-7-months"> 6-7 месяцев</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 7-8 месяцев</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="7-8-months"> 7-8 месяцев</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 8-9 месяцев</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="8-9-months"> 8-9 месяцев</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 9-10 месяцев</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="9-10-months"> 9-10 месяцев</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 10-11 месяцев</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="10-11-months"> 10-11 месяцев</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 11-12 месяцев</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="11-12-months"> 11-12 месяцев</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 1 год</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="1-year"> 1 год</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 1,5 года</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="1.5-years"> 1,5 года</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 2 года</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="2-years"> 2 года</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 3 года</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="3-years"> 3 года</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 4 года</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="4-years"> 4 года</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 5 года</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="5-years"> 5 лет</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 6 лет</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="6-years"> 6 лет</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 7 лет</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="7-years"> 7 лет</label>
                                 </div>
                             </div>
+                            
                         </div>
                         <div class="pampers-filters-desktop">
                             <div class="pampers-second-title-content">
@@ -544,8 +555,8 @@
                             </div>
                         </div>
                         <div>
-                            <button type="submit" id="category-btn-desk" class="form-btn" >Применить</button>
-                            <button type="submit" id="category-btn-mob" class="form-btn" >Применить</button>
+                            <button type="submit" id="category-btn-desk" class="form-btn" onclick="filterSubmitted()" >Применить</button>
+                            <button type="submit" id="category-btn-mob" class="form-btn" onclick="filterSubmitted()" >Применить</button>
                         </div>
                     </form>
                 </div>
