@@ -101,14 +101,14 @@
                             <div class="dropdown-mobile">
                                 <button class="dropdown-mobile-button" onclick="togglePopular()">Наиболее популярные</button>
                                 <div class="dropdown-mobile-content">
-                                    <div class="dropdown-mobile-item">Наиболее популярные</div>
-                                    <div class="dropdown-mobile-item">По возрастанию цены</div>
-                                    <div class="dropdown-mobile-item">По убыванию цены</div>
-                                    <div class="dropdown-mobile-item">Новинки</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected('popular')">Наиболее популярные</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected('price-asc')">По возрастанию цены</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected('price-desc')">По убыванию цены</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected('newest')">Новинки</div>
                                 </div>
                             </div>
                         </div>
-                        <img src="assets/images/arrowRight.svg" alt="" onclick="tooglePopular()">
+                        <img src="assets/images/arrowRight.svg" alt="" onclick="togglePopular()">
                     </div>
                 </div>
                 <div class="hits-content">
@@ -358,7 +358,7 @@
                         <div>Наиболее популярные</div>
                         <img id="arrow-popular" src="./assets/images/arrowRight.svg" alt="">
                     </div>
-                    <div class="pampers-second-main" >
+                    <form class="pampers-second-main" onsubmit="filterSubmitted(event)" id="filter">
                         <div class="pampers-filters">
                             <div class="pampers-second-title-content">
                                 <div class="pampers-second-title">Размер</div>
@@ -366,22 +366,22 @@
                             </div>
                             <div class="pampers-filters-block">
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> NB</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="size-nb"> NB</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 2 S</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="size-2s"> 2 S</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 3 M</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="size-3m"> 3 M</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 4 L</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="size-4l"> 4 L</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 5 XL</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="size-5xl"> 5 XL</label>
                                 </div>
                                 <div class="pampers-second-blocks">
-                                    <label class="pampers-second-choice"><input type="checkbox"> 6 XXL</label>
+                                    <label class="pampers-second-choice"><input type="checkbox" name="size-6xxl"> 6 XXL</label>
                                 </div>
                             </div>
                         </div>
@@ -414,11 +414,11 @@
                             <div class="pampers-quantity-block">
                                 <div class="pampers-filters-quantity">
                                     <label class="quantity-label" for="quantity-from-m">От:</label>
-                                    <input class="quantity-input" id="quantity-from-m" name="quantity" placeholder="0">
+                                    <input class="quantity-input" id="quantity-from-m" name="quantity-from" placeholder="0">
                                 </div>
                                 <div class="pampers-filters-quantity">
                                     <label class="quantity-label" for="quantity-to-m">До:</label>
-                                    <input class="quantity-input" id="quantity-to-m" name="quantity" placeholder="0">
+                                    <input class="quantity-input" id="quantity-to-m" name="quantity-to" placeholder="0">
                                 </div>
                             </div>
                         </div>
@@ -535,19 +535,19 @@
                             <div class="pampers-quantity-block">
                                 <div class="pampers-filters-quantity">
                                     <label class="quantity-label" for="quantity-from">От:</label>
-                                    <input class="quantity-input" id="quantity-from" name="quantity" placeholder="0">
+                                    <input class="quantity-input" id="quantity-from" name="quantity-from" placeholder="0">
                                 </div>
                                 <div class="pampers-filters-quantity">
                                     <label class="quantity-label" for="quantity-to">До:</label>
-                                    <input class="quantity-input" id="quantity-to" name="quantity" placeholder="0">
+                                    <input class="quantity-input" id="quantity-to" name="quantity-to" placeholder="0">
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <button id="category-btn-desk" class="form-btn" >Применить</button>
-                            <button id="category-btn-mob" class="form-btn" >Применить</button>
+                            <button type="submit" id="category-btn-desk" class="form-btn" >Применить</button>
+                            <button type="submit" id="category-btn-mob" class="form-btn" >Применить</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
          </div>

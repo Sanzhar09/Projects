@@ -676,6 +676,21 @@ togglePopular = () => {
         dropdownContent.style.display = 'block';
     }
 }
+
+let currentSorting = 'popular';
+let currentForm = {};
+sortSelected = (sorting, refresh) => {
+    currentSorting = sorting;
+    if(refresh) {
+        //TODO send request with currentForm value but with new sort
+    }
+}
+filterSubmitted = (e) => {
+    e.preventDefault();
+    console.log($('#filter').serializeArray());
+    //TODO send request with currentForm value and with currentSorting
+}
+
 document?.addEventListener("DOMContentLoaded", function() {
     const dropdownButton = document.querySelector('.dropdown-button');
     const dropdownContent = document.querySelector('.dropdown-content');
