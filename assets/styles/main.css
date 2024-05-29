@@ -3895,7 +3895,7 @@ ul {
     cursor: pointer;
 }
 .pampers-second-main {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 32px;
     position: fixed;
