@@ -651,17 +651,7 @@ document.addEventListener('DOMContentLoaded', () => {
  });
 
  togglePopular = () => {
-    const dropdownContent = document.querySelector('.dropdown-mobile-content');
-    const dropdownItems = document.querySelectorAll('.dropdown-mobile-item');
-    const dropdownButton = document.querySelector('.dropdown-mobile-button');
-
-    dropdownItems.forEach(item => {
-        item?.addEventListener('click', function() {
-            dropdownButton.textContent = this.textContent; // Меняем текст кнопки на выбранный пункт
-            dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
-        });
-    });
-
+    const dropdownContent = document.getElementById('sort-select-items');
     // Для переключения видимости выпадающего списка
     if (dropdownContent.style.display === 'block') {
         dropdownContent.style.display = 'none';
@@ -672,16 +662,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 togglePopularMobile = () => {
     const dropdownContent = document.querySelector('.dropdown-mobile-content');
-    const dropdownItems = document.querySelectorAll('.dropdown-mobile-item');
-    const dropdownButton = document.querySelector('.dropdown-mobile-button');
-
-    dropdownItems.forEach(item => {
-        item?.addEventListener('click', function() {
-            dropdownButton.textContent = this.textContent; // Меняем текст кнопки на выбранный пункт
-            dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
-        });
-    });
-
     // Для переключения видимости выпадающего списка
     if (dropdownContent.style.display === 'block') {
         dropdownContent.style.display = 'none';
@@ -692,14 +672,15 @@ togglePopularMobile = () => {
 
 let currentSorting = 'popular';
 let currentForm = {};
-sortSelected = (sorting, refresh) => {
+sortSelected = (e, sorting, text) => {
+    e.stopPropagation();
     currentSorting = sorting;
-    if(refresh) {
-        //TODO send request with currentForm value but with new sort
-    }
+    $('.dropdown-mobile-button').html(text);
+    togglePopular();
+    if(currentForm.currentSorting !== currentSorting) filterSubmitted();
 }
 function filterSubmitted(event) {
-    event.preventDefault(); // Предотвращаем стандартное поведение отправки формы
+    event?.preventDefault(); // Предотвращаем стандартное поведение отправки формы
 
     const form = document.getElementById('filter');
     const formData = new FormData(form);
@@ -713,7 +694,9 @@ function filterSubmitted(event) {
         filters[key].push(value);
     });
 
-    console.log('Отправляемые данные (POST):', filters); // Вывод данных в консоль
+    currentForm = {filters, currentSorting};
+
+    console.log('Отправляемые данные (POST):', currentForm); // Вывод данных в консоль
 
     // Отправка запроса
     fetch('/filterCategory', {
@@ -721,7 +704,7 @@ function filterSubmitted(event) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(filters)
+        body: JSON.stringify(currentForm)
     })
     .then(response => response.json())
     .then(data => {

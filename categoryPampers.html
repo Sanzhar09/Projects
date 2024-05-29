@@ -101,10 +101,10 @@
                             <div class="dropdown-mobile">
                                 <button class="dropdown-mobile-button" onclick="togglePopularMobile()">Наиболее популярные</button>
                                 <div class="dropdown-mobile-content">
-                                    <div class="dropdown-mobile-item" onclick="sortSelected('popular')">Наиболее популярные</div>
-                                    <div class="dropdown-mobile-item" onclick="sortSelected('price-asc')">По возрастанию цены</div>
-                                    <div class="dropdown-mobile-item" onclick="sortSelected('price-desc')">По убыванию цены</div>
-                                    <div class="dropdown-mobile-item" onclick="sortSelected('newest')">Новинки</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected(event, 'popular', 'Наиболее популярные')">Наиболее популярные</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected(event, 'price-asc', 'По возрастанию цены')">По возрастанию цены</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected(event, 'price-desc', 'По убыванию цены')">По убыванию цены</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected(event, 'newest', 'Новинки')">Новинки</div>
                                 </div>
                             </div>
                         </div>
@@ -354,15 +354,15 @@
             </div>
             <div class="pampers-content">
                 <div class="pampers-content-second">
-                    <div class="pampers-filter-title-desktop forDescktop">
+                    <div class="pampers-filter-title-desktop forDescktop" onclick="togglePopular()">
                         <div class="dropdown-mobile-container">
                             <div class="dropdown-mobile">
-                                <button class="dropdown-mobile-button" onclick="togglePopular()">Наиболее популярные</button>
-                                <div class="dropdown-mobile-content">
-                                    <div class="dropdown-mobile-item" onclick="sortSelected('popular')">Наиболее популярные</div>
-                                    <div class="dropdown-mobile-item" onclick="sortSelected('price-asc')">По возрастанию цены</div>
-                                    <div class="dropdown-mobile-item" onclick="sortSelected('price-desc')">По убыванию цены</div>
-                                    <div class="dropdown-mobile-item" onclick="sortSelected('newest')">Новинки</div>
+                                <button class="dropdown-mobile-button">Наиболее популярные</button>
+                                <div class="dropdown-mobile-content" id="sort-select-items">
+                                    <div class="dropdown-mobile-item" onclick="sortSelected(event, 'popular', 'Наиболее популярные')">Наиболее популярные</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected(event, 'price-asc', 'По возрастанию цены')">По возрастанию цены</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected(event, 'price-desc', 'По убыванию цены')">По убыванию цены</div>
+                                    <div class="dropdown-mobile-item" onclick="sortSelected(event, 'newest', 'Новинки')">Новинки</div>
                                 </div>
                             </div>
                         </div>
@@ -536,7 +536,7 @@
                                     <label class="pampers-second-choice"><input type="checkbox" name="7-years"> 7 лет</label>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="pampers-filters-desktop">
                             <div class="pampers-second-title-content">

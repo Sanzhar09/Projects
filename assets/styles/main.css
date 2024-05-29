@@ -2215,6 +2215,21 @@ ul {
     display: flex;
     align-items: center;
 }
+
+/* Стили для элементов при наведении курсора */
+.dropdown-mobile-item:hover {background-color: #fff}
+
+/*
+!* Показываем содержимое выпадающего списка при наведении на кнопку *!
+.pampers-filter-title-desktop:hover .dropdown-mobile-content {
+    display: block;
+}
+*/
+
+/* Стили для кнопки при наведении курсора */
+.pampers-filter-title-desktop:hover .dropdown-mobile-button {
+    background-color: #fff;
+}
 /* Стили для кнопки выпадающего списка */
 .dropdown-mobile-button {
     background-color: #fff;
@@ -2227,6 +2242,7 @@ ul {
     font-size: 16px;
     font-weight: 500;
     line-height: 19.5px;
+    min-width: 210px;
 }
 
 /* Стили для содержимого выпадающего списка */
@@ -2250,11 +2266,6 @@ ul {
 
 /* Стили для элементов при наведении курсора */
 .dropdown-mobile-item:hover {background-color: #fff}
-
-/* Показываем содержимое выпадающего списка при наведении на кнопку */
-.dropdown-mobile:hover .dropdown-mobile-content {
-    display: block;
-}
 
 /* Стили для кнопки при наведении курсора */
 .dropdown-mobile:hover .dropdown-mobile-button {
@@ -4154,18 +4165,5 @@ ul {
     text-decoration: none;
     display: block;
     cursor: pointer;
-}
-
-/* Стили для элементов при наведении курсора */
-.dropdown-mobile-item:hover {background-color: #fff}
-
-/* Показываем содержимое выпадающего списка при наведении на кнопку */
-.dropdown-mobile:hover .dropdown-mobile-content {
-    display: block;
-}
-
-/* Стили для кнопки при наведении курсора */
-.dropdown-mobile:hover .dropdown-mobile-button {
-    background-color: #fff;
 }
 }
