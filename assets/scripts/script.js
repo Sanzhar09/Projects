@@ -660,9 +660,7 @@ document.addEventListener('DOMContentLoaded', () => {
      });
  });
 
-
-document?.addEventListener("DOMContentLoaded", function() {
-    const dropdownButton = document.querySelector('.dropdown-mobile-button');
+togglePopular = () => {
     const dropdownContent = document.querySelector('.dropdown-mobile-content');
     const dropdownItems = document.querySelectorAll('.dropdown-mobile-item');
 
@@ -672,16 +670,12 @@ document?.addEventListener("DOMContentLoaded", function() {
             dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
         });
     });
-
-    dropdownButton?.addEventListener('click', function() {
-        // Переключаем отображение содержимого выпадающего списка при клике на кнопку
-        if (dropdownContent.style.display === 'block') {
-            dropdownContent.style.display = 'none';
-        } else {
-            dropdownContent.style.display = 'block';
-        }
-    });
-});
+    if (dropdownContent.style.display === 'block') {
+        dropdownContent.style.display = 'none';
+    } else {
+        dropdownContent.style.display = 'block';
+    }
+}
 document?.addEventListener("DOMContentLoaded", function() {
     const dropdownButton = document.querySelector('.dropdown-button');
     const dropdownContent = document.querySelector('.dropdown-content');
