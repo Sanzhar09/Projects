@@ -16,6 +16,9 @@
 .displayBlock  {
     display: none;
 }
+#pagination-container {
+    margin-top: 20px;
+}
 .address-input {
     display: block;
     margin: 10px 0;
@@ -1504,7 +1507,6 @@ ul {
 
 .pants {
     padding: 40px 100px 100px 100px;
-    min-height:1700px;
 }
 .pants-main {
     display: flex;
@@ -1525,7 +1527,6 @@ ul {
 }
 .napkins {
     padding: 40px 100px 100px 100px;
-    min-height:1700px;
 }
 .napkins-main {
     display: flex;
@@ -3882,7 +3883,6 @@ ul {
 /* CategoryPampers */
 .pampers {
     padding: 83px 16px 60px 16px;
-    min-height:1700px ;
 }
 
 .pampers .hits-card-favor {
@@ -4020,7 +4020,6 @@ ul {
 
 .pants {
     padding: 83px 16px 60px 16px;
-    min-height:1700px ;
 }
 .pants .hits-card-favor {
     right: 20px;
@@ -4111,7 +4110,6 @@ ul {
 /* Napkins */
 .napkins {
     padding: 83px 16px 60px 16px;
-    min-height:1700px ;
 }
 .pampers-main {
     display: flex;
