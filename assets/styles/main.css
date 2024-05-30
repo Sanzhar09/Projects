@@ -274,10 +274,13 @@ ul {
     justify-content: center;
     gap: 60px;
 }
-.category-card{
+.category-card {
     display: flex;
+    width: 264px;
+    box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 47px 72px;
     border: 1px solid rgba(238, 238, 238, 1);
@@ -512,6 +515,8 @@ ul {
     max-width: 210px;
 }
 .info-img {
+    width: 120px;
+    height: 120px;
 }
 .info-title {
     font-family: Montserrat;
@@ -1428,6 +1433,7 @@ ul {
     display: flex;
     justify-content: space-between;
     width: 93%;
+    cursor: pointer;
 }
 .pampers-second-title-content img {
 }
@@ -2456,9 +2462,8 @@ ul {
     width: 100%;
     gap: 0;
 }
-.category-card{
+.category-card {
     display: flex;
-    flex-direction: row;
     padding:0;
     border: none;
     border-radius: 0;
@@ -2683,7 +2688,8 @@ ul {
 }
 
 .info-img {
-    max-width: 60px;
+    width: 60px;
+    height: 60px;
 }
 .info-title {
     font-family: Montserrat;

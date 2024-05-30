@@ -231,18 +231,21 @@ document?.addEventListener('DOMContentLoaded', function() {
 
 // PampersCategory
 document?.addEventListener("DOMContentLoaded", function() {
-    const titleContents = document.querySelectorAll('.pampers-second-title-content');
+    if(window.screen.width <= 481) {
+        const titleContents = document.querySelectorAll('.pampers-second-title-content');
 
-    titleContents.forEach(titleContent => {
-        titleContent?.addEventListener('click', function() {
-            const filtersBlock = titleContent.closest('.pampers-filters').querySelector('.pampers-filters-block');
-            if (filtersBlock.style.display === 'flex') {
-                filtersBlock.style.display = 'none';
-            } else {
-                filtersBlock.style.display = 'flex';
-            }
+        titleContents.forEach(titleContent => {
+            titleContent?.addEventListener('click', function () {
+                const filtersBlock = titleContent.closest('.pampers-filters')?.querySelector('.pampers-filters-block');
+                if(filtersBlock)
+                if (filtersBlock.style.display === 'flex') {
+                    filtersBlock.style.display = 'none';
+                } else {
+                    filtersBlock.style.display = 'flex';
+                }
+            });
         });
-    });
+    }
 });
 
 document?.addEventListener("DOMContentLoaded", function() {
@@ -265,9 +268,7 @@ document?.addEventListener("DOMContentLoaded", function() {
         if (closeFilters) {
             closeFilters.style.display = 'flex';
             closeFilters.scrollIntoView({ behavior: 'smooth' }); // Прокручиваем элемент в область видимости с плавной анимацией
-
         }
-
     });
 });
 document?.addEventListener("DOMContentLoaded", function() {
@@ -278,9 +279,7 @@ document?.addEventListener("DOMContentLoaded", function() {
         if (closeFilters) {
             closeFilters.style.display = 'flex';
             closeFilters.scrollIntoView({ behavior: 'smooth' }); // Прокручиваем элемент в область видимости с плавной анимацией
-
         }
-
     });
 });
 
@@ -671,85 +670,15 @@ togglePopularMobile = () => {
 }
 
 let currentSorting = 'popular';
-let currentForm = {};
 sortSelected = (e, sorting, text) => {
     e.stopPropagation();
-    currentSorting = sorting;
-    $('.dropdown-mobile-button').html(text);
     togglePopular();
-    if(currentForm.currentSorting !== currentSorting) filterSubmitted();
+    if(currentSorting !== sorting) {
+        $('.dropdown-mobile-button').html(text);
+        currentSorting = sorting;
+        $('#sort').val(sorting);
+    }
 }
-function filterSubmitted(event) {
-    event?.preventDefault(); // Предотвращаем стандартное поведение отправки формы
-
-    const form = document.getElementById('filter');
-    const formData = new FormData(form);
-
-    // Сбор данных в объект
-    const filters = {};
-    formData.forEach((value, key) => {
-        if (!filters[key]) {
-            filters[key] = [];
-        }
-        filters[key].push(value);
-    });
-
-    currentForm = {filters, currentSorting};
-
-    console.log('Отправляемые данные (POST):', currentForm); // Вывод данных в консоль
-
-    // Отправка запроса
-    fetch('/filterCategory', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(currentForm)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        // Обработка данных
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-}
-
-
-
-// document?.addEventListener("DOMContentLoaded", function() {
-//     const dropdownButton = document.querySelector('.dropdown-button');
-//     const dropdownContent = document.querySelector('.dropdown-content');
-//     const dropdownItems = document.querySelectorAll('.dropdown-item');
-
-//     dropdownItems.forEach(item => {
-//         item?.addEventListener('click', function() {
-//             dropdownButton.textContent = this.textContent; // Меняем текст кнопки на выбранный пункт
-//             dropdownContent.style.display = 'none'; // Скрываем содержимое выпадающего списка
-//         });
-//     });
-
-//     dropdownButton?.addEventListener('click', function() {
-//         // Переключаем отображение содержимого выпадающего списка при клике на кнопку
-//         if (dropdownContent.style.display === 'block') {
-//             dropdownContent.style.display = 'none';
-//         } else {
-//             dropdownContent.style.display = 'block';
-//         }
-//     });
-// });
-// document.addEventListener('DOMContentLoaded', function() {
-//     // Находим элемент по ID
-//     const element = document.getElementById('phoneReg');
-//     // Опции маски
-//     const maskOptions = {
-//       mask: '+{7}(000)000-00-00'
-//     };
-//     // Применяем маску к элементу
-//     const mask = IMask(element, maskOptions);
-//   });
-
 
 // Add Adress
 document?.addEventListener('DOMContentLoaded', function() {
