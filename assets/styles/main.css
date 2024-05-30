@@ -1382,7 +1382,6 @@ ul {
 /* Pampers */
 .pampers {
     padding: 40px 100px 100px 100px;
-    min-height:1700px ;
 }
 .pampers-main {
     display: flex;
