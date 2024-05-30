@@ -1,6 +1,37 @@
 // Favor image
 
 document?.addEventListener("DOMContentLoaded", function() {
+    const paginationElem = $('#pagination-container');
+    if(paginationElem) {
+        const searchParams = new URLSearchParams(window.location.search);
+        const pages = paginationElem.attr('data-pages');
+        const currentPage = searchParams.get('page') || paginationElem.attr('data-current-page');
+        function simpleTemplating(data) {
+            var html = '<ul>';
+            $.each(data, function(index, item){
+                html += '<li>'+ item +'</li>';
+            });
+            html += '</ul>';
+            return html;
+        }
+
+        paginationElem.pagination({
+            dataSource: [ ...Array(parseInt(pages)).keys() ].map( i => i+1),
+            pageNumber: parseInt(currentPage) || 1,
+            callback: function(data, pagination) {
+                var html = simpleTemplating(data);
+                $('#data-container').html(html);
+
+                if ('URLSearchParams' in window) {
+                    if(!searchParams.get('page') || searchParams.get('page') != pagination.pageNumber) {
+                        searchParams.set("page", pagination.pageNumber);
+                        window.location.search = searchParams.toString();
+                    }
+                }
+            }
+        });
+    }
+
     const favorIcons = document.querySelectorAll(".hits-card-favor");
 
     favorIcons.forEach(icon => {
