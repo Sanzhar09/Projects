@@ -2,7 +2,7 @@
 
 document?.addEventListener("DOMContentLoaded", function() {
     const paginationElem = $('#pagination-container');
-    if(paginationElem) {
+    if(paginationElem.length) {
         const searchParams = new URLSearchParams(window.location.search);
         const pages = paginationElem.attr('data-pages');
         const currentPage = searchParams.get('page') || paginationElem.attr('data-current-page');
