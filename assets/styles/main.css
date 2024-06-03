@@ -2645,6 +2645,7 @@ ul {
     line-height: 14.63px;
     letter-spacing: 0.02em;
     text-align: left;
+    margin-right: auto;
 }
 .hits-card-chard-prices {
     display: flex;
