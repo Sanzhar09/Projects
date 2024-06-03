@@ -779,12 +779,14 @@ function changeAmount(e, isAdd, id) {
     e.stopPropagation();
     card = $(`[data-id="${id}"]`);
     currentCount = parseInt(card.attr('data-count'));
-    const newCount = isAdd ? currentCount + 1 : currentCount - 1;
-    card.attr('data-count', newCount);
-    card.attr('data-count', newCount);
-    card.find('.basket-total-count').html(newCount);
+    if(isAdd || currentCount > 1) {
+        const newCount = isAdd ? currentCount + 1 : currentCount - 1;
+        card.attr('data-count', newCount);
+        card.attr('data-count', newCount);
+        card.find('.basket-total-count').html(newCount);
 
-    sendRequestChangeAmount(id, newCount);
+        sendRequestChangeAmount(id, newCount);
+    }
 }
 
 function sendRequestChangeAmount(id, count) {
