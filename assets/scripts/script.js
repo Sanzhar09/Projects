@@ -775,13 +775,13 @@ document?.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function changeAmount(e, isAdd, id, count) {
+function changeAmount(e, isAdd, id) {
     e.stopPropagation();
     card = $(`[data-id="${id}"]`);
-    const newCount = isAdd ? count + 1 : count - 1;
+    currentCount = parseInt(card.attr('data-count'));
+    const newCount = isAdd ? currentCount + 1 : currentCount - 1;
     card.attr('data-count', newCount);
-    console.log(newCount);
-    card.find('.basket-total-count').attr('asd', count);
+    card.attr('data-count', newCount);
     card.find('.basket-total-count').html(newCount);
 
     sendRequestChangeAmount(id, newCount);
