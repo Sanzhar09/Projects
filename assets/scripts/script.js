@@ -779,7 +779,7 @@ function changeAmount(e, isAdd, id) {
     e.stopPropagation();
     card = $(`[data-id="${id}"]`);
     currentCount = parseInt(card.attr('data-count'));
-    if(isAdd || currentCount > 1) {
+    if(isAdd || currentCount > 0) {
         const newCount = isAdd ? currentCount + 1 : currentCount - 1;
         card.attr('data-count', newCount);
         card.attr('data-count', newCount);
