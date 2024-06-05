@@ -556,93 +556,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-    // Delete button
-    document.addEventListener('DOMContentLoaded', () => {
-        const favorIcons = document.querySelectorAll('.hits-card-delete');
-
-        favorIcons.forEach(favorIcon => {
-            favorIcon?.addEventListener('click', async (event) => {
-                event.stopPropagation(); // Останавливаем всплытие события клика
-
-                const productId = favorIcon.dataset.id; // Получаем ID товара из data-атрибута
-                if (!productId) {
-                    console.error('ID товара не найден');
-                    return;
-                }
-
-                const url = '/deleteCard'; // Замените на ваш URL для добавления товара в избранное
-
-                try {
-                    // Отправляем POST-запрос на сервер
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
-                    });
-
-                    if (response.ok) {
-                        // Обработка успешного ответа от сервера
-                        console.log('Товар успешно добавлен в избранное');
-                    } else {
-                        // Обработка ошибки от сервера
-                        console.error('Ошибка при добавлении товара в избранное:', response.status);
-                    }
-                } catch (error) {
-                    // Обработка ошибки сети или другой ошибки
-                    console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
-                }
-            });
-        })
-    })
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const favorIcons = document.querySelectorAll('.hits-card-delete');
-
-        favorIcons.forEach(favorIcon => {
-            favorIcon?.addEventListener('click', async (event) => {
-                event.stopPropagation(); // Останавливаем всплытие события клика
-
-                const productId = favorIcon.dataset.id; // Получаем ID товара из data-атрибута
-                if (!productId) {
-                    console.error('ID товара не найден');
-                    return;
-                }
-
-                const url = '/deleteCard'; // Замените на ваш URL для добавления товара в избранное
-
-                try {
-                    // Отправляем POST-запрос на сервер
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
-                    });
-
-                    if (response.ok) {
-                        // Обработка успешного ответа от сервера
-                        console.log('Товар успешно добавлен в избранное');
-                    } else {
-                        // Обработка ошибки от сервера
-                        console.error('Ошибка при добавлении товара в избранное:', response.status);
-                    }
-                } catch (error) {
-                    // Обработка ошибки сети или другой ошибки
-                    console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
-                }
-            });
-        })
-    })
-
-
-
-
-
-
-
  // Обработчик для добавления в корзину
  const basketButtons = document.querySelectorAll('.button-basket');
 
@@ -775,6 +688,43 @@ document?.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+async  function deleteBasket(event) {
+    event.stopPropagation(); // Останавливаем всплытие события клика
+
+    const productId = event.target.dataset.id; // Получаем ID товара из data-атрибута
+    if (!productId) {
+        console.error('ID товара не найден');
+        return;
+    }
+
+    const url = '/deleteCard'; // Замените на ваш URL для добавления товара в избранное
+
+    try {
+        $(`div[data-id=${productId}]`).each((i, obj) => {
+            obj.outerHTML = '';
+        });
+        // Отправляем POST-запрос на сервер
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
+        });
+
+        if (response.ok) {
+            // Обработка успешного ответа от сервера
+            console.log('Товар успешно удален');
+        } else {
+            // Обработка ошибки от сервера
+            console.error('Ошибка при удалении товара:', response.status);
+        }
+    } catch (error) {
+        // Обработка ошибки сети или другой ошибки
+        console.error('Ошибка при отправке запроса на удаление товара:', error);
+    }
+}
+
 function changeAmount(e, isAdd, id) {
     e.stopPropagation();
     card = $(`[data-id="${id}"]`);
@@ -785,6 +735,11 @@ function changeAmount(e, isAdd, id) {
         card.attr('data-count', newCount);
         card.find('.basket-total-count').html(newCount);
 
+        if(newCount === 0) {
+            $(`div[data-id=${id}]`).each((i, obj) => {
+                obj.outerHTML = '';
+            });
+        }
         sendRequestChangeAmount(id, newCount);
     }
 }
