@@ -1,41 +1,9 @@
 // Favor image
-
-document?.addEventListener("DOMContentLoaded", function() {
-    const paginationElem = $('#pagination-container');
-    if(paginationElem.length) {
-        const searchParams = new URLSearchParams(window.location.search);
-        const pages = paginationElem.attr('data-pages');
-        const currentPage = searchParams.get('page') || paginationElem.attr('data-current-page');
-        function simpleTemplating(data) {
-            var html = '<ul>';
-            $.each(data, function(index, item){
-                html += '<li>'+ item +'</li>';
-            });
-            html += '</ul>';
-            return html;
-        }
-
-        paginationElem.pagination({
-            dataSource: [ ...Array(parseInt(pages)).keys() ].map( i => i+1),
-            pageNumber: parseInt(currentPage) || 1,
-            callback: function(data, pagination) {
-                var html = simpleTemplating(data);
-                $('#data-container').html(html);
-
-                if ('URLSearchParams' in window) {
-                    if(!searchParams.get('page') || searchParams.get('page') != pagination.pageNumber) {
-                        searchParams.set("page", pagination.pageNumber);
-                        window.location.search = searchParams.toString();
-                    }
-                }
-            }
-        });
-    }
-
+document?.addEventListener("DOMContentLoaded", function () {
     const favorIcons = document.querySelectorAll(".hits-card-favor");
 
     favorIcons.forEach(icon => {
-        icon?.addEventListener("click", function(event) {
+        icon?.addEventListener("click", function (event) {
             event.stopPropagation();
             if (this.src.includes("favor.svg")) {
                 this.src = "./assets/images/heart.svg";
@@ -45,12 +13,12 @@ document?.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-document?.addEventListener("DOMContentLoaded", function() {
+document?.addEventListener("DOMContentLoaded", function () {
     const favorIcons = document.querySelectorAll('.icon-favor');
     const cardProductFavor = document.querySelector('.cardProduct-favor')
 
-    cardProductFavor?.addEventListener('click', function(event) {
-        event.stopPropagation();  // Остановка всплытия события, если это необходимо
+    cardProductFavor?.addEventListener('click', function (event) {
+        event.stopPropagation();  // РћСЃС‚Р°РЅРѕРІРєР° РІСЃРїР»С‹С‚РёСЏ СЃРѕР±С‹С‚РёСЏ, РµСЃР»Рё СЌС‚Рѕ РЅРµРѕР±С…РѕРґРёРјРѕ
         if (cardProductFavor.src.includes('favor.svg')) {
             cardProductFavor.src = './assets/images/heart.svg';
         } else {
@@ -58,8 +26,8 @@ document?.addEventListener("DOMContentLoaded", function() {
         }
     });
     favorIcons.forEach(icon => {
-        icon?.addEventListener('click', function(event) {
-            event.stopPropagation();  // Остановка всплытия события, если это необходимо
+        icon?.addEventListener('click', function (event) {
+            event.stopPropagation();  // РћСЃС‚Р°РЅРѕРІРєР° РІСЃРїР»С‹С‚РёСЏ СЃРѕР±С‹С‚РёСЏ, РµСЃР»Рё СЌС‚Рѕ РЅРµРѕР±С…РѕРґРёРјРѕ
             if (icon.src.includes('favor.svg')) {
                 icon.src = './assets/images/heart.svg';
             } else {
@@ -68,131 +36,156 @@ document?.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+// Favor button
+// РќР°С…РѕРґРёРј РёРєРѕРЅРєСѓ "РёР·Р±СЂР°РЅРЅРѕРµ"
 document.addEventListener('DOMContentLoaded', () => {
-    const favorIcons = document.querySelectorAll('.icon-favor');
-
+    const favorIcons = document.querySelectorAll('.hits-card-favor');
     favorIcons.forEach(favorIcon => {
         favorIcon?.addEventListener('click', async (event) => {
-            event.stopPropagation(); // Останавливаем всплытие события клика
-            const productId = favorIcon.dataset.id; // Получаем ID товара из data-атрибута
+            event.stopPropagation(); // РћСЃС‚Р°РЅР°РІР»РёРІР°РµРј РІСЃРїР»С‹С‚РёРµ СЃРѕР±С‹С‚РёСЏ РєР»РёРєР°
+            let token = $('meta[name="csrf-token"]').attr('content');
+            const productId = favorIcon.dataset.id; // РџРѕР»СѓС‡Р°РµРј ID С‚РѕРІР°СЂР° РёР· data-Р°С‚СЂРёР±СѓС‚Р°
             if (!productId) {
-                console.error('ID товара не найден');
+                console.error('ID С‚РѕРІР°СЂР° РЅРµ РЅР°Р№РґРµРЅ');
                 return;
             }
-            const url = '/addFavor'; // Замените на ваш URL для добавления товара в избранное
+            const url = '/favorites/add'; // Р—Р°РјРµРЅРёС‚Рµ РЅР° РІР°С€ URL РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ С‚РѕРІР°СЂР° РІ РёР·Р±СЂР°РЅРЅРѕРµ
             try {
-                // Отправляем POST-запрос на сервер
+                // РћС‚РїСЂР°РІР»СЏРµРј POST-Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
                 const response = await fetch(url, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
+                    body: JSON.stringify({product_id: productId, _token: token}) // РћС‚РїСЂР°РІР»СЏРµРј ID С‚РѕРІР°СЂР° РЅР° СЃРµСЂРІРµСЂ РІ С„РѕСЂРјР°С‚Рµ JSON
                 });
+
                 if (response.ok) {
-                    // Обработка успешного ответа от сервера
-                    console.log('Товар успешно добавлен в избранное');
+                    // РћР±СЂР°Р±РѕС‚РєР° СѓСЃРїРµС€РЅРѕРіРѕ РѕС‚РІРµС‚Р° РѕС‚ СЃРµСЂРІРµСЂР°
+                    console.log('РўРѕРІР°СЂ СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ РІ РёР·Р±СЂР°РЅРЅРѕРµ');
                 } else {
-                    // Обработка ошибки от сервера
-                    console.error('Ошибка при добавлении товара в избранное:', response.status);
+                    // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё РѕС‚ СЃРµСЂРІРµСЂР°
+                    console.error('РћС€РёР±РєР° РїСЂРё РґРѕР±Р°РІР»РµРЅРёРё С‚РѕРІР°СЂР° РІ РёР·Р±СЂР°РЅРЅРѕРµ:', response.status);
                 }
             } catch (error) {
-                // Обработка ошибки сети или другой ошибки
-                console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
+                // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё СЃРµС‚Рё РёР»Рё РґСЂСѓРіРѕР№ РѕС€РёР±РєРё
+                console.error('РћС€РёР±РєР° РїСЂРё РѕС‚РїСЂР°РІРєРµ Р·Р°РїСЂРѕСЃР° РЅР° РґРѕР±Р°РІР»РµРЅРёРµ С‚РѕРІР°СЂР° РІ РёР·Р±СЂР°РЅРЅРѕРµ:', error);
             }
         });
     })
 })
 
-document?.addEventListener("DOMContentLoaded", function() {
-    // Добавляем обработчик события для карточек
-    const hitsCards = document.querySelectorAll('.hits-card');
-    hitsCards.forEach(card => {
-        card?.addEventListener('click', function() {
-            window.location.href = './cardProduct.html';
+document.addEventListener('DOMContentLoaded', () => {
+    const favorIcons = document.querySelectorAll('.icon-favor');
+
+    favorIcons.forEach(favorIcon => {
+        favorIcon?.addEventListener('click', async (event) => {
+            event.stopPropagation(); // РћСЃС‚Р°РЅР°РІР»РёРІР°РµРј РІСЃРїР»С‹С‚РёРµ СЃРѕР±С‹С‚РёСЏ РєР»РёРєР°
+            let token = $('meta[name="csrf-token"]').attr('content');
+            const productId = favorIcon.dataset.id; // РџРѕР»СѓС‡Р°РµРј ID С‚РѕРІР°СЂР° РёР· data-Р°С‚СЂРёР±СѓС‚Р°
+            if (!productId) {
+                console.error('ID С‚РѕРІР°СЂР° РЅРµ РЅР°Р№РґРµРЅ');
+                return;
+            }
+            const url = '/favorites/add'; // Р—Р°РјРµРЅРёС‚Рµ РЅР° РІР°С€ URL РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ С‚РѕРІР°СЂР° РІ РёР·Р±СЂР°РЅРЅРѕРµ
+            try {
+                // РћС‚РїСЂР°РІР»СЏРµРј POST-Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({product_id: productId, _token: token})
+                });
+                if (response.ok) {
+                    // РћР±СЂР°Р±РѕС‚РєР° СѓСЃРїРµС€РЅРѕРіРѕ РѕС‚РІРµС‚Р° РѕС‚ СЃРµСЂРІРµСЂР°
+                    console.log('РўРѕРІР°СЂ СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ РІ РёР·Р±СЂР°РЅРЅРѕРµ');
+                } else {
+                    // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё РѕС‚ СЃРµСЂРІРµСЂР°
+                    console.error('РћС€РёР±РєР° РїСЂРё РґРѕР±Р°РІР»РµРЅРёРё С‚РѕРІР°СЂР° РІ РёР·Р±СЂР°РЅРЅРѕРµ:', response.status);
+                }
+            } catch (error) {
+                // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё СЃРµС‚Рё РёР»Рё РґСЂСѓРіРѕР№ РѕС€РёР±РєРё
+                console.error('РћС€РёР±РєР° РїСЂРё РѕС‚РїСЂР°РІРєРµ Р·Р°РїСЂРѕСЃР° РЅР° РґРѕР±Р°РІР»РµРЅРёРµ С‚РѕРІР°СЂР° РІ РёР·Р±СЂР°РЅРЅРѕРµ:', error);
+            }
         });
+    })
 })
-})
-document?.addEventListener("DOMContentLoaded", function() {
-    // Добавляем обработчик события для карточек
-    const basketCards = document.querySelectorAll('.button-basket');
+
+document?.addEventListener("DOMContentLoaded", function () {
+    // Р”РѕР±Р°РІР»СЏРµРј РѕР±СЂР°Р±РѕС‚С‡РёРє СЃРѕР±С‹С‚РёСЏ РґР»СЏ РєР°СЂС‚РѕС‡РµРє
+    const basketCards = document.querySelectorAll('.add-to-cart');
     basketCards.forEach(card => {
-        card?.addEventListener('click', function(e) {
+        card?.addEventListener('click', function (e) {
             e.stopPropagation();
         });
 
-})
-})
-
-document?.addEventListener("DOMContentLoaded", function() {
-    // Добавляем обработчик события для карточек
-    const hitsCards = document.querySelectorAll('.basket-left-card');
-    hitsCards.forEach(card => {
-        card?.addEventListener('click', function() {
-            window.location.href = './cardProduct.html';
-        });
-
-})
+    })
 })
 
 // FAQ
 function toogleAnswer(question) {
-    let answer = question.nextElementSibling; // Получаем следующий элемент (ответ)
-    let arrowIcon = question.querySelector('.arrow-icon'); // Получаем иконку вопроса
+    let answer = question.nextElementSibling; // РџРѕР»СѓС‡Р°РµРј СЃР»РµРґСѓСЋС‰РёР№ СЌР»РµРјРµРЅС‚ (РѕС‚РІРµС‚)
+    let arrowIcon = question.querySelector('.arrow-icon'); // РџРѕР»СѓС‡Р°РµРј РёРєРѕРЅРєСѓ РІРѕРїСЂРѕСЃР°
     if (answer.style.display === 'none') {
-        answer.style.display = 'block'; // Показываем ответ
-        arrowIcon.src = './assets/images/arrow-down.svg'; // Меняем иконку на стрелку вниз
+        answer.style.display = 'block'; // РџРѕРєР°Р·С‹РІР°РµРј РѕС‚РІРµС‚
+        arrowIcon.src = './assets/images/arrow-down.svg'; // РњРµРЅСЏРµРј РёРєРѕРЅРєСѓ РЅР° СЃС‚СЂРµР»РєСѓ РІРЅРёР·
     } else {
-        answer.style.display = 'none'; // Скрываем ответ
-        arrowIcon.src = './assets/images/arrowRight.svg'; // Меняем иконку на стрелку вправо
+        answer.style.display = 'none'; // РЎРєСЂС‹РІР°РµРј РѕС‚РІРµС‚
+        arrowIcon.src = './assets/images/arrowRight.svg'; // РњРµРЅСЏРµРј РёРєРѕРЅРєСѓ РЅР° СЃС‚СЂРµР»РєСѓ РІРїСЂР°РІРѕ
     }
 }
+
 // Orders
 function toogleOrders(question) {
-    let answer = question.nextElementSibling; // Получаем следующий элемент (ответ)
-    let arrowIcon = question.querySelector('.order-arrow'); // Получаем иконку вопроса
+    let answer = question.nextElementSibling; // РџРѕР»СѓС‡Р°РµРј СЃР»РµРґСѓСЋС‰РёР№ СЌР»РµРјРµРЅС‚ (РѕС‚РІРµС‚)
+    let arrowIcon = question.querySelector('.order-arrow'); // РџРѕР»СѓС‡Р°РµРј РёРєРѕРЅРєСѓ РІРѕРїСЂРѕСЃР°
     if (answer.style.display === 'none') {
-        answer.style.display = 'flex'; // Показываем ответ
-        arrowIcon.src = '/images/arrow-down.svg'; // Меняем иконку на стрелку вниз
+        answer.style.display = 'flex'; // РџРѕРєР°Р·С‹РІР°РµРј РѕС‚РІРµС‚
+        arrowIcon.src = '/images/arrow-down.svg'; // РњРµРЅСЏРµРј РёРєРѕРЅРєСѓ РЅР° СЃС‚СЂРµР»РєСѓ РІРЅРёР·
     } else {
-        answer.style.display = 'none'; // Скрываем ответ
-        arrowIcon.src = '/images/arrowRight.svg'; // Меняем иконку на стрелку вправо
+        answer.style.display = 'none'; // РЎРєСЂС‹РІР°РµРј РѕС‚РІРµС‚
+        arrowIcon.src = '/images/arrowRight.svg'; // РњРµРЅСЏРµРј РёРєРѕРЅРєСѓ РЅР° СЃС‚СЂРµР»РєСѓ РІРїСЂР°РІРѕ
     }
 }
+
 // Registration
 function redirectToPage(selectElement) {
     let selectedValue = selectElement.value;
-    if (selectedValue === 'individual') {
-        window.location.href = 'regIndividual.html'; // Перенаправление на страницу для физического лица
-    } else if (selectedValue === 'legal') {
-        window.location.href = 'regLegal.html'; // Перенаправление на страницу для юридического лица
-    } else if (selectedValue === 'wholesale') {
-        window.location.href = 'wholesale.html'; // Перенаправление на страницу для оптового пользователя
+    if (selectedValue === '2') {
+        window.location.href = '?role_id=2'; // РџРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ РЅР° СЃС‚СЂР°РЅРёС†Сѓ РґР»СЏ С„РёР·РёС‡РµСЃРєРѕРіРѕ Р»РёС†Р°
+    } else if (selectedValue === '3') {
+        window.location.href = '?role_id=3'; // РџРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ РЅР° СЃС‚СЂР°РЅРёС†Сѓ РґР»СЏ СЋСЂРёРґРёС‡РµСЃРєРѕРіРѕ Р»РёС†Р°
+    } else if (selectedValue === '4') {
+        window.location.href = '?role_id=4'; // РџРµСЂРµРЅР°РїСЂР°РІР»РµРЅРёРµ РЅР° СЃС‚СЂР°РЅРёС†Сѓ РґР»СЏ РѕРїС‚РѕРІРѕРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
     }
 }
-const phoneRegElement = document.getElementById('phoneReg');;
-if(phoneRegElement) {
+
+const phoneRegElement = document.getElementById('phoneReg');
+;
+if (phoneRegElement) {
     const maskOptions = {
         mask: '+{7}(000)000-00-00'
     };
     IMask(phoneRegElement, maskOptions);
 }
-const phoneElement = document.getElementById('phone');;
-if(phoneElement) {
+const phoneElement = document.getElementById('phone');
+;
+if (phoneElement) {
     const maskOptions = {
         mask: '+{7}(000)000-00-00'
     };
     IMask(phoneElement, maskOptions);
 }
 // Popup Basket
-document?.addEventListener('DOMContentLoaded', function() {
+document?.addEventListener('DOMContentLoaded', function () {
     const openPopup = document.getElementById('show-popup');
     if (openPopup) {
         const popUp = document.getElementById('basket-popup');
         const basket = document.getElementById('basket-main');
         const footerColor = document.getElementById('footer');
 
-        openPopup?.addEventListener('click', function(e) {
+        openPopup?.addEventListener('click', function (e) {
             e.preventDefault();
             popUp.classList.add('open');
             basket.classList.add('active-basket');
@@ -213,46 +206,47 @@ function toggleBurger() {
         categoryMobile.style.display = 'none';
     }
 }
+
 // Profile Mobile
-document.addEventListener('DOMContentLoaded', function() {
-        const mobileCabinet = document.querySelector('.mobile-cabinet');
-        const choiceBlocks = document.querySelectorAll('.cabinet-choice-block a');
-        const headerProfile = document.querySelector('.header-burger-profile');
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileCabinet = document.querySelector('.mobile-cabinet');
+    const choiceBlocks = document.querySelectorAll('.cabinet-choice-block a');
+    const headerProfile = document.querySelector('.header-burger-profile');
 
-        // Показ/скрытие мобильного меню при клике на headerProfile
-        headerProfile?.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (mobileCabinet.style.display === 'none' || mobileCabinet.style.display === '') {
-                mobileCabinet.style.display = 'flex';
-            } else {
-                mobileCabinet.style.display = 'none';
-            }
-        });
+    // РџРѕРєР°Р·/СЃРєСЂС‹С‚РёРµ РјРѕР±РёР»СЊРЅРѕРіРѕ РјРµРЅСЋ РїСЂРё РєР»РёРєРµ РЅР° headerProfile
+    headerProfile?.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (mobileCabinet.style.display === 'none' || mobileCabinet.style.display === '') {
+            mobileCabinet.style.display = 'flex';
+        } else {
+            mobileCabinet.style.display = 'none';
+        }
+    });
 
-        // Скрытие мобильного меню при клике на любой пункт
-        choiceBlocks.forEach(block => {
-            block.addEventListener('click', function() {
-                mobileCabinet.style.display = 'none';
-            });
+    // РЎРєСЂС‹С‚РёРµ РјРѕР±РёР»СЊРЅРѕРіРѕ РјРµРЅСЋ РїСЂРё РєР»РёРєРµ РЅР° Р»СЋР±РѕР№ РїСѓРЅРєС‚
+    choiceBlocks.forEach(block => {
+        block.addEventListener('click', function () {
+            mobileCabinet.style.display = 'none';
         });
+    });
 
 });
 
 // cardProduct
-document?.addEventListener('DOMContentLoaded', function() {
+document?.addEventListener('DOMContentLoaded', function () {
     let descTab = document.getElementById('desc-tab');
     let deliveryTab = document.getElementById('delivery-tab');
     let descContent = document.getElementById('desc-content');
     let deliveryContent = document.getElementById('delivery-content');
 
-    descTab?.addEventListener('click', function() {
+    descTab?.addEventListener('click', function () {
         descContent.classList.remove('none');
         deliveryContent.classList.add('none');
         descTab.classList.add('active-card');
         deliveryTab.classList.remove('active-card');
     });
 
-    deliveryTab?.addEventListener('click', function() {
+    deliveryTab?.addEventListener('click', function () {
         deliveryContent.classList.remove('none');
         descContent.classList.add('none');
         deliveryTab.classList.add('active-card');
@@ -261,28 +255,28 @@ document?.addEventListener('DOMContentLoaded', function() {
 });
 
 // PampersCategory
-document?.addEventListener("DOMContentLoaded", function() {
-    if(window.screen.width <= 481) {
+document?.addEventListener("DOMContentLoaded", function () {
+    if (window.screen.width <= 481) {
         const titleContents = document.querySelectorAll('.pampers-second-title-content');
 
         titleContents.forEach(titleContent => {
             titleContent?.addEventListener('click', function () {
                 const filtersBlock = titleContent.closest('.pampers-filters')?.querySelector('.pampers-filters-block');
-                if(filtersBlock)
-                if (filtersBlock.style.display === 'flex') {
-                    filtersBlock.style.display = 'none';
-                } else {
-                    filtersBlock.style.display = 'flex';
-                }
+                if (filtersBlock)
+                    if (filtersBlock.style.display === 'flex') {
+                        filtersBlock.style.display = 'none';
+                    } else {
+                        filtersBlock.style.display = 'flex';
+                    }
             });
         });
     }
 });
 
-document?.addEventListener("DOMContentLoaded", function() {
+document?.addEventListener("DOMContentLoaded", function () {
     const button = document.getElementById('category-btn-mob');
 
-    button?.addEventListener('click', function() {
+    button?.addEventListener('click', function () {
         const closeFilters = document.querySelector('.pampers-second-main')
         if (closeFilters) {
             closeFilters.style.display = 'none';
@@ -291,311 +285,75 @@ document?.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document?.addEventListener("DOMContentLoaded", function() {
+document?.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector('.filter-btn');
 
-    button?.addEventListener('click', function() {
+    button?.addEventListener('click', function () {
         const closeFilters = document.querySelector('.pampers-second-main')
         if (closeFilters) {
             closeFilters.style.display = 'flex';
-            closeFilters.scrollIntoView({ behavior: 'smooth' }); // Прокручиваем элемент в область видимости с плавной анимацией
+            closeFilters.scrollIntoView({behavior: 'smooth'}); // РџСЂРѕРєСЂСѓС‡РёРІР°РµРј СЌР»РµРјРµРЅС‚ РІ РѕР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё СЃ РїР»Р°РІРЅРѕР№ Р°РЅРёРјР°С†РёРµР№
         }
     });
 });
-document?.addEventListener("DOMContentLoaded", function() {
+document?.addEventListener("DOMContentLoaded", function () {
     const button = document.querySelector('.filter-btn');
 
-    button?.addEventListener('click', function() {
+    button?.addEventListener('click', function () {
         const closeFilters = document.querySelector('.pants-second-main')
         if (closeFilters) {
             closeFilters.style.display = 'flex';
-            closeFilters.scrollIntoView({ behavior: 'smooth' }); // Прокручиваем элемент в область видимости с плавной анимацией
+            closeFilters.scrollIntoView({behavior: 'smooth'}); // РџСЂРѕРєСЂСѓС‡РёРІР°РµРј СЌР»РµРјРµРЅС‚ РІ РѕР±Р»Р°СЃС‚СЊ РІРёРґРёРјРѕСЃС‚Рё СЃ РїР»Р°РІРЅРѕР№ Р°РЅРёРјР°С†РёРµР№
         }
     });
 });
 
 
-// Запросы
-document?.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector('.form-main');
-    const passwordInput = document.getElementById('password');
-    const errorList = document.querySelector('.authorization-error');
-    const lengthErrorItem = document.querySelector('.authorization-error-password');
+// Р—Р°РїСЂРѕСЃС‹
 
-    form?.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
+// Delete button
 
-        const password = passwordInput.value;
+// РћР±СЂР°Р±РѕС‚С‡РёРє РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РІ РєРѕСЂР·РёРЅСѓ
+const basketButtons = document.querySelectorAll('.add-to-cart');
 
-        // Скрываем все ошибки
-        // errorList.classList.add('displayNone');
-        // lengthErrorItem.classList.add('displayNone');
+basketButtons.forEach(button => {
+    button?.addEventListener('click', async (event) => {
+        event.stopPropagation();
 
+        const productId = button.dataset.id;
+        let token = $('meta[name="csrf-token"]').attr('content');
 
-        const formData = new FormData(form); // Получаем данные формы
-        const url = '/login';
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                body: formData
-            });
-
-            if (response.ok) {
-                // Успешный ответ от сервера
-                const data = await response.json();
-                console.log(data); // Обработка успешного входа
-                window.location.href = '/account.html'; // Перенаправление на страницу аккаунта
-            } // Проверяем длину пароля
-            else if (password.length < 8) {
-                // Отображаем соответствующую ошибку
-                lengthErrorItem.style.display = 'block'
-                return; // Останавливаем выполнение скрипта, если пароль недостаточно длинный
-            }
-
-        } catch (error) {
-            // Ошибка сети или другая ошибка
-            console.error('Ошибка при отправке запроса:', error);
-        }
-    });
-});
-// Забыл пароль
-const forgotPassword = document.getElementById('form-forgot-password');
-forgotPassword?.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Предотвращаем отправку формы по умолчанию
-    const forgotPasswordData = new FormData(forgotPassword); // Получаем данные формы
-    const url = '/OTP'; // Замените на ваш URL для аутентификации
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            body: forgotPasswordData
-        });
-
-        if (response.ok) {
-            // Успешный ответ от сервера
-            const data = await response.json();
-            console.log(data); // Обработка успешного входа
-            window.location.href = '/authorization.html'; // Перенаправление на страницу авторизации
-        } else {
-            // Ошибка от сервера
-            console.error('Ошибка при авторизации:', response.status);
-        }
-    } catch (error) {
-        // Ошибка сети или другая ошибка
-        console.error('Ошибка при отправке запроса:', error);
-    }
-});
-
-// Регистрация
-document?.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector('.form-reg');
-    const passwordInput = document.getElementById('passwordReg');
-    const passwordInputRepeat = document.getElementById('passwordRegRepeat');
-    const errorList = document.querySelector('.registration-error');
-    const lengthErrorItem = document.querySelector('.registration-error-password');
-    const confirmationErrorItem = document.querySelector('.registration-password-confirmation');
-
-    form?.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
-
-        const password = passwordInput.value;
-        const passwordRepeat = passwordInputRepeat.value;
-
-        let hasError = false;
-
-        // Скрываем все ошибки
-        lengthErrorItem.style.display = 'none';
-        confirmationErrorItem.style.display = 'none';
-        errorList.classList.add('displayNone');
-
-        // Проверяем длину пароля
-        if (password.length < 8) {
-            lengthErrorItem.style.display = 'block';
-            errorList.classList.remove('displayNone');
-            hasError = true;
-        }
-
-        // Проверяем совпадение паролей
-        if (password !== passwordRepeat) {
-            confirmationErrorItem.style.display = 'block';
-            errorList.classList.remove('displayNone');
-            hasError = true;
-        }
-
-        // Если есть ошибки, прекращаем выполнение скрипта
-        if (hasError) {
+        if (!productId) {
+            console.error('ID С‚РѕРІР°СЂР° РЅРµ РЅР°Р№РґРµРЅ');
             return;
         }
 
-        const formData = new FormData(form); // Получаем данные формы
-        const url = '/registr';
+        const url = '/cart/add';
+
         try {
             const response = await fetch(url, {
                 method: 'POST',
-                body: formData
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({product_id: productId, _token: token})
             });
 
             if (response.ok) {
-                // Успешный ответ от сервера
-                const data = await response.json();
-                console.log(data); // Обработка успешного входа
-                window.location.href = '/cabinet.html'; // Перенаправление на страницу аккаунта
+                console.log('РўРѕРІР°СЂ СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ РІ РєРѕСЂР·РёРЅСѓ');
+                button.textContent = 'Р”РѕР±Р°РІР»РµРЅРѕ';
             } else {
-                // Обработка ошибки от сервера
-                const errorData = await response.json();
-                console.error('Ошибка при авторизации:', response.status, errorData);
-                // Здесь можно добавить отображение других ошибок от сервера
+                console.error('РћС€РёР±РєР° РїСЂРё РґРѕР±Р°РІР»РµРЅРёРё С‚РѕРІР°СЂР° РІ РєРѕСЂР·РёРЅСѓ:', response.status);
             }
         } catch (error) {
-            // Ошибка сети или другая ошибка
-            console.error('Ошибка при отправке запроса:', error);
+            console.error('РћС€РёР±РєР° РїСЂРё РѕС‚РїСЂР°РІРєРµ Р·Р°РїСЂРѕСЃР° РЅР° РґРѕР±Р°РІР»РµРЅРёРµ С‚РѕРІР°СЂР° РІ РєРѕСЂР·РёРЅСѓ:', error);
         }
     });
 });
 
-// Регистрация Дилер
-document?.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector('.form-reg-legal');
-    const passwordInput = document.getElementById('passwordLegal');
-    const passwordInputRepeat = document.getElementById('passwordLegalRepeat');
-    const errorList = document.querySelector('.regLegal-error');
-    const lengthErrorItem = document.querySelector('.regLegal-error-password');
-    const confirmationErrorItem = document.querySelector('.regLegal-password-confirmation');
-
-    form?.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Предотвращаем отправку формы по умолчанию
-
-        const password = passwordInput.value;
-        const passwordRepeat = passwordInputRepeat.value;
-
-        let hasError = false;
-
-        // Скрываем все ошибки
-        lengthErrorItem.style.display = 'none';
-        confirmationErrorItem.style.display = 'none';
-        errorList.classList.add('displayNone');
-
-        // Проверяем длину пароля
-        if (password.length < 8) {
-            lengthErrorItem.style.display = 'block';
-            errorList.classList.remove('displayNone');
-            hasError = true;
-        }
-
-        // Проверяем совпадение паролей
-        if (password !== passwordRepeat) {
-            confirmationErrorItem.style.display = 'block';
-            errorList.classList.remove('displayNone');
-            hasError = true;
-        }
-
-        // Если есть ошибки, прекращаем выполнение скрипта
-        if (hasError) {
-            return;
-        }
-
-        const formData = new FormData(form); // Получаем данные формы
-        const url = '/registrLegal';
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                body: formData
-            });
-            if (response.ok) {
-                // Успешный ответ от сервера
-                const data = await response.json();
-                console.log(data); // Обработка успешного входа
-                window.location.href = '/cabinetDiller.html'; // Перенаправление на страницу аккаунта
-            } else {
-                // Обработка ошибки от сервера
-                const errorData = await response.json();
-                console.error('Ошибка при авторизации:', response.status, errorData);
-                // Здесь можно добавить отображение других ошибок от сервера
-            }
-        } catch (error) {
-            // Ошибка сети или другая ошибка
-            console.error('Ошибка при отправке запроса:', error);
-        }
-    });
-});
-
-// Favor button
-// Находим иконку "избранное"
-document.addEventListener('DOMContentLoaded', () => {
-    const favorIcons = document.querySelectorAll('.hits-card-favor');
-    favorIcons.forEach(favorIcon => {
-        favorIcon?.addEventListener('click', async (event) => {
-            event.stopPropagation(); // Останавливаем всплытие события клика
-            const productId = favorIcon.dataset.id; // Получаем ID товара из data-атрибута
-            if (!productId) {
-                console.error('ID товара не найден');
-                return;
-            }
-            const url = '/addFavor'; // Замените на ваш URL для добавления товара в избранное
-            try {
-                // Отправляем POST-запрос на сервер
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
-                });
-
-                if (response.ok) {
-                    // Обработка успешного ответа от сервера
-                    console.log('Товар успешно добавлен в избранное');
-                } else {
-                    // Обработка ошибки от сервера
-                    console.error('Ошибка при добавлении товара в избранное:', response.status);
-                }
-            } catch (error) {
-                // Обработка ошибки сети или другой ошибки
-                console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
-            }
-        });
-    })
-})
-
- // Обработчик для добавления в корзину
- const basketButtons = document.querySelectorAll('.button-basket');
-
- basketButtons.forEach(button => {
-     button?.addEventListener('click', async (event) => {
-         event.stopPropagation();
-
-         const productId = button.dataset.id;
-
-         if (!productId) {
-             console.error('ID товара не найден');
-             return;
-         }
-
-         const url = '/addBasket';
-
-         try {
-             const response = await fetch(url, {
-                 method: 'POST',
-                 headers: {
-                     'Content-Type': 'application/json'
-                 },
-                 body: JSON.stringify({ productId })
-             });
-
-             if (response.ok) {
-                 console.log('Товар успешно добавлен в корзину');
-                 button.textContent = 'Добавлено';
-             } else {
-                 console.error('Ошибка при добавлении товара в корзину:', response.status);
-             }
-         } catch (error) {
-             console.error('Ошибка при отправке запроса на добавление товара в корзину:', error);
-         }
-     });
- });
-
- togglePopular = () => {
+togglePopular = () => {
     const dropdownContent = document.getElementById('sort-select-items');
-    // Для переключения видимости выпадающего списка
+    // Р”Р»СЏ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РІРёРґРёРјРѕСЃС‚Рё РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР°
     if (dropdownContent.style.display === 'block') {
         dropdownContent.style.display = 'none';
     } else {
@@ -605,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 togglePopularMobile = () => {
     const dropdownContent = document.querySelector('.dropdown-mobile-content');
-    // Для переключения видимости выпадающего списка
+    // Р”Р»СЏ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РІРёРґРёРјРѕСЃС‚Рё РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР°
     if (dropdownContent.style.display === 'block') {
         dropdownContent.style.display = 'none';
     } else {
@@ -613,50 +371,39 @@ togglePopularMobile = () => {
     }
 }
 
-let currentSorting = 'popular';
-sortSelected = (e, sorting, text) => {
-    e.stopPropagation();
-    togglePopular();
-    if(currentSorting !== sorting) {
-        $('.dropdown-mobile-button').html(text);
-        currentSorting = sorting;
-        $('#sort').val(sorting);
-    }
-}
-
 // Add Adress
-document?.addEventListener('DOMContentLoaded', function() {
+document?.addEventListener('DOMContentLoaded', function () {
     const addressInput = document.getElementById('input-address');
     const saveButtonContainer = document.getElementById('save-button-container');
     const saveButton = document.getElementById('save-button');
 
     function showAddressInput() {
-        // Показываем поле ввода адреса
+        // РџРѕРєР°Р·С‹РІР°РµРј РїРѕР»Рµ РІРІРѕРґР° Р°РґСЂРµСЃР°
         // addressInput.classList.remove('displayNone');
         // addressInput.classList.add('displayBlock');
-        if(addressInput.style.display='none')
+        if (addressInput.style.display = 'none')
 
-            addressInput.style.display='block'
-        // Делаем кнопку "Сохранить" видимой
-        if(saveButtonContainer.style.display='none')
+            addressInput.style.display = 'block'
+        // Р”РµР»Р°РµРј РєРЅРѕРїРєСѓ "РЎРѕС…СЂР°РЅРёС‚СЊ" РІРёРґРёРјРѕР№
+        if (saveButtonContainer.style.display = 'none')
 
-            saveButtonContainer.style.display='flex'
-            saveButtonContainer.style.justifyContent='center'
+            saveButtonContainer.style.display = 'flex'
+        saveButtonContainer.style.justifyContent = 'center'
 
     }
 
-    // Добавляем обработчики событий для обеих кнопок
+    // Р”РѕР±Р°РІР»СЏРµРј РѕР±СЂР°Р±РѕС‚С‡РёРєРё СЃРѕР±С‹С‚РёР№ РґР»СЏ РѕР±РµРёС… РєРЅРѕРїРѕРє
     document.getElementById('add-address-descktop')?.addEventListener('click', showAddressInput);
     document.getElementById('add-address')?.addEventListener('click', showAddressInput);
 
-    // Пример обработчика события для кнопки "Сохранить"
-    saveButton?.addEventListener('click', function() {
-        // Получаем значение из поля ввода
+    // РџСЂРёРјРµСЂ РѕР±СЂР°Р±РѕС‚С‡РёРєР° СЃРѕР±С‹С‚РёСЏ РґР»СЏ РєРЅРѕРїРєРё "РЎРѕС…СЂР°РЅРёС‚СЊ"
+    saveButton?.addEventListener('click', function () {
+        // РџРѕР»СѓС‡Р°РµРј Р·РЅР°С‡РµРЅРёРµ РёР· РїРѕР»СЏ РІРІРѕРґР°
         const address = addressInput.value;
 
-        // Если адрес не пустой
+        // Р•СЃР»Рё Р°РґСЂРµСЃ РЅРµ РїСѓСЃС‚РѕР№
         if (address.trim() !== '') {
-            // Формируем объект с данными для отправки на сервер
+            // Р¤РѕСЂРјРёСЂСѓРµРј РѕР±СЉРµРєС‚ СЃ РґР°РЅРЅС‹РјРё РґР»СЏ РѕС‚РїСЂР°РІРєРё РЅР° СЃРµСЂРІРµСЂ
             const data = {
                 address: address
             };
@@ -668,78 +415,134 @@ document?.addEventListener('DOMContentLoaded', function() {
                 },
                 body: JSON.stringify(data)
             })
-            .then(response => {
-                if (!response.ok) {
-                    addressInput.style.display='none'
-                    saveButtonContainer.style.display='none'
-                    throw new Error('Ошибка сети');
+                .then(response => {
+                    if (!response.ok) {
+                        addressInput.style.display = 'none'
+                        saveButtonContainer.style.display = 'none'
+                        throw new Error('РћС€РёР±РєР° СЃРµС‚Рё');
 
-                }
-                return response.json();
-            })
-            .then(data => {
-                // Обработка успешного ответа от сервера
-                console.log('Ответ от сервера:', data);
-                alert('Адрес успешно сохранён!');
-            })
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // РћР±СЂР°Р±РѕС‚РєР° СѓСЃРїРµС€РЅРѕРіРѕ РѕС‚РІРµС‚Р° РѕС‚ СЃРµСЂРІРµСЂР°
+                    console.log('РћС‚РІРµС‚ РѕС‚ СЃРµСЂРІРµСЂР°:', data);
+                    alert('РђРґСЂРµСЃ СѓСЃРїРµС€РЅРѕ СЃРѕС…СЂР°РЅС‘РЅ!');
+                })
         } else {
-            alert('Пожалуйста, введите адрес.');
+            alert('РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РІРІРµРґРёС‚Рµ Р°РґСЂРµСЃ.');
         }
     });
 });
 
-async  function deleteBasket(event) {
-    event.stopPropagation(); // Останавливаем всплытие события клика
+async function deleteBasket(event) {
+    event.stopPropagation(); // РћСЃС‚Р°РЅР°РІР»РёРІР°РµРј РІСЃРїР»С‹С‚РёРµ СЃРѕР±С‹С‚РёСЏ РєР»РёРєР°
 
-    const productId = event.target.dataset.id; // Получаем ID товара из data-атрибута
+    const productId = event.target.dataset.id; // РџРѕР»СѓС‡Р°РµРј ID С‚РѕРІР°СЂР° РёР· data-Р°С‚СЂРёР±СѓС‚Р°
     if (!productId) {
-        console.error('ID товара не найден');
+        console.error('ID С‚РѕРІР°СЂР° РЅРµ РЅР°Р№РґРµРЅ');
         return;
     }
 
-    const url = '/deleteCard'; // Замените на ваш URL для добавления товара в избранное
+    let token = $('meta[name="csrf-token"]').attr('content');
+    const url = '/cart/delete/' + productId;
 
     try {
         $(`div[data-id=${productId}]`).each((i, obj) => {
             obj.outerHTML = '';
         });
-        // Отправляем POST-запрос на сервер
+        // РћС‚РїСЂР°РІР»СЏРµРј POST-Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
         const response = await fetch(url, {
-            method: 'POST',
+            method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ productId }) // Отправляем ID товара на сервер в формате JSON
-        });
+            body: JSON.stringify({_token: token})
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('РћС€РёР±РєР° СЃРµС‚Рё');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // РћР±СЂР°Р±РѕС‚РєР° СѓСЃРїРµС€РЅРѕРіРѕ РѕС‚РІРµС‚Р° РѕС‚ СЃРµСЂРІРµСЂР°
+                console.log('РћС‚РІРµС‚ РѕС‚ СЃРµСЂРІРµСЂР°:', data);
+                console.log('РўРѕРІР°СЂ СѓСЃРїРµС€РЅРѕ СѓРґР°Р»РµРЅ!');
+                let deliverySum = data.data.deliverySum ? data.data.deliverySum + ' в‚ё' : 'Р‘РµСЃРїР»Р°С‚РЅРѕ';
 
-        if (response.ok) {
-            // Обработка успешного ответа от сервера
-            console.log('Товар успешно удален');
-        } else {
-            // Обработка ошибки от сервера
-            console.error('Ошибка при удалении товара:', response.status);
-        }
+                $('.basket-delivery-free').text(deliverySum);
+                $('.basket-right-total').text(data.data.total);
+                $('#totalQuantity').text(data.data.totalQuantity);
+                $('#totalOldSum').text(data.data.totalOldSum);
+                $('#totalSum').text(data.data.totalSum);
+                $('#totalDiscount').text(data.data.totalDiscount);
+
+                if(data.data.totalQuantity === 0){
+                    $('#basket-empty').show();
+                    $('#basket-not-empty').hide();
+                }
+            })
+            .catch(error => {
+                // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РѕРє
+                console.error('РћС€РёР±РєР° РїСЂРё РѕС‚РїСЂР°РІРєРµ Р·Р°РїСЂРѕСЃР° РЅР° СѓРґР°Р»РµРЅРёРµ С‚РѕРІР°СЂР°:', error.message);
+            });
     } catch (error) {
-        // Обработка ошибки сети или другой ошибки
-        console.error('Ошибка при отправке запроса на удаление товара:', error);
+        // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё СЃРµС‚Рё РёР»Рё РґСЂСѓРіРѕР№ РѕС€РёР±РєРё
+        console.error('РћС€РёР±РєР° РїСЂРё РѕС‚РїСЂР°РІРєРµ Р·Р°РїСЂРѕСЃР° РЅР° СѓРґР°Р»РµРЅРёРµ С‚РѕРІР°СЂР°:', error);
     }
 }
 
+$('#delivery-type-id').change(function() {
+    const selectedValue = $(this).val();
+
+    if(selectedValue === "1"){
+        $('.delivery-block').show();
+    }else {
+        $('.delivery-block').hide();
+    }
+
+    if (selectedValue) {
+        $.ajax({
+            url: '/cart/update-delivery', // Replace with your server endpoint
+            type: 'POST',
+            data: {
+                _token: $('meta[name="csrf-token"]').attr('content'), // Include CSRF token if required
+                delivery_type_id: selectedValue
+            },
+            success: function(response) {
+                let deliverySum = response.data.deliverySum ? response.data.deliverySum + ' в‚ё' : 'Р‘РµСЃРїР»Р°С‚РЅРѕ';
+
+                $('.basket-delivery-free').text(deliverySum);
+                $('.basket-right-total').text(response.data.total);
+                $('#totalQuantity').text(response.data.totalQuantity);
+                $('#totalOldSum').text(response.data.totalOldSum);
+                $('#totalSum').text(response.data.totalSum);
+                $('#totalDiscount').text(response.data.totalDiscount);
+            },
+            error: function(xhr, status, error) {
+                alert('Error: ' + error);
+            }
+        });
+    }
+});
+
 function changeAmount(e, isAdd, id) {
     e.stopPropagation();
-    card = $(`[data-id="${id}"]`);
-    currentCount = parseInt(card.attr('data-count'));
-    if(isAdd || currentCount > 0) {
+    let card = $(`[data-id="${id}"]`);
+    let currentCount = parseInt(card.attr('data-count'));
+    if (isAdd || currentCount > 0) {
         const newCount = isAdd ? currentCount + 1 : currentCount - 1;
         card.attr('data-count', newCount);
         card.attr('data-count', newCount);
         card.find('.basket-total-count').html(newCount);
 
-        if(newCount === 0) {
+        if (newCount === 0) {
             $(`div[data-id=${id}]`).each((i, obj) => {
                 obj.outerHTML = '';
             });
         }
+
         sendRequestChangeAmount(id, newCount);
     }
 }
@@ -749,125 +552,151 @@ function sendRequestChangeAmount(id, count) {
         cardId: id,
         count: count
     };
+    let token = $('meta[name="csrf-token"]').attr('content');
+    let deliveryTypeId = $('#delivery-type-id').val();
+    if(deliveryTypeId === "1"){
+        $('.delivery-block').show();
+    }else {
+        $('.delivery-block').hide();
+    }
 
-    fetch('count', {
+    fetch('cart/add', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({
+            product_id: id,
+            _token: token,
+            quantity: count,
+            from_cart: 1,
+            delivery_type_id: deliveryTypeId
+        })
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Ошибка сети');
-        }
-        return response.json();
-    })
-    .then(data => {
-        // Обработка успешного ответа от сервера
-        console.log('Ответ от сервера:', data);
-        alert('Данные успешно отправлены на сервер!');
-    })
-    .catch(error => {
-        // Обработка ошибок
-        console.error('Ошибка:', error.message);
-        alert('Ошибка при отправке данных на сервер!');
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('РћС€РёР±РєР° СЃРµС‚Рё');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // РћР±СЂР°Р±РѕС‚РєР° СѓСЃРїРµС€РЅРѕРіРѕ РѕС‚РІРµС‚Р° РѕС‚ СЃРµСЂРІРµСЂР°
+            console.log('РћС‚РІРµС‚ РѕС‚ СЃРµСЂРІРµСЂР°:', data);
+            console.log('Р”Р°РЅРЅС‹Рµ СѓСЃРїРµС€РЅРѕ РѕС‚РїСЂР°РІР»РµРЅС‹ РЅР° СЃРµСЂРІРµСЂ!');
+            let deliverySum = data.data.deliverySum ? data.data.deliverySum + ' в‚ё' : 'Р‘РµСЃРїР»Р°С‚РЅРѕ';
+
+            $('.basket-delivery-free').text(deliverySum);
+            $('.basket-right-total').text(data.data.total);
+            $('#totalQuantity').text(data.data.totalQuantity);
+            $('#totalOldSum').text(data.data.totalOldSum);
+            $('#totalSum').text(data.data.totalSum);
+            $('#totalDiscount').text(data.data.totalDiscount);
+
+            if(data.data.totalQuantity === 0){
+                $('#basket-empty').show();
+                $('#basket-not-empty').hide();
+            }
+        })
+        .catch(error => {
+            // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РѕРє
+            console.error('РћС€РёР±РєР°:', error.message);
+            alert('РћС€РёР±РєР° РїСЂРё РѕС‚РїСЂР°РІРєРµ РґР°РЅРЅС‹С… РЅР° СЃРµСЂРІРµСЂ!');
+        });
 }
 
 // Slick
-  $(function(){
-      if($('.mySlick').length)
-    $('.mySlick').slick({
-        infinite: false,
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        vertical: true,
-        draggable: false,  // Включаем возможность листания мышью
-        verticalSwiping: true,
-        swipeToSlide: false,
-        prevArrow: '.prev-arrow',
-        nextArrow: '.next-arrow'
-    });
-  });
+$(function () {
+    if ($('.mySlick').length)
+        $('.mySlick').slick({
+            infinite: false,
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            vertical: true,
+            draggable: false,  // Р’РєР»СЋС‡Р°РµРј РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р»РёСЃС‚Р°РЅРёСЏ РјС‹С€СЊСЋ
+            verticalSwiping: true,
+            swipeToSlide: false,
+            prevArrow: '.prev-arrow',
+            nextArrow: '.next-arrow'
+        });
+});
 
-  $(function(){
-      if($('.mySlick-mobile').length)
-    $('.mySlick-mobile')?.slick({
-        infinite: false,
-        slidesToShow: 5,
-        swipeToSlide: true,
-        swipe: true,      // Включаем листание на сенсорных экранах
-        touchMove: true,
-        arrows: false,
-    });
-  });
+$(function () {
+    if ($('.mySlick-mobile').length)
+        $('.mySlick-mobile')?.slick({
+            infinite: false,
+            slidesToShow: 5,
+            swipeToSlide: true,
+            swipe: true,      // Р’РєР»СЋС‡Р°РµРј Р»РёСЃС‚Р°РЅРёРµ РЅР° СЃРµРЅСЃРѕСЂРЅС‹С… СЌРєСЂР°РЅР°С…
+            touchMove: true,
+            arrows: false,
+        });
+});
 
-    $(function(){
-        if($('.mySlickMain').length)
-          $('.mySlickMain').slick({
-              infinite: false,
-              dots: true,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              draggable: true,  // Включаем возможность листания мышью
-              prevArrow: '.swiper-button-prev',
-              nextArrow: '.swiper-button-next'
-          });
-    });
+$(function () {
+    if ($('.mySlickMain').length)
+        $('.mySlickMain').slick({
+            infinite: false,
+            dots: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            draggable: true,  // Р’РєР»СЋС‡Р°РµРј РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р»РёСЃС‚Р°РЅРёСЏ РјС‹С€СЊСЋ
+            prevArrow: '.swiper-button-prev',
+            nextArrow: '.swiper-button-next'
+        });
+});
 
-    $(function(){
-        if($('.reviews-content').length)
-          $('.reviews-content').slick({
-              infinite: false,
-              dots: false,
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              draggable: true,  // Включаем возможность листания мышью
-              prevArrow: '.swiper-button-prev',
-              nextArrow: '.swiper-button-next',
-              mobileFirst:true,
-              arrows: false,
-              responsive: [
-                  {
-                      breakpoint: 481,
-                      settings: {
-                          arrows: true,
-                      }
-                  }],
-          });
-    });
+$(function () {
+    if ($('.reviews-content').length)
+        $('.reviews-content').slick({
+            infinite: false,
+            dots: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            draggable: true,  // Р’РєР»СЋС‡Р°РµРј РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р»РёСЃС‚Р°РЅРёСЏ РјС‹С€СЊСЋ
+            prevArrow: '.swiper-button-prev',
+            nextArrow: '.swiper-button-next',
+            mobileFirst: true,
+            arrows: false,
+            responsive: [
+                {
+                    breakpoint: 481,
+                    settings: {
+                        arrows: true,
+                    }
+                }],
+        });
+});
 
 
-    //   slickcardProduct Cards
-    $(function(){
-        if($('.mySlickCards').length)
-      $('.mySlickCards').slick({
-          infinite: false,
-          slidesToShow: 2,
-          slidesToScroll: 5,
-          vertical: false,
-          draggable: true,  // Включаем возможность листания мышью
-          swipeToSlide: true,
-          prevArrow: '#prev',
-          nextArrow: '#next'
+//   slickcardProduct Cards
+$(function () {
+    if ($('.mySlickCards').length)
+        $('.mySlickCards').slick({
+            infinite: false,
+            slidesToShow: 2,
+            slidesToScroll: 5,
+            vertical: false,
+            draggable: true,  // Р’РєР»СЋС‡Р°РµРј РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р»РёСЃС‚Р°РЅРёСЏ РјС‹С€СЊСЋ
+            swipeToSlide: true,
+            prevArrow: '#prev',
+            nextArrow: '#next'
 
-      });
-    });
+        });
+});
 
-    //   slickcardProduct Cards
-    $(function(){
-        if($('.mySlickCardsMain').length)
-          $('.mySlickCardsMain').slick({
-              infinite: false,
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              draggable: true,  // Включаем возможность листания мышью
-              swipeToSlide: true,
-              dots: true,
-              arrows: false,
-          });
-    });
+//   slickcardProduct Cards
+$(function () {
+    if ($('.mySlickCardsMain').length)
+        $('.mySlickCardsMain').slick({
+            infinite: false,
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            draggable: true,  // Р’РєР»СЋС‡Р°РµРј РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ Р»РёСЃС‚Р°РЅРёСЏ РјС‹С€СЊСЋ
+            swipeToSlide: true,
+            dots: true,
+            arrows: false,
+        });
+});
 
 setSelectedImage = (url) => {
     $('.cardProduct-card-img img').attr('src', url);
@@ -910,7 +739,7 @@ editProfile = () => {
         email,
         phone,
     };
-    if(company) temp.company = company;
+    if (company) temp.company = company;
 }
 
 editProfileSubmit = async () => {
@@ -919,33 +748,37 @@ editProfileSubmit = async () => {
     const phone = $('#phone').val();
     const company = $('#company-name')?.val();
     const modal = document.getElementById('success-modal');
-    if((!company || company.length) && fullName?.length && email?.length && phone?.length)
-    try {
-        // Отправляем POST-запрос на сервер
-        const response = await fetch('/editCabinet', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: company ? JSON.stringify({fullName, email, phone, company}) : JSON.stringify({fullName, email, phone}) // Отправляем ID товара на сервер в формате JSON
-        });
-        if (response.ok) {
-            // Обработка успешного ответа от сервера
-            $('#fullname').attr('disabled', true);
-            $('#email').attr('disabled', true);
-            $('#phone').attr('disabled', true);
-            if(company) $('#company-name').attr('disabled', true);
-            $('.cabinet-buttons').hide();
-            $('.edit-profile-btn').show();
-            modal.style.display = 'flex';
-        } else {
-            // Обработка ошибки от сервера
-            console.error('Ошибка при сохранении данных:', response.status);
+    if ((!company || company.length) && fullName?.length && email?.length && phone?.length)
+        try {
+            // РћС‚РїСЂР°РІР»СЏРµРј POST-Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
+            const response = await fetch('/editCabinet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: company ? JSON.stringify({fullName, email, phone, company}) : JSON.stringify({
+                    fullName,
+                    email,
+                    phone
+                }) // РћС‚РїСЂР°РІР»СЏРµРј ID С‚РѕРІР°СЂР° РЅР° СЃРµСЂРІРµСЂ РІ С„РѕСЂРјР°С‚Рµ JSON
+            });
+            if (response.ok) {
+                // РћР±СЂР°Р±РѕС‚РєР° СѓСЃРїРµС€РЅРѕРіРѕ РѕС‚РІРµС‚Р° РѕС‚ СЃРµСЂРІРµСЂР°
+                $('#fullname').attr('disabled', true);
+                $('#email').attr('disabled', true);
+                $('#phone').attr('disabled', true);
+                if (company) $('#company-name').attr('disabled', true);
+                $('.cabinet-buttons').hide();
+                $('.edit-profile-btn').show();
+                modal.style.display = 'flex';
+            } else {
+                // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё РѕС‚ СЃРµСЂРІРµСЂР°
+                console.error('РћС€РёР±РєР° РїСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё РґР°РЅРЅС‹С…:', response.status);
+            }
+        } catch (error) {
+            // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё СЃРµС‚Рё РёР»Рё РґСЂСѓРіРѕР№ РѕС€РёР±РєРё
+            console.error('РћС€РёР±РєР° РїСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё РґР°РЅРЅС‹С…:', error);
         }
-    } catch (error) {
-        // Обработка ошибки сети или другой ошибки
-        console.error('Ошибка при сохранении данных:', error);
-    }
 }
 
 //Cabinet requisites
@@ -1002,53 +835,54 @@ editRequisitesSubmit = async () => {
     const dataAccountNumber = $('#dataAccountNumber')?.val();
 
     const modal = document.getElementById('success-modal');
-    if(dataAddressCompany?.length && dataIin?.length && dataBank?.length && dataKbe?.length && dataBik?.length && dataAccountNumber?.length)
-    try {
-        // Отправляем POST-запрос на сервер
-        const response = await fetch('/editRequisites', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({dataAddressCompany, dataIin, dataBank, dataKbe, dataBik, dataAccountNumber}) // Отправляем ID товара на сервер в формате JSON
-        });
-        if (response.ok) {
-            // Обработка успешного ответа от сервера
-            $('#dataAddressCompany').attr('disabled', true);
-            $('#dataIin').attr('disabled', true);
-            $('#dataBank').attr('disabled', true);
-            $('#dataKbe')?.attr('disabled', true);
-            $('#dataBik')?.attr('disabled', true);
-            $('#dataAccountNumber')?.attr('disabled', true);
+    if (dataAddressCompany?.length && dataIin?.length && dataBank?.length && dataKbe?.length && dataBik?.length && dataAccountNumber?.length)
+        try {
+            // РћС‚РїСЂР°РІР»СЏРµРј POST-Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
+            const response = await fetch('/editRequisites', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({dataAddressCompany, dataIin, dataBank, dataKbe, dataBik, dataAccountNumber}) // РћС‚РїСЂР°РІР»СЏРµРј ID С‚РѕРІР°СЂР° РЅР° СЃРµСЂРІРµСЂ РІ С„РѕСЂРјР°С‚Рµ JSON
+            });
+            if (response.ok) {
+                // РћР±СЂР°Р±РѕС‚РєР° СѓСЃРїРµС€РЅРѕРіРѕ РѕС‚РІРµС‚Р° РѕС‚ СЃРµСЂРІРµСЂР°
+                $('#dataAddressCompany').attr('disabled', true);
+                $('#dataIin').attr('disabled', true);
+                $('#dataBank').attr('disabled', true);
+                $('#dataKbe')?.attr('disabled', true);
+                $('#dataBik')?.attr('disabled', true);
+                $('#dataAccountNumber')?.attr('disabled', true);
 
-            $('.requsites-buttons').hide();
-            $('.requsites-edit-btn').show();
-            modal.style.display = 'flex';
-        } else {
-            // Обработка ошибки от сервера
-            console.error('Ошибка при сохранении:', response.status);
+                $('.requsites-buttons').hide();
+                $('.requsites-edit-btn').show();
+                modal.style.display = 'flex';
+            } else {
+                // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё РѕС‚ СЃРµСЂРІРµСЂР°
+                console.error('РћС€РёР±РєР° РїСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё:', response.status);
+            }
+        } catch (error) {
+            // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё СЃРµС‚Рё РёР»Рё РґСЂСѓРіРѕР№ РѕС€РёР±РєРё
+            console.error('РћС€РёР±РєР° РїСЂРё СЃРѕС…СЂР°РЅРµРЅРёРё:', error);
         }
-    } catch (error) {
-        // Обработка ошибки сети или другой ошибки
-        console.error('Ошибка при сохранении:', error);
-    }
 }
 
 closeModal = (e) => {
     const modal = document.getElementById('success-modal');
-    if(e.target === modal) modal.style.display = 'none';
+    if (e.target === modal) modal.style.display = 'none';
 }
 
- function changePasswordCabinet() {
+function changePasswordCabinet() {
     const passwordChangeBlock = document.querySelector('.profile-password-change');
     const cabinetPasswordButtons = document.querySelector('.cabinet-password-buttons');
     const changePassword = document.getElementById('change-password-btn')
 
-        passwordChangeBlock.style.display = 'flex';
-        cabinetPasswordButtons.style.display = 'flex';
-        changePassword.style.display = 'none'
- }
- editPasswordCancel =()=> {
+    passwordChangeBlock.style.display = 'flex';
+    cabinetPasswordButtons.style.display = 'flex';
+    changePassword.style.display = 'none'
+}
+
+editPasswordCancel = () => {
     const passwordChangeBlock = document.querySelector('.profile-password-change');
     const cabinetPasswordButtons = document.querySelector('.cabinet-password-buttons');
     const changePassword = document.getElementById('change-password-btn')
@@ -1057,12 +891,9 @@ closeModal = (e) => {
     cabinetPasswordButtons.style.display = 'none';
     changePassword.style.display = 'block'
 
- }
+}
 
-
-
-
- editPasswordSubmit = async () => {
+editPasswordSubmit = async () => {
     const passwordChangeBlock = document.querySelector('.profile-password-change');
     const cabinetPasswordButtons = document.querySelector('.cabinet-password-buttons');
     const passwordConfirmation = document.querySelector('.password-confirmation')
@@ -1072,47 +903,114 @@ closeModal = (e) => {
     const newPassword = $('#newPassword').val();
     const repeatPassword = $('#repeatPassword').val();
     const modal = document.getElementById('success-modal');
-    if((oldPassword?.length>7 && newPassword?.length>7 && repeatPassword?.length>7)&&  newPassword == repeatPassword &&  oldPassword !== repeatPassword )
-    try {
-        // Отправляем POST-запрос на сервер
-        const response = await fetch('/changePassword', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({oldPassword, newPassword, repeatPassword}) // Отправляем ID товара на сервер в формате JSON
-        });
-        if (response.ok) {
-            // Обработка успешного ответа от сервера
-            console.log('Товар успешно добавлен в избранное');
-            passwordChangeBlock.style.display = 'none';
-            cabinetPasswordButtons.style.display = 'none';
-            modal.style.display = 'flex';
-        } else {
-            // Обработка ошибки от сервера
-            console.error('Ошибка при добавлении товара в избранное:', response.status);
+    if ((oldPassword?.length > 7 && newPassword?.length > 7 && repeatPassword?.length > 7) && newPassword == repeatPassword && oldPassword !== repeatPassword)
+        try {
+            // РћС‚РїСЂР°РІР»СЏРµРј POST-Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
+            const response = await fetch('/changePassword', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({oldPassword, newPassword, repeatPassword}) // РћС‚РїСЂР°РІР»СЏРµРј ID С‚РѕРІР°СЂР° РЅР° СЃРµСЂРІРµСЂ РІ С„РѕСЂРјР°С‚Рµ JSON
+            });
+            if (response.ok) {
+                // РћР±СЂР°Р±РѕС‚РєР° СѓСЃРїРµС€РЅРѕРіРѕ РѕС‚РІРµС‚Р° РѕС‚ СЃРµСЂРІРµСЂР°
+                console.log('РўРѕРІР°СЂ СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅ РІ РёР·Р±СЂР°РЅРЅРѕРµ');
+                passwordChangeBlock.style.display = 'none';
+                cabinetPasswordButtons.style.display = 'none';
+                modal.style.display = 'flex';
+            } else {
+                // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё РѕС‚ СЃРµСЂРІРµСЂР°
+                console.error('РћС€РёР±РєР° РїСЂРё РґРѕР±Р°РІР»РµРЅРёРё С‚РѕРІР°СЂР° РІ РёР·Р±СЂР°РЅРЅРѕРµ:', response.status);
+            }
+        } catch (error) {
+            // РћР±СЂР°Р±РѕС‚РєР° РѕС€РёР±РєРё СЃРµС‚Рё РёР»Рё РґСЂСѓРіРѕР№ РѕС€РёР±РєРё
+            console.error('РћС€РёР±РєР° РїСЂРё РѕС‚РїСЂР°РІРєРµ Р·Р°РїСЂРѕСЃР° РЅР° РґРѕР±Р°РІР»РµРЅРёРµ С‚РѕРІР°СЂР° РІ РёР·Р±СЂР°РЅРЅРѕРµ:', error);
         }
-    } catch (error) {
-        // Обработка ошибки сети или другой ошибки
-        console.error('Ошибка при отправке запроса на добавление товара в избранное:', error);
-    }
-    else if(oldPassword?.length<8 || newPassword?.length<8 || repeatPassword?.length<8) {
+    else if (oldPassword?.length < 8 || newPassword?.length < 8 || repeatPassword?.length < 8) {
         errorPassword.style.display = 'block'
         passwordConfirmation.style.display = 'none'
         passwordSame.style.display = 'none'
-    }
-    else if(newPassword !== repeatPassword) {
+    } else if (newPassword !== repeatPassword) {
         passwordConfirmation.style.display = 'block'
         errorPassword.style.display = 'none'
         passwordSame.style.display = 'none'
 
-    }
-    else if(oldPassword == repeatPassword) {
+    } else if (oldPassword == repeatPassword) {
         passwordSame.style.display = 'block'
         errorPassword.style.display = 'none'
         passwordConfirmation.style.display = 'none'
-    }
-    else
-    console.log("oshibka")
+    } else
+        console.log("oshibka")
+}
 
+$(document).ready(function() {
+    $('#orderForm').on('submit', function(event) {
+        event.preventDefault();
+        $('.error-message').html('')
+
+        const deliveryTypeId = $('#delivery-type-id').val();
+        const address = $('#address').val();
+        $.ajax({
+            url: '/order/create',
+            type: 'POST',
+            data: {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                delivery_type_id: deliveryTypeId,
+                address: address,
+            },
+            success: function(response) {
+                console.log(response);
+                let data = response.data;
+                if(data.is_pay){
+                    pay(data.order_id, data.amount, data.email, data.phone);
+                }else{
+                    alert('Р’Р°С€ Р·Р°РєР°Р· РѕС„РѕСЂРјР»РµРЅ, РІ Р±Р»РёР¶Р°Р№С€РµРµ РІСЂРµРјСЏ РјС‹ СЃ РІР°РјРё СЃРІСЏР¶РµРјСЃСЏ!');
+                }
+                $('#basket-empty').show();
+                $('#basket-not-empty').hide();
+            },
+            error: function(xhr, status, error) {
+                let response = xhr.responseJSON;
+                $('.error-message').html(response.message);
+            }
+        });
+    });
+});
+function pay(order_id, amount, email, phone) {
+    var data = {
+        token: "token",
+        payment: {
+            order: order_id,
+            amount: amount,
+            currency: "KZT",
+            description: order_id,
+            expires_at: "",
+            param1: "string",
+            param2: "string",
+            param3: "string",
+            test: 1,  // testing mode
+            options: {
+                callbacks: {
+                    result_url: "https://sabiko.kz/payment/result",
+                    check_url: "https://sabiko.kz/payment/check"
+                },
+                custom_params: {},
+                user: {
+                    email: email,
+                    phone: phone,
+                },
+                receipt_positions: []
+            }
+        },
+        successCallback: function (payment) {
+            console.log(payment)
+        },
+        errorCallback: function (payment) {
+            console.log(payment)
+        }
+    }
+
+    var widget = new PayBox(data);
+    widget.create();
 }

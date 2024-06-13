@@ -104,7 +104,7 @@
     list-style-type: none;
 }
 
-/* Подключение Gooseberry */
+/* РџРѕРґРєР»СЋС‡РµРЅРёРµ Gooseberry */
 @font-face {
     font-family: 'Gooseberry';
     src: url('./fonts/goosberry_version_02.otf') format('truetype');
@@ -1290,7 +1290,7 @@ ul {
 }
 .basket-right-btn {
     margin-top: 20px;
-    padding: 18px 118px;
+    padding: 18px 18px;
     color: #fff;
     background-color: rgba(63, 63, 63, 1);
     border-radius: 30px;
@@ -1301,6 +1301,7 @@ ul {
     font-weight: 600;
     line-height: 19.5px;
     letter-spacing: 0.02em;
+    text-align: center;
 }
 .basket-right-btn:active {
     background-color: rgba(209, 209, 209, 1);
@@ -1750,18 +1751,18 @@ ul {
     border:1px solid rgba(209, 209, 209, 1) ;
 }
 .modal-cabinet {
-    display: none; /* Скрыто по умолчанию */
+    display: none; /* РЎРєСЂС‹С‚Рѕ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ */
     align-items: center;
     justify-content: center;
-    position: fixed; /* Оставаться на месте */
-    z-index: 1; /* Сидеть на вершине */
+    position: fixed; /* РћСЃС‚Р°РІР°С‚СЊСЃСЏ РЅР° РјРµСЃС‚Рµ */
+    z-index: 1; /* РЎРёРґРµС‚СЊ РЅР° РІРµСЂС€РёРЅРµ */
     left: 0;
     top: 0;
-    width: 100%; /* Полная ширина */
-    height: 100%; /* Полная высота */
-    overflow: auto; /* Включить прокрутку, если необходимо */
-    background-color: rgb(0,0,0); /* Черный фон с непрозрачностью */
-    background-color: rgba(0,0,0,0.4); /* Черный фон с непрозрачностью */
+    width: 100%; /* РџРѕР»РЅР°СЏ С€РёСЂРёРЅР° */
+    height: 100%; /* РџРѕР»РЅР°СЏ РІС‹СЃРѕС‚Р° */
+    overflow: auto; /* Р’РєР»СЋС‡РёС‚СЊ РїСЂРѕРєСЂСѓС‚РєСѓ, РµСЃР»Рё РЅРµРѕР±С…РѕРґРёРјРѕ */
+    background-color: rgb(0,0,0); /* Р§РµСЂРЅС‹Р№ С„РѕРЅ СЃ РЅРµРїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊСЋ */
+    background-color: rgba(0,0,0,0.4); /* Р§РµСЂРЅС‹Р№ С„РѕРЅ СЃ РЅРµРїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊСЋ */
 }
 
 .modal-content {
@@ -1776,7 +1777,7 @@ ul {
     margin: 0 auto;
     padding: 80px 100px;
     border: 1px solid #888;
-    max-width: 545px; /* Ширина может быть изменена */
+    max-width: 545px; /* РЁРёСЂРёРЅР° РјРѕР¶РµС‚ Р±С‹С‚СЊ РёР·РјРµРЅРµРЅР° */
     border-radius: 20px;
 }
 .modal-content-title {
@@ -1878,7 +1879,7 @@ ul {
     padding-left: 16px;
 }
 
-/* Карточка Товара */
+/* РљР°СЂС‚РѕС‡РєР° РўРѕРІР°СЂР° */
 .cardProduct-main {
     padding: 30px 100px 66px 100px;
 }
@@ -2223,21 +2224,21 @@ ul {
     align-items: center;
 }
 
-/* Стили для элементов при наведении курсора */
+/* РЎС‚РёР»Рё РґР»СЏ СЌР»РµРјРµРЅС‚РѕРІ РїСЂРё РЅР°РІРµРґРµРЅРёРё РєСѓСЂСЃРѕСЂР° */
 .dropdown-mobile-item:hover {background-color: #fff}
 
 /*
-!* Показываем содержимое выпадающего списка при наведении на кнопку *!
+!* РџРѕРєР°Р·С‹РІР°РµРј СЃРѕРґРµСЂР¶РёРјРѕРµ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° РїСЂРё РЅР°РІРµРґРµРЅРёРё РЅР° РєРЅРѕРїРєСѓ *!
 .pampers-filter-title-desktop:hover .dropdown-mobile-content {
     display: block;
 }
 */
 
-/* Стили для кнопки при наведении курсора */
+/* РЎС‚РёР»Рё РґР»СЏ РєРЅРѕРїРєРё РїСЂРё РЅР°РІРµРґРµРЅРёРё РєСѓСЂСЃРѕСЂР° */
 .pampers-filter-title-desktop:hover .dropdown-mobile-button {
     background-color: #fff;
 }
-/* Стили для кнопки выпадающего списка */
+/* РЎС‚РёР»Рё РґР»СЏ РєРЅРѕРїРєРё РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
 .dropdown-mobile-button {
     background-color: #fff;
     padding: 10px;
@@ -2252,7 +2253,7 @@ ul {
     min-width: 210px;
 }
 
-/* Стили для содержимого выпадающего списка */
+/* РЎС‚РёР»Рё РґР»СЏ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
 .dropdown-mobile-content {
     display: none;
     position: absolute;
@@ -2262,7 +2263,7 @@ ul {
     z-index: 1;
 }
 
-/* Стили для элементов внутри выпадающего списка */
+/* РЎС‚РёР»Рё РґР»СЏ СЌР»РµРјРµРЅС‚РѕРІ РІРЅСѓС‚СЂРё РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
 .dropdown-mobile-item {
     color: black;
     padding: 12px 16px;
@@ -2271,10 +2272,10 @@ ul {
     cursor: pointer;
 }
 
-/* Стили для элементов при наведении курсора */
+/* РЎС‚РёР»Рё РґР»СЏ СЌР»РµРјРµРЅС‚РѕРІ РїСЂРё РЅР°РІРµРґРµРЅРёРё РєСѓСЂСЃРѕСЂР° */
 .dropdown-mobile-item:hover {background-color: #fff}
 
-/* Стили для кнопки при наведении курсора */
+/* РЎС‚РёР»Рё РґР»СЏ РєРЅРѕРїРєРё РїСЂРё РЅР°РІРµРґРµРЅРёРё РєСѓСЂСЃРѕСЂР° */
 .dropdown-mobile:hover .dropdown-mobile-button {
     background-color: #fff;
 }
@@ -2713,7 +2714,7 @@ ul {
         line-height: 17.07px;
         letter-spacing: 0.02em;
         text-align: center;
-        word-wrap: break-word; /* Разрешить перенос слов */
+        word-wrap: break-word; /* Р Р°Р·СЂРµС€РёС‚СЊ РїРµСЂРµРЅРѕСЃ СЃР»РѕРІ */
     }
     .footer {
         padding: 30px 16px;
@@ -3178,7 +3179,7 @@ ul {
         letter-spacing: 0.02em;
         text-decoration: underline;
     }
-    /* Избранное */
+    /* РР·Р±СЂР°РЅРЅРѕРµ */
     .featured {
         padding: 83px 16px 110px 16px;
         display: flex;
@@ -3719,16 +3720,16 @@ ul {
         gap: 13px;
     }
     .modal-cabinet {
-        display: none; /* Скрыто по умолчанию */
-        position: fixed; /* Оставаться на месте */
-        z-index: 1; /* Сидеть на вершине */
+        display: none; /* РЎРєСЂС‹С‚Рѕ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ */
+        position: fixed; /* РћСЃС‚Р°РІР°С‚СЊСЃСЏ РЅР° РјРµСЃС‚Рµ */
+        z-index: 1; /* РЎРёРґРµС‚СЊ РЅР° РІРµСЂС€РёРЅРµ */
         left: 0;
         top: 0;
-        width: 100%; /* Полная ширина */
-        height: 100%; /* Полная высота */
-        overflow: auto; /* Включить прокрутку, если необходимо */
-        background-color: rgb(0,0,0); /* Черный фон с непрозрачностью */
-        background-color: rgba(0,0,0,0.4); /* Черный фон с непрозрачностью */
+        width: 100%; /* РџРѕР»РЅР°СЏ С€РёСЂРёРЅР° */
+        height: 100%; /* РџРѕР»РЅР°СЏ РІС‹СЃРѕС‚Р° */
+        overflow: auto; /* Р’РєР»СЋС‡РёС‚СЊ РїСЂРѕРєСЂСѓС‚РєСѓ, РµСЃР»Рё РЅРµРѕР±С…РѕРґРёРјРѕ */
+        background-color: rgb(0,0,0); /* Р§РµСЂРЅС‹Р№ С„РѕРЅ СЃ РЅРµРїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊСЋ */
+        background-color: rgba(0,0,0,0.4); /* Р§РµСЂРЅС‹Р№ С„РѕРЅ СЃ РЅРµРїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊСЋ */
     }
     .modal-content {
         display: flex;
@@ -3742,7 +3743,7 @@ ul {
         margin: 0 auto;
         padding: 80px 100px;
         border: 1px solid #888;
-        max-width: 545px; /* Ширина может быть изменена */
+        max-width: 545px; /* РЁРёСЂРёРЅР° РјРѕР¶РµС‚ Р±С‹С‚СЊ РёР·РјРµРЅРµРЅР° */
         border-radius: 20px;
     }
     .profile-second-data {
@@ -4142,7 +4143,7 @@ ul {
     }
 
     /* Dropdown category */
-    /* Стили для контейнера выпадающего списка */
+    /* РЎС‚РёР»Рё РґР»СЏ РєРѕРЅС‚РµР№РЅРµСЂР° РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
     .dropdown-mobile-container {
         position: relative;
         display: inline-block;
@@ -4150,7 +4151,7 @@ ul {
     .dropdown-mobile {
     }
 
-    /* Стили для кнопки выпадающего списка */
+    /* РЎС‚РёР»Рё РґР»СЏ РєРЅРѕРїРєРё РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
     .dropdown-mobile-button {
         background-color: #fff;
         padding: 10px;
@@ -4163,7 +4164,7 @@ ul {
         line-height: 17.07px;
     }
 
-    /* Стили для содержимого выпадающего списка */
+    /* РЎС‚РёР»Рё РґР»СЏ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
     .dropdown-mobile-content {
         display: none;
         position: absolute;
@@ -4173,7 +4174,7 @@ ul {
         z-index: 1;
     }
 
-    /* Стили для элементов внутри выпадающего списка */
+    /* РЎС‚РёР»Рё РґР»СЏ СЌР»РµРјРµРЅС‚РѕРІ РІРЅСѓС‚СЂРё РІС‹РїР°РґР°СЋС‰РµРіРѕ СЃРїРёСЃРєР° */
     .dropdown-mobile-item {
         color: black;
         padding: 12px 16px;
