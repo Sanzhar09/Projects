@@ -2377,8 +2377,6 @@ ul {
         max-width: 478px;
         display: flex;
         flex-direction: column;
-        gap: 0;
-        height: 90%;
         justify-content: space-between;
     }
 
@@ -2422,10 +2420,8 @@ ul {
     }
     .swiper-slide img {
         object-fit: cover;
-        max-height: 469px;
-        padding-right: 600px;
+        max-height: 200px;
         background-color: rgba(249, 249, 249, 1);
-        max-width: 390px;
     }
     .category {
         max-width: 480px;
