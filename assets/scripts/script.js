@@ -237,7 +237,10 @@ basketButtons.forEach(button => {
         const productId = button.dataset.id;
         let token = $('meta[name="csrf-token"]').attr('content');
 
-        if (!productId) {
+        if(button.textContent === 'Добавлено') {
+            window.location.href = "/favorites";
+            return;
+        } else if (!productId) {
             console.error('ID товара не найден');
             return;
         }
