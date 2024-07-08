@@ -54,32 +54,56 @@
                 <div>
                     <div class="cabinet-profile-title">Мои Адреса</div>
                     <div class='forMobile cabinet-profile-title'>Личная информация</div>
-                        <div class="cabinet-profile-content">
+                        <form class="cabinet-profile-content" onsubmit="saveAddresses(event)">
                             <div class="cabinet-profile-blocks">
                                 <div class="address-second-data">
-                                    <label for="fullname">Адрес 1:</label>
-                                    <input type="text" id="data" value="Иванов Иван Иванович">
+                                    <label for="address-1">Адрес 1:</label>
+                                    <div class="basket-form-block">
+                                        <label class="city-label">Город:</label>
+                                        <select class="basket-method-content" required name="address_0_city">
+                                            <option class="basket-method-desc" value="Almaty" selected>Алматы</option>
+                                            <option class="basket-method-desc" value="Astana">Астана</option>
+                                        </select>
+                                    </div>
+                                    <label class="city-label">Адрес:</label>
+                                    <input class="address-input" type="text" id="address-1" value="Аль-Фараби 123" required name="address_0_address">
                                 </div>
-                            </div>
-                            <div class="cabinet-profile-blocks">
                                 <div class="address-second-data">
-                                    <label for="phone">Адрес 2:</label>
-                                    <input type="tel" id="data" value="+7 (701) 777-7777">
+                                    <label for="address-2">Адрес 2:</label>
+                                    <div class="basket-form-block">
+                                        <label class="city-label">Город:</label>
+                                        <select class="basket-method-content" required name="address_1_city">
+                                            <option class="basket-method-desc" value="Almaty">Алматы</option>
+                                            <option class="basket-method-desc" value="Astana" selected>Астана</option>
+                                        </select>
+                                    </div>
+                                    <label class="city-label">Адрес:</label>
+                                    <input class="address-input" type="text" id="address-2" value="Орбита 3, д 20" required name="address_1_address">
                                 </div>
                             </div>
-                            <div class="cabinet-profile-blocks">
-                                <div class="address-second-data">
-                                    <label for="phone">Адрес 3:</label>
-                                    <input type="tel" id="data" value="+7 (701) 777-7777">
-                                </div>
-                            </div>
+
                             <div id="address-container">
-                                <input class="add-input-address displayNone" type="tel" placeholder="Добавьте адрес" id="input-address" value="">
+                                <div class="address-second-data">
+                                    <label for="new-address">Новый адрес:</label>
+                                    <div class="basket-form-block">
+                                        <label class="city-label">Город:</label>
+                                        <select class="basket-method-content" id="newCity" name="newCity">
+                                            <option class="basket-method-desc" value="Almaty" selected>Алматы</option>
+                                            <option class="basket-method-desc" value="Astana">Астана</option>
+                                        </select>
+                                    </div>
+                                    <label class="city-label">Адрес:</label>
+                                    <input name="newAddress" class="address-input" type="text" id="new-address" value="">
+                                </div>
                             </div>
-                            <div class="cabinet-profile-fourth forMobile"><button id="add-address">Добавить другой адрес</button></div>
-                            <div class="cabinet-profile-fourth forDescktop"><button id="add-address-descktop">+Добавить другой адрес</button></div>
-                            <div class="displayNone" id="save-button-container"><button id="save-button">Сохранить</button></div>
-                        </div>
+
+                            <div class="cabinet-profile-fourth">
+                                <button id="add-address-descktop" onclick="addNewAddress()" type="button">+Добавить другой адрес</button>
+                            </div>
+                            <div id="save-button-container">
+                                <button id="save-button" type="submit">Сохранить</button>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>

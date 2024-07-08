@@ -288,69 +288,52 @@ togglePopularMobile = () => {
     }
 }
 
-// Add Adress
-document?.addEventListener('DOMContentLoaded', function () {
-    const addressInput = document.getElementById('input-address');
-    const saveButtonContainer = document.getElementById('save-button-container');
-    const saveButton = document.getElementById('save-button');
-
-    function showAddressInput() {
-        // Показываем поле ввода адреса
-        // addressInput.classList.remove('displayNone');
-        // addressInput.classList.add('displayBlock');
-        if (addressInput.style.display = 'none')
-
-            addressInput.style.display = 'block'
-        // Делаем кнопку "Сохранить" видимой
-        if (saveButtonContainer.style.display = 'none')
-
-            saveButtonContainer.style.display = 'flex'
-        saveButtonContainer.style.justifyContent = 'center'
-
+addNewAddress = () => {
+    $('#address-container').show();
+    $('#add-address-descktop').hide();
+}
+saveAddresses = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const isAdding = $('#address-container').is(":visible");
+    // output as an object
+    const temp = [];
+    const newAddress = {};
+    for (var pair of formData.entries()) {
+        const keys = pair[0].split('_');
+        if(keys[0] === 'address') {
+            if(!temp[keys[1]]) temp[keys[1]] = {};
+            temp[keys[1]][keys[2]] = pair[1];
+        } else if(keys[0] === 'newAddress' || keys[0] === 'newCity') {
+            if(isAdding) newAddress[keys[0]] = pair[1];
+        }
     }
 
-    // Добавляем обработчики событий для обеих кнопок
-    document.getElementById('add-address-descktop')?.addEventListener('click', showAddressInput);
-    document.getElementById('add-address')?.addEventListener('click', showAddressInput);
+    const toSend = {addresses: temp};
+    if(isAdding) toSend.newAddress = newAddress;
 
-    // Пример обработчика события для кнопки "Сохранить"
-    saveButton?.addEventListener('click', function () {
-        // Получаем значение из поля ввода
-        const address = addressInput.value;
-
-        // Если адрес не пустой
-        if (address.trim() !== '') {
-            // Формируем объект с данными для отправки на сервер
-            const data = {
-                address: address
-            };
-
-            fetch('addAddress', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        addressInput.style.display = 'none'
-                        saveButtonContainer.style.display = 'none'
-                        throw new Error('Ошибка сети');
-
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Обработка успешного ответа от сервера
-                    console.log('Ответ от сервера:', data);
-                    alert('Адрес успешно сохранён!');
-                })
-        } else {
-            alert('Пожалуйста, введите адрес.');
-        }
-    });
-});
+    fetch('editAddresses', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(toSend)
+    })
+        .then(response => {
+            if (!response.ok) {
+                alert('Ошибка сети');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Обработка успешного ответа от сервера
+            console.log('Ответ от сервера:', data);
+            $('#address-container').hide();
+            $('#add-address-descktop').show();
+            $('#new-address').val('');
+            alert('Адреса успешно сохранены!');
+        });
+}
 
 async function deleteBasket(event) {
     event.stopPropagation(); // Останавливаем всплытие события клика
