@@ -292,6 +292,11 @@ addNewAddress = () => {
     $('#address-container').show();
     $('#add-address-descktop').hide();
 }
+
+deleteAddress = (index) => {
+    $('.address-second-data')[index].remove();
+}
+
 saveAddresses = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
