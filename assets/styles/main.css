@@ -2200,6 +2200,12 @@ ul {
     flex-direction: column;
     gap: 12px;
 }
+
+.order-desk-img {
+ width: 74px;
+ height: 54px;
+}
+
 .order-desk-content {
     display: flex;
     gap: 12px;
