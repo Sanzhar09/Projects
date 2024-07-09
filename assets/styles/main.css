@@ -2410,12 +2410,14 @@ ul {
     }
     .swiper-content {
         position: absolute;
-        top: 6%;
-        left: 50%;
-        max-width: 478px;
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: space-between;
+        top: 0;
+        left: 0;
     }
 
     .swiper-content-title {
@@ -2435,6 +2437,7 @@ ul {
         letter-spacing: 0.03em;
         text-align: center;
         margin-bottom: 0;
+        width: 60%;
     }
     .swiper-content-btn {
         padding: 10px 24px;
@@ -2514,8 +2517,8 @@ ul {
         flex-direction: row;
     }
     .category-image-mobile {
-        width: 19px;
-        height: 19px;
+        width: 30px;
+        height: 30px;
     }
     .category-card-desc {
         font-family: Montserrat;
