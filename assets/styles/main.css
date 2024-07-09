@@ -2202,7 +2202,7 @@ ul {
     gap: 12px;
 }
 
-.order-desk-img {
+.order-desk-img, .order-desk-img img {
  width: 74px;
  height: 54px;
 }
