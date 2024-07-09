@@ -294,7 +294,7 @@ addNewAddress = () => {
 }
 
 deleteAddress = (index) => {
-    $('.address-second-data')[index].remove();
+    $(`.address-second-data#${index}`).remove();
 }
 
 saveAddresses = (event) => {
