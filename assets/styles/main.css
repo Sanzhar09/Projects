@@ -1604,8 +1604,9 @@ ul {
     color: rgba(0, 0, 0, 1);
 }
 .cabinet-profile-blocks {
-    display: flex;
-    gap: 120px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
 }
 .profile-second-data {
     display: flex;
