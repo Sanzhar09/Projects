@@ -2731,7 +2731,7 @@ ul {
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        max-width: 210px;
+        max-width: 230px;
     }
 
     .info-img {
