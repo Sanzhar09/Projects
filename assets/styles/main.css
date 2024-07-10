@@ -195,7 +195,7 @@ ul {
     line-height: 58px;
     letter-spacing: 0.03em;
     text-align: center;
-    color:rgba(84, 61, 141, 1);
+    color: rgb(88 191 176);
 }
 .swiper-content-desc {
     font-family: Montserrat;
@@ -2429,7 +2429,6 @@ ul {
         line-height: 22px;
         letter-spacing: 0.01em;
         text-align: center;
-        color: rgb(88 191 176);
     }
     .swiper-content-desc {
         font-family: Montserrat;
