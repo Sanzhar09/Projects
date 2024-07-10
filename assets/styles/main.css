@@ -353,7 +353,7 @@ ul {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    max-width: 265px;
+    max-width: 280px;
 }
 .hits-card-first {
     display: flex;
@@ -514,7 +514,7 @@ ul {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    max-width: 210px;
+    max-width: 240px;
 }
 .info-img {
     width: 120px;
@@ -2154,6 +2154,7 @@ ul {
     align-items: center;
     padding-right: 4px;
     margin-bottom: 40px;
+    cursor: pointer;
 }
 .orders-content {
     display: none;

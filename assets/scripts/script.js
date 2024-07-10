@@ -54,7 +54,7 @@ function toogleAnswer(question) {
 function toogleOrders(question) {
     let answer = question.nextElementSibling; // Получаем следующий элемент (ответ)
     let arrowIcon = question.querySelector('.order-arrow'); // Получаем иконку вопроса
-    if (answer.style.display === 'none') {
+    if (!$(answer).is(':visible')) {
         answer.style.display = 'flex'; // Показываем ответ
         arrowIcon.src = 'assets/images/arrow-down.svg'; // Меняем иконку на стрелку вниз
     } else {
