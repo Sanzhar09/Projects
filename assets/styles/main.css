@@ -1745,7 +1745,7 @@ ul {
 .delete-address {
     cursor: pointer;
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px;
     background: rgba(63, 63, 63, 1);
     border-radius: 30px;
     display: flex;
