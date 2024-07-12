@@ -2661,6 +2661,7 @@ ul {
         max-width: 169px;
         box-sizing: border-box;
         width: 100%;
+        flex: 1;
     }
     .hits-card-second-block {
         display: flex;
