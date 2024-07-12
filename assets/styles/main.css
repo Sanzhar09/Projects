@@ -129,10 +129,11 @@ li {
 }
 a {
     text-decoration: none;
-    color: rgba(0,0,0,1);
+    color: #3F3F3F;
 }
-a:hover {
+a:hover, button:hover {
     color: rgb(88 191 176);
+    border-color: rgb(88 191 176);
 }
 ul {
     padding: 0;
