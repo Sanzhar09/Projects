@@ -193,13 +193,13 @@ ul {
     gap: 20px;
 }
 .swiper-content-title {
-    font-family: gooseberry;
-    font-size: 58px;
+    font-family: Montserrat;
+    font-size: 36px;
     font-weight: 500;
     line-height: 58px;
     letter-spacing: 0.03em;
     text-align: center;
-    color: rgb(88 191 176);
+    color: #FFFFFF;
 }
 .swiper-content-desc {
     font-family: Montserrat;
