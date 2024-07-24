@@ -1123,6 +1123,8 @@ ul {
     font-size: 14.46px;
     font-weight: 500;
     line-height: 17.62px;
+    border: none;
+    width: 60px;
 }
 .basket-total-desc .hits-card-oldprice {
     font-family: Montserrat;

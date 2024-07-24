@@ -432,6 +432,21 @@ $('#delivery-type-id').change(function() {
     }
 });
 
+let timer;
+
+function changeAmountInput(e, id) {
+    clearTimeout(timer)
+    timer = setTimeout(() => {
+        e.stopPropagation();
+        let card = $(`[data-id="${id}"]`);
+        let currentCount = parseInt(e.target.value);
+        const newCount = currentCount > 0 ? currentCount : 1;
+        card.attr('data-count', newCount);
+        card.find('.basket-total-count').val(newCount);
+        sendRequestChangeAmount(id, newCount);
+    }, 1500);
+}
+
 function changeAmount(e, isAdd, id) {
     e.stopPropagation();
     let card = $(`[data-id="${id}"]`);
@@ -439,8 +454,7 @@ function changeAmount(e, isAdd, id) {
     if (isAdd || currentCount > 0) {
         const newCount = isAdd ? currentCount + 1 : currentCount - 1;
         card.attr('data-count', newCount);
-        card.attr('data-count', newCount);
-        card.find('.basket-total-count').html(newCount);
+        card.find('.basket-total-count').val(newCount);
 
         if (newCount === 0) {
             $(`div[data-id=${id}]`).each((i, obj) => {
