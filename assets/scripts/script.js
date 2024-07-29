@@ -454,8 +454,9 @@ function changeAmount(e, isAdd, id) {
     if (isAdd || currentCount > 0) {
         const newCount = isAdd ? currentCount + 1 : currentCount - 1;
         card.attr('data-count', newCount);
-        card.find('.basket-total-count').val(newCount);
-        card.find('.basket-total-count').attr("value", newCount);
+        /*card.find('.basket-total-count').val(newCount);
+        card.find('.basket-total-count').attr("value", newCount);*/
+        card.find('.basket-total-count').prop("value", newCount);
 
         if (newCount === 0) {
             $(`div[data-id=${id}]`).each((i, obj) => {
