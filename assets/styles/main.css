@@ -497,6 +497,10 @@ ul {
     transition: background-color 0.3s ease, border-color 0.3s ease;
     width: 100%;
 }
+.button-basket:hover {
+    color: #FFFFFF;
+    background-color: rgb(88 191 176);
+}
 .basket-minus {
     cursor: pointer;
 }
